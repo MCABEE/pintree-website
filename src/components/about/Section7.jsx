@@ -4,7 +4,7 @@ import React from "react";
 export default function () {
   return (
     <section
-      className="w-full bg-[#E8FBF9] flex flex-col lg:flex-row 
+      className="w-full bg-[#FFEDF4] flex flex-col lg:flex-row 
                       py-[80px] sm:py-[152px]  "
     >
       <div className="w-full lg:w-1/2 flex items-center justify-center  ">
@@ -17,36 +17,25 @@ export default function () {
 
       <div className="w-full lg:w-1/2 flex flex-col  justify-center">
         <p className="text-center lg:text-left text-[16px] sm:text-[20px] xl:text-[26px]  2xl:text-[32px] text-[#000000] font-aeonik-regular pt-[48px] lg:pt-0  ">
-          Communities
+          Business
         </p>
 
         <h2
           className="font-aeonik-medium text-center lg:text-left text-[32px] sm:text-[40px] xl:text-[45px] 2xl:text-[64px]
                        leading-[120%] text-[#0C0C0C] mt-[16px] sm:mt-[4px]"
         >
-          Where ideas meet <br /> like-minded people.
+          Turn your presence into possibility.
         </h2>
 
         <p className=" text-center lg:text-left text-[16px] sm:text-[18px] xl:text-[20px] 2xl:text-[24px] font-aeonik-regular text-[#1A1A1A] leading-[140%] mt-[17px] sm:mt-[8px] px-[44px] md:px-0">
-          Just communities built around your passions, 
-          <br className="hidden sm:inline-block" /> curiosity, and conversations.
+          Share what you offer and reach the right people with{" "}
+          <br className="hidden sm:inline-block" /> targeted visibility.
         </p>
 
-        <p className=" text-center lg:text-left text-[16px] sm:text-[18px] xl:text-[20px] 2xl:text-[24px] font-aeonik-medium text-[#1A1A1A] mt-[19px] sm:mt-[25px] xl:mt-[31px]">
-          Get the Pintree App
-        </p>
-
-        <div className="flex gap-[8px] mt-[16px] sm:mt-[18px] justify-center lg:justify-start">
-          <img
-            src="/appStore.svg"
-            alt="App Store"
-            className="w-[128px] sm:w-[100px] 2xl:w-[140px] h-auto"
-          />
-          <img
-            src="/playStore.svg"
-            alt="Google Play"
-            className="w-[128px] sm:w-[100px] 2xl:w-[140px] h-auto"
-          />
+        <div className="flex justify-center lg:justify-start items-center pt-[23px] sm:pt-[54px] ">
+          <button className="w-[240px] sm:w-[280px] md:w-[300px] lg:w-[360px] h-[40px] sm:h-[55px] md:h-[60px] lg:h-[64px] border border-[#1A1A1A] rounded-[4px] text-[16px] sm:text-[18px] md:text-[20px] lg:text-[24px] text-[#1A1A1A] font-aeonik-regular  ">
+           Create Business Account
+          </button>
         </div>
       </div>
     </section>

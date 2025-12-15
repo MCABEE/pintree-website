@@ -12,6 +12,12 @@
   --font-mono: var(--font-geist-mono);
 }
 
+/* BREAKPOINTS MUST BE HERE — NOT INLINE */
+@theme {
+  --breakpoint-3xl: 1700px;
+  --breakpoint-4xl: 1900px;
+}
+
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #ffffff;
@@ -47,9 +53,4 @@ body {
 
 html {
   scroll-behavior: smooth;
-}
-@theme {
-  
-  --breakpoint-3xl: 1700px; 
-  --breakpoint-4xl:1900px;
 }
