@@ -1,207 +1,4 @@
-// import Navbar from "@/components/Navbar";
-// import React from "react";
 
-// const page = () => {
-//   return (
-//     <div>
-//       <Navbar />
-//       <h1 className="text-[96px] font-aeonik-medium text-[#1A1A1A] pb-[25px] text-center pt-[180px]">
-//         Terms of Service
-//       </h1>
-//       <p className="text-[24px] font-aeonik-regular text-center text-[#1A1A1A]">
-//         Guidelines that define your rights, responsibilities, and safe usage of
-//         <br /> Pintree’s platform and community features.
-//       </p>
-//       <div className="text-[24px] text-[#000000] font-aeonik-regular px-[240px]">
-//         <p className="pt-[54px] ">Pintree – Terms of Use</p>
-//         <p className=" font-aeonik-semibold pt-4">
-//           Last updated: [31 December 2025]
-//         </p>
-//         <p className="pt-8 ">
-//           These Terms of Use <span className="font-aeonik-bold">(“Terms”)</span>{" "}
-//           govern your access to and use of Pintree and any related websites,
-//           apps, tools and services (collectively, the “Platform” or “Services”).
-//         </p>
-//         <p className="pt-4">
-//           The Platform is owned and operated by{" "}
-//           <span className="font-aeonik-bold">MCABEE DIGITAL</span>, an Indian
-//           company{" "}
-//           <span className="font-aeonik-bold">
-//             (“MCABEE DIGITAL”, “Pintree”, “we”, “us”, “our”).
-//           </span>
-//         </p>
-//         <p>
-//           By creating an account or using Pintree, you agree to these Terms.
-//         </p>
-//         <p className="pt-8 font-aeonik-medium">1. Your Relationship with Us</p>
-//         <p className="pt-8 font-aeonik-medium">1.1 What is Pintree?</p>
-//         <p className="pt-4">
-//           Pintree is a community-based social platform where users can share and
-//           discover content such as:
-//         </p>
-//         <ul className="pt-4 list-disc pl-5 ms-4 flex flex-col gap-2">
-//           <li>Photos and multi-photo albums</li>
-//           <li>Text posts and blogs</li>
-//           <li>Life events and updates</li>
-//           <li>Polls and similar interactive posts</li>
-//           <li>Comments, reactions and community discussions</li>
-//         </ul>
-//         <p className="pt-4">
-//           We <span className="font-aeonik-medium">do not</span> currently
-//           support video or music uploads or streaming.
-//         </p>
-//         <p className="pt-8 font-aeonik-medium">1.2 Personal vs. Pro use</p>
-//         <ul className="pt-4 list-disc pl-5 ms-4 flex flex-col gap-2">
-//           <li>
-//             {" "}
-//             Our Services are{" "}
-//             <span className="font-aeonik-medium">
-//               {" "}
-//               primarily meant for personal, non-commercial use.
-//             </span>
-//           </li>
-//           <li>
-//             {" "}
-//             Limited commercial and promotional use is allowed{" "}
-//             <span className="font-aeonik-medium">
-//               only through authorized Pro Accounts,
-//             </span>{" "}
-//             such as creators, businesses, media, and institutions, and must
-//             always comply with these Terms and applicable laws.
-//           </li>
-//         </ul>
-//         <p className="pt-8 font-aeonik-medium">1.3 Binding agreement</p>
-//         <p className="pt-2">
-//           These Terms form a legally binding agreement between you and MCABEE
-//           DIGITAL. If you do not agree with any part of these Terms,{" "}
-//           <span className="font-aeonik-medium">do not use Pintree.</span>
-//         </p>
-//         <p className="pt-8 font-aeonik-medium">
-//           2. Eligibility and Age Requirements
-//         </p>
-//         <p className="pt-8 font-aeonik-medium">2.1 Minimum age</p>
-//         <p className="pt-2">You may use Pintree only if:</p>
-//         <ul className="pt-4 list-disc pl-5 ms-4 flex flex-col gap-2">
-//           <li>
-//             You are at least{" "}
-//             <span className="font-aeonik-medium">13 years old,</span> and
-//           </li>
-//           <li>
-//             {" "}
-//             You are capable of forming a binding contract under applicable law,
-//             or you have the consent of a parent or legal guardian (if required
-//             in your country).
-//           </li>
-//         </ul>
-//         <p className="pt-8 font-aeonik-medium">2.2 Indian origin focus</p>
-//         <p className="pt-4">
-//           Pintree is currently designed for{" "}
-//           <span className="font-aeonik-medium">
-//             Indian origin users globally,
-//           </span>{" "}
-//           and is operated from India. However, anyone who complies with these
-//           Terms and applicable local laws may use the Platform.
-//         </p>
-//         <p className="pt-8 font-aeonik-medium">2.3 If you are under 18</p>
-//         <p className="pt-4">
-//           If you are under 18, you confirm that you have obtained permission
-//           from your parent or legal guardian to use the Services. We may ask for
-//           additional verification where required by law.
-//         </p>
-//         <p className="pt-8 font-aeonik-medium">
-//           3. Real Identity and Account Registration
-//         </p>
-//         <p className="pt-8 font-aeonik-medium">3.1 Real identity requirement</p>
-//         <p className="pt-2">
-//           Pintree is a real-identity platform. When you create an account, you
-//           must:
-//         </p>
-//         <ul className="pt-4 list-disc pl-5 ms-4 flex flex-col gap-2">
-//           <li>
-//             {" "}
-//             Provide your{" "}
-//             <span className="font-aeonik-medium">real full name, </span>matching
-//             your ID or commonly used legal name
-//           </li>
-//           <li>
-//             Provide a{" "}
-//             <span className="font-aeonik-medium">
-//               valid and accessible email address or mobile number
-//             </span>
-//           </li>
-//           <li>Verify your email or phone number when requested</li>
-//         </ul>
-//         <p className="pt-4">
-//           Your username/handle can be different (creative or brand-style), but
-//           your account profile details must be truthful and not misleading.
-//         </p>
-//         <p className="pt-8 font-aeonik-medium">3.2 Account security</p>
-//         <p className="pt-2">You are responsible for:</p>
-//         <ul className="pt-4 list-disc pl-5 ms-4 flex flex-col gap-2">
-//           <li> Keeping your login credentials confidential</li>{" "}
-//           <li>Restricting access to your device and account</li>
-//           <li>All activity that occurs under your account</li>
-//         </ul>
-//         <p className="pt-4">
-//           If you suspect unauthorized access, you should immediately change your
-//           password and follow the in-app help or contact{" "}
-//           <span className="font-aeonik-medium">contact@pintree.co </span> for
-//           support.
-//         </p>{" "}
-//         <p className="pt-8 font-aeonik-medium">3.3 One person, one identity </p>
-//         <p className="pt-4">
-//           You agree <span className="font-aeonik-medium">not</span> to:
-//         </p>
-//         <ul className="pt-4 list-disc pl-5 ms-4 flex flex-col gap-2">
-//           <li>
-//             {" "}
-//             Impersonate another person, brand, organization, or public authority
-//           </li>
-//           <li>
-//             {" "}
-//             Create accounts on behalf of others without proper authorization{" "}
-//           </li>
-//           <li> Misrepresent your identity, role, or affiliation</li>
-//         </ul>
-//         <h1 className="pt-8 font-aeonik-medium">4. Types of Accounts</h1>
-//         <p className="pt-8 font-aeonik-medium">4.1 Personal Accounts</p>
-//         <p className="pt-4">Personal accounts are for individual users to:</p>
-//         <ul className="pt-4 list-disc pl-5 ms-4 flex flex-col gap-2">
-//           <li>Connect with communities and rooms</li>{" "}
-//           <li> Share personal photos, posts, blogs, life events, and polls</li>{" "}
-//           <li>Interact through comments, reactions, and discussions</li>
-//         </ul>
-//         <p className="pt-4">
-//           Personal accounts are not intended for structured commercial
-//           advertising or large-scale brand promotion.
-//         </p>
-//         <p className="pt-8 font-aeonik-medium"> 4.2 Pro Accounts</p>
-//         <p className="pt-4">
-//           Pro Accounts are intended for professional and organizational
-//           presence, discovery, promotion, and communications. Pro Accounts may
-//           include:
-//         </p>
-//         <ul className="pt-4 list-disc pl-5 ms-4 flex flex-col gap-2">
-//           <li>Creators and Influencers</li>
-//           <li>Public Figures and Celebrities</li>
-//           <li>
-//             Communities (e.g., fan communities, interest groups, official clubs)
-//           </li>
-//           <li>Businesses and Brands</li>
-//           <li>News Publishers (Print, visual, online, audio, etc.)</li>
-//           <li>Educational and Religious Entities</li>
-//           <li>Government, NGOs, and Non-profits</li>
-//           <li>
-//             Infotainment Channels (Print, video, online, etc., even if they
-//             currently link outside Pintree for video)
-//           </li>
-//         </ul>
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default page;
 
 import Navbar from "@/components/Navbar";
 import React from "react";
@@ -731,6 +528,215 @@ const page = () => {
             Platform
           </li>
         </ul>
+        <h1 className="pt-8 font-aeonik-bold">
+          9. Account Suspension and Termination
+        </h1>
+        <p className="pt-8 font-aeonik-bold">9.1 Our right to act</p>
+        <p className="pt-4">
+          We may suspend, restrict, or terminate your account (with or without
+          prior notice) if:
+        </p>
+        <ul className="pt-4 list-disc pl-5 ms-4 flex flex-col gap-2">
+          <li> You violate these Terms or our Community Guidelines</li>
+          <li> We are required to do so by law or court order</li>
+          <li>
+            {" "}
+            Your conduct creates risk or potential legal exposure for us or
+            other users{" "}
+          </li>
+          <li> There is prolonged inactivity or misuse of the account</li>
+        </ul>
+        <p className="pt-8 font-aeonik-bold">
+          9.2 Your right to stop using Pintree
+        </p>
+        <p className="pt-4">You may stop using Pintree at any time.</p>
+        <p className="pt-8 font-aeonik-bold">9.3 Account deletion</p>
+        <p className="pt-4">
+          You can{" "}
+          <span className="font-aeonik-bold">
+            delete your account directly from within the app{" "}
+          </span>{" "}
+          (for example, via:
+          <span className="font-aeonik-bold">
+            Settings → Account → Delete Account{" "}
+          </span>
+          or any updated equivalent menu).
+        </p>
+        <p className="pt-4">When you delete your account:</p>
+        <ul className="pt-4 list-disc pl-5 ms-4 flex flex-col gap-2">
+          <li>
+            {" "}
+            Your profile will be deactivated and may be permanently deleted
+            after a certain period
+          </li>
+          <li>
+            {" "}
+            Some information (such as messages sent to others, logs required by
+            law, or aggregated data) may be retained for legal, security, or
+            operational reasons
+          </li>
+          <li>
+            {" "}
+            Certain content may remain visible if it has been reshared, quoted,
+            or used in group/community contexts
+          </li>
+        </ul>
+        <p className="pt-4">
+          If you face issues deleting your account, you may contact us at
+          contact@pintree.co for assistance.
+        </p>
+        <h1 className="pt-8 font-aeonik-bold">
+          10. Third-Party Links and Services
+        </h1>
+        <p className="pt-4">
+          Pintree may contain links to third-party websites, apps, or services.
+          These are provided for convenience only.
+        </p>
+        <p className="pt-4">
+          We do not control, endorse, or assume responsibility for:
+        </p>
+        <ul className="pt-4 list-disc pl-5 ms-4 flex flex-col gap-2">
+          <li>Third-party content, privacy practices, or terms</li>
+          <li>
+            {" "}
+            Any loss or damage arising from your use of third-party sites or
+            services You should review the terms and privacy policies of any
+            third-party services you visit or use.
+          </li>
+        </ul>
+        <h1 className="pt-8 font-aeonik-bold">11. Disclaimers</h1>
+        <p className="pt-4">To the maximum extent permitted by law:</p>
+        <ul className="pt-4 list-disc pl-5 ms-4 flex flex-col gap-2">
+          <li>
+            {" "}
+            The Services are provided on an “as is” and “as available” basis.
+          </li>
+          <li>
+            {" "}
+            We make no guarantees that the Services will be uninterrupted,
+            secure, or error-free.
+          </li>
+          <li>
+            {" "}
+            We do not guarantee that any content (including user content) will
+            always be accurate, complete, or up-to-date.
+          </li>
+        </ul>
+        <p className="pt-4">
+          We may change, suspend, or discontinue any part of the Services at any
+          time, including features and availability, without prior notice.
+        </p>
+        <h1 className="pt-8 font-aeonik-bold">12. Limitation of Liability</h1>
+        <p className="pt-4">
+          To the fullest extent permitted by applicable law, MCABEE DIGITAL and
+          its directors, officers, employees, partners, and agents will not be
+          liable for:
+        </p>
+        <ul className="pt-4 list-disc pl-5 ms-4 flex flex-col gap-2">
+          <li>
+            Any indirect, incidental, special, consequential, or punitive
+            damages
+          </li>
+          <li> Any loss of profits, revenue, data, goodwill, or opportunity</li>
+          <li> Any loss or damage resulting from:</li>
+        </ul>
+        <ul className="pt-4 list-none pl-5 ms-4 flex flex-col gap-2">
+          <li>o&nbsp;Your use of, or inability to use, the Services</li>
+          <li>o&nbsp;Any user content or conduct of other users</li>
+          <li>
+            o&nbsp;Unauthorized access, use, or alteration of your content or
+            account
+          </li>
+          <li>o&nbsp;Technical issues, bugs, or service interruptions</li>
+        </ul>
+        <p className="pt-4">
+          Where liability cannot be excluded under law, our total aggregate
+          liability to you relating to the Services will be limited to the
+          amount you have paid to us (if any) in the
+          <span className="font-aeonik-bold">12 months</span> prior to the event
+          giving rise to the claim.
+        </p>
+        <p className="pt-4">Nothing in these Terms excludes liability for:</p>
+        <ul className="pt-4 list-none pl-5 ms-4 flex flex-col gap-2">
+          <li>Death or personal injury caused by our negligence </li>
+          <li> Fraud or fraudulent misrepresentation</li>
+          <li>
+            {" "}
+            Any other liability that cannot be excluded under applicable law
+          </li>
+        </ul>
+        <h1 className="pt-8 font-aeonik-bold">13. Indemnity </h1>
+        <p className="pt-4">
+          You agree to
+          <span className="font-aeonik-bold">
+            indemnify and hold harmless{" "}
+          </span>{" "}
+          MCABEE DIGITAL, its affiliates, directors, officers, employees and
+          agents from and against any claims, liabilities, damages, losses, and
+          expenses (including reasonable legal fees) arising out of or in any
+          way related to:
+        </p>{" "}
+        <ul className="pt-4 list-disc pl-5 ms-4 flex flex-col gap-2">
+          <li>Your use of the Services </li>
+          <li> Your User Content</li>
+          <li> Your violation of these Terms or applicable law </li>
+          <li> Your infringement of any third-party rights</li>
+        </ul>
+        <h1 className="pt-8 font-aeonik-bold">14. Changes to These Terms</h1>
+        <p className="pt-4">
+          We may update these Terms from time to time, for example when:
+        </p>
+        <ul className="pt-4 list-disc pl-5 ms-4 flex flex-col gap-2">
+          <li> We add or change features</li>
+          <li> We expand to new regions</li>
+          <li> Laws or regulations change</li>
+        </ul>
+        <p className="pt-4">
+          When we make material changes, we will take reasonable steps to notify
+          you (for example, in-app notices or updated “Last updated” date). Your
+          continued use of the Services after changes become effective means you
+          accept the updated Terms.
+        </p>
+        <p className="pt-4">
+          If you do not agree with the updated Terms, you must stop using the
+          Services and, if you wish, delete your account.
+        </p>
+        <h1 className="pt-8 font-aeonik-bold">
+          15. Governing Law and Jurisdiction
+        </h1>
+        <p className="pt-4">
+          These Terms are governed by the laws of India, without regard to
+          conflict of law rules.
+        </p>
+        <p className="pt-4">
+          You agree that the courts located in Chennai, Tamil Nadu, India shall
+          have exclusive jurisdiction over all disputes arising out of or in
+          connection with these Terms or your use of the Services.
+        </p>
+        <h1 className="pt-8 font-aeonik-bold">16. Other Legal Terms </h1>
+        <p className="pt-8 font-aeonik-bold">16.1 No waiver</p>
+        <p className="pt-4">
+          If we do not enforce a part of these Terms at any time, it does not
+          mean we give up our rights under that part later.
+        </p>
+        <p className="pt-8 font-aeonik-bold">16.2 Severability</p>
+        <p className="pt-4">
+          If any provision of these Terms is found to be invalid or
+          unenforceable, that part will be limited or removed to the minimum
+          extent necessary, and the rest of the Terms will remain in full force
+          and effect.
+        </p>
+        <p className="pt-8 font-aeonik-bold">16.3 Entire agreement </p>
+        <p className="pt-4">
+          These Terms (together with our Privacy Policy and Community
+          Guidelines) are the entire agreement between you and us regarding your
+          use of Pintree and supersede any prior agreements.
+        </p>
+        <h1 className="pt-8 font-aeonik-bold">17. Contact Us</h1>
+        <p className="pt-4">
+          If you have any questions about these Terms, you can contact us at:
+        </p>
+        <p className="pt-4">Email: contact@pintree.co</p>
       </div>
     </div>
   );
