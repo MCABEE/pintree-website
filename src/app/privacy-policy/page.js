@@ -16,7 +16,7 @@ function Section6() {
           These terms govern your access to and use of Pintree’s services,{" "}
           <br /> features, content, and community tools.
         </p>
-        <div className="text-[24px] text-[#000000] xl:px-[240px]">
+        <div className="text-[16px] sm:text-[24px] text-[#000000] xl:px-[240px]">
           <p className="pt-[54px] ">Pintree – Privacy Policy</p>
           <p className="font-aeonik-bold pt-4">
             Last Updated: 2025 December 31

@@ -16,7 +16,7 @@ const page = () => {
           of
           <br /> Pintree’s platform and community features.
         </p>
-        <div className="text-[24px] text-[#000000] font-aeonik-regular xl:px-[240px]">
+        <div className="text-[16px] sm:text-[24px] text-[#000000] font-aeonik-regular xl:px-[240px]">
           <p className="pt-[54px] ">Pintree – Terms of Use</p>
           <p className=" font-aeonik-semibold pt-4">
             Last updated: [31 December 2025]
