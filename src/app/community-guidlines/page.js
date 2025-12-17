@@ -1,18 +1,21 @@
+import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import React from "react";
 
 const page = () => {
   return (
-    <div className="mb-10">
+<>
       <Navbar />
-      <h1 className="text-[96px] font-aeonik-medium text-[#1A1A1A] pb-[25px] text-center pt-[180px]">
+
+    <div className="mb-10 px-[24px]">
+      <h1 className="text-[48px] sm:text-[96px] font-aeonik-medium text-[#1A1A1A] pb-[25px] text-left xl:text-center pt-[100px] md:pt-[180px]">
         Community Guidelines
       </h1>
-      <p className="text-[24px] font-aeonik-regular text-center text-[#1A1A1A]">
+      <p className="text-[16px] sm:text-[24px] font-aeonik-regular text-left xl:text-center text-[#1A1A1A]">
         Our principles for respectful conversations, responsible sharing, and
-        <br /> a trusted community space.
+        <br className="hidden sm:inline-block"/> a trusted community space.
       </p>
-      <div className="text-[24px] text-[#000000] font-aeonik-regular px-[240px]">
+      <div className="text-[16px] sm:text-[24px] text-[#000000] font-aeonik-regular xl:px-[240px]">
         <p className="pt-[54px] font-aeonik-bold">
           Pintree Community Guidelines
         </p>
@@ -305,8 +308,12 @@ const page = () => {
           If you have questions or concerns about these guidelines, please
           contact: contact@pintree.co
         </p>
+       
       </div>
     </div>
+           <Footer/>
+
+</>
   );
 };
 

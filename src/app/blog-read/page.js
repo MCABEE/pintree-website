@@ -8,7 +8,7 @@ export default function Page() {
     <>
       <Navbar />
       <div className="bg-white">
-        <div className="px-[24px] md:px-[140px] 2xl:px-[240px] pt-[160px] 2xl:pt-[190px]">
+        <div className="px-[24px] sm:px-[50px] xl:px-[140px] 2xl:px-[240px] pt-[70px] md:pt-[160px] 2xl:pt-[190px]">
           <a
             href="/blog"
             className="flex items-center gap-3.5 text-[#0453F1] text-[16px] xl:text-[24px] font-aeonik-medium cursor-pointer"
@@ -78,16 +78,16 @@ export default function Page() {
             </p>
           </div>
 
-          <div className="mt-[12px] md:mt-[71px] flex flex-col md:flex-row justify-between  py-[160px]  ">
+          <div className="mt-[12px] md:mt-[71px] flex flex-col xl:flex-row justify-between    ">
             <div className="text-[16px] md:text-[20px] 2xl:text-[24px] font-aeonik-regular text-[#000000] space-y-2">
-              <p>
+              <p className="flex flex-col sm:flex-row gap-2">
                 Published on{" "}
                 <span className="text-[#0453F1]  cursor-pointer">
                   27 November 2025, Thu
                 </span>
               </p>
 
-              <p>
+              <p className="flex flex-col sm:flex-row gap-2">
                 From{" "}
                 <span className="text-[#0453F1]  cursor-pointer">
                   Pintree Editorial team
@@ -95,69 +95,39 @@ export default function Page() {
               </p>
             </div>
 
-            <div className="flex items-center gap-[24px]">
-              <p className="text-[20px] 2xl:text-[24px]  text-[#000000] font-aeonik-regular ">
-                Share this Article
-              </p>
-
-              <div className="relative group flex  items-center justify-center w-fit">
-                <button
-                  className="relative size-[54px] 2xl:size-[64px]"
-                  onClick={() => {
-                    navigator.clipboard.writeText(
-                      "https://www.youtube.com/results?search_query=ben10+movie"
-                    );
-                  }}
-                >
-                  {/* Default Icon */}
-                  <img
-                    src="/copylink.svg"
-                    className="absolute inset-0 w-full h-full group-hover:opacity-0 transition-opacity duration-200"
-                  />
-
-                  {/* Hover Icon */}
-                  <img
-                    src="/copylink-black.svg"
-                    className="absolute inset-0 w-full h-full opacity-0 group-hover:opacity-100 transition-opacity duration-200"
-                  />
-                </button>
-
-                {/* Tooltip */}
-                <div
-                  className="
-      absolute 
-      bottom-[75px] left-1/2 -translate-x-1/2
-      bg-black text-white text-[12px]
-      px-2 py-1 rounded-md
-      opacity-0 group-hover:opacity-100
-      pointer-events-none
-      transition-all duration-200
-      font-aeonik-regular
-      whitespace-nowrap
-    "
-                >
-                  Copy Link
-                </div>
+            <div className="flex  gap-[24px] flex-col sm:flex-row ">
+              <div className="flex items-center">
+                <p className="text-[16px] md:text-[20px] 2xl:text-[24px]  text-[#000000] font-aeonik-regular pt-[41px] md:pt-0  ">
+                  Share this Article
+                </p>
               </div>
 
-              <div className="relative group flex items-center justify-center w-fit">
-                <button className="relative size-[54px] 2xl:size-[64px]">
-                  {/* Default Icon */}
-                  <img
-                    src="/email.svg"
-                    className="absolute inset-0 w-full h-full group-hover:opacity-0 transition-opacity duration-200"
-                  />
+              <div className="flex gap-2 md:gap-6 items-center">
+                <div className="relative group flex  items-center justify-center w-fit">
+                  <button
+                    className="relative size-[54px] 2xl:size-[64px]"
+                    onClick={() => {
+                      navigator.clipboard.writeText(
+                        "https://www.youtube.com/results?search_query=ben10+movie"
+                      );
+                    }}
+                  >
+                    {/* Default Icon */}
+                    <img
+                      src="/copylink.svg"
+                      className="absolute inset-0 size-[40px] md:size-auto group-hover:opacity-0 transition-opacity duration-200"
+                    />
 
-                  {/* Hover Icon */}
-                  <img
-                    src="/email-black.svg"
-                    className="absolute inset-0 w-full h-full opacity-0 group-hover:opacity-100 transition-opacity duration-200"
-                  />
-                </button>
+                    {/* Hover Icon */}
+                    <img
+                      src="/copylink-black.svg"
+                      className="absolute inset-0 size-[40px] md:size-auto opacity-0 group-hover:opacity-100 transition-opacity duration-200"
+                    />
+                  </button>
 
-                {/* Tooltip */}
-                <div
-                  className="
+                  {/* Tooltip */}
+                  <div
+                    className="
       absolute 
       bottom-[75px] left-1/2 -translate-x-1/2
       bg-black text-white text-[12px]
@@ -168,29 +138,29 @@ export default function Page() {
       font-aeonik-regular
       whitespace-nowrap
     "
-                >
-                  Email
+                  >
+                    Copy Link
+                  </div>
                 </div>
-              </div>
 
-              <div className="relative group flex items-center justify-center w-fit">
-                <button className="relative size-[54px] 2xl:size-[64px]">
-                  {/* Default Icon */}
-                  <img
-                    src="/whatsapp.svg"
-                    className="absolute inset-0 w-full h-full group-hover:opacity-0 transition-opacity duration-200"
-                  />
+                <div className="relative group flex items-center justify-center w-fit">
+                  <button className="relative size-[54px] 2xl:size-[64px]">
+                    {/* Default Icon */}
+                    <img
+                      src="/email.svg"
+                      className="absolute inset-0 size-[40px] md:size-auto group-hover:opacity-0 transition-opacity duration-200"
+                    />
 
-                  {/* Hover Icon */}
-                  <img
-                    src="/whatsapp-black.svg"
-                    className="absolute inset-0 w-full h-full opacity-0 group-hover:opacity-100 transition-opacity duration-200"
-                  />
-                </button>
+                    {/* Hover Icon */}
+                    <img
+                      src="/email-black.svg"
+                      className="absolute inset-0 size-[40px] md:size-auto opacity-0 group-hover:opacity-100 transition-opacity duration-200"
+                    />
+                  </button>
 
-                {/* Tooltip */}
-                <div
-                  className="
+                  {/* Tooltip */}
+                  <div
+                    className="
       absolute 
       bottom-[75px] left-1/2 -translate-x-1/2
       bg-black text-white text-[12px]
@@ -201,8 +171,42 @@ export default function Page() {
       font-aeonik-regular
       whitespace-nowrap
     "
-                >
-                  WhatsApp
+                  >
+                    Email
+                  </div>
+                </div>
+
+                <div className="relative group flex items-center justify-center w-fit">
+                  <button className="relative size-[54px] 2xl:size-[64px]">
+                    {/* Default Icon */}
+                    <img
+                      src="/whatsapp.svg"
+                      className="absolute inset-0 size-[40px] md:size-auto group-hover:opacity-0 transition-opacity duration-200"
+                    />
+
+                    {/* Hover Icon */}
+                    <img
+                      src="/whatsapp-black.svg"
+                      className="absolute inset-0 size-[40px] md:size-auto opacity-0 group-hover:opacity-100 transition-opacity duration-200"
+                    />
+                  </button>
+
+                  {/* Tooltip */}
+                  <div
+                    className="
+      absolute 
+      bottom-[75px] left-1/2 -translate-x-1/2
+      bg-black text-white text-[12px]
+      px-2 py-1 rounded-md
+      opacity-0 group-hover:opacity-100
+      pointer-events-none
+      transition-all duration-200
+      font-aeonik-regular
+      whitespace-nowrap
+    "
+                  >
+                    WhatsApp
+                  </div>
                 </div>
               </div>
             </div>

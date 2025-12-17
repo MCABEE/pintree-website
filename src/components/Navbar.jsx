@@ -22,7 +22,7 @@ const Navbar = () => {
       <div
         className="
         flex justify-between items-center 
-       px-[140px] 3xl:px-[240px] 
+       px-[24px] 2xl:px-[140px] 3xl:px-[240px] 
         py-[30px] sm:py-[40px] 
         relative z-50 bg-white
       "
@@ -101,6 +101,7 @@ const Navbar = () => {
         </div>
       </div>
     </>
+
   );
 };
 

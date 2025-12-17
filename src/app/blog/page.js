@@ -11,11 +11,11 @@ export default function Page() {
     <>
       <Navbar />
       <div className="bg-white w-full min-h-screen pt-[100px] xl:pt-[140px] 2xl:pt-[190px] px-[32px] md:px-[100px] xl:px-[180px] 2xl:px-[240px]">
-        <div className="text-center  ">
+        <div className="text-left sm:text-center  ">
           <h1 className="text-[48px] md:text-[56px] xl:text-[86px] 2xl:text-[96px] text-[#1A1A1A] font-aeonik-medium ">
             Pintree Blog
           </h1>
-          <p className="text-[16px] md:text-[18px] xl:text-[20px] 2xl:text-[24px] text-[#1A1A1A] font-aeonik-regular leading-[140%] ">
+          <p className=" text-[16px] md:text-[18px] xl:text-[20px] 2xl:text-[24px] text-[#1A1A1A] font-aeonik-regular leading-[140%] ">
             Insights, updates, and stories that show how Pintree evolves,
             improves, <br /> and empowers its community.
           </p>

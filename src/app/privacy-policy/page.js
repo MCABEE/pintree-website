@@ -1,3 +1,4 @@
+import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import React from "react";
 
@@ -5,16 +6,17 @@ import React from "react";
 function Section6() {
   return (
     <div>
-      <div>
-        <Navbar/>
-        <h1 className="text-[96px] font-aeonik-medium text-[#1A1A1A] pb-[25px] text-center pt-[180px]">
+      <Navbar/>
+      <div className="px-[24px]">
+        
+      <h1 className="text-[48px] sm:text-[96px] font-aeonik-medium text-[#1A1A1A] pb-[25px] text-left xl:text-center pt-[100px] md:pt-[180px]">
           Privacy Policy
         </h1>
-        <p className="text-[24px] font-aeonik-regular text-center text-[#1A1A1A]">
+        <p className="text-[24px] font-aeonik-regular text-left xl:text-center text-[#1A1A1A]">
           These terms govern your access to and use of Pintree’s services,{" "}
           <br /> features, content, and community tools.
         </p>
-        <div className="text-[24px] text-[#000000] px-[240px]">
+        <div className="text-[24px] text-[#000000] xl:px-[240px]">
           <p className="pt-[54px] ">Pintree – Privacy Policy</p>
           <p className="font-aeonik-bold pt-4">
             Last Updated: 2025 December 31
@@ -513,13 +515,14 @@ function Section6() {
             <p>We encourage you to review this page regularly.</p>
           </div>
 
-          <div className="space-y-6 pt-8">
+          <div className="space-y-6 py-8">
             <h3 className="font-aeonik-bold">11. Contact Us</h3>
             <p>For questions or concerns, email:</p>
             <p className="font-aeonik-bold">�� contact@pintree.co</p>
           </div>
         </div>
       </div>
+      <Footer/>
     </div>
   );
 }
