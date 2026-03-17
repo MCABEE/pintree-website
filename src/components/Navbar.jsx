@@ -14,7 +14,7 @@ const Navbar = () => {
     { href: "/", label: "About" },
     { href: "/newsroom", label: "Newsroom" },
     { href: "/contact", label: "Contact" },
-    { href: "/blog", label: "Blog" },
+    // { href: "/blog", label: "Blog" },
   ];
   return (
     <>
@@ -23,19 +23,19 @@ const Navbar = () => {
         className="
         flex justify-between items-center 
        px-[24px] 2xl:px-[140px] 3xl:px-[240px] 
-        py-[30px] sm:py-[40px] 
-        relative z-50 bg-white
+     py-[24px] 
+        relative z-50 bg-white border-b border-[#F0F0F0]
       "
       >
         {/* LOGO */}
         <img
           src="/pintree.svg"
           alt="logo"
-          className="w-[84px] sm:w-[100px] 2xl:w-[150px] lg:mb-2"
+          className="w-[84px] sm:w-[100px] 2xl:w-[113px] lg:mb-2"
         />
 
         {/* DESKTOP LINKS */}
-        <div className="hidden xl:flex iv gap-[57px] text-[#333333] text-[18px] 2xl:text-[20px]">
+        <div className="hidden xl:flex iv gap-[57px] text-[#333333] text-[16px]">
           {links.map((link) => (
             <Link
               key={link.href}
@@ -52,7 +52,7 @@ const Navbar = () => {
         </div>
 
         {/* DESKTOP CTA */}
-        <div className="hidden xl:flex gap-2.5 items-center  text-[#333333] text-[18px] 2xl:text-[20px] font-aeonik-medium cursor-pointer">
+        <div className="hidden xl:flex gap-2.5 items-center  text-[#333333] text-[16px]  font-aeonik-medium cursor-pointer">
           <h1>Professional Account</h1>
           <FaArrowRight />
         </div>
@@ -76,7 +76,7 @@ const Navbar = () => {
         `}
       >
         {/* LINKS */}
-        <div className="flex flex-col px-6 py-4 gap-4 text-[#333333] text-[18px] font-medium">
+        <div className="flex flex-col px-6 py-4 gap-4 text-[#333333] text-[16px] font-medium">
           {links.map((link) => (
             <Link
               key={link.href}
@@ -93,7 +93,7 @@ const Navbar = () => {
           {/* MOBILE CTA */}
           <div
             onClick={() => setMenuOpen(false)}
-            className="flex items-center gap-2 px-3 py-2 text-[18px] font-aeonik-medium cursor-pointer hover:bg-[#F9F9F9] rounded-md"
+            className="flex items-center gap-2 px-3 py-2 text-[16px] font-aeonik-medium cursor-pointer hover:bg-[#F9F9F9] rounded-md"
           >
             <h1>Professional Account</h1>
             <FaArrowRight />

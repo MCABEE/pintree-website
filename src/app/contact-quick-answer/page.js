@@ -38,50 +38,6 @@ export default function quickanswer() {
             Popular Topics
           </h2>
 
-          {/* <div className=" mt-[11px] grid grid-cols-1 lg:grid-cols-2 2xl:grid-cols-3 gap-[16px] md:gap-[36px] ">
-            {[
-              {
-                title: "Getting Started",
-                desc: "Learn how to sign up, log in, and set up your Pintree account.",
-              },
-              {
-                title: "Profile & Account Settings",
-                desc: "Manage your personal profile, login details, and basic account settings.",
-              },
-              {
-                title: "Privacy & Safety",
-                desc: "Control your privacy options, security settings, and account protection.",
-              },
-              {
-                title: "Connections & Circles",
-                desc: "Understand following, followers, friends, and circle-based interactions.",
-              },
-              {
-                title: "Feed, Discovery & Search",
-                desc: "Learn how your feed works and how to discover new people and content.",
-              },
-              {
-                title: "Posting & Sharing",
-                desc: "Create, edit, and manage your posts — photos, videos, and stories.",
-              },
-            ].map((item, index) => (
-              <div
-                key={index}
-                className="md:pt-[80px] bg-[#F2F7FF] rounded-[4px] md:w-[408px] md:h-[360px] cursor-pointer p-6 md:px-[56px]"
-              >
-                <img src="/logo2.svg" className="" />
-
-                <h3 className=" mt-[24px] text-[#1A1A1A] font-aeonik-medium text-[16px] md:text-[24px] leading-[140%] ">
-                  {item.title}
-                </h3>
-
-                <p className=" mt-[5px] text-[14px] md:text-[20px] text-[#333333]   font-aeonik-regular leading-[120%] ">
-                  {item.desc}
-                </p>
-              </div>
-            ))}
-          </div> */}
-
           <div className="mt-[11px] grid grid-cols-1 lg:grid-cols-2 2xl:grid-cols-3 gap-[16px] md:gap-[36px]">
             {[
               {

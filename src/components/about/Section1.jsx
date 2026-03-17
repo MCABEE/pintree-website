@@ -33,7 +33,7 @@ function Section1() {
       <div className="w-full lg:w-1/2 text-[#1A1A1A] flex flex-col justify-center pb-10 lg:pb-0">
         <h1
           className="
-          text-[32px] sm:text-[40px] md:text-[48px] lg:text-[54px] 2xl:text-[64px] 
+          text-[28px] sm:text-[32px] lg:text-[48px] 2xl:text-[56px] 
           font-aeonik-medium leading-[120%]  
            text-center lg:text-left
         "
@@ -45,17 +45,20 @@ function Section1() {
 
         <h2
           className="
-          text-[16px] sm:text-[18px] md:text-[20px] lg:text-[22px] 2xl:text-[24px] 
+          text-[16px] sm:text-[18px] md:text-[20px] 
           pt-[14px]
           text-center lg:text-left
         "
         >
-         Pintree brings creativity, connection, and <br className="inline-block lg:hidden"/> visibility together— <br className="hidden 3xl:inline-block"/>helping everyone share, grow,  and be seen.
+          Pintree brings creativity, connection, and{" "}
+          <br className="inline-block lg:hidden" /> visibility together—{" "}
+          <br className="hidden 3xl:inline-block" />
+          helping everyone share, grow, and be seen.
         </h2>
 
         <p
           className="
-          text-[16px] sm:text-[18px] md:text-[20px] lg:text-[22px] 2xl:text-[24px] 
+          text-[16px] sm:text-[18px] md:text-[20px] 
           font-aeonik-medium pt-[30px] text-center lg:text-left
         "
         >

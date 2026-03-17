@@ -16,25 +16,26 @@ export default function () {
       </div>
 
       <div className="w-full lg:w-1/2 flex flex-col  justify-center">
-        <p className="text-center lg:text-left text-[16px] sm:text-[20px] xl:text-[26px]  2xl:text-[32px] text-[#000000] font-aeonik-regular pt-[48px] lg:pt-0  ">
+        <p className="text-center lg:text-left text-[16px] sm:text-[20px] xl:text-[26px] text-[#000000] font-aeonik-regular pt-[48px] lg:pt-0  ">
           Business
         </p>
 
         <h2
-          className="font-aeonik-medium text-center lg:text-left text-[32px] sm:text-[40px] xl:text-[45px] 2xl:text-[64px]
+          className="font-aeonik-medium text-center lg:text-left  text-[28px] sm:text-[32px] lg:text-[48px] 2xl:text-[56px] 
                        leading-[120%] text-[#0C0C0C] mt-[16px] sm:mt-[4px]"
         >
           Turn your presence into possibility.
         </h2>
 
-        <p className=" text-center lg:text-left text-[16px] sm:text-[18px] xl:text-[20px] 2xl:text-[24px] font-aeonik-regular text-[#1A1A1A] leading-[140%] mt-[17px] sm:mt-[8px] px-[44px] md:px-0">
+        <p className=" text-center lg:text-left text-[16px] sm:text-[18px] xl:text-[20px] font-aeonik-regular text-[#1A1A1A] leading-[140%] mt-[17px] sm:mt-[8px] px-[44px] md:px-0">
           Share what you offer and reach the right people with{" "}
           <br className="hidden sm:inline-block" /> targeted visibility.
         </p>
 
         <div className="flex justify-center lg:justify-start items-center pt-[23px] sm:pt-[54px] ">
-          <button className="w-[240px] sm:w-[280px] md:w-[300px] lg:w-[360px] h-[40px] sm:h-[55px] md:h-[60px] lg:h-[64px] border border-[#1A1A1A] rounded-[4px] text-[16px] sm:text-[18px] md:text-[20px] lg:text-[24px] text-[#1A1A1A] font-aeonik-regular  ">
-           Create Business Account
+          <button className="w-[240px] sm:w-[280px] md:w-[300px] lg:w-[360px] h-[40px] sm:h-[55px] md:h-[60px] lg:h-[64px] border border-[#1A1A1A] rounded-[4px] text-[16px] sm:text-[18px] md:text-[20px] 
+           text-[#1A1A1A] font-aeonik-regular  ">
+            Create Business Account
           </button>
         </div>
       </div>

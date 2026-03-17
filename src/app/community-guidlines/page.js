@@ -8,18 +8,18 @@ const page = () => {
       <Navbar />
 
     <div className="mb-10 px-[24px]">
-      <h1 className="text-[48px] sm:text-[96px] font-aeonik-medium text-[#1A1A1A] pb-[25px] text-left xl:text-center pt-[100px] md:pt-[180px]">
+      <h1 className="text-[32px] sm:text-[56px] font-aeonik-medium text-[#1A1A1A] pb-[25px] text-center pt-[55px]">
         Community Guidelines
       </h1>
-      <p className="text-[16px] sm:text-[24px] font-aeonik-regular text-left xl:text-center text-[#1A1A1A]">
+      <p className="text-[16px] font-aeonik-regular text-left xl:text-center text-[#1A1A1A]">
         Our principles for respectful conversations, responsible sharing, and
         <br className="hidden sm:inline-block"/> a trusted community space.
       </p>
-      <div className="text-[16px] sm:text-[24px] text-[#000000] font-aeonik-regular xl:px-[240px]">
+      <div className="text-[16px] text-[#000000] font-aeonik-regular xl:px-[240px]">
         <p className="pt-[54px] font-aeonik-bold">
           Pintree Community Guidelines
         </p>
-        <p className="pt-4">Last Updated: 2025 December 31</p>
+        <p className="pt-4">Last Updated: 01 April 2026</p>
         <p className="pt-4">
           A Safe, Respectful Space for Meaningful Communities
         </p>
@@ -304,9 +304,9 @@ const page = () => {
           means acceptance of the updated guidelines.
         </p>
         <h1 className="pt-8 font-aeonik-medium">10. Contact Us</h1>
-        <p className="pt-4">
+        <p className="py-4">
           If you have questions or concerns about these guidelines, please
-          contact: contact@pintree.co
+          contact: <span className="text-[#0453F1]">contact@pintree.co</span>
         </p>
        
       </div>

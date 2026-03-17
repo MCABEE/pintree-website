@@ -8,18 +8,18 @@ const page = () => {
       <Navbar />
 
       <div className="px-[24px]">
-        <h1 className="text-[48px] sm:text-[96px] font-aeonik-medium text-[#1A1A1A] pb-[25px] text-left xl:text-center pt-[100px] md:pt-[180px]">
+        <h1 className="text-[32px] sm:text-[56px] font-aeonik-medium text-[#1A1A1A] pb-[25px] text-center pt-[55px]">
           Terms of Service
         </h1>
-        <p className="text-[24px] font-aeonik-regular text-left xl:text-center text-[#1A1A1A]">
+        <p className="text-[16px] font-aeonik-regular text-left xl:text-center text-[#1A1A1A]">
           Guidelines that define your rights, responsibilities, and safe usage
           of
           <br /> Pintree’s platform and community features.
         </p>
-        <div className="text-[16px] sm:text-[24px] text-[#000000] font-aeonik-regular xl:px-[240px]">
+        <div className="text-[16px] text-[#000000] font-aeonik-regular xl:px-[240px]">
           <p className="pt-[54px] ">Pintree – Terms of Use</p>
           <p className=" font-aeonik-semibold pt-4">
-            Last updated: [31 December 2025]
+            Last updated: 01 April 2026
           </p>
           <p className="pt-8 ">
             These Terms of Use{" "}
@@ -760,7 +760,7 @@ const page = () => {
           <p className="pt-4">
             If you have any questions about these Terms, you can contact us at:
           </p>
-          <p className="py-4">Email: contact@pintree.co</p>
+          <p className="py-4 ">Email: <span className="text-[#0453F1]">contact@pintree.co</span></p>
         </div>
       </div>
       <Footer />

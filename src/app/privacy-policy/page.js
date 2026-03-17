@@ -9,17 +9,17 @@ function Section6() {
       <Navbar/>
       <div className="px-[24px]">
         
-      <h1 className="text-[48px] sm:text-[96px] font-aeonik-medium text-[#1A1A1A] pb-[25px] text-left xl:text-center pt-[100px] md:pt-[180px]">
+      <h1 className="text-[32px] md:text-[56px] font-aeonik-medium text-[#1A1A1A] pb-[25px] text-center pt-[55px]">
           Privacy Policy
         </h1>
-        <p className="text-[24px] font-aeonik-regular text-left xl:text-center text-[#1A1A1A]">
+        <p className="text-[16px] font-aeonik-regular text-left xl:text-center text-[#1A1A1A]">
           These terms govern your access to and use of Pintree’s services,{" "}
           <br /> features, content, and community tools.
         </p>
-        <div className="text-[16px] sm:text-[24px] text-[#000000] xl:px-[240px]">
+        <div className="text-[16px]  text-[#000000] xl:px-[240px]">
           <p className="pt-[54px] ">Pintree – Privacy Policy</p>
           <p className="font-aeonik-bold pt-4">
-            Last Updated: 2025 December 31
+            Last Updated: 01 April 2026
           </p>
           <p className="pt-4">
             Welcome to <span className="font-aeonik-bold">Pintree</span>{" "}
@@ -429,7 +429,7 @@ function Section6() {
             <p>We will verify your identity before fulfilling requests.</p>
             <p>
               To exercise rights, use the in-app settings or contact{" "}
-              <span className="font-aeonik-bold">contact@pintree.co.</span>
+              <span className="font-aeonik-bold text-[#0453F1]">contact@pintree.co.</span>
             </p>
           </div>
 
@@ -497,7 +497,7 @@ function Section6() {
             </p>
             <p>
               If you believe a minor’s data was collected, contact{" "}
-              <span className="font-aeonik-bold">contact@pintree.co.</span>{" "}
+              <span className="font-aeonik-bold text-[#0453F1]">contact@pintree.co.</span>{" "}
             </p>
           </div>
 
@@ -517,8 +517,10 @@ function Section6() {
 
           <div className="space-y-6 py-8">
             <h3 className="font-aeonik-bold">11. Contact Us</h3>
-            <p>For questions or concerns, email:</p>
-            <p className="font-aeonik-bold">�� contact@pintree.co</p>
+            <p>For questions or concerns, email: <br />
+            <span className="font-aeonik-bold text-[#0453F1]">contact@pintree.co</span>
+
+            </p>
           </div>
         </div>
       </div>

@@ -1,70 +1,3 @@
-// import React from "react";
-// import { AiTwotoneLeftCircle } from "react-icons/ai";
-// import { AiTwotoneRightCircle } from "react-icons/ai";
-
-// function Section8() {
-//   return (
-//     <div className="py-[197px] bg-[#F1FBE8] flex flex-col lg:flex-row gap-[32px]  px-6 sm:px-10 lg:px-[80px] xl:px-[140px] 2xl:px-[240px] ">
-//       <div className=" rounded p-6">
-//         <h1 className="font-aeonik-medium text-[16px] sm:text-[20px] md:text-[28px] lg:text-[30px] xl:text-[64px] text-[#1A1A1A] ">
-//           What’s New at<br/> Pintree
-//         </h1>
-//         <p className=" text-left text-[16px] sm:text-[18px] xl:text-[20px] 2xl:text-[24px] font-aeonik-regular text-[#1A1A1A] leading-[140%] mt-[17px] sm:mt-[8px] px-[44px] md:px-0">
-//           Explore the latest stories, product<br/> updates, and insights from our<br/>
-//           newsroom and blog.
-//         </p>
-//         <div className=" gap-10 mt-10 hidden lg:flex">
-//             <button>
-//                 <AiTwotoneLeftCircle className="text-4xl"/>
-//             </button>
-//             <button>
-//                 <AiTwotoneRightCircle className="text-4xl"/>
-//             </button>
-
-//         </div>
-//       </div>
-//       <div className="lg:w-[449px] h-[512px] bg-[#FFFFFF] border px-[55px] py-[64px]">
-//         <h1 className="text-[#1A1A1A] text-[24px] font-aeonik-medium    ">
-//           Pintree Launches a New Social Space Built for Meaningful Connections
-//         </h1>
-//         <p className="text-[#333333] text-[20px] font-aeonik-regular pt-3 ">
-//           Pintree introduces a fresh approach to social networking, bringing
-//           users, creators, and communities together in a space designed for
-//           expression, discovery, and genuine engagement.
-//         </p>
-//         <button className="w-[144px] h-[48px] rounded-[24px] text-[#333333] border border-[#1A1A1A] mt-[51px] ">
-//           Read More
-//         </button>
-//       </div>
-//       <div className="lg:w-[449px] h-[512px] bg-[#FFFFFF] border px-[55px] py-[64px]">
-//         <h1 className="text-[#1A1A1A] text-[24px] font-aeonik-medium    ">
-//           Pintree Introduces a Fresh Social Platform for Expression and
-//           Discovery
-//         </h1>
-//         <p className="text-[#333333] text-[20px] font-aeonik-regular pt-3 ">
-//           Pintree offers a modern space for sharing, exploring, and
-//           connecting—bringing users, creators, and communities together through
-//           personalized content, inspiring moments...
-//         </p>
-//         <button className="w-[144px] h-[48px] rounded-[24px]  border border-[#1A1A1A] mt-[51px] bg-[#1A1A1A] text-white ">
-//           Read More
-//         </button>
-//       </div>
-//        <div className=" gap-10 mt-10 flex lg:hidden justify-between">
-//             <button>
-//                 <AiTwotoneLeftCircle className="text-4xl"/>
-//             </button>
-//             <button>
-//                 <AiTwotoneRightCircle className="text-4xl"/>
-//             </button>
-
-//         </div>
-//     </div>
-//   );
-// }
-
-// export default Section8;
-
 "use client";
 
 import React, { useRef, useState } from "react";
@@ -136,12 +69,13 @@ export default function Section8() {
         <div className="flex  flex-col lg:flex-row items-start justify-between gap-[32px]">
           {/* Left column */}
           <div className="w-full lg:w-1/3 rounded ">
-            <h1 className="font-aeonik-medium text-[32px] lg:text-[45px] 2xl:text-[64px] text-[#1A1A1A] text-center lg:text-left">
+            <h1 className="font-aeonik-medium  text-[28px] sm:text-[32px] lg:text-[48px] 2xl:text-[56px]  text-[#1A1A1A] text-center lg:text-left">
               What’s New at Pintree
             </h1>
-            <p className="text-center lg:text-left text-[16px] sm:text-[18px] xl:text-[20px] 2xl:text-[24px] font-aeonik-regular  text-[#1A1A1A] leading-[140%] mt-[17px] sm:mt-[8px] px-[44px] md:px-0">
+            <p className="text-center lg:text-left text-[16px] sm:text-[18px] xl:text-[20px]  font-aeonik-regular  text-[#1A1A1A] leading-[140%] mt-[17px] sm:mt-[8px] px-[44px] md:px-0">
               Explore the latest stories, product
-              <br className="hidden md:inline-block" /> updates, and insights from our
+              <br className="hidden md:inline-block" /> updates, and insights
+              from our
               <br className="hidden md:inline-block" /> newsroom and blog.
             </p>
 
@@ -189,10 +123,10 @@ export default function Section8() {
                       }
                     `}
                   >
-                    <h2 className="text-[#1A1A1A] text-[20px] sm:text-[20px] 2xl:text-[24px] font-aeonik-medium">
+                    <h2 className="text-[#1A1A1A] text-[20px] sm:text-[20px]  font-aeonik-medium">
                       {card.title}
                     </h2>
-                    <p className="text-[#333333] text-[16px] 2xl:text-[18px] font-aeonik-regular pt-3">
+                    <p className="text-[#333333] text-[16px] font-aeonik-regular pt-3">
                       {card.body}
                     </p>
                     <button
@@ -226,20 +160,6 @@ export default function Section8() {
                 </button>
               </div>
             </div>
-
-            {/* Dots / indicator */}
-            {/* <div className="flex gap-2 justify-center mt-6">
-              {cards.map((_, i) => (
-                <button
-                  key={i}
-                  onClick={() => scrollToIndex(i)}
-                  aria-label={`Go to slide ${i + 1}`}
-                  className={`w-2 h-2 rounded-full ${
-                    i === currentIndex ? "bg-[#1A1A1A]" : "bg-[#C9D7B8]"
-                  }`}
-                />
-              ))}
-            </div> */}
           </div>
         </div>
       </div>
