@@ -1,80 +1,3 @@
-// import React from "react";
-// import { FaArrowRight } from "react-icons/fa6";
-// const Navbar = () => {
-//   return (
-//     <div className=" flex justify-between items-center px-[240px] py-[43px]">
-//       <img src="/pintree-logo.svg" alt="" />
-//       <div className="flex gap-[57px] text-[#333333] text-[20px]">
-//         <h1 className="px-[20px] py-[6px] bg-[#F2F2F2] rounded-[8px]">About</h1>
-//         <h1 className="px-[20px] py-[6px]">Newsroom</h1>
-//         <h1 className="px-[20px] py-[6px]">Contact</h1>
-//       </div>
-//       <div className="flex gap-2.5 items-center text-[#333333] text-[20px] font-aeonik-medium">
-//         <h1>Professional Account</h1>
-//         <FaArrowRight />
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default Navbar;
-
-
-
-// "use client";
-
-// import React from "react";
-// import Link from "next/link";
-// import { usePathname } from "next/navigation";
-// import { FaArrowRight } from "react-icons/fa6";
-
-// const Navbar = () => {
-//   const pathname = usePathname();
-
-//   const links = [
-//     { href: "/", label: "About" },
-//     { href: "/newsroom", label: "Newsroom" },
-//     { href: "/contact", label: "Contact" },
-//     { href: "/blog", label: "Blog" },
-
-//   ];
-
-//   return (
-//     <div className="flex justify-between items-center px-6 sm:px-10 lg:px-[80px] xl:px-[140px] 2xl:px-[240px]  py-[43px]">
-//       <img src="/pintree.svg" alt="logo" />
-//       <div className="flex gap-[57px] text-[#333333] text-[20px]">
-//         {links.map((link) => (
-//           <Link
-//             key={link.href}
-//             href={link.href}
-//             className={`px-[20px] py-[6px] rounded-[8px] transition-colors duration-200 ${
-//               pathname === link.href
-//                 ? "bg-[#F2F2F2] font-medium"
-//                 : "hover:bg-[#f7f7f7]"
-//             }`}
-//           >
-//             {link.label}
-//           </Link>
-//         ))}
-//       </div>
-
-//       <div className="flex gap-2.5 items-center text-[#333333] text-[20px] font-aeonik-medium cursor-pointer">
-//         <h1>Professional Account</h1>
-//         <FaArrowRight />
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default Navbar;
-
-
-
-
-
-
-
-
 "use client";
 
 import React, { useState } from "react";
@@ -91,24 +14,29 @@ const Navbar = () => {
     { href: "/", label: "About" },
     { href: "/newsroom", label: "Newsroom" },
     { href: "/contact", label: "Contact" },
-    { href: "/blog", label: "Blog" },
+    // { href: "/blog", label: "Blog" },
   ];
-
   return (
     <>
       {/* NAVBAR */}
-      <div className="
-        flex justify-between items-center 
-        px-6 sm:px-10 lg:px-[80px] xl:px-[140px] 2xl:px-[240px] 
-        py-[30px] sm:py-[40px] 
-        relative z-50 bg-white
-      ">
-        
+   <div
+  className="
+    flex justify-between items-center 
+    px-6 sm:px-10 lg:px-[80px] xl:px-[140px] 
+    py-[24px] 
+    z-50 bg-white border-b border-[#F0F0F0] 
+    sticky top-0
+  "
+>
         {/* LOGO */}
-        <img src="/pintree.svg" alt="logo" className="w-[84px] sm:w-[100px] 2xl:w-[150px] lg:mb-2" />
+        <img
+          src="/pintree.svg"
+          alt="logo"
+          className="w-[84px] sm:w-[100px] 2xl:w-[113px] lg:mb-2"
+        />
 
         {/* DESKTOP LINKS */}
-        <div className="hidden xl:flex iv gap-[57px] text-[#333333] text-[18px] 2xl:text-[20px]">
+        <div className="hidden xl:flex iv gap-[57px] text-[#333333] text-[16px]">
           {links.map((link) => (
             <Link
               key={link.href}
@@ -125,7 +53,7 @@ const Navbar = () => {
         </div>
 
         {/* DESKTOP CTA */}
-        <div className="hidden xl:flex gap-2.5 items-center  text-[#333333] text-[18px] 2xl:text-[20px] font-aeonik-medium cursor-pointer">
+        <div className="hidden xl:flex gap-2.5 items-center  text-[#333333] text-[16px]  font-aeonik-medium cursor-pointer">
           <h1>Professional Account</h1>
           <FaArrowRight />
         </div>
@@ -149,16 +77,14 @@ const Navbar = () => {
         `}
       >
         {/* LINKS */}
-        <div className="flex flex-col px-6 py-4 gap-4 text-[#333333] text-[18px] font-medium">
+        <div className="flex flex-col px-6 py-4 gap-4 text-[#333333] text-[16px] font-medium">
           {links.map((link) => (
             <Link
               key={link.href}
               href={link.href}
               onClick={() => setMenuOpen(false)}
               className={`px-3 py-2 rounded-md transition ${
-                pathname === link.href
-                  ? "bg-[#F2F2F2]"
-                  : "hover:bg-[#F9F9F9]"
+                pathname === link.href ? "bg-[#F2F2F2]" : "hover:bg-[#F9F9F9]"
               }`}
             >
               {link.label}
@@ -168,7 +94,7 @@ const Navbar = () => {
           {/* MOBILE CTA */}
           <div
             onClick={() => setMenuOpen(false)}
-            className="flex items-center gap-2 px-3 py-2 text-[18px] font-aeonik-medium cursor-pointer hover:bg-[#F9F9F9] rounded-md"
+            className="flex items-center gap-2 px-3 py-2 text-[16px] font-aeonik-medium cursor-pointer hover:bg-[#F9F9F9] rounded-md"
           >
             <h1>Professional Account</h1>
             <FaArrowRight />
@@ -176,6 +102,7 @@ const Navbar = () => {
         </div>
       </div>
     </>
+
   );
 };
 
