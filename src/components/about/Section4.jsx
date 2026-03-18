@@ -5,7 +5,7 @@ export default function () {
   return (
     <section
       className="w-full bg-[#E8FBF9] flex flex-col lg:flex-row 
-                      py-[80px] sm:py-[152px]  "
+                      py-[80px] sm:py-[100px]  "
     >
       <div className="w-full lg:w-1/2 flex items-center justify-center  ">
         <img
@@ -21,7 +21,7 @@ export default function () {
         </p>
 
         <h2
-          className="font-aeonik-medium text-center lg:text-left  text-[28px] sm:text-[32px] lg:text-[48px] 2xl:text-[56px] 
+          className="font-aeonik-medium text-center lg:text-left  text-[28px] sm:text-[32px] lg:text-[48px] 
                        leading-[120%] text-[#0C0C0C] mt-[16px] sm:mt-[4px]"
         >
           Where ideas meet <br /> like-minded people.

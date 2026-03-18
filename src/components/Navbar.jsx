@@ -19,14 +19,15 @@ const Navbar = () => {
   return (
     <>
       {/* NAVBAR */}
-      <div
-        className="
-        flex justify-between items-center 
-       px-[24px] 2xl:px-[140px] 3xl:px-[240px] 
-     py-[24px] 
-        relative z-50 bg-white border-b border-[#F0F0F0]
-      "
-      >
+   <div
+  className="
+    flex justify-between items-center 
+    px-6 sm:px-10 lg:px-[80px] xl:px-[140px] 
+    py-[24px] 
+    z-50 bg-white border-b border-[#F0F0F0] 
+    sticky top-0
+  "
+>
         {/* LOGO */}
         <img
           src="/pintree.svg"

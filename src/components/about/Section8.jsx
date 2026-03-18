@@ -64,12 +64,12 @@ export default function Section8() {
   const handleNext = () => scrollToIndex(currentIndex + 1);
 
   return (
-    <section className="py-[71px] md:py-[197px] bg-[#F1FBE8]">
-      <div className="container mx-auto px-5 xl:px-32 3xl:px-12 ">
+    <section className="py-[71px] md:py-[157px] bg-[#F1FBE8]">
+      <div className="container mx-auto px-6 sm:px-10 lg:px-[80px] xl:px-[140px] ">
         <div className="flex  flex-col lg:flex-row items-start justify-between gap-[32px]">
           {/* Left column */}
           <div className="w-full lg:w-1/3 rounded ">
-            <h1 className="font-aeonik-medium  text-[28px] sm:text-[32px] lg:text-[48px] 2xl:text-[56px]  text-[#1A1A1A] text-center lg:text-left">
+            <h1 className="font-aeonik-medium  text-[28px] sm:text-[32px] lg:text-[48px]   text-[#1A1A1A] text-center lg:text-left">
               What’s New at Pintree
             </h1>
             <p className="text-center lg:text-left text-[16px] sm:text-[18px] xl:text-[20px]  font-aeonik-regular  text-[#1A1A1A] leading-[140%] mt-[17px] sm:mt-[8px] px-[44px] md:px-0">
@@ -115,22 +115,22 @@ export default function Section8() {
                     className={`
                       flex-shrink-0
                       bg-white border border-[#E7E7E7] rounded
-                      px-[25px] 2xl:px-[55px] py-[34px] 2xl:py-[64px]
+                      px-[25px] 2xl:px-[40px] py-[34px] 2xl:py-[64px]
                       scroll-snap-align: center;
                       ${
                         // widths: full width on mobile, fixed on lg to match your original
-                        "w-[312px] md:w-[48%] xl:w-[339px] 2xl:w-[449px]"
+                        "w-[312px] md:w-[48%] xl:w-[339px] 2xl:w-[400px]"
                       }
                     `}
                   >
-                    <h2 className="text-[#1A1A1A] text-[20px] sm:text-[20px]  font-aeonik-medium">
+                    <h2 className="text-[#1A1A1A] text-[20px]  font-aeonik-medium min-h-[100px] ">
                       {card.title}
                     </h2>
-                    <p className="text-[#333333] text-[16px] font-aeonik-regular pt-3">
+                    <p className="text-[#333333] text-[16px] font-aeonik-regular pt-3 min-h-[150px]">
                       {card.body}
                     </p>
                     <button
-                      className="w-[144px] h-[48px] rounded-[24px] mt-[51px] 
+                      className="w-[120px] h-[44px] rounded-[24px] mt-[51px] text-[16px]
                        
                           border border-[#1A1A1A] bg-white text-[#333333] hover:bg-[#1A1A1A] hover:text-white"
                     >

@@ -5,13 +5,13 @@ export default function () {
   return (
     <section
       className="w-full bg-white flex flex-col lg:flex-row  
-                      mt-[50px] md:mt-[145px] xl:mt-[150px] 2xl:mt-[160px] 3xl:mt-[168px] pt-[40px] sm:py-[56px]  pb-[100px] sm:pb-0"
+                      mt-[50px] md:mt-[100px]  2xl:mt-[160px] 3xl:mt-[168px] pt-[40px] sm:py-[56px]  mb-[80px] sm:pb-0"
     >
       <div className="w-full lg:w-1/2 flex items-center justify-center ">
         <img
           src="/discover-mobile.svg"
           alt="Pintree Preview"
-          className=" h-[480px] sm:h-[400px]  md:h-auto w-[256px] sm:w-[300px] xl:w-[350px] 2xl:w-[384px]  "
+          className=" h-[480px] sm:h-[400px]  md:h-[550px] w-[256px] sm:w-[300px] xl:w-[350px]  "
         />
       </div>
 
@@ -21,7 +21,7 @@ export default function () {
         </p>
 
         <h2
-          className="font-aeonik-medium text-center lg:text-left  text-[28px] sm:text-[32px] lg:text-[48px] 2xl:text-[56px] 
+          className="font-aeonik-medium text-center lg:text-left  text-[28px] sm:text-[32px] lg:text-[48px] 
                        leading-[120%] text-[#0C0C0C] mt-[16px] sm:mt-[4px]"
         >
           Explore what inspires <br /> you, endlessly

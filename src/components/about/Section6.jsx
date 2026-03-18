@@ -5,7 +5,7 @@ export default function () {
   return (
     <section
       className="w-full bg-[#FFFFFF] flex flex-col lg:flex-row 
-                      py-[80px] sm:py-[152px]  "
+                      py-[80px] sm:py-[100px]  "
     >
       <div className="w-full lg:w-1/2 flex items-center justify-center  ">
         <img
@@ -21,7 +21,7 @@ export default function () {
         </p>
 
         <h2
-          className="font-aeonik-medium text-center lg:text-left  text-[28px] sm:text-[32px] lg:text-[48px] 2xl:text-[56px] 
+          className="font-aeonik-medium text-center lg:text-left  text-[28px] sm:text-[32px] lg:text-[48px] 
                        leading-[120%] text-[#0C0C0C] mt-[16px] sm:mt-[4px]"
         >
           Showcase talent,
@@ -35,7 +35,7 @@ export default function () {
         </p>
 
         <div className="flex justify-center lg:justify-start items-center pt-[23px] sm:pt-[54px] ">
-          <button className="w-[240px] sm:w-[280px] md:w-[300px] lg:w-[360px] h-[40px] sm:h-[55px] md:h-[60px] lg:h-[64px] border border-[#1A1A1A] rounded-[4px] text-[16px] sm:text-[18px] md:text-[20px] text-[#1A1A1A] font-aeonik-regular  ">
+          <button className="w-[240px] sm:w-[280px] md:w-[320px] h-[40px] sm:h-[55px] md:h-[60px] border border-[#1A1A1A] rounded-[4px] text-[16px] sm:text-[18px] md:text-[20px] text-[#1A1A1A] font-aeonik-regular  ">
             Create Professional Account
           </button>
         </div>

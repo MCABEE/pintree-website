@@ -3,11 +3,11 @@ import React from "react";
 function Section2() {
   return (
     <div>
-      <div className="bg-[#1A1A1A] py-[75px] sm:py-[150px] md:py-[200px] lg:py-[293px] ">
+      <div className="bg-[#1A1A1A] py-[75px] sm:py-[150px] md:py-[200px]  ">
         <h1 className="font-aeonik-medium text-[16px] sm:text-[20px] md:text-[28px]  text-[#FFFFFF] text-center ">
           For Everyone
         </h1>
-        <p className="font-aeonik-medium  text-[28px] sm:text-[32px] lg:text-[48px] 2xl:text-[56px]  text-[#FFFFFF] text-center leading-[120%]">
+        <p className="font-aeonik-medium  text-[28px] sm:text-[32px] lg:text-[48px]   text-[#FFFFFF] text-center leading-[120%]">
           Connect, explore,
           <br className=" sm:hidden  inline-block" /> and enjoy a{" "}
           <br className="hidden sm:inline-block" /> space{" "}

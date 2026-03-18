@@ -25,7 +25,7 @@ function Section1() {
       className="
       flex flex-col lg:flex-row 
       h-auto 
-      px-6 sm:px-10 lg:px-[80px] xl:px-[140px] 2xl:px-[240px] 
+      px-6 sm:px-10 lg:px-[80px] xl:px-[140px]
       pt-10 lg:pt-0
     "
     >
@@ -85,7 +85,7 @@ function Section1() {
         w-full lg:w-1/2 
         flex justify-center items-center 
         relative 
-        pt-10 lg:pt-[169px]
+        pt-10 lg:pt-[129px]
       "
       >
         {/* PHONE FRAME */}
@@ -94,7 +94,7 @@ function Section1() {
           alt="mobile frame"
           className="
             relative z-10 pointer-events-none
-            w-[240px] sm:w-[260px] md:w-[300px] lg:w-[350px] 2xl:w-[420px]
+            w-[240px] sm:w-[260px] md:w-[300px] lg:w-[350px] 
           "
         />
 
@@ -107,7 +107,7 @@ function Section1() {
             sm:w-[260px] sm:h-[320px]
             md:w-[300px] md:h-[380px]
             lg:w-[350px] lg:h-[450px]
-            2xl:w-[420px] 2xl:h-[520px]
+          
           "
         >
           {images.map((src, index) => (
