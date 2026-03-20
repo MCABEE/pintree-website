@@ -27,14 +27,14 @@ export default function Page() {
     <>
       <Navbar />
 
-      <div className="bg-white py-10 md:py-16 ">
+      <div className="bg-white py-10 md:py-16  px-2 sm:px-10 lg:px-[80px] xl:px-[140px]">
         <div
           className="
             bg-white
             shadow-xl
             border border-[#FFFFFF]
             sm:mx-auto
-            md:w-[700px] lg:w-[850px] xl:w-[1000px] 2xl:w-[1200px] 3xl:w-[1440px]
+           max-w-[1440px]
             px-6 sm:px-8 md:px-12 lg:px-[72px] 
             py-12 sm:py-16 md:py-24 lg:py-[100px]
             min-h-[60vh]
@@ -45,7 +45,7 @@ export default function Page() {
           {/* ---------------- Section Header ---------------- */}
           <h1
             className="
-              text-[26px] sm:text-[28px] md:text-[32px]
+              text-[26px] sm:text-[28px]
               font-aeonik-bold
               text-[#0C0C0C]
             "
@@ -58,7 +58,7 @@ export default function Page() {
               text-[#333333]
               font-aeonik-regular
               mt-2 sm:mt-3
-              text-[16px] sm:text-[18px] md:text-[20px]
+              text-[16px] sm:text-[18px]
             "
           >
             Learn how to sign up, log in, and set up your Pintree account.
@@ -81,7 +81,7 @@ export default function Page() {
                   >
                     <p
                       className="
-                        text-[18px] sm:text-[20px] md:text-[24px]
+                        text-[18px] sm:text-[20px] 
                         font-aeonik-medium
                         text-[#1A1A1A]
                       "
@@ -89,7 +89,7 @@ export default function Page() {
                       {item.question}
                     </p>
 
-                    <span className="text-[22px] text-[#000000] select-none">
+                    <span className="text-[16px] md:text-[18px] text-[#000000] select-none">
                       {isOpen ? "—" : "+"}
                     </span>
                   </div>
@@ -99,7 +99,7 @@ export default function Page() {
                     <p
                       className="
                         mt-2 sm:mt-3
-                        text-[15px] sm:text-[17px] md:text-[20px]
+                        text-[16px] sm:text-[18px]
                         text-[#1A1A1A]
                         font-aeonik-regular
                         leading-[22px] sm:leading-[24px] md:leading-[26px]

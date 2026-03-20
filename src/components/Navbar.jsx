@@ -24,8 +24,8 @@ const Navbar = () => {
     flex justify-between items-center 
     px-6 sm:px-10 lg:px-[80px] xl:px-[140px] 
     py-[24px] 
-    z-50 bg-white border-b border-[#F0F0F0] 
-    sticky top-0
+    z-50 bg-white border-b border-[#F0F0F0] relative
+    xl:sticky top-0
   "
 >
         {/* LOGO */}

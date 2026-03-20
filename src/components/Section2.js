@@ -6,7 +6,7 @@ export default function Section2() {
     <section className="">
       <div className="flex flex-col md:flex-row">
         {/* ---- Top Left Image ---- */}
-        <div className="w-full md:w-1/2  h-[360px] md:h-[400px] lg:h-[500px] xl:h-[600px] 2xl:h-[960px]">
+        <div className="w-full md:w-1/2  h-[360px] md:h-[400px] lg:h-[500px]">
           <img
             src="/img3.svg"
             alt="user feedback"
@@ -15,11 +15,11 @@ export default function Section2() {
         </div>
 
         {/* ---- Top Right Text ---- */}
-        <div className="w-full md:w-1/2  flex flex-col justify-center items-start  p-[20px]  lg:p-[55px] 2xl:pt-[252px] bg-white">
-          <p className="font-aeonik-regular text-[20px] sm:text-[28px] 2xl:text-[32px] text-[#000000]">
+        <div className="w-full md:w-1/2  flex flex-col justify-center items-start  p-[20px]  lg:p-[55px]  bg-white">
+          <p className="font-aeonik-regular text-[20px] sm:text-[28px] text-[#000000]">
             Users
           </p>
-          <h2 className="text-[32px] lg:text-[42px] 2xl:text-[64px] text-[#0C0C0C] font-aeonik-medium  mb-[4px]">
+          <h2 className="text-[32px] lg:text-[48px] text-[#0C0C0C] font-aeonik-medium  mb-[4px]">
             Have a question or suggestion?
           </h2>
           <p className="font-aeonik-regular text-[16px] 2xl:text-[24px] text-[#1A1A1A] leading-relaxed">
@@ -35,16 +35,16 @@ export default function Section2() {
 
       <div className="flex flex-col-reverse md:flex-row ">
         {/* ---- Bottom Left Text ---- */}
-        <div className="w-full md:w-1/2  flex flex-col justify-center items-start  p-[20px]  lg:p-[55px] 2xl:pt-[252px] bg-white">
+        <div className="w-full md:w-1/2  flex flex-col justify-center items-start  p-[20px]  lg:p-[55px]  bg-white">
           <div className="">
-            <p className=" text-[20px] sm:text-[28px] 2xl:text-[32px] font-aeonik-regular text-[#000000]">
+            <p className=" text-[20px] sm:text-[28px] font-aeonik-regular text-[#000000]">
               Contributors
             </p>
-            <h2 className=" text-[#0C0C0C] font-aeonik-medium text-[32px] lg:text-[42px] 2xl:text-[64px] leading-[120%] ">
+            <h2 className=" text-[#0C0C0C] font-aeonik-medium text-[32px] lg:text-[48px] leading-[120%] ">
               For Professionals, Businesses..
             </h2>
           </div>
-          <p className="text-[#1A1A1A] font-aeonik-regular  text-[16px] 2xl:text-[24px] leading-[140%] 2xl:ps-[220px] md:pe-[85px]">
+          <p className="text-[#1A1A1A] font-aeonik-regular  text-[16px] 2xl:text-[24px] leading-[140%] md:pe-[85px]">
             Explore better ways to grow, connect, and collaborate —{" "}
             <br className="hidden sm:inline-block" /> our team is here to help
             you make the most of Pintree.
@@ -55,7 +55,7 @@ export default function Section2() {
         </div>
 
         {/* ---- Bottom Right Image ---- */}
-        <div className="w-full md:w-1/2  h-[360px] md:h-[400px] lg:h-[500px] xl:h-[600px] 2xl:h-[960px]">
+        <div className="w-full md:w-1/2  h-[360px] md:h-[400px] lg:h-[500px] ">
           <img
             src="/img2.svg" // replace with your image path
             alt="contributors help"
