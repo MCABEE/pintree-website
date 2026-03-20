@@ -19,18 +19,21 @@ const Navbar = () => {
   return (
     <>
       {/* NAVBAR */}
-   <div
-  className="
+      <div
+        className="
     flex justify-between items-center 
     px-6 sm:px-10 lg:px-[80px] xl:px-[140px] 
     py-[24px] 
+    feat/PW-03
     z-50 bg-white border-b border-[#F0F0F0] relative
     xl:sticky top-0
   "
 >
+
+main
         {/* LOGO */}
         <img
-          src="/pintree.svg"
+          src="/Pintree.svg"
           alt="logo"
           className="w-[84px] sm:w-[100px] 2xl:w-[113px] lg:mb-2"
         />
@@ -45,8 +48,7 @@ const Navbar = () => {
                 pathname === link.href
                   ? "bg-[#F2F2F2] font-medium"
                   : "hover:bg-[#F2F2F2]"
-              }`}
-            >
+              }`}>
               {link.label}
             </Link>
           ))}
@@ -61,8 +63,7 @@ const Navbar = () => {
         {/* MOBILE HAMBURGER */}
         <button
           className="xl:hidden text-2xl sm:text-4xl text-[#333333]"
-          onClick={() => setMenuOpen(!menuOpen)}
-        >
+          onClick={() => setMenuOpen(!menuOpen)}>
           {menuOpen ? <HiX /> : <HiMenuAlt3 />}
         </button>
       </div>
@@ -74,8 +75,7 @@ const Navbar = () => {
           absolute top-[90px] left-0 w-full bg-white shadow-md 
           transition-all duration-300 overflow-hidden 
           ${menuOpen ? "max-h-[500px] opacity-100" : "max-h-0 opacity-0"}
-        `}
-      >
+        `}>
         {/* LINKS */}
         <div className="flex flex-col px-6 py-4 gap-4 text-[#333333] text-[16px] font-medium">
           {links.map((link) => (
@@ -85,8 +85,7 @@ const Navbar = () => {
               onClick={() => setMenuOpen(false)}
               className={`px-3 py-2 rounded-md transition ${
                 pathname === link.href ? "bg-[#F2F2F2]" : "hover:bg-[#F9F9F9]"
-              }`}
-            >
+              }`}>
               {link.label}
             </Link>
           ))}
@@ -94,15 +93,13 @@ const Navbar = () => {
           {/* MOBILE CTA */}
           <div
             onClick={() => setMenuOpen(false)}
-            className="flex items-center gap-2 px-3 py-2 text-[16px] font-aeonik-medium cursor-pointer hover:bg-[#F9F9F9] rounded-md"
-          >
+            className="flex items-center gap-2 px-3 py-2 text-[16px] font-aeonik-medium cursor-pointer hover:bg-[#F9F9F9] rounded-md">
             <h1>Professional Account</h1>
             <FaArrowRight />
           </div>
         </div>
       </div>
     </>
-
   );
 };
 
