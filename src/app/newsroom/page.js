@@ -7,31 +7,35 @@ function page() {
     <>
       <Navbar />
       <div className=" px-[24px] 2xl:px-[140px] 3xl:px-[240px]  max-h-max ">
-        <h1 className=" text-[28px] sm:text-[32px] lg:text-[48px] 2xl:text-[56px]  font-aeonik-medium text-[#1A1A1A] pb-[25px] text-left xl:text-center pt-[100px] ">
+        <h1 className=" text-[28px] sm:text-[32px] lg:text-[48px] 2xl:text-[56px]  font-aeonik-medium text-[#1A1A1A] pb-[25px] text-left xl:text-center pt-[50px] md:pt-[100px] ">
           Newsroom
         </h1>
         <p className="text-[16px] sm:text-[20px] font-aeonik-regular text-left xl:text-center text-[#1A1A1A] ">
           Official updates, announcements, and milestones from the Pintree team,
-          <br className="hidden md:inline-block"/>
+          <br className="hidden md:inline-block" />
           shared directly with our community and media.
         </p>
-        <h1 className="text-[20px] sm:text-[24px]  text-[#0C0C0C] pt-[135px] sm:pt-[187px] pb-2">
+        <h1 className="text-[20px] sm:text-[24px]  text-[#0C0C0C] pt-[50px] md:pt-[100px] pb-2">
           Latest
         </h1>
-        <div className="flex flex-col 2xl:flex-row 2xl:gap-10">
-          <p className="text-[20px] text-[#000000] pb-3.5 2xl:hidden inline-block ">
+        <div className="flex flex-col lg:flex-row lg:gap-10">
+          <p className="text-[16px] md:text-[20px] text-[#000000] pb-3.5 lg:hidden inline-block ">
             15 December 2025, Mon
           </p>
-          <p className="text-[24px] sm:text-[36px] text-[#0C0C0C] leading-[120%] pb-0.5 2xl:hidden inline-block ">
+          <p className="text-[20px] md:text-[24px] sm:text-[36px] text-[#0C0C0C] leading-[120%] pb-0.5 lg:hidden inline-block ">
             Pintree Introduces New Community Features to Strengthen Meaningful
             Connections.
           </p>
-          <img src="/news1.svg" alt="" className="2xl:w-[600px] h-[338px]" />
+          <img
+            src="/news1.svg"
+            alt=""
+            className="2xl:w-[600px] sm:h-[338px] my-4"
+          />
           <div>
-            <p className="text-[16px] text-[#000000] pb-3.5 hidden 2xl:inline-block ">
+            <p className="text-[14px] md:text-[16px] text-[#000000] pb-3.5 hidden lg:inline-block ">
               15 December 2025, Mon
             </p>
-            <p className="text-[24px]  text-[#0C0C0C] leading-[120%] pb-2 hidden 2xl:inline-block ">
+            <p className="text-[24px]  text-[#0C0C0C] leading-[120%] pb-2 hidden lg:inline-block ">
               Pintree Introduces New Community Features to Strengthen Meaningful
               Connections.
             </p>

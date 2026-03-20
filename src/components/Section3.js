@@ -37,7 +37,7 @@ export default function Section3() {
           key={index}
           className={`${item.bg} flex flex-col justify-start items-start px-[20px] md:px-[40px] lg:px-[130px] 2xl:px-[212px] py-16 md:py-24 md:min-h-[420px]`}
         >
-          <h3 className="text-[20px] lg:text-[28px] md:text-[32px] font-aeonik-medium leading-[1.15] text-[#0C0C0C] mb-3">
+          <h3 className="text-[20px] lg:text-[28px] font-aeonik-medium leading-[1.15] text-[#0C0C0C] mb-3">
             {item.title}
           </h3>
 
@@ -48,7 +48,7 @@ export default function Section3() {
           {/* 🔥 Dynamic Link */}
           <Link
             href={item.href}
-            className="mt-6 border border-[#1A1A1A] text-[#1A1A1A] w-[180px] h-[48px] rounded-[6px] flex items-center justify-center text-[16px] lg:text-[20px] font-aeonik-regular"
+            className="mt-6 border border-[#1A1A1A] text-[#1A1A1A] w-[160px] h-[48px] rounded-[6px] flex items-center justify-center text-[16px] font-aeonik-regular"
           >
             Get in Touch
           </Link>

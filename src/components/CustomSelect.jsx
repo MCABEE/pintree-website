@@ -18,7 +18,7 @@ export default function CustomSelect({
       <div className="flex items-center border border-[#0C0C0C] rounded-[4px] px-[25px]  h-[48px] md:py-4 outline-none">
         
         {/* Select Element */}
-        <select className="w-full text-[#333333] text-[16px] 2xl:text-[20px] font-aeonik-regular appearance-none outline-none bg-transparent">
+        <select className="w-full text-[#333333] text-[16px] font-aeonik-regular appearance-none outline-none bg-transparent">
           <option value="" className="text-[16px] lg:text-[24px]">{placeholder}</option>
           {options.map((opt, idx) => (
             <option key={idx} value={opt}>
@@ -28,7 +28,7 @@ export default function CustomSelect({
         </select>
 
         {/* Custom Arrow */}
-        <img src={icon} alt="dropdown arrow" className="size-3 2xl:size-5 ml-3" />
+        <img src={icon} alt="dropdown arrow" className="size-3  ml-3" />
       </div>
     </div>
   );
