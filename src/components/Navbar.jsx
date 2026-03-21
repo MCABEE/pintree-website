@@ -28,9 +28,7 @@ const Navbar = () => {
     z-50 bg-white border-b border-[#F0F0F0] relative
     xl:sticky top-0
   "
->
-
-main
+      >
         {/* LOGO */}
         <img
           src="/Pintree.svg"
@@ -48,7 +46,8 @@ main
                 pathname === link.href
                   ? "bg-[#F2F2F2] font-medium"
                   : "hover:bg-[#F2F2F2]"
-              }`}>
+              }`}
+            >
               {link.label}
             </Link>
           ))}
@@ -63,7 +62,8 @@ main
         {/* MOBILE HAMBURGER */}
         <button
           className="xl:hidden text-2xl sm:text-4xl text-[#333333]"
-          onClick={() => setMenuOpen(!menuOpen)}>
+          onClick={() => setMenuOpen(!menuOpen)}
+        >
           {menuOpen ? <HiX /> : <HiMenuAlt3 />}
         </button>
       </div>
@@ -75,7 +75,8 @@ main
           absolute top-[90px] left-0 w-full bg-white shadow-md 
           transition-all duration-300 overflow-hidden 
           ${menuOpen ? "max-h-[500px] opacity-100" : "max-h-0 opacity-0"}
-        `}>
+        `}
+      >
         {/* LINKS */}
         <div className="flex flex-col px-6 py-4 gap-4 text-[#333333] text-[16px] font-medium">
           {links.map((link) => (
@@ -85,7 +86,8 @@ main
               onClick={() => setMenuOpen(false)}
               className={`px-3 py-2 rounded-md transition ${
                 pathname === link.href ? "bg-[#F2F2F2]" : "hover:bg-[#F9F9F9]"
-              }`}>
+              }`}
+            >
               {link.label}
             </Link>
           ))}
@@ -93,7 +95,8 @@ main
           {/* MOBILE CTA */}
           <div
             onClick={() => setMenuOpen(false)}
-            className="flex items-center gap-2 px-3 py-2 text-[16px] font-aeonik-medium cursor-pointer hover:bg-[#F9F9F9] rounded-md">
+            className="flex items-center gap-2 px-3 py-2 text-[16px] font-aeonik-medium cursor-pointer hover:bg-[#F9F9F9] rounded-md"
+          >
             <h1>Professional Account</h1>
             <FaArrowRight />
           </div>
