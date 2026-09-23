@@ -1,10 +1,9 @@
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import PrivacyPolicyContent from "@/components/PrivacyPolicyContent";
+import { LEGAL_PAGE_COLUMN } from "@/components/legalDocumentIntro";
 
-/** Narrow column — matches target Privacy Policy screenshot (~440px). */
-export const PRIVACY_COLUMN =
-  "mx-auto w-full max-w-[440px] px-5 sm:px-6";
+export const PRIVACY_COLUMN = LEGAL_PAGE_COLUMN;
 
 export const metadata = {
   title: "Privacy Policy | Pintree",
@@ -18,8 +17,8 @@ export default function PrivacyPolicyPage() {
       <Navbar />
 
       <main>
-        <section className={PRIVACY_COLUMN}>
-          <h1 className="pt-[56px] sm:pt-[64px] text-center text-[28px] leading-[1.12] font-aeonik-medium text-[#1A1A1A] tracking-[-0.02em] pb-[14px]">
+        <section className={LEGAL_PAGE_COLUMN}>
+          <h1 className="pt-[92px] sm:pt-[104px] text-center text-[28px] leading-[1.12] font-aeonik-medium text-[#1A1A1A] tracking-[-0.02em] pb-5 sm:pb-6">
             Privacy Policy
           </h1>
           <p className="text-center text-[12px] leading-[1.45] font-aeonik-regular text-[#4B5563]">

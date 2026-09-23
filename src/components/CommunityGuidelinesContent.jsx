@@ -40,10 +40,10 @@ const MAIN_SECTION_TITLES = new Set([
 ]);
 
 const bodyBase =
-  "text-[15px] sm:text-[16px] leading-[1.65] font-aeonik-regular text-[#000000] antialiased";
-const bodyParagraph = `${bodyBase} pt-4`;
+  "text-[15px] sm:text-[16px] leading-[1.6] font-aeonik-regular text-[#000000] antialiased";
+const bodyParagraph = `${bodyBase} pt-[10px]`;
 const headingBase =
-  "text-[15px] sm:text-[16px] leading-[1.65] text-[#000000] font-aeonik-bold";
+  "text-[15px] sm:text-[16px] leading-[1.6] text-[#000000] font-aeonik-bold";
 
 function RunText({ runs }) {
   if (!runs) return null;
@@ -81,22 +81,22 @@ function isFullyBold(runs) {
 
 function getHeadingSpacing(text) {
   if (/^\d+\.\d+/.test(text)) {
-    return "pt-4 sm:pt-5";
+    return "pt-3 sm:pt-4";
   }
 
   if (/^[A-Z]\.\s/.test(text)) {
-    return "pt-5 sm:pt-6";
-  }
-
-  if (MAIN_SECTION_TITLES.has(text)) {
-    return "pt-8 sm:pt-10";
-  }
-
-  if (/^\d+\.\s/.test(text)) {
     return "pt-4 sm:pt-5";
   }
 
-  return "pt-4";
+  if (MAIN_SECTION_TITLES.has(text)) {
+    return "pt-6 sm:pt-7";
+  }
+
+  if (/^\d+\.\s/.test(text)) {
+    return "pt-3 sm:pt-4";
+  }
+
+  return "pt-3";
 }
 
 function renderParagraph(block, index) {
@@ -151,7 +151,7 @@ export default function CommunityGuidelinesContent() {
     elements.push(
       <ul
         key={`${keyPrefix}-list`}
-        className="mt-2 list-disc space-y-2 pl-5 ms-1 marker:text-[#000000]"
+        className="mt-[10px] list-disc space-y-[10px] pl-5 ms-1 marker:text-[#000000]"
       >
         {listBuffer.map((item, itemIndex) => (
           <li

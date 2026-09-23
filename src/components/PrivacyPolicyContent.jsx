@@ -1,4 +1,5 @@
 import content from "@/data/privacy-policy-content.json";
+import { legalArticleClass } from "@/components/legalDocumentIntro";
 
 const MAIN_SECTION_TITLES = new Set([
   "1. Information We Collect",
@@ -25,10 +26,10 @@ const MAIN_SECTION_TITLES = new Set([
 ]);
 
 const bodyBase =
-  "text-[12px] sm:text-[12px] leading-[1.45] font-aeonik-regular text-[#000000] antialiased max-sm:text-[13px] max-sm:leading-[1.5]";
+  "text-[12px] sm:text-[12px] leading-[1.6] font-aeonik-regular text-[#000000] antialiased max-sm:text-[13px] max-sm:leading-[1.6]";
 const bodyParagraph = `${bodyBase} pt-[10px]`;
 const headingBase =
-  "text-[12px] sm:text-[12px] leading-[1.45] text-[#000000] font-aeonik-bold max-sm:text-[13px]";
+  "text-[12px] sm:text-[12px] leading-[1.6] text-[#000000] font-aeonik-bold max-sm:text-[13px]";
 
 function RunText({ runs }) {
   return runs.map((run, index) => {
@@ -64,19 +65,19 @@ function isFullyBold(runs) {
 
 function getHeadingSpacing(text) {
   if (/^\d+\.\d+/.test(text)) {
-    return "pt-3";
+    return "pt-3 sm:pt-4";
   }
 
   if (/^[A-Z]\.\s/.test(text)) {
-    return "pt-4";
+    return "pt-4 sm:pt-5";
   }
 
   if (MAIN_SECTION_TITLES.has(text) || text === "Summary") {
-    return "pt-5";
+    return "pt-6 sm:pt-7";
   }
 
   if (/^\d+\.\s/.test(text)) {
-    return "pt-3";
+    return "pt-3 sm:pt-4";
   }
 
   return "pt-3";
@@ -148,7 +149,7 @@ export default function PrivacyPolicyContent() {
     elements.push(
       <ul
         key={`${keyPrefix}-list`}
-        className="mt-1.5 list-disc space-y-1.5 pl-4 ms-0 marker:text-[#000000]"
+        className="mt-[10px] list-disc space-y-[10px] pl-5 ms-1 marker:text-[#000000]"
       >
         {listBuffer.map((item, itemIndex) => (
           <li
@@ -182,7 +183,7 @@ export default function PrivacyPolicyContent() {
   flushList("final");
 
   return (
-    <article className="mx-auto w-full max-w-[440px] px-5 sm:px-6 pb-[64px] sm:pb-[72px] pt-[44px] sm:pt-[48px]">
+    <article className={legalArticleClass}>
       {elements}
     </article>
   );

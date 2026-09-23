@@ -5,10 +5,10 @@ import React from "react";
 function CardArrow({ isGreen = false }) {
   return (
     <div
-      className={`inline-flex h-[32px] w-[32px] items-center justify-center rounded-full transition-all duration-300 ${
+      className={`inline-flex h-[32px] w-[32px] cursor-pointer items-center justify-center rounded-full transition-all duration-300 ${
         isGreen
-          ? "bg-[#00D685]/20 border border-[#00D685] text-white shadow-[0_0_12px_rgba(0,214,133,0.3)]"
-          : "border border-white/40 bg-black/10 text-white hover:border-white hover:bg-white/10"
+          ? "border border-[#00D685] bg-[#00D685]/20 text-white shadow-[0_0_12px_rgba(0,214,133,0.3)] hover:border-white hover:bg-white hover:text-[#0C0C0C] hover:shadow-none"
+          : "border border-white/40 bg-black/10 text-white hover:border-white hover:bg-white hover:text-[#0C0C0C]"
       }`}
     >
       <svg width="13" height="13" viewBox="0 0 16 16" fill="none" aria-hidden>
@@ -35,10 +35,10 @@ function BentoCard({
 }) {
   return (
     <div
-      className={`group relative overflow-hidden rounded-[8px] ${
+      className={`group relative flex flex-col justify-end overflow-hidden rounded-[8px] ${
         isLarge
-          ? "pl-[32px] pr-[61px] pt-[223px] pb-[32px]"
-          : "pl-[32px] pr-[52px] pt-[62px] pb-[32px]"
+          ? "pl-[32px] pr-[61px] pb-[32px] pt-[32px]"
+          : "pl-[32px] pr-[52px] pb-[32px] pt-[32px]"
       } ${className}`}
     >
       <img
@@ -62,9 +62,9 @@ function BentoCard({
         <p className="mt-[10px] text-[12.5px] leading-[1.45] font-aeonik-regular text-white/85 sm:text-[13px]">
           {description}
         </p>
-      </div>
-      <div className="absolute left-[32px] bottom-[32px] z-10">
-        <CardArrow isGreen={isGreenArrow} />
+        <div className="mt-[24px]">
+          <CardArrow isGreen={isGreenArrow} />
+        </div>
       </div>
     </div>
   );
@@ -97,7 +97,6 @@ const featureCards = [
     description:
       "Find places to belong. Create or join communities around shared interests, organizations, local groups, and more.",
     className: "h-[240px] w-full lg:h-[264px]",
-    isGreenArrow: true,
     isLarge: false,
   },
   {

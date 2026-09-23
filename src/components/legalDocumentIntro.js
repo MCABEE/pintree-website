@@ -1,5 +1,9 @@
+/** Shared centered legal column (matches Terms of Service layout). */
+export const LEGAL_PAGE_COLUMN =
+  "mx-auto w-full max-w-[740px] px-4 sm:px-6 md:px-8";
+
 export const legalArticleClass =
-  "mx-auto w-full max-w-[830px] pl-6 sm:pl-[52px] pr-6 sm:pr-8 pb-[80px] sm:pb-[96px] pt-[18px] sm:pt-[20px]";
+  "mx-auto w-full max-w-[740px] px-4 pb-12 pt-6 sm:px-6 sm:pb-14 sm:pt-8 md:px-8";
 
 export const introPintreeClass =
   "text-[16px] leading-[24px] tracking-[-0.0125em] font-aeonik-medium text-[#000000] antialiased";
