@@ -8,7 +8,7 @@ function CardArrow({ isGreen = false }) {
       className={`inline-flex h-[32px] w-[32px] cursor-pointer items-center justify-center rounded-full transition-all duration-300 ${
         isGreen
           ? "border border-[#00D685] bg-[#00D685]/20 text-white shadow-[0_0_12px_rgba(0,214,133,0.3)] hover:border-white hover:bg-white hover:text-[#0C0C0C] hover:shadow-none"
-          : "border border-white/40 bg-black/10 text-white hover:border-white hover:bg-white hover:text-[#0C0C0C]"
+          : "border border-white/40 bg-transparent text-white hover:border-white hover:bg-white hover:text-[#0C0C0C]"
       }`}
     >
       <svg width="13" height="13" viewBox="0 0 16 16" fill="none" aria-hidden>
@@ -35,10 +35,8 @@ function BentoCard({
 }) {
   return (
     <div
-      className={`group relative flex flex-col justify-end overflow-hidden rounded-[8px] ${
-        isLarge
-          ? "pl-[32px] pr-[61px] pb-[32px] pt-[32px]"
-          : "pl-[32px] pr-[52px] pb-[32px] pt-[32px]"
+      className={`group relative flex flex-col items-start overflow-hidden rounded-[8px] px-[32px] py-[32px] ${
+        isLarge ? "justify-center pr-[61px]" : "justify-end pr-[52px]"
       } ${className}`}
     >
       <img
@@ -55,7 +53,7 @@ function BentoCard({
         className="pointer-events-none absolute inset-0 bg-gradient-to-b from-black/20 via-black/15 to-black/60"
         aria-hidden
       />
-      <div className="relative z-10 text-left text-white">
+      <div className="relative z-10 max-w-[320px] text-left text-white">
         <h3 className="m-0 text-[20px] font-aeonik-medium font-medium leading-[1.15] sm:text-[21px]">
           {title}
         </h3>

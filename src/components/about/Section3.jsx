@@ -90,7 +90,7 @@ function PurposeCard({
 }) {
   return (
     <div
-      className={`group relative flex h-[315px] w-full max-w-[415px] cursor-pointer flex-col justify-start rounded-[10px] bg-[#214D5B] ${paddingLeft} pr-[56px] pt-[65px] text-left transition-colors hover:bg-[#1b414e]`}
+      className={`group relative z-0 flex h-[315px] w-full max-w-[415px] cursor-pointer flex-col justify-start rounded-[10px] bg-[#214D5B] ${paddingLeft} pr-[56px] pt-[65px] text-left transition-[transform,background-color] duration-300 ease-out hover:z-10 hover:scale-[1.04] hover:bg-[#1b414e]`}
     >
       <img
         src={icon}
@@ -130,7 +130,7 @@ export default function Section3() {
         </p>
 
         <div className="mt-[44px] w-full lg:mt-[52px]">
-          <div className="grid grid-cols-1 justify-items-center gap-[10px] md:grid-cols-3">
+          <div className="grid grid-cols-1 justify-items-center gap-[10px] overflow-visible md:grid-cols-3">
             {purposeCards.map((card) => (
               <PurposeCard key={card.titleLine1 + card.titleLine2} {...card} />
             ))}
