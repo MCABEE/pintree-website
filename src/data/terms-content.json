@@ -1,0 +1,6677 @@
+[
+  {
+    "type": "p",
+    "text": "Pintree",
+    "runs": [
+      {
+        "text": "Pintree",
+        "bold": true,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "p",
+    "text": "Terms of Use",
+    "runs": [
+      {
+        "text": "Terms of Use",
+        "bold": true,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "p",
+    "text": "Last Updated: 1 October 2026",
+    "runs": [
+      {
+        "text": "Last Updated: 1 October 2026",
+        "bold": true,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "p",
+    "text": "These Terms of Use (“Terms”) govern your access to and use of Pintree and any related websites, mobile applications, software, tools, features, and services (collectively, the “Platform” or “Services”).",
+    "runs": [
+      {
+        "text": "These Terms of Use (“Terms”) govern your access to and use of Pintree and any related websites, mobile applications, software, tools, features, and services (collectively, the “Platform” or “Services”).",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "p",
+    "text": "The Platform is owned and operated by MCABEE DIGITAL, an Indian company (“MCABEE DIGITAL,” “Pintree,” “we,” “us,” or “our”).",
+    "runs": [
+      {
+        "text": "The Platform is owned and operated by ",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      },
+      {
+        "text": "MCABEE DIGITAL",
+        "bold": true,
+        "italic": false,
+        "underline": false
+      },
+      {
+        "text": ", an Indian company (“MCABEE DIGITAL,” “Pintree,” “we,” “us,” or “our”).",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "p",
+    "text": "By creating an account, accessing, or using Pintree, you agree to be bound by these Terms. If you do not agree to these Terms, you must not access or use Pintree.",
+    "runs": [
+      {
+        "text": "By creating an account, accessing, or using Pintree, you agree to be bound by these Terms. If you do not agree to these Terms, you must not access or use Pintree.",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "blank"
+  },
+  {
+    "type": "p",
+    "text": "1. About Pintree and Your Relationship with Us",
+    "runs": [
+      {
+        "text": "1. About Pintree and Your Relationship with Us",
+        "bold": true,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "p",
+    "text": "1.1 What is Pintree?",
+    "runs": [
+      {
+        "text": "1.1 What is Pintree?",
+        "bold": true,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "p",
+    "text": "Pintree is a community-based social platform designed to help people connect with others, participate in communities, discover content, and communicate through various social and community features.",
+    "runs": [
+      {
+        "text": "Pintree is a community-based social platform designed to help people connect with others, participate in communities, discover content, and communicate through various social and community features.",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "p",
+    "text": "Depending on the features available in your version of the Platform, Pintree may allow users to:",
+    "runs": [
+      {
+        "text": "Depending on the features available in your version of the Platform, Pintree may allow users to:",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Create and maintain personal profiles",
+    "runs": [
+      {
+        "text": "Create and maintain personal profiles",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Connect with other users",
+    "runs": [
+      {
+        "text": "Connect with other users",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Follow or interact with other users and communities",
+    "runs": [
+      {
+        "text": "Follow or interact with other users and communities",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Create, join, and participate in communities",
+    "runs": [
+      {
+        "text": "Create, join, and participate in communities",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Participate in Rooms within communities",
+    "runs": [
+      {
+        "text": "Participate in Rooms within communities",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Share photos and text-based posts",
+    "runs": [
+      {
+        "text": "Share photos and text-based posts",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Share life events and personal updates",
+    "runs": [
+      {
+        "text": "Share life events and personal updates",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Create and participate in polls",
+    "runs": [
+      {
+        "text": "Create and participate in polls",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Comment, reply, react to, and interact with content",
+    "runs": [
+      {
+        "text": "Comment, reply, react to, and interact with content",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Save content and organize saved content where such features are available",
+    "runs": [
+      {
+        "text": "Save content and organize saved content where such features are available",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Discover content, users, and communities through the Discover experience",
+    "runs": [
+      {
+        "text": "Discover content, users, and communities through the Discover experience",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Participate in community events and view community schedules",
+    "runs": [
+      {
+        "text": "Participate in community events and view community schedules",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Send and receive messages through available communication features",
+    "runs": [
+      {
+        "text": "Send and receive messages through available communication features",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Share YouTube links that may be displayed or played through supported embedded experiences",
+    "runs": [
+      {
+        "text": "Share YouTube links that may be displayed or played through supported embedded experiences",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Use other features that Pintree may introduce from time to time",
+    "runs": [
+      {
+        "text": "Use other features that Pintree may introduce from time to time",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "p",
+    "text": "Pintree is primarily designed around photo, text, community, and discussion-based experiences.",
+    "runs": [
+      {
+        "text": "Pintree is primarily designed around photo, text, community, and discussion-based experiences.",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "p",
+    "text": "Pintree does not currently provide a general-purpose facility for users to upload or host their own video files or music tracks. Where YouTube or another third-party service is supported through a link or embedded experience, the availability and playback of that content may depend on the third-party service.",
+    "runs": [
+      {
+        "text": "Pintree does not currently provide a general-purpose facility for users to upload or host their own video files or music tracks. Where YouTube or another third-party service is supported through a link or embedded experience, the availability and playback of that content may depend on the third-party service.",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "p",
+    "text": "1.2 Account categories",
+    "runs": [
+      {
+        "text": "1.2 Account categories",
+        "bold": true,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "p",
+    "text": "Pintree may support different categories of accounts and profiles.",
+    "runs": [
+      {
+        "text": "Pintree may support different categories of accounts and profiles.",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "p",
+    "text": "Personal Accounts",
+    "runs": [
+      {
+        "text": "Personal Accounts",
+        "bold": true,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "p",
+    "text": "Personal Accounts are intended for individuals using Pintree primarily for personal and social purposes.",
+    "runs": [
+      {
+        "text": "Personal Accounts are intended for individuals using Pintree primarily for personal and social purposes.",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "p",
+    "text": "Community Accounts",
+    "runs": [
+      {
+        "text": "Community Accounts",
+        "bold": true,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "p",
+    "text": "Community Accounts are intended for groups, organizations, institutions, and communities that use Pintree to communicate with members, publish information, conduct discussions, and organize community activities.",
+    "runs": [
+      {
+        "text": "Community Accounts are intended for groups, organizations, institutions, and communities that use Pintree to communicate with members, publish information, conduct discussions, and organize community activities.",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "p",
+    "text": "Examples may include:",
+    "runs": [
+      {
+        "text": "Examples may include:",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Interest groups",
+    "runs": [
+      {
+        "text": "Interest groups",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Fan communities",
+    "runs": [
+      {
+        "text": "Fan communities",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Clubs and associations",
+    "runs": [
+      {
+        "text": "Clubs and associations",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Educational institutions or groups",
+    "runs": [
+      {
+        "text": "Educational institutions or groups",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Religious or faith communities",
+    "runs": [
+      {
+        "text": "Religious or faith communities",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Alumni groups",
+    "runs": [
+      {
+        "text": "Alumni groups",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Non-profit organizations",
+    "runs": [
+      {
+        "text": "Non-profit organizations",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Government or public-interest organizations",
+    "runs": [
+      {
+        "text": "Government or public-interest organizations",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Other legitimate groups, organizations, or networks",
+    "runs": [
+      {
+        "text": "Other legitimate groups, organizations, or networks",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "p",
+    "text": "Professional Accounts",
+    "runs": [
+      {
+        "text": "Professional Accounts",
+        "bold": true,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "p",
+    "text": "Pintree may introduce or enable Professional Accounts for certain professional, organizational, media, creator, public-figure, and commercial uses.",
+    "runs": [
+      {
+        "text": "Pintree may introduce or enable Professional Accounts for certain professional, organizational, media, creator, public-figure, and commercial uses.",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "p",
+    "text": "Depending on availability, Professional Accounts may include:",
+    "runs": [
+      {
+        "text": "Depending on availability, Professional Accounts may include:",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Creators",
+    "runs": [
+      {
+        "text": "Creators",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Public figures",
+    "runs": [
+      {
+        "text": "Public figures",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Businesses and brands",
+    "runs": [
+      {
+        "text": "Businesses and brands",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "News publishers and media organizations",
+    "runs": [
+      {
+        "text": "News publishers and media organizations",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Professional service providers",
+    "runs": [
+      {
+        "text": "Professional service providers",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Other authorized professional or organizational profiles",
+    "runs": [
+      {
+        "text": "Other authorized professional or organizational profiles",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "p",
+    "text": "Pintree may determine which account types and features are available at any particular time.",
+    "runs": [
+      {
+        "text": "Pintree may determine which account types and features are available at any particular time.",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "p",
+    "text": "Account classification does not give an account holder any special right to violate these Terms, applicable laws, or the rights of other users.",
+    "runs": [
+      {
+        "text": "Account classification does not give an account holder any special right to violate these Terms, applicable laws, or the rights of other users.",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "p",
+    "text": "1.3 Personal and commercial use",
+    "runs": [
+      {
+        "text": "1.3 Personal and commercial use",
+        "bold": true,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "p",
+    "text": "Personal Accounts are primarily intended for personal and social use.",
+    "runs": [
+      {
+        "text": "Personal Accounts are primarily intended for personal and social use.",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "p",
+    "text": "Commercial, promotional, organizational, or professional activity must be conducted through the appropriate account type where such account functionality is available.",
+    "runs": [
+      {
+        "text": "Commercial, promotional, organizational, or professional activity must be conducted through the appropriate account type where such account functionality is available.",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "p",
+    "text": "We may introduce additional requirements, verification procedures, restrictions, or terms for professional, commercial, media, creator, public-figure, or business accounts.",
+    "runs": [
+      {
+        "text": "We may introduce additional requirements, verification procedures, restrictions, or terms for professional, commercial, media, creator, public-figure, or business accounts.",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "p",
+    "text": "1.4 Binding agreement",
+    "runs": [
+      {
+        "text": "1.4 Binding agreement",
+        "bold": true,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "p",
+    "text": "These Terms constitute a legally binding agreement between you and MCABEE DIGITAL concerning your use of Pintree.",
+    "runs": [
+      {
+        "text": "These Terms constitute a legally binding agreement between you and MCABEE DIGITAL concerning your use of Pintree.",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "p",
+    "text": "If you do not agree to these Terms, you must not use the Platform.",
+    "runs": [
+      {
+        "text": "If you do not agree to these Terms, you must not use the Platform.",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "blank"
+  },
+  {
+    "type": "p",
+    "text": "2. Eligibility and Age Requirements",
+    "runs": [
+      {
+        "text": "2. Eligibility and Age Requirements",
+        "bold": true,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "p",
+    "text": "2.1 Minimum age",
+    "runs": [
+      {
+        "text": "2.1 Minimum age",
+        "bold": true,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "p",
+    "text": "You may use Pintree only if:",
+    "runs": [
+      {
+        "text": "You may use Pintree only if:",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "You are at least 13 years old; and",
+    "runs": [
+      {
+        "text": "You are at least 13 years old; and",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "You are legally capable of entering into a binding agreement, or you have the consent of a parent or legal guardian where such consent is required by applicable law.",
+    "runs": [
+      {
+        "text": "You are legally capable of entering into a binding agreement, or you have the consent of a parent or legal guardian where such consent is required by applicable law.",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "p",
+    "text": "If the minimum age required by the laws of your country is higher than 13, the higher minimum age applies.",
+    "runs": [
+      {
+        "text": "If the minimum age required by the laws of your country is higher than 13, the higher minimum age applies.",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "p",
+    "text": "We may restrict access to certain features based on age or applicable legal requirements.",
+    "runs": [
+      {
+        "text": "We may restrict access to certain features based on age or applicable legal requirements.",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "p",
+    "text": "2.2 Users under the age of majority",
+    "runs": [
+      {
+        "text": "2.2 Users under the age of majority",
+        "bold": true,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "p",
+    "text": "If you are under the age of majority in your country, you are responsible for obtaining any permission or consent required from your parent or legal guardian before using Pintree.",
+    "runs": [
+      {
+        "text": "If you are under the age of majority in your country, you are responsible for obtaining any permission or consent required from your parent or legal guardian before using Pintree.",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "p",
+    "text": "Parents and legal guardians are responsible for supervising minors' use of the Platform where required or appropriate.",
+    "runs": [
+      {
+        "text": "Parents and legal guardians are responsible for supervising minors' use of the Platform where required or appropriate.",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "p",
+    "text": "We may request additional information or verification where required by law or where reasonably necessary to protect users.",
+    "runs": [
+      {
+        "text": "We may request additional information or verification where required by law or where reasonably necessary to protect users.",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "p",
+    "text": "2.3 Global availability",
+    "runs": [
+      {
+        "text": "2.3 Global availability",
+        "bold": true,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "p",
+    "text": "Pintree is developed and operated from India and may initially be designed with particular communities or user groups in mind. However, users from other countries may use the Platform subject to these Terms and all applicable local laws.",
+    "runs": [
+      {
+        "text": "Pintree is developed and operated from India and may initially be designed with particular communities or user groups in mind. However, users from other countries may use the Platform subject to these Terms and all applicable local laws.",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "p",
+    "text": "You are responsible for ensuring that your use of Pintree is lawful in the jurisdiction where you access it.",
+    "runs": [
+      {
+        "text": "You are responsible for ensuring that your use of Pintree is lawful in the jurisdiction where you access it.",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "blank"
+  },
+  {
+    "type": "p",
+    "text": "3. Account Registration and Real Identity",
+    "runs": [
+      {
+        "text": "3. Account Registration and Real Identity",
+        "bold": true,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "p",
+    "text": "3.1 Real identity requirement",
+    "runs": [
+      {
+        "text": "3.1 Real identity requirement",
+        "bold": true,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "p",
+    "text": "Pintree is intended to operate as a real-identity social platform.",
+    "runs": [
+      {
+        "text": "Pintree is intended to operate as a real-identity social platform.",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "p",
+    "text": "When creating an account, you must:",
+    "runs": [
+      {
+        "text": "When creating an account, you must:",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Provide your real full name or a name that you are legally entitled to use;",
+    "runs": [
+      {
+        "text": "Provide your real full name or a name that you are legally entitled to use;",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Provide a valid and accessible email address or mobile number;",
+    "runs": [
+      {
+        "text": "Provide a valid and accessible email address or mobile number;",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Complete email or phone verification when requested;",
+    "runs": [
+      {
+        "text": "Complete email or phone verification when requested;",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Provide accurate profile information;",
+    "runs": [
+      {
+        "text": "Provide accurate profile information;",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Provide location-related information requested by Pintree for personalization or discovery features, where applicable; and",
+    "runs": [
+      {
+        "text": "Provide location-related information requested by Pintree for personalization or discovery features, where applicable; and",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Keep your account information reasonably accurate and up to date.",
+    "runs": [
+      {
+        "text": "Keep your account information reasonably accurate and up to date.",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "p",
+    "text": "Your username or handle may be different from your legal name and may use a creative, professional, or brand-style format, provided that it does not mislead others or impersonate another person or organization.",
+    "runs": [
+      {
+        "text": "Your username or handle may be different from your legal name and may use a creative, professional, or brand-style format, provided that it does not mislead others or impersonate another person or organization.",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "p",
+    "text": "3.2 Location and personalization information",
+    "runs": [
+      {
+        "text": "3.2 Location and personalization information",
+        "bold": true,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "p",
+    "text": "Pintree may allow users to provide information such as:",
+    "runs": [
+      {
+        "text": "Pintree may allow users to provide information such as:",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Current country, state, or city",
+    "runs": [
+      {
+        "text": "Current country, state, or city",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Native country, state, or hometown",
+    "runs": [
+      {
+        "text": "Native country, state, or hometown",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Language or mother tongue",
+    "runs": [
+      {
+        "text": "Language or mother tongue",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Interests and other discovery preferences",
+    "runs": [
+      {
+        "text": "Interests and other discovery preferences",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "p",
+    "text": "This information may be used to personalize discovery, communities, recommendations, and other Platform experiences in accordance with our Privacy Policy.",
+    "runs": [
+      {
+        "text": "This information may be used to personalize discovery, communities, recommendations, and other Platform experiences in accordance with our Privacy Policy.",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "p",
+    "text": "Providing such information does not make it publicly visible in every circumstance. Visibility depends on the applicable profile and privacy settings.",
+    "runs": [
+      {
+        "text": "Providing such information does not make it publicly visible in every circumstance. Visibility depends on the applicable profile and privacy settings.",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "p",
+    "text": "You should not provide another person's location or personal information without appropriate authorization.",
+    "runs": [
+      {
+        "text": "You should not provide another person's location or personal information without appropriate authorization.",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "p",
+    "text": "3.3 Account security",
+    "runs": [
+      {
+        "text": "3.3 Account security",
+        "bold": true,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "p",
+    "text": "You are responsible for:",
+    "runs": [
+      {
+        "text": "You are responsible for:",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Keeping your password and login credentials confidential;",
+    "runs": [
+      {
+        "text": "Keeping your password and login credentials confidential;",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Taking reasonable steps to protect access to your device and account;",
+    "runs": [
+      {
+        "text": "Taking reasonable steps to protect access to your device and account;",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Using appropriate security practices;",
+    "runs": [
+      {
+        "text": "Using appropriate security practices;",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Not sharing your login credentials with unauthorized persons; and",
+    "runs": [
+      {
+        "text": "Not sharing your login credentials with unauthorized persons; and",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "All activity occurring through your account, except where such activity results from circumstances for which you are not legally responsible.",
+    "runs": [
+      {
+        "text": "All activity occurring through your account, except where such activity results from circumstances for which you are not legally responsible.",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "p",
+    "text": "If you believe your account has been accessed without authorization, you should change your password immediately and contact us through the available support channels.",
+    "runs": [
+      {
+        "text": "If you believe your account has been accessed without authorization, you should change your password immediately and contact us through the available support channels.",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "p",
+    "text": "For account-related assistance, you may contact contact@pintree.co.",
+    "runs": [
+      {
+        "text": "For account-related assistance, you may contact ",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      },
+      {
+        "text": "contact@pintree.co",
+        "bold": true,
+        "italic": false,
+        "underline": false
+      },
+      {
+        "text": ".",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "p",
+    "text": "3.4 One person, one identity",
+    "runs": [
+      {
+        "text": "3.4 One person, one identity",
+        "bold": true,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "p",
+    "text": "You must not:",
+    "runs": [
+      {
+        "text": "You must not:",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Impersonate another person;",
+    "runs": [
+      {
+        "text": "Impersonate another person;",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Impersonate a brand, organization, public authority, or other entity;",
+    "runs": [
+      {
+        "text": "Impersonate a brand, organization, public authority, or other entity;",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Create an account on behalf of another person without proper authorization;",
+    "runs": [
+      {
+        "text": "Create an account on behalf of another person without proper authorization;",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Falsely claim an affiliation, position, profession, qualification, or relationship;",
+    "runs": [
+      {
+        "text": "Falsely claim an affiliation, position, profession, qualification, or relationship;",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Use another person's identity or personal information without authorization; or",
+    "runs": [
+      {
+        "text": "Use another person's identity or personal information without authorization; or",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Create multiple accounts for deceptive, abusive, fraudulent, or prohibited purposes.",
+    "runs": [
+      {
+        "text": "Create multiple accounts for deceptive, abusive, fraudulent, or prohibited purposes.",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "p",
+    "text": "We may require additional verification where reasonably necessary.",
+    "runs": [
+      {
+        "text": "We may require additional verification where reasonably necessary.",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "blank"
+  },
+  {
+    "type": "p",
+    "text": "4. Account Types and Verification",
+    "runs": [
+      {
+        "text": "4. Account Types and Verification",
+        "bold": true,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "p",
+    "text": "4.1 Personal Accounts",
+    "runs": [
+      {
+        "text": "4.1 Personal Accounts",
+        "bold": true,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "p",
+    "text": "Personal Accounts may be used to:",
+    "runs": [
+      {
+        "text": "Personal Accounts may be used to:",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Create a personal profile;",
+    "runs": [
+      {
+        "text": "Create a personal profile;",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Connect with people and communities;",
+    "runs": [
+      {
+        "text": "Connect with people and communities;",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Share permitted photos and text content;",
+    "runs": [
+      {
+        "text": "Share permitted photos and text content;",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Share life events and personal updates;",
+    "runs": [
+      {
+        "text": "Share life events and personal updates;",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Participate in discussions;",
+    "runs": [
+      {
+        "text": "Participate in discussions;",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Comment and react to content;",
+    "runs": [
+      {
+        "text": "Comment and react to content;",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Use available discovery, messaging, saving, and privacy features.",
+    "runs": [
+      {
+        "text": "Use available discovery, messaging, saving, and privacy features.",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "p",
+    "text": "Personal Accounts are not intended to function as unauthorized business, advertising, or large-scale promotional accounts.",
+    "runs": [
+      {
+        "text": "Personal Accounts are not intended to function as unauthorized business, advertising, or large-scale promotional accounts.",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "p",
+    "text": "4.2 Community Accounts",
+    "runs": [
+      {
+        "text": "4.2 Community Accounts",
+        "bold": true,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "p",
+    "text": "Community Accounts may be used by legitimate groups and organizations to:",
+    "runs": [
+      {
+        "text": "Community Accounts may be used by legitimate groups and organizations to:",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Create a community;",
+    "runs": [
+      {
+        "text": "Create a community;",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Publish community posts;",
+    "runs": [
+      {
+        "text": "Publish community posts;",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Create and manage Rooms;",
+    "runs": [
+      {
+        "text": "Create and manage Rooms;",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Communicate with members;",
+    "runs": [
+      {
+        "text": "Communicate with members;",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Organize events;",
+    "runs": [
+      {
+        "text": "Organize events;",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Publish schedules or recurring information;",
+    "runs": [
+      {
+        "text": "Publish schedules or recurring information;",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Manage members and moderators;",
+    "runs": [
+      {
+        "text": "Manage members and moderators;",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Share community information; and",
+    "runs": [
+      {
+        "text": "Share community information; and",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Conduct lawful community activities.",
+    "runs": [
+      {
+        "text": "Conduct lawful community activities.",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "p",
+    "text": "Community owners and administrators are responsible for ensuring that their communities are operated lawfully and in accordance with these Terms and applicable Community Guidelines.",
+    "runs": [
+      {
+        "text": "Community owners and administrators are responsible for ensuring that their communities are operated lawfully and in accordance with these Terms and applicable Community Guidelines.",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "p",
+    "text": "4.3 Professional Accounts",
+    "runs": [
+      {
+        "text": "4.3 Professional Accounts",
+        "bold": true,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "p",
+    "text": "Where available, Professional Accounts may be used by creators, public figures, businesses, brands, news organizations, media publishers, professionals, and other authorized entities.",
+    "runs": [
+      {
+        "text": "Where available, Professional Accounts may be used by creators, public figures, businesses, brands, news organizations, media publishers, professionals, and other authorized entities.",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "p",
+    "text": "Professional Accounts must:",
+    "runs": [
+      {
+        "text": "Professional Accounts must:",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Provide accurate information;",
+    "runs": [
+      {
+        "text": "Provide accurate information;",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Not misrepresent qualifications, affiliations, products, services, or ownership;",
+    "runs": [
+      {
+        "text": "Not misrepresent qualifications, affiliations, products, services, or ownership;",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Comply with applicable advertising, consumer-protection, intellectual-property, privacy, and other laws;",
+    "runs": [
+      {
+        "text": "Comply with applicable advertising, consumer-protection, intellectual-property, privacy, and other laws;",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Avoid deceptive or misleading promotions; and",
+    "runs": [
+      {
+        "text": "Avoid deceptive or misleading promotions; and",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Comply with any additional requirements applicable to the relevant account type.",
+    "runs": [
+      {
+        "text": "Comply with any additional requirements applicable to the relevant account type.",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "p",
+    "text": "Professional features may not be available to all users or in all regions.",
+    "runs": [
+      {
+        "text": "Professional features may not be available to all users or in all regions.",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "p",
+    "text": "4.4 Verification",
+    "runs": [
+      {
+        "text": "4.4 Verification",
+        "bold": true,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "p",
+    "text": "Pintree may offer verification for certain account categories.",
+    "runs": [
+      {
+        "text": "Pintree may offer verification for certain account categories.",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "p",
+    "text": "Verification, if provided, does not constitute an endorsement, guarantee, certification, or representation by Pintree regarding the account holder's conduct, views, products, services, qualifications, or content.",
+    "runs": [
+      {
+        "text": "Verification, if provided, does not constitute an endorsement, guarantee, certification, or representation by Pintree regarding the account holder's conduct, views, products, services, qualifications, or content.",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "p",
+    "text": "We may refuse, suspend, revoke, or modify verification where appropriate.",
+    "runs": [
+      {
+        "text": "We may refuse, suspend, revoke, or modify verification where appropriate.",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "blank"
+  },
+  {
+    "type": "p",
+    "text": "5. Communities, Rooms, Events, and Schedules",
+    "runs": [
+      {
+        "text": "5. Communities, Rooms, Events, and Schedules",
+        "bold": true,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "p",
+    "text": "5.1 Communities",
+    "runs": [
+      {
+        "text": "5.1 Communities",
+        "bold": true,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "p",
+    "text": "Communities are spaces created for groups, organizations, institutions, or shared interests.",
+    "runs": [
+      {
+        "text": "Communities are spaces created for groups, organizations, institutions, or shared interests.",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "p",
+    "text": "Community owners and authorized moderators may have tools to manage:",
+    "runs": [
+      {
+        "text": "Community owners and authorized moderators may have tools to manage:",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Community information;",
+    "runs": [
+      {
+        "text": "Community information;",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Members;",
+    "runs": [
+      {
+        "text": "Members;",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Moderators;",
+    "runs": [
+      {
+        "text": "Moderators;",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Posts;",
+    "runs": [
+      {
+        "text": "Posts;",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Rooms;",
+    "runs": [
+      {
+        "text": "Rooms;",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Events;",
+    "runs": [
+      {
+        "text": "Events;",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Schedules;",
+    "runs": [
+      {
+        "text": "Schedules;",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Community rules; and",
+    "runs": [
+      {
+        "text": "Community rules; and",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Other available community functions.",
+    "runs": [
+      {
+        "text": "Other available community functions.",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "p",
+    "text": "Community administrators are responsible for using these tools appropriately.",
+    "runs": [
+      {
+        "text": "Community administrators are responsible for using these tools appropriately.",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "p",
+    "text": "5.2 Rooms",
+    "runs": [
+      {
+        "text": "5.2 Rooms",
+        "bold": true,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "p",
+    "text": "Rooms are discussion spaces within communities.",
+    "runs": [
+      {
+        "text": "Rooms are discussion spaces within communities.",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "p",
+    "text": "Depending on the available functionality, Rooms may support:",
+    "runs": [
+      {
+        "text": "Depending on the available functionality, Rooms may support:",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Text posts;",
+    "runs": [
+      {
+        "text": "Text posts;",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Images;",
+    "runs": [
+      {
+        "text": "Images;",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Polls;",
+    "runs": [
+      {
+        "text": "Polls;",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Files;",
+    "runs": [
+      {
+        "text": "Files;",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Voice content;",
+    "runs": [
+      {
+        "text": "Voice content;",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Replies and threaded discussions; and",
+    "runs": [
+      {
+        "text": "Replies and threaded discussions; and",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Other supported discussion features.",
+    "runs": [
+      {
+        "text": "Other supported discussion features.",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "p",
+    "text": "Room content is intended to remain within the relevant Room experience and may not appear in the main community feed or Discover experience in the same manner as community posts.",
+    "runs": [
+      {
+        "text": "Room content is intended to remain within the relevant Room experience and may not appear in the main community feed or Discover experience in the same manner as community posts.",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "p",
+    "text": "Users should not assume that content shared within a Room is completely confidential. Members may copy, screenshot, record, quote, or otherwise share information outside the Room.",
+    "runs": [
+      {
+        "text": "Users should not assume that content shared within a Room is completely confidential. Members may copy, screenshot, record, quote, or otherwise share information outside the Room.",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "p",
+    "text": "Do not share information in a Room that you would not want disclosed to other participants.",
+    "runs": [
+      {
+        "text": "Do not share information in a Room that you would not want disclosed to other participants.",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "p",
+    "text": "5.3 Community posts",
+    "runs": [
+      {
+        "text": "5.3 Community posts",
+        "bold": true,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "p",
+    "text": "Community posts may be used by authorized community administrators or other permitted account holders to publish information to the community.",
+    "runs": [
+      {
+        "text": "Community posts may be used by authorized community administrators or other permitted account holders to publish information to the community.",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "p",
+    "text": "Visibility and interaction capabilities may vary depending on the community structure and features enabled by Pintree.",
+    "runs": [
+      {
+        "text": "Visibility and interaction capabilities may vary depending on the community structure and features enabled by Pintree.",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "p",
+    "text": "5.4 Events and schedules",
+    "runs": [
+      {
+        "text": "5.4 Events and schedules",
+        "bold": true,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "p",
+    "text": "Communities may provide event and schedule information, including dates, times, locations, online participation information, or recurring schedules.",
+    "runs": [
+      {
+        "text": "Communities may provide event and schedule information, including dates, times, locations, online participation information, or recurring schedules.",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "p",
+    "text": "Pintree does not guarantee that an event will occur as described. Community administrators and event organizers are responsible for the accuracy and conduct of events they publish.",
+    "runs": [
+      {
+        "text": "Pintree does not guarantee that an event will occur as described. Community administrators and event organizers are responsible for the accuracy and conduct of events they publish.",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "p",
+    "text": "You participate in events at your own discretion and should independently verify important event details.",
+    "runs": [
+      {
+        "text": "You participate in events at your own discretion and should independently verify important event details.",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "blank"
+  },
+  {
+    "type": "p",
+    "text": "6. Discover, Recommendations, and Content Discovery",
+    "runs": [
+      {
+        "text": "6. Discover, Recommendations, and Content Discovery",
+        "bold": true,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "p",
+    "text": "Pintree may provide a Discover or similar discovery experience that allows users to find content, people, communities, or other information outside their existing connections.",
+    "runs": [
+      {
+        "text": "Pintree may provide a Discover or similar discovery experience that allows users to find content, people, communities, or other information outside their existing connections.",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "p",
+    "text": "Discovery may use factors such as:",
+    "runs": [
+      {
+        "text": "Discovery may use factors such as:",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Location;",
+    "runs": [
+      {
+        "text": "Location;",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Language;",
+    "runs": [
+      {
+        "text": "Language;",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Interests;",
+    "runs": [
+      {
+        "text": "Interests;",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Community categories;",
+    "runs": [
+      {
+        "text": "Community categories;",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Connections;",
+    "runs": [
+      {
+        "text": "Connections;",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Followers or following relationships;",
+    "runs": [
+      {
+        "text": "Followers or following relationships;",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Community membership;",
+    "runs": [
+      {
+        "text": "Community membership;",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Content interactions;",
+    "runs": [
+      {
+        "text": "Content interactions;",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Publicly available or permitted content; and",
+    "runs": [
+      {
+        "text": "Publicly available or permitted content; and",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Other signals used to operate and improve the Platform.",
+    "runs": [
+      {
+        "text": "Other signals used to operate and improve the Platform.",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "p",
+    "text": "Discovery and recommendation systems may change over time.",
+    "runs": [
+      {
+        "text": "Discovery and recommendation systems may change over time.",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "p",
+    "text": "The appearance of content in Discover or another recommendation area does not mean that Pintree endorses, verifies, or guarantees the accuracy of that content or the person or organization responsible for it.",
+    "runs": [
+      {
+        "text": "The appearance of content in Discover or another recommendation area does not mean that Pintree endorses, verifies, or guarantees the accuracy of that content or the person or organization responsible for it.",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "blank"
+  },
+  {
+    "type": "p",
+    "text": "7. Content You Share",
+    "runs": [
+      {
+        "text": "7. Content You Share",
+        "bold": true,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "p",
+    "text": "7.1 User Content",
+    "runs": [
+      {
+        "text": "7.1 User Content",
+        "bold": true,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "p",
+    "text": "“User Content” means content, information, materials, or communications that you create, upload, submit, publish, transmit, or otherwise make available through Pintree.",
+    "runs": [
+      {
+        "text": "“User Content” means content, information, materials, or communications that you create, upload, submit, publish, transmit, or otherwise make available through Pintree.",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "p",
+    "text": "Depending on the available features, User Content may include:",
+    "runs": [
+      {
+        "text": "Depending on the available features, User Content may include:",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Photos;",
+    "runs": [
+      {
+        "text": "Photos;",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Captions;",
+    "runs": [
+      {
+        "text": "Captions;",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Text posts;",
+    "runs": [
+      {
+        "text": "Text posts;",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Long-form posts or articles;",
+    "runs": [
+      {
+        "text": "Long-form posts or articles;",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Blogs;",
+    "runs": [
+      {
+        "text": "Blogs;",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Life events and personal updates;",
+    "runs": [
+      {
+        "text": "Life events and personal updates;",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Polls;",
+    "runs": [
+      {
+        "text": "Polls;",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Comments;",
+    "runs": [
+      {
+        "text": "Comments;",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Replies;",
+    "runs": [
+      {
+        "text": "Replies;",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Reactions;",
+    "runs": [
+      {
+        "text": "Reactions;",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Profile information;",
+    "runs": [
+      {
+        "text": "Profile information;",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Community information;",
+    "runs": [
+      {
+        "text": "Community information;",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Room content;",
+    "runs": [
+      {
+        "text": "Room content;",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Files;",
+    "runs": [
+      {
+        "text": "Files;",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Voice content in supported Rooms;",
+    "runs": [
+      {
+        "text": "Voice content in supported Rooms;",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "YouTube or other supported third-party links; and",
+    "runs": [
+      {
+        "text": "YouTube or other supported third-party links; and",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Other content supported by the Platform.",
+    "runs": [
+      {
+        "text": "Other content supported by the Platform.",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "p",
+    "text": "7.2 You are responsible for your content",
+    "runs": [
+      {
+        "text": "7.2 You are responsible for your content",
+        "bold": true,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "p",
+    "text": "You are solely responsible for the User Content you submit.",
+    "runs": [
+      {
+        "text": "You are solely responsible for the User Content you submit.",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "p",
+    "text": "By posting User Content, you represent and warrant that:",
+    "runs": [
+      {
+        "text": "By posting User Content, you represent and warrant that:",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "You own the content or have all necessary rights and permissions to use and share it;",
+    "runs": [
+      {
+        "text": "You own the content or have all necessary rights and permissions to use and share it;",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "You have obtained any necessary permissions from people appearing in the content;",
+    "runs": [
+      {
+        "text": "You have obtained any necessary permissions from people appearing in the content;",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Your content does not unlawfully infringe copyright, trademarks, privacy, publicity, confidentiality, or other rights;",
+    "runs": [
+      {
+        "text": "Your content does not unlawfully infringe copyright, trademarks, privacy, publicity, confidentiality, or other rights;",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Your content is not knowingly false or misleading in a manner prohibited by law or these Terms;",
+    "runs": [
+      {
+        "text": "Your content is not knowingly false or misleading in a manner prohibited by law or these Terms;",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Your content complies with applicable laws;",
+    "runs": [
+      {
+        "text": "Your content complies with applicable laws;",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Your content complies with these Terms and our Community Guidelines; and",
+    "runs": [
+      {
+        "text": "Your content complies with these Terms and our Community Guidelines; and",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "You have the authority to provide any rights or permissions you grant to Pintree under these Terms.",
+    "runs": [
+      {
+        "text": "You have the authority to provide any rights or permissions you grant to Pintree under these Terms.",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "p",
+    "text": "7.3 YouTube and third-party content",
+    "runs": [
+      {
+        "text": "7.3 YouTube and third-party content",
+        "bold": true,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "p",
+    "text": "Pintree may allow users to share supported YouTube links.",
+    "runs": [
+      {
+        "text": "Pintree may allow users to share supported YouTube links.",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "p",
+    "text": "Where supported, YouTube content may be displayed or played through an embedded experience within Pintree. Such content remains subject to YouTube's own terms, policies, availability, and technical controls.",
+    "runs": [
+      {
+        "text": "Where supported, YouTube content may be displayed or played through an embedded experience within Pintree. Such content remains subject to YouTube's own terms, policies, availability, and technical controls.",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "p",
+    "text": "Pintree does not own or control third-party videos or other third-party content merely because such content is displayed through Pintree.",
+    "runs": [
+      {
+        "text": "Pintree does not own or control third-party videos or other third-party content merely because such content is displayed through Pintree.",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "p",
+    "text": "If a third-party platform removes, restricts, disables, or changes content or embedding functionality, the corresponding Pintree experience may also become unavailable.",
+    "runs": [
+      {
+        "text": "If a third-party platform removes, restricts, disables, or changes content or embedding functionality, the corresponding Pintree experience may also become unavailable.",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "p",
+    "text": "7.4 Prohibited content",
+    "runs": [
+      {
+        "text": "7.4 Prohibited content",
+        "bold": true,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "p",
+    "text": "You must not post, upload, transmit, or otherwise distribute content that:",
+    "runs": [
+      {
+        "text": "You must not post, upload, transmit, or otherwise distribute content that:",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Is unlawful or promotes unlawful activity;",
+    "runs": [
+      {
+        "text": "Is unlawful or promotes unlawful activity;",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Infringes another person's intellectual-property rights;",
+    "runs": [
+      {
+        "text": "Infringes another person's intellectual-property rights;",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Infringes privacy, publicity, confidentiality, or other rights;",
+    "runs": [
+      {
+        "text": "Infringes privacy, publicity, confidentiality, or other rights;",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Harasses, threatens, abuses, stalks, or bullies another person;",
+    "runs": [
+      {
+        "text": "Harasses, threatens, abuses, stalks, or bullies another person;",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Contains hateful or discriminatory material prohibited by applicable law or our policies;",
+    "runs": [
+      {
+        "text": "Contains hateful or discriminatory material prohibited by applicable law or our policies;",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Contains sexually explicit or pornographic material;",
+    "runs": [
+      {
+        "text": "Contains sexually explicit or pornographic material;",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Exploits or sexually abuses minors;",
+    "runs": [
+      {
+        "text": "Exploits or sexually abuses minors;",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Promotes or facilitates terrorism or violent extremist activity;",
+    "runs": [
+      {
+        "text": "Promotes or facilitates terrorism or violent extremist activity;",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Promotes or facilitates organized criminal activity;",
+    "runs": [
+      {
+        "text": "Promotes or facilitates organized criminal activity;",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Encourages or facilitates self-harm;",
+    "runs": [
+      {
+        "text": "Encourages or facilitates self-harm;",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Contains malicious software or harmful code;",
+    "runs": [
+      {
+        "text": "Contains malicious software or harmful code;",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Facilitates fraud, scams, phishing, or deceptive schemes;",
+    "runs": [
+      {
+        "text": "Facilitates fraud, scams, phishing, or deceptive schemes;",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Contains unauthorized financial, identity, or authentication information;",
+    "runs": [
+      {
+        "text": "Contains unauthorized financial, identity, or authentication information;",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Unlawfully exposes another person's private or sensitive information;",
+    "runs": [
+      {
+        "text": "Unlawfully exposes another person's private or sensitive information;",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Constitutes spam or unsolicited bulk communication;",
+    "runs": [
+      {
+        "text": "Constitutes spam or unsolicited bulk communication;",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Promotes pyramid schemes or other prohibited deceptive schemes;",
+    "runs": [
+      {
+        "text": "Promotes pyramid schemes or other prohibited deceptive schemes;",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Deliberately impersonates another person or organization;",
+    "runs": [
+      {
+        "text": "Deliberately impersonates another person or organization;",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Contains materially deceptive or fraudulent claims;",
+    "runs": [
+      {
+        "text": "Contains materially deceptive or fraudulent claims;",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Violates applicable advertising or consumer-protection laws; or",
+    "runs": [
+      {
+        "text": "Violates applicable advertising or consumer-protection laws; or",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Otherwise violates these Terms or our Community Guidelines.",
+    "runs": [
+      {
+        "text": "Otherwise violates these Terms or our Community Guidelines.",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "p",
+    "text": "We may remove or restrict content that violates these requirements.",
+    "runs": [
+      {
+        "text": "We may remove or restrict content that violates these requirements.",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "p",
+    "text": "7.5 Keywords and content information",
+    "runs": [
+      {
+        "text": "7.5 Keywords and content information",
+        "bold": true,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "p",
+    "text": "Pintree may allow users to provide keywords or other descriptive information for posts.",
+    "runs": [
+      {
+        "text": "Pintree may allow users to provide keywords or other descriptive information for posts.",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "p",
+    "text": "Users are responsible for ensuring that keywords and descriptive information are relevant and not misleading.",
+    "runs": [
+      {
+        "text": "Users are responsible for ensuring that keywords and descriptive information are relevant and not misleading.",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "p",
+    "text": "Keywords must not be used to manipulate discovery, impersonate another topic, evade moderation, or deliberately mislead users.",
+    "runs": [
+      {
+        "text": "Keywords must not be used to manipulate discovery, impersonate another topic, evade moderation, or deliberately mislead users.",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "p",
+    "text": "Pintree may limit the number or format of keywords and may modify how keywords are used for discovery or recommendations.",
+    "runs": [
+      {
+        "text": "Pintree may limit the number or format of keywords and may modify how keywords are used for discovery or recommendations.",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "blank"
+  },
+  {
+    "type": "p",
+    "text": "8. License to User Content",
+    "runs": [
+      {
+        "text": "8. License to User Content",
+        "bold": true,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "p",
+    "text": "8.1 Ownership",
+    "runs": [
+      {
+        "text": "8.1 Ownership",
+        "bold": true,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "p",
+    "text": "You retain ownership of User Content that you create and share on Pintree, subject to the rights and licenses granted under these Terms.",
+    "runs": [
+      {
+        "text": "You retain ownership of User Content that you create and share on Pintree, subject to the rights and licenses granted under these Terms.",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "p",
+    "text": "Pintree does not claim ownership of your original User Content merely because you post it on the Platform.",
+    "runs": [
+      {
+        "text": "Pintree does not claim ownership of your original User Content merely because you post it on the Platform.",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "p",
+    "text": "8.2 License granted to Pintree",
+    "runs": [
+      {
+        "text": "8.2 License granted to Pintree",
+        "bold": true,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "p",
+    "text": "By posting or uploading User Content to Pintree, you grant MCABEE DIGITAL a worldwide, non-exclusive, royalty-free, transferable, sublicensable license to host, store, reproduce, process, modify, adapt, publish, translate, create derivative works from, display, distribute, and otherwise use that content as reasonably necessary to:",
+    "runs": [
+      {
+        "text": "By posting or uploading User Content to Pintree, you grant MCABEE DIGITAL a worldwide, non-exclusive, royalty-free, transferable, sublicensable license to host, store, reproduce, process, modify, adapt, publish, translate, create derivative works from, display, distribute, and otherwise use that content as reasonably necessary to:",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Operate and provide the Services;",
+    "runs": [
+      {
+        "text": "Operate and provide the Services;",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Make content available to intended audiences;",
+    "runs": [
+      {
+        "text": "Make content available to intended audiences;",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Display content in feeds, profiles, communities, Rooms, Discover, search, recommendations, and other Platform features;",
+    "runs": [
+      {
+        "text": "Display content in feeds, profiles, communities, Rooms, Discover, search, recommendations, and other Platform features;",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Maintain, secure, troubleshoot, and improve the Services;",
+    "runs": [
+      {
+        "text": "Maintain, secure, troubleshoot, and improve the Services;",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Develop and introduce Platform features;",
+    "runs": [
+      {
+        "text": "Develop and introduce Platform features;",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Prevent fraud, abuse, and security threats;",
+    "runs": [
+      {
+        "text": "Prevent fraud, abuse, and security threats;",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Promote the Platform and its features; and",
+    "runs": [
+      {
+        "text": "Promote the Platform and its features; and",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Comply with legal obligations.",
+    "runs": [
+      {
+        "text": "Comply with legal obligations.",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "p",
+    "text": "This license lasts for as long as reasonably necessary for the purposes described above, including periods required for backups, security, legal compliance, dispute resolution, or other legitimate operational purposes.",
+    "runs": [
+      {
+        "text": "This license lasts for as long as reasonably necessary for the purposes described above, including periods required for backups, security, legal compliance, dispute resolution, or other legitimate operational purposes.",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "p",
+    "text": "8.3 Marketing use",
+    "runs": [
+      {
+        "text": "8.3 Marketing use",
+        "bold": true,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "p",
+    "text": "Where reasonably necessary to promote Pintree, we may display limited portions of publicly available User Content, such as screenshots or examples of Platform content, in connection with Pintree marketing, demonstrations, documentation, or promotional materials.",
+    "runs": [
+      {
+        "text": "Where reasonably necessary to promote Pintree, we may display limited portions of publicly available User Content, such as screenshots or examples of Platform content, in connection with Pintree marketing, demonstrations, documentation, or promotional materials.",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "p",
+    "text": "We will not interpret this provision as transferring ownership of your User Content to us.",
+    "runs": [
+      {
+        "text": "We will not interpret this provision as transferring ownership of your User Content to us.",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "p",
+    "text": "8.4 Deleting User Content",
+    "runs": [
+      {
+        "text": "8.4 Deleting User Content",
+        "bold": true,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "p",
+    "text": "You may delete User Content where the relevant feature allows deletion.",
+    "runs": [
+      {
+        "text": "You may delete User Content where the relevant feature allows deletion.",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "p",
+    "text": "Deletion may not immediately remove all copies because content may remain temporarily in:",
+    "runs": [
+      {
+        "text": "Deletion may not immediately remove all copies because content may remain temporarily in:",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Backups;",
+    "runs": [
+      {
+        "text": "Backups;",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Security logs;",
+    "runs": [
+      {
+        "text": "Security logs;",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Technical systems;",
+    "runs": [
+      {
+        "text": "Technical systems;",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Legal records;",
+    "runs": [
+      {
+        "text": "Legal records;",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Moderation records;",
+    "runs": [
+      {
+        "text": "Moderation records;",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Cached systems; or",
+    "runs": [
+      {
+        "text": "Cached systems; or",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Other locations where retention is reasonably necessary.",
+    "runs": [
+      {
+        "text": "Other locations where retention is reasonably necessary.",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "p",
+    "text": "Content that has already been copied, quoted, reshared, screenshotted, or otherwise reproduced by other users may continue to exist outside our control.",
+    "runs": [
+      {
+        "text": "Content that has already been copied, quoted, reshared, screenshotted, or otherwise reproduced by other users may continue to exist outside our control.",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "blank"
+  },
+  {
+    "type": "p",
+    "text": "9. Content Visibility and Privacy",
+    "runs": [
+      {
+        "text": "9. Content Visibility and Privacy",
+        "bold": true,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "p",
+    "text": "9.1 Visibility settings",
+    "runs": [
+      {
+        "text": "9.1 Visibility settings",
+        "bold": true,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "p",
+    "text": "Depending on the account, content type, and available settings:",
+    "runs": [
+      {
+        "text": "Depending on the account, content type, and available settings:",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Personal posts may be publicly visible by default;",
+    "runs": [
+      {
+        "text": "Personal posts may be publicly visible by default;",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Users may have options to restrict certain posts to friends or selected groups;",
+    "runs": [
+      {
+        "text": "Users may have options to restrict certain posts to friends or selected groups;",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Circle or similar privacy features may allow users to select specific groups of people for certain content;",
+    "runs": [
+      {
+        "text": "Circle or similar privacy features may allow users to select specific groups of people for certain content;",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Community content may be visible to community members or other permitted audiences;",
+    "runs": [
+      {
+        "text": "Community content may be visible to community members or other permitted audiences;",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Room content is intended for participants in the relevant Room;",
+    "runs": [
+      {
+        "text": "Room content is intended for participants in the relevant Room;",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Profile information may have different visibility settings; and",
+    "runs": [
+      {
+        "text": "Profile information may have different visibility settings; and",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Some information may necessarily be visible to other users to provide the relevant Platform feature.",
+    "runs": [
+      {
+        "text": "Some information may necessarily be visible to other users to provide the relevant Platform feature.",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "p",
+    "text": "Feature availability and default visibility may change.",
+    "runs": [
+      {
+        "text": "Feature availability and default visibility may change.",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "p",
+    "text": "9.2 Your responsibility when sharing",
+    "runs": [
+      {
+        "text": "9.2 Your responsibility when sharing",
+        "bold": true,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "p",
+    "text": "You are responsible for reviewing the audience and privacy settings before publishing content.",
+    "runs": [
+      {
+        "text": "You are responsible for reviewing the audience and privacy settings before publishing content.",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "p",
+    "text": "Pintree cannot guarantee that other users will respect the intended audience of your content.",
+    "runs": [
+      {
+        "text": "Pintree cannot guarantee that other users will respect the intended audience of your content.",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "p",
+    "text": "You should not post confidential, highly sensitive, or private information unless you understand the risks and have the necessary rights to share it.",
+    "runs": [
+      {
+        "text": "You should not post confidential, highly sensitive, or private information unless you understand the risks and have the necessary rights to share it.",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "p",
+    "text": "9.3 Privacy Policy",
+    "runs": [
+      {
+        "text": "9.3 Privacy Policy",
+        "bold": true,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "p",
+    "text": "Our collection, use, storage, and processing of personal information are governed by our Privacy Policy, which forms part of your agreement with us.",
+    "runs": [
+      {
+        "text": "Our collection, use, storage, and processing of personal information are governed by our Privacy Policy, which forms part of your agreement with us.",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "blank"
+  },
+  {
+    "type": "p",
+    "text": "10. Acceptable Use of Pintree",
+    "runs": [
+      {
+        "text": "10. Acceptable Use of Pintree",
+        "bold": true,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "p",
+    "text": "You agree not to:",
+    "runs": [
+      {
+        "text": "You agree not to:",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Use Pintree for an unlawful purpose;",
+    "runs": [
+      {
+        "text": "Use Pintree for an unlawful purpose;",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Violate any applicable law or regulation;",
+    "runs": [
+      {
+        "text": "Violate any applicable law or regulation;",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Violate another person's rights;",
+    "runs": [
+      {
+        "text": "Violate another person's rights;",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Harass, abuse, threaten, stalk, or intimidate others;",
+    "runs": [
+      {
+        "text": "Harass, abuse, threaten, stalk, or intimidate others;",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Upload prohibited or harmful content;",
+    "runs": [
+      {
+        "text": "Upload prohibited or harmful content;",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Engage in fraud, scams, phishing, or deceptive practices;",
+    "runs": [
+      {
+        "text": "Engage in fraud, scams, phishing, or deceptive practices;",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Send spam or unauthorized bulk communications;",
+    "runs": [
+      {
+        "text": "Send spam or unauthorized bulk communications;",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Create misleading accounts or communities;",
+    "runs": [
+      {
+        "text": "Create misleading accounts or communities;",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Manipulate engagement, reactions, comments, follows, or other Platform activity through artificial means;",
+    "runs": [
+      {
+        "text": "Manipulate engagement, reactions, comments, follows, or other Platform activity through artificial means;",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Use automated systems, bots, scripts, crawlers, or scraping tools to access, collect, or monitor Platform data without our prior written authorization, except where such activity is expressly permitted by applicable law;",
+    "runs": [
+      {
+        "text": "Use automated systems, bots, scripts, crawlers, or scraping tools to access, collect, or monitor Platform data without our prior written authorization, except where such activity is expressly permitted by applicable law;",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Circumvent access controls, security mechanisms, rate limits, or other technical restrictions;",
+    "runs": [
+      {
+        "text": "Circumvent access controls, security mechanisms, rate limits, or other technical restrictions;",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Probe, scan, test, attack, overload, or interfere with our systems;",
+    "runs": [
+      {
+        "text": "Probe, scan, test, attack, overload, or interfere with our systems;",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Introduce malware, viruses, or other harmful code;",
+    "runs": [
+      {
+        "text": "Introduce malware, viruses, or other harmful code;",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Reverse engineer, decompile, disassemble, or attempt to extract source code except where expressly permitted by applicable law;",
+    "runs": [
+      {
+        "text": "Reverse engineer, decompile, disassemble, or attempt to extract source code except where expressly permitted by applicable law;",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Attempt to gain unauthorized access to another account;",
+    "runs": [
+      {
+        "text": "Attempt to gain unauthorized access to another account;",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Sell, rent, lease, transfer, or otherwise misuse your account;",
+    "runs": [
+      {
+        "text": "Sell, rent, lease, transfer, or otherwise misuse your account;",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Use Pintree to build a substantially similar competing service using unauthorized access to Pintree data or systems;",
+    "runs": [
+      {
+        "text": "Use Pintree to build a substantially similar competing service using unauthorized access to Pintree data or systems;",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Collect personal information about users for unauthorized purposes;",
+    "runs": [
+      {
+        "text": "Collect personal information about users for unauthorized purposes;",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Use Pintree to facilitate illegal transactions or activities; or",
+    "runs": [
+      {
+        "text": "Use Pintree to facilitate illegal transactions or activities; or",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Attempt to circumvent enforcement actions or account restrictions.",
+    "runs": [
+      {
+        "text": "Attempt to circumvent enforcement actions or account restrictions.",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "p",
+    "text": "You must also comply with our Community Guidelines and other policies that apply to your use of the Platform.",
+    "runs": [
+      {
+        "text": "You must also comply with our Community Guidelines and other policies that apply to your use of the Platform.",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "blank"
+  },
+  {
+    "type": "p",
+    "text": "11. Intellectual Property",
+    "runs": [
+      {
+        "text": "11. Intellectual Property",
+        "bold": true,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "p",
+    "text": "11.1 Pintree intellectual property",
+    "runs": [
+      {
+        "text": "11.1 Pintree intellectual property",
+        "bold": true,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "p",
+    "text": "The Platform and its components, including the Pintree name, trademarks, logos, visual identity, designs, software, code, interfaces, layouts, features, databases, documentation, and other materials provided by or on behalf of MCABEE DIGITAL are owned by or licensed to MCABEE DIGITAL and are protected by applicable intellectual-property laws.",
+    "runs": [
+      {
+        "text": "The Platform and its components, including the Pintree name, trademarks, logos, visual identity, designs, software, code, interfaces, layouts, features, databases, documentation, and other materials provided by or on behalf of MCABEE DIGITAL are owned by or licensed to MCABEE DIGITAL and are protected by applicable intellectual-property laws.",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "p",
+    "text": "Except for the limited right to use Pintree under these Terms, no ownership rights are transferred to you.",
+    "runs": [
+      {
+        "text": "Except for the limited right to use Pintree under these Terms, no ownership rights are transferred to you.",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "p",
+    "text": "You may not copy, reproduce, modify, distribute, sell, lease, sublicense, publicly display, or create derivative works from our intellectual property without appropriate authorization.",
+    "runs": [
+      {
+        "text": "You may not copy, reproduce, modify, distribute, sell, lease, sublicense, publicly display, or create derivative works from our intellectual property without appropriate authorization.",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "p",
+    "text": "11.2 Third-party intellectual property",
+    "runs": [
+      {
+        "text": "11.2 Third-party intellectual property",
+        "bold": true,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "p",
+    "text": "You must respect the intellectual-property rights of third parties.",
+    "runs": [
+      {
+        "text": "You must respect the intellectual-property rights of third parties.",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "p",
+    "text": "If you believe that content on Pintree infringes your copyright, trademark, or other intellectual-property rights, you may contact us at contact@pintree.co with sufficient information for us to evaluate the complaint.",
+    "runs": [
+      {
+        "text": "If you believe that content on Pintree infringes your copyright, trademark, or other intellectual-property rights, you may contact us at ",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      },
+      {
+        "text": "contact@pintree.co",
+        "bold": true,
+        "italic": false,
+        "underline": false
+      },
+      {
+        "text": " with sufficient information for us to evaluate the complaint.",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "p",
+    "text": "We may remove or restrict access to content where appropriate.",
+    "runs": [
+      {
+        "text": "We may remove or restrict access to content where appropriate.",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "blank"
+  },
+  {
+    "type": "p",
+    "text": "12. Moderation, Reporting, and Enforcement",
+    "runs": [
+      {
+        "text": "12. Moderation, Reporting, and Enforcement",
+        "bold": true,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "p",
+    "text": "12.1 Reporting",
+    "runs": [
+      {
+        "text": "12.1 Reporting",
+        "bold": true,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "p",
+    "text": "Users may report content, profiles, communities, Rooms, messages, or other activity that they believe violates these Terms, our Community Guidelines, or applicable law.",
+    "runs": [
+      {
+        "text": "Users may report content, profiles, communities, Rooms, messages, or other activity that they believe violates these Terms, our Community Guidelines, or applicable law.",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "p",
+    "text": "We may review reports using automated, manual, or combined processes.",
+    "runs": [
+      {
+        "text": "We may review reports using automated, manual, or combined processes.",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "p",
+    "text": "12.2 Enforcement actions",
+    "runs": [
+      {
+        "text": "12.2 Enforcement actions",
+        "bold": true,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "p",
+    "text": "Depending on the circumstances, we may:",
+    "runs": [
+      {
+        "text": "Depending on the circumstances, we may:",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Remove or restrict content;",
+    "runs": [
+      {
+        "text": "Remove or restrict content;",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Limit the visibility or distribution of content;",
+    "runs": [
+      {
+        "text": "Limit the visibility or distribution of content;",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Disable comments or interactions;",
+    "runs": [
+      {
+        "text": "Disable comments or interactions;",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Restrict specific features;",
+    "runs": [
+      {
+        "text": "Restrict specific features;",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Restrict or remove a community or Room;",
+    "runs": [
+      {
+        "text": "Restrict or remove a community or Room;",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Warn a user;",
+    "runs": [
+      {
+        "text": "Warn a user;",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Temporarily suspend an account;",
+    "runs": [
+      {
+        "text": "Temporarily suspend an account;",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Permanently terminate an account;",
+    "runs": [
+      {
+        "text": "Permanently terminate an account;",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Require additional verification; or",
+    "runs": [
+      {
+        "text": "Require additional verification; or",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Take other reasonable measures to protect users and the Platform.",
+    "runs": [
+      {
+        "text": "Take other reasonable measures to protect users and the Platform.",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "p",
+    "text": "We may take action when we reasonably believe it is necessary to enforce these Terms, comply with law, protect users, protect our systems, or prevent abuse.",
+    "runs": [
+      {
+        "text": "We may take action when we reasonably believe it is necessary to enforce these Terms, comply with law, protect users, protect our systems, or prevent abuse.",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "p",
+    "text": "12.3 No obligation to pre-screen everything",
+    "runs": [
+      {
+        "text": "12.3 No obligation to pre-screen everything",
+        "bold": true,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "p",
+    "text": "We do not guarantee that every piece of User Content will be reviewed before it is published.",
+    "runs": [
+      {
+        "text": "We do not guarantee that every piece of User Content will be reviewed before it is published.",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "p",
+    "text": "The Platform may contain content that is inaccurate, offensive, inappropriate, unlawful, or otherwise objectionable.",
+    "runs": [
+      {
+        "text": "The Platform may contain content that is inaccurate, offensive, inappropriate, unlawful, or otherwise objectionable.",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "p",
+    "text": "We encourage users to report content that violates our policies.",
+    "runs": [
+      {
+        "text": "We encourage users to report content that violates our policies.",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "p",
+    "text": "12.4 Community administrators",
+    "runs": [
+      {
+        "text": "12.4 Community administrators",
+        "bold": true,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "p",
+    "text": "Community administrators and moderators may have additional responsibilities because they manage spaces used by other users.",
+    "runs": [
+      {
+        "text": "Community administrators and moderators may have additional responsibilities because they manage spaces used by other users.",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "p",
+    "text": "Community administrators must not use administrative powers to facilitate unlawful discrimination, harassment, fraud, abuse, or other violations of these Terms.",
+    "runs": [
+      {
+        "text": "Community administrators must not use administrative powers to facilitate unlawful discrimination, harassment, fraud, abuse, or other violations of these Terms.",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "p",
+    "text": "Pintree may intervene in community administration where reasonably necessary to enforce Platform rules, protect users, or comply with law.",
+    "runs": [
+      {
+        "text": "Pintree may intervene in community administration where reasonably necessary to enforce Platform rules, protect users, or comply with law.",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "blank"
+  },
+  {
+    "type": "p",
+    "text": "13. Safety and Our Responsibility",
+    "runs": [
+      {
+        "text": "13. Safety and Our Responsibility",
+        "bold": true,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "p",
+    "text": "We work to make Pintree a safer, respectful, and reliable service. Our efforts may include:",
+    "runs": [
+      {
+        "text": "We work to make Pintree a safer, respectful, and reliable service. Our efforts may include:",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Moderation systems;",
+    "runs": [
+      {
+        "text": "Moderation systems;",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Automated detection;",
+    "runs": [
+      {
+        "text": "Automated detection;",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Human review;",
+    "runs": [
+      {
+        "text": "Human review;",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "User reporting;",
+    "runs": [
+      {
+        "text": "User reporting;",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Account and content restrictions;",
+    "runs": [
+      {
+        "text": "Account and content restrictions;",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Security measures;",
+    "runs": [
+      {
+        "text": "Security measures;",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Abuse-prevention systems; and",
+    "runs": [
+      {
+        "text": "Abuse-prevention systems; and",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Policy enforcement.",
+    "runs": [
+      {
+        "text": "Policy enforcement.",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "p",
+    "text": "However, no online platform can guarantee that all content, users, communications, or activities will always be safe, lawful, accurate, or appropriate.",
+    "runs": [
+      {
+        "text": "However, no online platform can guarantee that all content, users, communications, or activities will always be safe, lawful, accurate, or appropriate.",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "p",
+    "text": "You interact with other users at your own discretion.",
+    "runs": [
+      {
+        "text": "You interact with other users at your own discretion.",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "p",
+    "text": "You should exercise appropriate caution when communicating with people you do not know, sharing personal information, following links, attending events, or entering into transactions or relationships based on information obtained through Pintree.",
+    "runs": [
+      {
+        "text": "You should exercise appropriate caution when communicating with people you do not know, sharing personal information, following links, attending events, or entering into transactions or relationships based on information obtained through Pintree.",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "p",
+    "text": "Pintree does not conduct background checks on every user and does not guarantee the identity, intentions, qualifications, or conduct of users.",
+    "runs": [
+      {
+        "text": "Pintree does not conduct background checks on every user and does not guarantee the identity, intentions, qualifications, or conduct of users.",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "blank"
+  },
+  {
+    "type": "p",
+    "text": "14. User Content and Third-Party Conduct",
+    "runs": [
+      {
+        "text": "14. User Content and Third-Party Conduct",
+        "bold": true,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "p",
+    "text": "Pintree does not generally pre-approve or endorse User Content.",
+    "runs": [
+      {
+        "text": "Pintree does not generally pre-approve or endorse User Content.",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "p",
+    "text": "Views and opinions expressed by users, communities, organizations, creators, professionals, businesses, or other account holders are their own and do not necessarily represent the views of MCABEE DIGITAL.",
+    "runs": [
+      {
+        "text": "Views and opinions expressed by users, communities, organizations, creators, professionals, businesses, or other account holders are their own and do not necessarily represent the views of MCABEE DIGITAL.",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "p",
+    "text": "To the maximum extent permitted by applicable law, we are not responsible for:",
+    "runs": [
+      {
+        "text": "To the maximum extent permitted by applicable law, we are not responsible for:",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "User Content;",
+    "runs": [
+      {
+        "text": "User Content;",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Statements or opinions made by users;",
+    "runs": [
+      {
+        "text": "Statements or opinions made by users;",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Actions or omissions of users;",
+    "runs": [
+      {
+        "text": "Actions or omissions of users;",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Conduct occurring between users;",
+    "runs": [
+      {
+        "text": "Conduct occurring between users;",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Third-party websites or services;",
+    "runs": [
+      {
+        "text": "Third-party websites or services;",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Transactions or arrangements between users;",
+    "runs": [
+      {
+        "text": "Transactions or arrangements between users;",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Events organized by users or communities; or",
+    "runs": [
+      {
+        "text": "Events organized by users or communities; or",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Loss or harm arising from reliance on information provided by users.",
+    "runs": [
+      {
+        "text": "Loss or harm arising from reliance on information provided by users.",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "p",
+    "text": "You are responsible for evaluating information obtained through Pintree before relying on it.",
+    "runs": [
+      {
+        "text": "You are responsible for evaluating information obtained through Pintree before relying on it.",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "blank"
+  },
+  {
+    "type": "p",
+    "text": "15. Account Suspension and Termination",
+    "runs": [
+      {
+        "text": "15. Account Suspension and Termination",
+        "bold": true,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "p",
+    "text": "15.1 Our right to restrict accounts",
+    "runs": [
+      {
+        "text": "15.1 Our right to restrict accounts",
+        "bold": true,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "p",
+    "text": "We may suspend, restrict, disable, or terminate an account, with or without prior notice where permitted by law, if:",
+    "runs": [
+      {
+        "text": "We may suspend, restrict, disable, or terminate an account, with or without prior notice where permitted by law, if:",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "You violate these Terms;",
+    "runs": [
+      {
+        "text": "You violate these Terms;",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "You violate our Community Guidelines;",
+    "runs": [
+      {
+        "text": "You violate our Community Guidelines;",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "You engage in unlawful or harmful conduct;",
+    "runs": [
+      {
+        "text": "You engage in unlawful or harmful conduct;",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Your account presents a security or safety risk;",
+    "runs": [
+      {
+        "text": "Your account presents a security or safety risk;",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "We are required to do so by law or court order;",
+    "runs": [
+      {
+        "text": "We are required to do so by law or court order;",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "We reasonably believe the account is fraudulent or compromised;",
+    "runs": [
+      {
+        "text": "We reasonably believe the account is fraudulent or compromised;",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "You misuse Platform features;",
+    "runs": [
+      {
+        "text": "You misuse Platform features;",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "You attempt to circumvent enforcement actions;",
+    "runs": [
+      {
+        "text": "You attempt to circumvent enforcement actions;",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Your continued use creates significant legal, security, or operational risk; or",
+    "runs": [
+      {
+        "text": "Your continued use creates significant legal, security, or operational risk; or",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Your account remains inactive for an extended period where such action is reasonably necessary.",
+    "runs": [
+      {
+        "text": "Your account remains inactive for an extended period where such action is reasonably necessary.",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "p",
+    "text": "15.2 Your right to stop using Pintree",
+    "runs": [
+      {
+        "text": "15.2 Your right to stop using Pintree",
+        "bold": true,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "p",
+    "text": "You may stop using Pintree at any time.",
+    "runs": [
+      {
+        "text": "You may stop using Pintree at any time.",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "p",
+    "text": "15.3 Account deletion",
+    "runs": [
+      {
+        "text": "15.3 Account deletion",
+        "bold": true,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "p",
+    "text": "Where the feature is available, you may request or initiate account deletion through the applicable account settings, such as:",
+    "runs": [
+      {
+        "text": "Where the feature is available, you may request or initiate account deletion through the applicable account settings, such as:",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "p",
+    "text": "Account Center → Delete Account",
+    "runs": [
+      {
+        "text": "Account Center → Delete Account",
+        "bold": true,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "p",
+    "text": "The exact navigation may change as the Platform is updated.",
+    "runs": [
+      {
+        "text": "The exact navigation may change as the Platform is updated.",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "p",
+    "text": "When you delete your account:",
+    "runs": [
+      {
+        "text": "When you delete your account:",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Your profile may be deactivated;",
+    "runs": [
+      {
+        "text": "Your profile may be deactivated;",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Your account may be permanently deleted after applicable processing periods;",
+    "runs": [
+      {
+        "text": "Your account may be permanently deleted after applicable processing periods;",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Certain information may be retained where required by law or reasonably necessary for security, fraud prevention, dispute resolution, or legitimate operational purposes;",
+    "runs": [
+      {
+        "text": "Certain information may be retained where required by law or reasonably necessary for security, fraud prevention, dispute resolution, or legitimate operational purposes;",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Backups may retain information for a limited period;",
+    "runs": [
+      {
+        "text": "Backups may retain information for a limited period;",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Messages or content already shared with other users may continue to exist where deletion from another user's experience is technically or legally different;",
+    "runs": [
+      {
+        "text": "Messages or content already shared with other users may continue to exist where deletion from another user's experience is technically or legally different;",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Content that has been copied, quoted, reshared, or captured by others may remain outside our control; and",
+    "runs": [
+      {
+        "text": "Content that has been copied, quoted, reshared, or captured by others may remain outside our control; and",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Aggregated or anonymized information may be retained where permitted by law.",
+    "runs": [
+      {
+        "text": "Aggregated or anonymized information may be retained where permitted by law.",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "p",
+    "text": "If you experience difficulty deleting your account, you may contact contact@pintree.co.",
+    "runs": [
+      {
+        "text": "If you experience difficulty deleting your account, you may contact ",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      },
+      {
+        "text": "contact@pintree.co",
+        "bold": true,
+        "italic": false,
+        "underline": false
+      },
+      {
+        "text": ".",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "blank"
+  },
+  {
+    "type": "p",
+    "text": "16. Third-Party Services and Links",
+    "runs": [
+      {
+        "text": "16. Third-Party Services and Links",
+        "bold": true,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "p",
+    "text": "Pintree may contain links, integrations, embeds, or other connections to third-party websites, platforms, applications, or services.",
+    "runs": [
+      {
+        "text": "Pintree may contain links, integrations, embeds, or other connections to third-party websites, platforms, applications, or services.",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "p",
+    "text": "Examples may include third-party content platforms such as YouTube.",
+    "runs": [
+      {
+        "text": "Examples may include third-party content platforms such as YouTube.",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "p",
+    "text": "Third-party services are controlled by their respective providers.",
+    "runs": [
+      {
+        "text": "Third-party services are controlled by their respective providers.",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "p",
+    "text": "We do not control and are not responsible for:",
+    "runs": [
+      {
+        "text": "We do not control and are not responsible for:",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Third-party content;",
+    "runs": [
+      {
+        "text": "Third-party content;",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Third-party terms;",
+    "runs": [
+      {
+        "text": "Third-party terms;",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Third-party privacy practices;",
+    "runs": [
+      {
+        "text": "Third-party privacy practices;",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Third-party availability;",
+    "runs": [
+      {
+        "text": "Third-party availability;",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Third-party security;",
+    "runs": [
+      {
+        "text": "Third-party security;",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Changes made by third-party providers; or",
+    "runs": [
+      {
+        "text": "Changes made by third-party providers; or",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Loss or damage arising from your use of third-party services.",
+    "runs": [
+      {
+        "text": "Loss or damage arising from your use of third-party services.",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "p",
+    "text": "You should review the applicable terms and privacy policies of third-party services before using them.",
+    "runs": [
+      {
+        "text": "You should review the applicable terms and privacy policies of third-party services before using them.",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "blank"
+  },
+  {
+    "type": "p",
+    "text": "17. Platform Changes and Availability",
+    "runs": [
+      {
+        "text": "17. Platform Changes and Availability",
+        "bold": true,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "p",
+    "text": "Pintree is continuously developed and may change over time.",
+    "runs": [
+      {
+        "text": "Pintree is continuously developed and may change over time.",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "p",
+    "text": "We may:",
+    "runs": [
+      {
+        "text": "We may:",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Add new features;",
+    "runs": [
+      {
+        "text": "Add new features;",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Remove existing features;",
+    "runs": [
+      {
+        "text": "Remove existing features;",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Modify how features work;",
+    "runs": [
+      {
+        "text": "Modify how features work;",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Change user interfaces;",
+    "runs": [
+      {
+        "text": "Change user interfaces;",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Change account types;",
+    "runs": [
+      {
+        "text": "Change account types;",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Introduce new categories of accounts;",
+    "runs": [
+      {
+        "text": "Introduce new categories of accounts;",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Change discovery or recommendation systems;",
+    "runs": [
+      {
+        "text": "Change discovery or recommendation systems;",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Change community functionality;",
+    "runs": [
+      {
+        "text": "Change community functionality;",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Restrict features by region or age;",
+    "runs": [
+      {
+        "text": "Restrict features by region or age;",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Introduce fees or paid services in the future; or",
+    "runs": [
+      {
+        "text": "Introduce fees or paid services in the future; or",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Suspend or discontinue portions of the Platform.",
+    "runs": [
+      {
+        "text": "Suspend or discontinue portions of the Platform.",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "p",
+    "text": "We do not guarantee that any particular feature will remain available indefinitely.",
+    "runs": [
+      {
+        "text": "We do not guarantee that any particular feature will remain available indefinitely.",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "p",
+    "text": "We may temporarily suspend access to the Platform for maintenance, security, technical issues, upgrades, emergencies, or other operational reasons.",
+    "runs": [
+      {
+        "text": "We may temporarily suspend access to the Platform for maintenance, security, technical issues, upgrades, emergencies, or other operational reasons.",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "blank"
+  },
+  {
+    "type": "p",
+    "text": "18. Monetization, Advertising, and Paid Features",
+    "runs": [
+      {
+        "text": "18. Monetization, Advertising, and Paid Features",
+        "bold": true,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "p",
+    "text": "At the time these Terms were last updated:",
+    "runs": [
+      {
+        "text": "At the time these Terms were last updated:",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Pintree does not currently offer paid subscriptions or in-app purchases as a general Platform feature;",
+    "runs": [
+      {
+        "text": "Pintree does not currently offer paid subscriptions or in-app purchases as a general Platform feature;",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Pintree does not currently provide direct revenue sharing to creators through a creator fund or advertising-revenue-sharing program; and",
+    "runs": [
+      {
+        "text": "Pintree does not currently provide direct revenue sharing to creators through a creator fund or advertising-revenue-sharing program; and",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Pintree does not currently operate a general paid advertising or sponsored-post system for users.",
+    "runs": [
+      {
+        "text": "Pintree does not currently operate a general paid advertising or sponsored-post system for users.",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "p",
+    "text": "These arrangements may change in the future.",
+    "runs": [
+      {
+        "text": "These arrangements may change in the future.",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "p",
+    "text": "If Pintree introduces subscriptions, advertising products, paid features, creator monetization, revenue sharing, or other commercial services, additional terms, policies, pricing, or agreements may apply.",
+    "runs": [
+      {
+        "text": "If Pintree introduces subscriptions, advertising products, paid features, creator monetization, revenue sharing, or other commercial services, additional terms, policies, pricing, or agreements may apply.",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "blank"
+  },
+  {
+    "type": "p",
+    "text": "19. Disclaimers",
+    "runs": [
+      {
+        "text": "19. Disclaimers",
+        "bold": true,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "p",
+    "text": "To the maximum extent permitted by applicable law, the Services are provided on an “as is” and “as available” basis.",
+    "runs": [
+      {
+        "text": "To the maximum extent permitted by applicable law, the Services are provided on an ",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      },
+      {
+        "text": "“as is”",
+        "bold": true,
+        "italic": false,
+        "underline": false
+      },
+      {
+        "text": " and ",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      },
+      {
+        "text": "“as available”",
+        "bold": true,
+        "italic": false,
+        "underline": false
+      },
+      {
+        "text": " basis.",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "p",
+    "text": "We do not guarantee that:",
+    "runs": [
+      {
+        "text": "We do not guarantee that:",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "The Platform will always be available;",
+    "runs": [
+      {
+        "text": "The Platform will always be available;",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "The Platform will always be uninterrupted or error-free;",
+    "runs": [
+      {
+        "text": "The Platform will always be uninterrupted or error-free;",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "The Platform will always be secure;",
+    "runs": [
+      {
+        "text": "The Platform will always be secure;",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "All features will remain available;",
+    "runs": [
+      {
+        "text": "All features will remain available;",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Content will always be accurate, complete, reliable, or current;",
+    "runs": [
+      {
+        "text": "Content will always be accurate, complete, reliable, or current;",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "User identities will always be authentic;",
+    "runs": [
+      {
+        "text": "User identities will always be authentic;",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Other users will comply with these Terms;",
+    "runs": [
+      {
+        "text": "Other users will comply with these Terms;",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Content will always remain available;",
+    "runs": [
+      {
+        "text": "Content will always remain available;",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Third-party services will remain available; or",
+    "runs": [
+      {
+        "text": "Third-party services will remain available; or",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "The Platform will meet every user's particular requirements.",
+    "runs": [
+      {
+        "text": "The Platform will meet every user's particular requirements.",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "p",
+    "text": "We may experience technical failures, outages, bugs, delays, data loss, security incidents, or other issues despite reasonable efforts to prevent them.",
+    "runs": [
+      {
+        "text": "We may experience technical failures, outages, bugs, delays, data loss, security incidents, or other issues despite reasonable efforts to prevent them.",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "p",
+    "text": "Nothing in these Terms excludes any rights or protections that cannot lawfully be excluded under applicable law.",
+    "runs": [
+      {
+        "text": "Nothing in these Terms excludes any rights or protections that cannot lawfully be excluded under applicable law.",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "blank"
+  },
+  {
+    "type": "p",
+    "text": "20. Limitation of Liability",
+    "runs": [
+      {
+        "text": "20. Limitation of Liability",
+        "bold": true,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "p",
+    "text": "To the fullest extent permitted by applicable law, MCABEE DIGITAL and its directors, officers, employees, contractors, affiliates, partners, and agents will not be liable for indirect, incidental, special, consequential, exemplary, or punitive damages, or for loss of:",
+    "runs": [
+      {
+        "text": "To the fullest extent permitted by applicable law, MCABEE DIGITAL and its directors, officers, employees, contractors, affiliates, partners, and agents will not be liable for indirect, incidental, special, consequential, exemplary, or punitive damages, or for loss of:",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Profits;",
+    "runs": [
+      {
+        "text": "Profits;",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Revenue;",
+    "runs": [
+      {
+        "text": "Revenue;",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Business opportunities;",
+    "runs": [
+      {
+        "text": "Business opportunities;",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Data;",
+    "runs": [
+      {
+        "text": "Data;",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Goodwill;",
+    "runs": [
+      {
+        "text": "Goodwill;",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Reputation; or",
+    "runs": [
+      {
+        "text": "Reputation; or",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Other intangible losses,",
+    "runs": [
+      {
+        "text": "Other intangible losses,",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "p",
+    "text": "arising from or relating to your use of, or inability to use, the Services.",
+    "runs": [
+      {
+        "text": "arising from or relating to your use of, or inability to use, the Services.",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "p",
+    "text": "This limitation includes losses arising from:",
+    "runs": [
+      {
+        "text": "This limitation includes losses arising from:",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "User Content;",
+    "runs": [
+      {
+        "text": "User Content;",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Conduct of other users;",
+    "runs": [
+      {
+        "text": "Conduct of other users;",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Unauthorized access to accounts or content;",
+    "runs": [
+      {
+        "text": "Unauthorized access to accounts or content;",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Technical failures;",
+    "runs": [
+      {
+        "text": "Technical failures;",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Bugs;",
+    "runs": [
+      {
+        "text": "Bugs;",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Service interruptions;",
+    "runs": [
+      {
+        "text": "Service interruptions;",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Third-party services;",
+    "runs": [
+      {
+        "text": "Third-party services;",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Reliance on information available through Pintree; or",
+    "runs": [
+      {
+        "text": "Reliance on information available through Pintree; or",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Other circumstances relating to the Platform.",
+    "runs": [
+      {
+        "text": "Other circumstances relating to the Platform.",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "p",
+    "text": "Where liability cannot legally be excluded, our aggregate liability will be limited to the maximum extent permitted by applicable law and, where legally permissible, to the amount you paid to us for the Services during the 12 months preceding the event giving rise to the claim.",
+    "runs": [
+      {
+        "text": "Where liability cannot legally be excluded, our aggregate liability will be limited to the maximum extent permitted by applicable law and, where legally permissible, to the amount you paid to us for the Services during the 12 months preceding the event giving rise to the claim.",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "p",
+    "text": "Nothing in these Terms excludes or limits liability that cannot legally be excluded or limited, including liability for death or personal injury caused by negligence, fraud or fraudulent misrepresentation, or other mandatory liabilities under applicable law.",
+    "runs": [
+      {
+        "text": "Nothing in these Terms excludes or limits liability that cannot legally be excluded or limited, including liability for death or personal injury caused by negligence, fraud or fraudulent misrepresentation, or other mandatory liabilities under applicable law.",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "blank"
+  },
+  {
+    "type": "p",
+    "text": "21. Indemnification",
+    "runs": [
+      {
+        "text": "21. Indemnification",
+        "bold": true,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "p",
+    "text": "To the extent permitted by applicable law, you agree to indemnify and hold harmless MCABEE DIGITAL, its affiliates, directors, officers, employees, contractors, agents, and representatives from claims, liabilities, damages, losses, costs, and reasonable legal expenses arising from or related to:",
+    "runs": [
+      {
+        "text": "To the extent permitted by applicable law, you agree to indemnify and hold harmless MCABEE DIGITAL, its affiliates, directors, officers, employees, contractors, agents, and representatives from claims, liabilities, damages, losses, costs, and reasonable legal expenses arising from or related to:",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Your use of the Services;",
+    "runs": [
+      {
+        "text": "Your use of the Services;",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Your User Content;",
+    "runs": [
+      {
+        "text": "Your User Content;",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Your violation of these Terms;",
+    "runs": [
+      {
+        "text": "Your violation of these Terms;",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Your violation of applicable law;",
+    "runs": [
+      {
+        "text": "Your violation of applicable law;",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Your infringement of another person's rights; or",
+    "runs": [
+      {
+        "text": "Your infringement of another person's rights; or",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Your unauthorized use of the Platform.",
+    "runs": [
+      {
+        "text": "Your unauthorized use of the Platform.",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "p",
+    "text": "This provision does not apply to the extent that the claim results from our own unlawful conduct or from circumstances where applicable law prohibits such indemnification.",
+    "runs": [
+      {
+        "text": "This provision does not apply to the extent that the claim results from our own unlawful conduct or from circumstances where applicable law prohibits such indemnification.",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "blank"
+  },
+  {
+    "type": "p",
+    "text": "22. Changes to These Terms",
+    "runs": [
+      {
+        "text": "22. Changes to These Terms",
+        "bold": true,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "p",
+    "text": "We may update these Terms from time to time.",
+    "runs": [
+      {
+        "text": "We may update these Terms from time to time.",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "p",
+    "text": "Changes may be made when:",
+    "runs": [
+      {
+        "text": "Changes may be made when:",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "We add or modify features;",
+    "runs": [
+      {
+        "text": "We add or modify features;",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "We introduce new account types;",
+    "runs": [
+      {
+        "text": "We introduce new account types;",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "We change our Services;",
+    "runs": [
+      {
+        "text": "We change our Services;",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "We expand into additional regions;",
+    "runs": [
+      {
+        "text": "We expand into additional regions;",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Laws or regulations change;",
+    "runs": [
+      {
+        "text": "Laws or regulations change;",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Security or operational requirements change; or",
+    "runs": [
+      {
+        "text": "Security or operational requirements change; or",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Other legitimate business or legal reasons require an update.",
+    "runs": [
+      {
+        "text": "Other legitimate business or legal reasons require an update.",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "p",
+    "text": "When we make material changes, we will take reasonable steps to notify users, which may include an in-app notice, email, or an updated “Last Updated” date.",
+    "runs": [
+      {
+        "text": "When we make material changes, we will take reasonable steps to notify users, which may include an in-app notice, email, or an updated “Last Updated” date.",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "p",
+    "text": "Your continued use of Pintree after updated Terms become effective constitutes acceptance of the updated Terms to the extent permitted by applicable law.",
+    "runs": [
+      {
+        "text": "Your continued use of Pintree after updated Terms become effective constitutes acceptance of the updated Terms to the extent permitted by applicable law.",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "p",
+    "text": "If you do not agree with the updated Terms, you must stop using the Services and may delete your account.",
+    "runs": [
+      {
+        "text": "If you do not agree with the updated Terms, you must stop using the Services and may delete your account.",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "blank"
+  },
+  {
+    "type": "p",
+    "text": "23. Governing Law and Jurisdiction",
+    "runs": [
+      {
+        "text": "23. Governing Law and Jurisdiction",
+        "bold": true,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "p",
+    "text": "These Terms are governed by and interpreted in accordance with the laws of India, without regard to conflict-of-law principles, except to the extent that mandatory laws of your country of residence apply.",
+    "runs": [
+      {
+        "text": "These Terms are governed by and interpreted in accordance with the laws of India, without regard to conflict-of-law principles, except to the extent that mandatory laws of your country of residence apply.",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "p",
+    "text": "Subject to applicable law, courts located in the State of Kerala, India, shall have jurisdiction over disputes arising out of or relating to these Terms or your use of Pintree.",
+    "runs": [
+      {
+        "text": "Subject to applicable law, courts located in the State of Kerala, India, shall have jurisdiction over disputes arising out of or relating to these Terms or your use of Pintree.",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "p",
+    "text": "Nothing in this section is intended to remove any mandatory consumer, privacy, or other legal rights that apply to you in your jurisdiction.",
+    "runs": [
+      {
+        "text": "Nothing in this section is intended to remove any mandatory consumer, privacy, or other legal rights that apply to you in your jurisdiction.",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "blank"
+  },
+  {
+    "type": "p",
+    "text": "24. General Legal Terms",
+    "runs": [
+      {
+        "text": "24. General Legal Terms",
+        "bold": true,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "p",
+    "text": "24.1 No waiver",
+    "runs": [
+      {
+        "text": "24.1 No waiver",
+        "bold": true,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "p",
+    "text": "If we do not enforce a provision of these Terms at any particular time, that does not constitute a waiver of our right to enforce that provision later.",
+    "runs": [
+      {
+        "text": "If we do not enforce a provision of these Terms at any particular time, that does not constitute a waiver of our right to enforce that provision later.",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "p",
+    "text": "24.2 Severability",
+    "runs": [
+      {
+        "text": "24.2 Severability",
+        "bold": true,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "p",
+    "text": "If any provision of these Terms is determined to be invalid, unlawful, or unenforceable, that provision will be modified or limited to the minimum extent necessary, and the remaining provisions will continue in full force and effect.",
+    "runs": [
+      {
+        "text": "If any provision of these Terms is determined to be invalid, unlawful, or unenforceable, that provision will be modified or limited to the minimum extent necessary, and the remaining provisions will continue in full force and effect.",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "p",
+    "text": "24.3 Entire agreement",
+    "runs": [
+      {
+        "text": "24.3 Entire agreement",
+        "bold": true,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "p",
+    "text": "These Terms, together with our Privacy Policy, Community Guidelines, and any additional terms applicable to specific features or services, constitute the agreement between you and MCABEE DIGITAL regarding your use of Pintree and supersede prior agreements relating to the same subject matter.",
+    "runs": [
+      {
+        "text": "These Terms, together with our Privacy Policy, Community Guidelines, and any additional terms applicable to specific features or services, constitute the agreement between you and MCABEE DIGITAL regarding your use of Pintree and supersede prior agreements relating to the same subject matter.",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "p",
+    "text": "24.4 Assignment",
+    "runs": [
+      {
+        "text": "24.4 Assignment",
+        "bold": true,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "p",
+    "text": "You may not transfer or assign your rights or obligations under these Terms without our prior written consent.",
+    "runs": [
+      {
+        "text": "You may not transfer or assign your rights or obligations under these Terms without our prior written consent.",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "p",
+    "text": "We may assign or transfer our rights and obligations under these Terms in connection with a merger, acquisition, restructuring, sale of assets, or other lawful business transaction.",
+    "runs": [
+      {
+        "text": "We may assign or transfer our rights and obligations under these Terms in connection with a merger, acquisition, restructuring, sale of assets, or other lawful business transaction.",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "p",
+    "text": "24.5 No agency relationship",
+    "runs": [
+      {
+        "text": "24.5 No agency relationship",
+        "bold": true,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "p",
+    "text": "Nothing in these Terms creates an employment, partnership, joint venture, agency, franchise, or other similar relationship between you and MCABEE DIGITAL.",
+    "runs": [
+      {
+        "text": "Nothing in these Terms creates an employment, partnership, joint venture, agency, franchise, or other similar relationship between you and MCABEE DIGITAL.",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "p",
+    "text": "24.6 Force majeure",
+    "runs": [
+      {
+        "text": "24.6 Force majeure",
+        "bold": true,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "p",
+    "text": "We will not be responsible for delays or failures caused by circumstances beyond our reasonable control, including natural disasters, war, civil unrest, government actions, telecommunications failures, internet outages, power failures, cyberattacks, infrastructure failures, or other events beyond our reasonable control.",
+    "runs": [
+      {
+        "text": "We will not be responsible for delays or failures caused by circumstances beyond our reasonable control, including natural disasters, war, civil unrest, government actions, telecommunications failures, internet outages, power failures, cyberattacks, infrastructure failures, or other events beyond our reasonable control.",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "blank"
+  },
+  {
+    "type": "p",
+    "text": "25. Contact Us",
+    "runs": [
+      {
+        "text": "25. Contact Us",
+        "bold": true,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "p",
+    "text": "If you have questions, concerns, complaints, or requests relating to these Terms or your use of Pintree, you may contact us at:",
+    "runs": [
+      {
+        "text": "If you have questions, concerns, complaints, or requests relating to these Terms or your use of Pintree, you may contact us at:",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "p",
+    "text": "MCABEE DIGITALEmail: contact@pintree.co",
+    "runs": [
+      {
+        "text": "MCABEE DIGITALEmail:",
+        "bold": true,
+        "italic": false,
+        "underline": false
+      },
+      {
+        "text": " contact@pintree.co",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "p",
+    "text": "For intellectual-property complaints or other legal notices, please provide sufficient information for us to identify and evaluate the issue.",
+    "runs": [
+      {
+        "text": "For intellectual-property complaints or other legal notices, please provide sufficient information for us to identify and evaluate the issue.",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "blank"
+  },
+  {
+    "type": "p",
+    "text": "Related Policies",
+    "runs": [
+      {
+        "text": "Related Policies",
+        "bold": true,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "p",
+    "text": "These Terms should be read together with the other policies and rules applicable to Pintree, including:",
+    "runs": [
+      {
+        "text": "These Terms should be read together with the other policies and rules applicable to Pintree, including:",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Privacy Policy",
+    "runs": [
+      {
+        "text": "Privacy Policy",
+        "bold": true,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Community Guidelines",
+    "runs": [
+      {
+        "text": "Community Guidelines",
+        "bold": true,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "list",
+    "text": "Any additional terms applicable to specific features or services",
+    "runs": [
+      {
+        "text": "Any additional terms applicable to specific features or services",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "p",
+    "text": "By using Pintree, you agree to comply with these policies and any applicable laws.",
+    "runs": [
+      {
+        "text": "By using Pintree, you agree to comply with these policies and any applicable laws.",
+        "bold": false,
+        "italic": false,
+        "underline": false
+      }
+    ]
+  },
+  {
+    "type": "blank"
+  }
+]
