@@ -1,5 +1,13 @@
+import { Inter } from "next/font/google";
 import localFont from "next/font/local";
 import "./globals.css";
+
+const inter = Inter({
+  subsets: ["latin"],
+  weight: ["700"],
+  variable: "--font-inter",
+  display: "swap",
+});
 
 const aeonikRegular = localFont({
   src: "../../public/fonts/aeonik/Aeonik-Regular.ttf",
@@ -34,7 +42,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`bg-white ${aeonikRegular.variable} ${aeonikMedium.variable} ${aeonikBold.variable} ${aeonikLight.variable} antialiased`}
+        className={`bg-white ${inter.variable} ${aeonikRegular.variable} ${aeonikMedium.variable} ${aeonikBold.variable} ${aeonikLight.variable} antialiased`}
       >
         {children}
       </body>

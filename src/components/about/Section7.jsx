@@ -1,42 +1,102 @@
 "use client";
+
 import React from "react";
 
-export default function () {
+const sectionWrap =
+  "mx-auto w-[calc(100%-40px)] max-w-[968px] sm:w-[calc(100%-64px)] lg:w-[calc(100%-80px)]";
+
+const newsCards = [
+  {
+    title:
+      "Pintree launches new community features to strengthen meaningful connections.",
+    description:
+      "Pintree introduces a fresh approach to online interaction, bringing users, creators, and communities together in a space designed for active participation.",
+  },
+  {
+    title:
+      "Pintree introduces a fresh social platform for expression and discovery.",
+    description:
+      "Pintree offers a cleaner space for sharing, exploring, and connecting through dedicated rooms and community feeds.",
+  },
+  {
+    title: "Building organized spaces for tomorrow's digital communities.",
+    description:
+      "Discover how Pintree's room architecture enables collaboration and interest-driven discussions without algorithm overload.",
+  },
+];
+
+function NewsCard({ card }) {
   return (
-    <section
-      className="w-full bg-[#FFEDF4] flex flex-col lg:flex-row 
-                      py-[80px] sm:py-[100px]  "
-    >
-      <div className="w-full lg:w-1/2 flex items-center justify-center  ">
-        <img
-          src="/mobile.svg"
-          alt="Pintree Preview"
-          className=" h-[208px] sm:h-[400px] md:h-[500px] 2xl:h-[608px] w-[99px] sm:w-[230px] md:w-[250px]  2xl:w-[288px]  "
-        />
+    <article className="group flex min-h-[270px] flex-col justify-between rounded-[20px] border border-white/10 bg-[#181818] p-7 sm:min-h-[290px]">
+      <div className="text-left">
+        <h3 className="text-[17px] font-aeonik-medium font-medium leading-[1.35] text-white sm:text-[18px]">
+          {card.title}
+        </h3>
+        <p className="mt-3 line-clamp-3 text-[13px] leading-[1.45] font-aeonik-regular font-normal text-[#888888] sm:text-[13.5px]">
+          {card.description}
+        </p>
       </div>
+      <div className="mt-6 pt-2">
+        <div className="inline-flex h-[38px] w-[38px] items-center justify-center rounded-full border border-white/15 bg-white/5 text-white/70">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden>
+            <path
+              d="M3.33331 8H12.6666"
+              stroke="currentColor"
+              strokeWidth="1.5"
+              strokeLinecap="round"
+            />
+            <path
+              d="M8.66663 4L12.6666 8L8.66663 12"
+              stroke="currentColor"
+              strokeWidth="1.5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+          </svg>
+        </div>
+      </div>
+    </article>
+  );
+}
 
-      <div className="w-full lg:w-1/2 flex flex-col  justify-center">
-        <p className="text-center lg:text-left text-[16px] sm:text-[20px] xl:text-[26px] text-[#000000] font-aeonik-regular pt-[48px] lg:pt-0  ">
-          Business
-        </p>
+export default function Section7() {
+  return (
+    <section className="w-full overflow-hidden bg-[#0C0C0C] py-[60px] sm:py-[80px] lg:py-[90px]">
+      <div className={sectionWrap}>
+        <div className="flex flex-col justify-between gap-6 sm:flex-row sm:items-end">
+          <div className="text-left">
+            <h2 className="text-[28px] font-aeonik-medium font-medium leading-[1.15] tracking-[-0.02em] text-white sm:text-[36px] lg:text-[42px]">
+              What&apos;s now at Pintree
+            </h2>
+            <p className="mt-2 max-w-[500px] text-[13px] font-aeonik-regular font-normal text-[#999999] sm:text-[14px]">
+              The latest updates, stories, and things happening around Pintree.
+            </p>
+          </div>
+          <div className="hidden shrink-0 sm:flex">
+            <div className="inline-flex h-[44px] w-[44px] items-center justify-center rounded-full border border-white/25 bg-[#1A1A1A] text-white">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden>
+                <path
+                  d="M4.16669 10H15.8334"
+                  stroke="currentColor"
+                  strokeWidth="1.5"
+                  strokeLinecap="round"
+                />
+                <path
+                  d="M10.8334 5L15.8334 10L10.8334 15"
+                  stroke="currentColor"
+                  strokeWidth="1.5"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+            </div>
+          </div>
+        </div>
 
-        <h2
-          className="font-aeonik-medium text-center lg:text-left  text-[28px] sm:text-[32px] lg:text-[48px] 
-                       leading-[120%] text-[#0C0C0C] mt-[16px] sm:mt-[4px]"
-        >
-          Turn your presence into <br className="hidden md:inline-block"/> possibility.
-        </h2>
-
-        <p className=" text-center lg:text-left text-[16px] sm:text-[18px] xl:text-[20px] font-aeonik-regular text-[#1A1A1A] leading-[140%] mt-[17px] sm:mt-[8px] px-[44px] md:px-0">
-          Share what you offer and reach the right people with{" "}
-          <br className="hidden sm:inline-block" /> targeted visibility.
-        </p>
-
-        <div className="flex justify-center lg:justify-start items-center pt-[23px] sm:pt-[54px] ">
-          <button className="w-[240px] sm:w-[280px] md:w-[320px] h-[40px] sm:h-[55px] md:h-[60px] border border-[#1A1A1A] rounded-[4px] text-[16px] sm:text-[18px] md:text-[20px] 
-           text-[#1A1A1A] font-aeonik-regular  ">
-            Create Business Account
-          </button>
+        <div className="mt-[36px] grid grid-cols-1 gap-5 sm:mt-[48px] md:grid-cols-2 lg:grid-cols-3">
+          {newsCards.map((card) => (
+            <NewsCard key={card.title} card={card} />
+          ))}
         </div>
       </div>
     </section>

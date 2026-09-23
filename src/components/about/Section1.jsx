@@ -1,135 +1,74 @@
 "use client";
-import React, { useEffect, useState } from "react";
 
 function Section1() {
-  const [active, setActive] = useState(0);
-  const [flash, setFlash] = useState(false);
-
-  const images = ["/img1.svg", "/playStore.svg"];
-
-  // Flash + image switching
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setFlash(true);
-      setTimeout(() => {
-        setFlash(false);
-        setActive((prev) => (prev + 1) % images.length);
-      }, 200);
-    }, 1200);
-
-    return () => clearInterval(interval);
-  }, []);
-
   return (
-    <div
-      className="
-      flex flex-col lg:flex-row 
-      h-auto 
-      px-6 sm:px-10 lg:px-[80px] xl:px-[140px]
-      pt-10 lg:pt-0
-    "
-    >
-      {/* LEFT TEXT SECTION */}
-      <div className="w-full lg:w-1/2 text-[#1A1A1A] flex flex-col justify-center pb-10 lg:pb-0">
-        <h1
-          className="
-          text-[28px] sm:text-[32px] lg:text-[48px] 2xl:text-[56px] 
-          font-aeonik-medium leading-[120%]  
-           text-center lg:text-left
-        "
-        >
-          Your space <br />
-          to shine, explore, <br />
-          and connect.
-        </h1>
-
-        <h2
-          className="
-          text-[16px] sm:text-[18px] md:text-[20px] 
-          pt-[14px]
-          text-center lg:text-left
-        "
-        >
-          Pintree brings creativity, connection, and{" "}
-          <br className="inline-block lg:hidden" /> visibility together—{" "}
-          <br className="hidden 3xl:inline-block" />
-          helping everyone share, grow, and be seen.
-        </h2>
-
-        <p
-          className="
-          text-[16px] sm:text-[18px] md:text-[20px] 
-          font-aeonik-medium pt-[30px] text-center lg:text-left
-        "
-        >
-          Get the Pintree App
-        </p>
-
-        <div className="flex gap-2 pt-[18px] justify-center lg:justify-start">
-          <img
-            src="/appStore.svg"
-            alt="App Store"
-            className="w-[120px] sm:w-[140px]"
-          />
-          <img
-            src="/playStore.svg"
-            alt="Play Store"
-            className="w-[120px] sm:w-[140px]"
-          />
-        </div>
-      </div>
-
-      {/* RIGHT PHONE SECTION */}
+    <section className="relative min-h-[calc(100vh-64px)] w-full overflow-hidden flex items-center">
+      <img
+        src="/hero-home.svg"
+        alt=""
+        className="absolute inset-0 h-full w-full object-cover object-center"
+      />
       <div
-        className="
-        w-full lg:w-1/2 
-        flex justify-center items-center 
-        relative 
-        pt-10 lg:pt-[129px]
-      "
-      >
-        {/* PHONE FRAME */}
-        <img
-          src="/mobile-frame.svg"
-          alt="mobile frame"
-          className="
-            relative z-10 pointer-events-none
-            w-[240px] sm:w-[260px] md:w-[300px] lg:w-[350px] 
-          "
-        />
+        className="pointer-events-none absolute inset-0 bg-[linear-gradient(90deg,rgba(0,0,0,0.52)_0%,rgba(0,0,0,0.38)_42%,rgba(0,0,0,0.22)_100%)]"
+        aria-hidden
+      />
 
-        {/* IMAGE SCREEN AREA (scaled WITH frame) */}
-        <div
-          className="
-            absolute z-0 
-            overflow-hidden 
-            w-[240px] h-[300px]
-            sm:w-[260px] sm:h-[320px]
-            md:w-[300px] md:h-[380px]
-            lg:w-[350px] lg:h-[450px]
-          
-          "
-        >
-          {images.map((src, index) => (
-            <img
-              key={index}
-              src={src}
-              alt=""
-              className={`
-                absolute inset-0 w-full h-full object-cover
-                transition-all duration-500 ease-out
-                ${active === index ? "opacity-100" : "opacity-0"}
-                ${
-                  flash && active === index
-                    ? "brightness-150 scale-105"
-                    : "brightness-100 scale-100"
-                }
-              `}
-            />
-          ))}
+      <div className="relative z-10 mx-auto h-full w-full max-w-[1536px] px-6 sm:px-10 lg:px-[136px] flex items-center">
+        <div className="max-w-[560px] pb-[48px] pt-[64px] sm:pt-[72px] lg:max-w-[520px] lg:pb-[56px] lg:pt-[75px]">
+          <p className="mb-[12px] text-[9px] uppercase leading-none tracking-[0.02em] text-white/85 font-aeonik-medium font-medium">
+            HOME / PINTREE
+          </p>
+
+          <h1 className="m-0 max-w-[500px] text-[28px] font-aeonik-medium font-medium leading-[1.12] tracking-[-0.02em] text-white sm:text-[32px] lg:text-[36px] lg:leading-[1.08] lg:whitespace-nowrap">
+            People, Communities, Discovery
+          </h1>
+
+          <p className="mt-[10px] max-w-[470px] text-[11px] leading-[1.5] font-aeonik-regular font-normal text-white/90 sm:text-[12px] lg:mt-[11px] lg:text-[13px] lg:leading-[1.45]">
+            People you know → Communities you belong to → A world beyond your
+            network.
+          </p>
+
+          <p className="mb-[8px] mt-[32px] text-[9px] leading-none font-aeonik-regular font-normal text-white lg:mt-[34px]">
+            Get the Pintree App
+          </p>
+
+          <div className="flex items-center gap-[8px]">
+            <a
+              href="#"
+              className="relative inline-flex h-[29px] w-[38px] shrink-0 items-center justify-center transition-opacity hover:opacity-90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white/80"
+              aria-label="Download on the App Store"
+            >
+              <img
+                src="/Rectangle-151850.svg"
+                alt=""
+                className="absolute inset-0 h-full w-full"
+              />
+              <img
+                src="/hero-app-store-icon.svg"
+                alt=""
+                className="relative z-10 h-[16px] w-[15px] object-contain"
+              />
+            </a>
+            <a
+              href="#"
+              className="relative inline-flex h-[29px] w-[38px] shrink-0 items-center justify-center transition-opacity hover:opacity-90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white/80"
+              aria-label="Get it on Google Play"
+            >
+              <img
+                src="/Rectangle-151850.svg"
+                alt=""
+                className="absolute inset-0 h-full w-full"
+              />
+              <img
+                src="/hero-google-play-icon.svg"
+                alt=""
+                className="relative z-10 h-[16px] w-[14px] object-contain"
+              />
+            </a>
+          </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 }
 

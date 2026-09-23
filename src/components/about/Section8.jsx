@@ -1,166 +1,161 @@
 "use client";
 
-import React, { useRef, useState } from "react";
-import { AiTwotoneLeftCircle, AiTwotoneRightCircle } from "react-icons/ai";
+import React, { useEffect, useRef, useState } from "react";
 
 const cards = [
   {
     title:
-      "Pintree Launches a New Social Space Built for Meaningful Connections",
-    body: "Pintree introduces a fresh approach to social networking, bringing users, creators, and communities together in a space designed for expression, discovery, and genuine engagement.",
-    cta: "Read More",
-    ctaVariant: "outline",
+      "Pintree Launches a New Social Space Built for Meaningful Connections part..",
+    body: "Pintree introduces a fresh approach to social networking, bringing users, creators, and communities together in a space..",
   },
   {
     title:
       "Pintree Introduces a Fresh Social Platform for Expression and Discovery",
-    body: "Pintree offers a modern space for sharing, exploring, and connecting—bringing users, creators, and communities together through personalized content, inspiring moments...",
-    cta: "Read More",
-    ctaVariant: "solid",
+    body: "Pintree offers a modern space for sharing, exploring, and connecting—bringing users, creators, and communities together through personalized content, inspiring moments..",
   },
   {
-    title: "Product Update: New Creator Tools",
-    body: "We shipped creator tool improvements to help creators manage their audience and monetize content more easily.",
-    cta: "Read More",
-    ctaVariant: "outline",
-  },
-  {
-    title: "Community Spotlight: Success Stories",
-    body: "Read how communities on Pintree are building meaningful connections and launching collaborative projects.",
-    cta: "Read More",
-    ctaVariant: "outline",
-  },
-  {
-    title: "Design Refresh & Accessibility Improvements",
-    body: "A cleaner UI, better contrast, and keyboard navigation improvements make Pintree more welcoming to everyone.",
-    cta: "Read More",
-    ctaVariant: "solid",
+    title: "Pintree Launches a New Social Space Built for Meaningful Connections",
+    body: "Stay up to date with product news, community stories, and platform updates from the Pintree team.",
   },
 ];
 
+function ArrowIcon({ direction }) {
+  return (
+    <svg
+      width="16"
+      height="16"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.75"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden
+    >
+      {direction === "left" ? (
+        <>
+          <path d="M19 12H5" />
+          <path d="m12 19-7-7 7-7" />
+        </>
+      ) : (
+        <>
+          <path d="M5 12h14" />
+          <path d="m12 5 7 7-7 7" />
+        </>
+      )}
+    </svg>
+  );
+}
+
+function CardArrowButton({ label = "Read story" }) {
+  return (
+    <button
+      type="button"
+      className="mt-auto flex h-[40px] w-[40px] shrink-0 items-center justify-center rounded-full border border-[#3A3A3A] bg-transparent text-[#A0A0A0] transition-all duration-300 group-hover:border-white group-hover:bg-white group-hover:text-[#121212] group-hover:scale-105 active:scale-95 cursor-pointer"
+      aria-label={label}
+    >
+      <ArrowIcon direction="right" />
+    </button>
+  );
+}
+
+function NavArrowButton({ direction, onClick, disabled, label }) {
+  return (
+    <button
+      type="button"
+      onClick={onClick}
+      disabled={disabled}
+      className={`flex h-[42px] w-[42px] items-center justify-center rounded-full border transition-all duration-300 ${
+        disabled
+          ? "cursor-default border-[#2B2B2B] text-[#404040] opacity-40"
+          : "cursor-pointer border-[#3A3A3A] text-[#CCCCCC] hover:border-white hover:bg-white hover:text-black hover:scale-105 active:scale-95"
+      }`}
+      aria-label={label}
+    >
+      <ArrowIcon direction={direction} />
+    </button>
+  );
+}
+
 export default function Section8() {
   const trackRef = useRef(null);
-  const cardRefs = useRef([]);
-  const [currentIndex, setCurrentIndex] = useState(0);
+  const [canScrollLeft, setCanScrollLeft] = useState(false);
+  const [canScrollRight, setCanScrollRight] = useState(true);
 
-  // Ensure cardRefs array is same length as cards
-  cardRefs.current = [];
-
-  const scrollToIndex = (index) => {
-    const clamped = Math.min(Math.max(index, 0), cards.length - 1);
-    const node = cardRefs.current[clamped];
-    if (node && trackRef.current) {
-      // scroll the card into view horizontally, centered when possible
-      node.scrollIntoView({
-        behavior: "smooth",
-        inline: "center",
-        block: "nearest",
-      });
-      setCurrentIndex(clamped);
-    }
+  const checkScroll = () => {
+    if (!trackRef.current) return;
+    const { scrollLeft, scrollWidth, clientWidth } = trackRef.current;
+    setCanScrollLeft(scrollLeft > 5);
+    setCanScrollRight(scrollLeft < scrollWidth - clientWidth - 5);
   };
 
-  const handlePrev = () => scrollToIndex(currentIndex - 1);
-  const handleNext = () => scrollToIndex(currentIndex + 1);
+  useEffect(() => {
+    checkScroll();
+    const node = trackRef.current;
+    if (!node) return undefined;
+    node.addEventListener("scroll", checkScroll, { passive: true });
+    window.addEventListener("resize", checkScroll);
+    return () => {
+      node.removeEventListener("scroll", checkScroll);
+      window.removeEventListener("resize", checkScroll);
+    };
+  }, []);
+
+  const scroll = (direction) => {
+    if (!trackRef.current) return;
+    trackRef.current.scrollBy({
+      left: direction === "left" ? -340 : 340,
+      behavior: "smooth",
+    });
+  };
 
   return (
-    <section className="py-[71px] md:py-[157px] bg-[#F1FBE8]">
-      <div className="container mx-auto px-6 sm:px-10 lg:px-[80px] xl:px-[140px] ">
-        <div className="flex  flex-col lg:flex-row items-start justify-between gap-[32px]">
-          {/* Left column */}
-          <div className="w-full lg:w-1/3 rounded ">
-            <h1 className="font-aeonik-medium  text-[28px] sm:text-[32px] lg:text-[48px]   text-[#1A1A1A] text-center lg:text-left">
-              What’s New at Pintree
-            </h1>
-            <p className="text-center lg:text-left text-[16px] sm:text-[18px] xl:text-[20px]  font-aeonik-regular  text-[#1A1A1A] leading-[140%] mt-[17px] sm:mt-[8px] px-[44px] md:px-0">
-              Explore the latest stories, product
-              <br className="hidden md:inline-block" /> updates, and insights
-              from our
-              <br className="hidden md:inline-block" /> newsroom and blog.
+    <section className="w-full bg-black py-[56px] sm:py-[72px] lg:py-[88px]">
+      <div className="mx-auto w-full max-w-[1536px] px-6 sm:px-10 lg:px-[136px]">
+        <div className="flex flex-col gap-6 sm:flex-row sm:items-start sm:justify-between">
+          <div className="max-w-[520px] text-left">
+            <h2 className="text-[28px] font-aeonik-medium font-medium leading-[1.12] tracking-[-0.02em] text-white sm:text-[36px] lg:text-[40px]">
+              What&apos;s new at Pintree
+            </h2>
+            <p className="mt-[12px] text-[14px] font-aeonik-regular font-normal leading-[1.5] text-white/55 sm:text-[15px]">
+              The latest updates, stories, and things happening around Pintree.
             </p>
-
-            {/* Desktop arrows (visible lg+) */}
-            <div className="hidden lg:flex gap-6 mt-20">
-              <button
-                onClick={handlePrev}
-                aria-label="Previous"
-                className="p-1 disabled:opacity-40"
-                disabled={currentIndex <= 0}
-              >
-                <AiTwotoneLeftCircle className="text-4xl" />
-              </button>
-              <button
-                onClick={handleNext}
-                aria-label="Next"
-                className="p-1 disabled:opacity-40"
-                disabled={currentIndex >= cards.length - 1}
-              >
-                <AiTwotoneRightCircle className="text-4xl" />
-              </button>
-            </div>
           </div>
 
-          {/* Carousel track */}
-          <div className="w-full lg:w-2/3">
-            <div ref={trackRef} className="relative">
-              {/* Horizontal scrollable track */}
-              <div
-                className="flex gap-[32px] overflow-x-auto scroll-smooth py-2 px-1 lg:px-0 no-scrollbar"
-                style={{ scrollSnapType: "x mandatory" }}
-              >
-                {cards.map((card, idx) => (
-                  <article
-                    key={idx}
-                    ref={(el) => (cardRefs.current[idx] = el)}
-                    className={`
-                      flex-shrink-0
-                      bg-white border border-[#E7E7E7] rounded
-                      px-[25px] 2xl:px-[40px] py-[34px] 2xl:py-[64px]
-                      scroll-snap-align: center;
-                      ${
-                        // widths: full width on mobile, fixed on lg to match your original
-                        "w-[312px] md:w-[48%] xl:w-[339px] 2xl:w-[400px]"
-                      }
-                    `}
-                  >
-                    <h2 className="text-[#1A1A1A] text-[20px]  font-aeonik-medium min-h-[100px] ">
-                      {card.title}
-                    </h2>
-                    <p className="text-[#333333] text-[16px] font-aeonik-regular pt-3 min-h-[150px]">
-                      {card.body}
-                    </p>
-                    <button
-                      className="w-[120px] h-[44px] rounded-[24px] mt-[51px] text-[16px]
-                       
-                          border border-[#1A1A1A] bg-white text-[#333333] hover:bg-[#1A1A1A] hover:text-white"
-                    >
-                      {card.cta}
-                    </button>
-                  </article>
-                ))}
-              </div>
-
-              {/* Mobile arrows (visible < lg) */}
-              <div className="flex lg:hidden justify-between mt-6">
-                <button
-                  onClick={handlePrev}
-                  aria-label="Previous"
-                  className="p-1 disabled:opacity-40"
-                  disabled={currentIndex <= 0}
-                >
-                  <AiTwotoneLeftCircle className="text-4xl" />
-                </button>
-                <button
-                  onClick={handleNext}
-                  aria-label="Next"
-                  className="p-1 disabled:opacity-40"
-                  disabled={currentIndex >= cards.length - 1}
-                >
-                  <AiTwotoneRightCircle className="text-4xl" />
-                </button>
-              </div>
-            </div>
+          <div className="flex shrink-0 items-center gap-[10px] sm:pt-1">
+            <NavArrowButton
+              direction="left"
+              onClick={() => scroll("left")}
+              disabled={!canScrollLeft}
+              label="Previous updates"
+            />
+            <NavArrowButton
+              direction="right"
+              onClick={() => scroll("right")}
+              disabled={!canScrollRight}
+              label="Next updates"
+            />
           </div>
+        </div>
+
+        <div
+          ref={trackRef}
+          className="mt-[32px] flex gap-[16px] overflow-x-auto pb-2 sm:mt-[40px] sm:gap-[20px] [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+        >
+          {cards.map((card) => (
+            <article
+              key={card.title}
+              className="group flex h-[320px] w-[min(100%,320px)] shrink-0 flex-col rounded-[16px] bg-[#1A1A1A] p-[28px] text-left sm:h-[340px] sm:w-[340px] sm:p-[32px] lg:w-[360px] transition-all duration-300 hover:-translate-y-1 hover:bg-[#202020] cursor-pointer"
+            >
+              <h3 className="text-[17px] font-aeonik-regular font-normal leading-[1.35] text-white sm:text-[18px]">
+                {card.title}
+              </h3>
+              <p className="mt-[14px] text-[14px] font-aeonik-regular font-normal leading-[1.5] text-white/50 sm:text-[15px]">
+                {card.body}
+              </p>
+              <CardArrowButton />
+            </article>
+          ))}
         </div>
       </div>
     </section>

@@ -1,51 +1,140 @@
 "use client";
+
 import React from "react";
 
-export default function () {
+const sectionWrap =
+  "mx-auto w-full max-w-[1536px] px-6 sm:px-10 lg:px-[136px]";
+
+function CircledText({ children }) {
   return (
-    <section
-      className="w-full bg-white flex flex-col lg:flex-row  
-                      mt-[50px] md:mt-[100px]  2xl:mt-[160px] 3xl:mt-[168px] pt-[40px] sm:py-[56px]  mb-[80px] sm:pb-0"
-    >
-      <div className="w-full lg:w-1/2 flex items-center justify-center ">
-        <img
-          src="/discover-mobile.svg"
-          alt="Pintree Preview"
-          className=" h-[480px] sm:h-[400px]  md:h-[550px] w-[256px] sm:w-[300px] xl:w-[350px]  "
+    <span className="relative inline-block px-1.5 py-0.5 mx-0.5 align-baseline">
+      <svg
+        className="pointer-events-none absolute -inset-x-2 -inset-y-1.5 h-[calc(100%+12px)] w-[calc(100%+16px)] overflow-visible"
+        viewBox="0 0 100 40"
+        preserveAspectRatio="none"
+        fill="none"
+        aria-hidden
+      >
+        <path
+          d="M 6 20 C 6 8, 30 4, 50 4 C 80 4, 96 10, 96 20 C 96 30, 75 36, 50 36 C 20 36, 4 30, 6 20 C 8 10, 35 5, 65 5"
+          stroke="white"
+          strokeWidth="1.25"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          opacity="0.9"
         />
-      </div>
+      </svg>
+      <span className="relative z-10">{children}</span>
+    </span>
+  );
+}
 
-      <div className="w-full lg:w-1/2 flex flex-col mt-[59px] sm:mt-[50px]">
-        <p className="text-center lg:text-left text-[16px] sm:text-[20px]  text-[#000000] font-aeonik-regular   ">
-          Discover
-        </p>
+const purposeCards = [
+  {
+    titleLine1: "Structured",
+    titleLine2: "Conversations",
+    description: (
+      <>
+        <CircledText>Communities</CircledText> and{" "}
+        <CircledText>rooms</CircledText> help discussions stay focused and
+        organized.
+      </>
+    ),
+    icon: "/Vector (3).svg",
+    iconFallback: "/Vector_(3).svg",
+    iconWidth: "w-[48px]",
+    iconHeight: "h-[46px]",
+    paddingLeft: "pl-[33px]",
+  },
+  {
+    titleLine1: "Meaningful",
+    titleLine2: "Participation",
+    description: (
+      <>
+        Interact through <CircledText>shared interests</CircledText>,
+        communities, and relevant conversations.
+      </>
+    ),
+    icon: "/Vector (4).svg",
+    iconFallback: "/Vector_(4).svg",
+    iconWidth: "w-[66px]",
+    iconHeight: "h-[46px]",
+    paddingLeft: "pl-[34px]",
+  },
+  {
+    titleLine1: "Cleaner",
+    titleLine2: "Social Experience",
+    description: (
+      <>
+        Designed to <CircledText>reduce noise</CircledText>, distraction, and
+        low-quality interaction.
+      </>
+    ),
+    icon: "/Vector (5).svg",
+    iconFallback: "/Vector_(5).svg",
+    iconWidth: "w-[46px]",
+    iconHeight: "h-[46px]",
+    paddingLeft: "pl-[31px]",
+  },
+];
 
-        <h2
-          className="font-aeonik-medium text-center lg:text-left  text-[28px] sm:text-[32px] lg:text-[48px] 
-                       leading-[120%] text-[#0C0C0C] mt-[16px] sm:mt-[4px]"
-        >
-          Explore what inspires <br /> you, endlessly
+function PurposeCard({
+  titleLine1,
+  titleLine2,
+  description,
+  icon,
+  iconFallback,
+  iconWidth,
+  iconHeight,
+  paddingLeft,
+}) {
+  return (
+    <div
+      className={`group relative flex h-[315px] w-full max-w-[415px] cursor-pointer flex-col justify-start rounded-[10px] bg-[#214D5B] ${paddingLeft} pr-[56px] pt-[65px] text-left transition-colors hover:bg-[#1b414e]`}
+    >
+      <img
+        src={icon}
+        alt=""
+        className={`${iconWidth} ${iconHeight} shrink-0 object-contain`}
+        onError={(e) => {
+          if (iconFallback && e.currentTarget.src !== iconFallback) {
+            e.currentTarget.src = iconFallback;
+          }
+        }}
+      />
+
+      <h3 className="mt-[19px] max-w-[270px] text-[20px] font-aeonik-medium font-medium leading-[1.15] text-white">
+        <span className="block">{titleLine1}</span>
+        <span className="block">{titleLine2}</span>
+      </h3>
+
+      <p className="mt-[16px] max-w-[326px] text-[16px] leading-[1.38] font-aeonik-regular text-white/90">
+        {description}
+      </p>
+    </div>
+  );
+}
+
+export default function Section3() {
+  return (
+    <section className="w-full bg-white pb-[60px] pt-[40px] sm:pb-[80px] sm:pt-[50px] lg:pb-[90px] lg:pt-[60px]">
+      <div className={sectionWrap}>
+        <h2 className="m-0 text-center text-[30px] font-aeonik-medium font-medium leading-[1.12] tracking-[-0.02em] text-[#0C0C0C] sm:text-[38px] lg:text-[44px]">
+          Social, with more purpose.
         </h2>
 
-        <p className=" text-center lg:text-left text-[16px] sm:text-[18px] xl:text-[20px] font-aeonik-regular text-[#1A1A1A] leading-[140%] mt-[17px] sm:mt-[8px]">
-          Discover trends, talents, and ideas tailored <br /> to what you love.
+        <p className="mx-auto mt-[14px] max-w-[620px] text-center text-[13px] leading-[1.5] font-aeonik-regular font-normal text-[#555555] sm:text-[14px] lg:text-[15px]">
+          Pintree is designed to encourage focused participation, meaningful
+          discovery, and community-driven interaction — creating a cleaner, more
+          organized social experience.
         </p>
 
-        <p className=" text-center lg:text-left text-[16px] sm:text-[18px] xl:text-[20px] font-aeonik-medium text-[#1A1A1A] mt-[19px] sm:mt-[25px] xl:mt-[31px]">
-          Get the Pintree App
-        </p>
-
-        <div className="flex gap-[8px] mt-[16px] sm:mt-[18px] justify-center lg:justify-start">
-          <img
-            src="/appStore.svg"
-            alt="App Store"
-            className="w-[128px] sm:w-[100px] 2xl:w-[140px] h-auto"
-          />
-          <img
-            src="/playStore.svg"
-            alt="Google Play"
-            className="w-[128px] sm:w-[100px] 2xl:w-[140px] h-auto"
-          />
+        <div className="mt-[44px] w-full lg:mt-[52px]">
+          <div className="grid grid-cols-1 justify-items-center gap-[10px] md:grid-cols-3">
+            {purposeCards.map((card) => (
+              <PurposeCard key={card.titleLine1 + card.titleLine2} {...card} />
+            ))}
+          </div>
         </div>
       </div>
     </section>
