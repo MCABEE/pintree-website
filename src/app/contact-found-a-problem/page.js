@@ -1,13 +1,11 @@
 import CustomSelect from "@/components/CustomSelect";
 import Footer from "@/components/Footer";
-import Navbar from "@/components/Navbar";
 import React from "react";
 
 function page() {
   return (
     <div>
       <>
-        <Navbar />
         <div className="bg-white pb-20">
           <div className=" py-[60px] lg:py-[100px] 3xl:py-[156px] min-h-screen mx-4 sm:w-[600px] lg:w-[950px] xl:w-[1050px] 3xl:w-[1440px] bg-white flex flex-col justify-center items-center border border-[#FFFFFF] shadow-xl sm:mx-auto">
             <h1 className="text-center text-[#000000] text-[20px] lg:text-[24px] font-aeonik-bold ">

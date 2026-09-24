@@ -1,7 +1,6 @@
 "use client";
 
 import Footer from "@/components/Footer";
-import Navbar from "@/components/Navbar";
 import Pagination from "@/components/Pagination";
 import { useState } from "react";
 
@@ -9,7 +8,6 @@ export default function Page() {
   const [page, setPage] = useState(1);
   return (
     <>
-      <Navbar />
       <div className="bg-white w-full min-h-screen pt-[100px] xl:pt-[140px] 2xl:pt-[190px] px-[32px] md:px-[100px] xl:px-[180px] 2xl:px-[240px]">
         <div className="text-left sm:text-center  ">
           <h1 className="text-[48px] md:text-[56px] xl:text-[86px] 2xl:text-[96px] text-[#1A1A1A] font-aeonik-medium ">

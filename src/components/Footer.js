@@ -22,7 +22,7 @@ const footerColumns = [
     title: "Support",
     links: [
       { href: "/contact-quick-answer", label: "Quick answers" },
-      { href: "/contact", label: "Help center" },
+      { href: "/support", label: "Help center" },
       { href: "/newsroom", label: "Press & Media" },
     ],
   },

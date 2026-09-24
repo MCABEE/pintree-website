@@ -1,7 +1,6 @@
 "use client";
 
 import Footer from "@/components/Footer";
-import Navbar from "@/components/Navbar";
 import { useState } from "react";
 
 export default function Page() {
@@ -25,8 +24,6 @@ export default function Page() {
 
   return (
     <>
-      <Navbar />
-
       <div className="bg-white py-10 md:py-16  px-2 sm:px-10 lg:px-[80px] xl:px-[140px]">
         <div
           className="

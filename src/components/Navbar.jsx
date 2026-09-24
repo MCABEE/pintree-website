@@ -1,30 +1,50 @@
 "use client";
 
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useState } from "react";
 
 const mainNavLinks = [
   { href: "/", label: "Product" },
   { href: "/", label: "About" },
   { href: "/newsroom", label: "Newsroom" },
-  { href: "/contact", label: "Support" },
+  { href: "/support", label: "Support" },
 ];
 
-const navLinkClass =
-  "whitespace-nowrap text-[13px] leading-[20px] font-aeonik-regular font-normal text-[#333333] transition-colors hover:text-[#111111] focus-visible:text-[#111111] focus-visible:outline-none";
+const navLinkShellClass =
+  "inline-flex items-center justify-center rounded-[8px] px-[16px] py-[6px] whitespace-nowrap text-[13px] leading-[20px] font-aeonik-medium font-medium transition-[color,background-color] focus-visible:outline-none";
 
-const authLinkClass = `${navLinkClass} shrink-0`;
+const navLinkInactiveClass = `${navLinkShellClass} text-[#333333] hover:text-[#111111] focus-visible:text-[#111111]`;
+
+const navLinkActiveClass = `${navLinkShellClass} bg-[#F2F2F2] text-[#1A1A1A]`;
+
+function isMainNavLinkActive(link, pathname) {
+  if (link.label === "Product") {
+    return pathname === "/";
+  }
+  if (link.label === "About") {
+    return pathname.startsWith("/about");
+  }
+  if (link.href === "/") {
+    return pathname === "/";
+  }
+  return pathname === link.href || pathname.startsWith(`${link.href}/`);
+}
+
+const authLinkClass =
+  "shrink-0 whitespace-nowrap text-[13px] leading-[20px] font-aeonik-medium font-medium text-[#333333] transition-colors hover:text-[#111111] focus-visible:text-[#111111] focus-visible:outline-none";
 
 const primaryButtonClass =
-  "inline-flex h-[36px] shrink-0 items-center justify-center rounded-[7px] bg-[#2C2C2C] text-[13px] leading-none font-aeonik-regular font-normal text-white transition-colors hover:bg-[#242424] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#2C2C2C]";
+  "inline-flex h-[36px] shrink-0 items-center justify-center rounded-[7px] bg-[#2C2C2C] text-[13px] leading-none font-aeonik-medium font-medium text-white transition-colors hover:bg-[#242424] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#2C2C2C]";
 
 const Navbar = () => {
+  const pathname = usePathname();
   const [mobileOpen, setMobileOpen] = useState(false);
 
   return (
     <>
       <header className="fixed inset-x-0 top-0 z-50 w-full border-b border-[#1A1A1A]/10 bg-white">
-        <div className="mx-auto flex h-16 w-full max-w-[1536px] items-center px-6 lg:px-[136px]">
+        <div className="mx-auto box-border flex h-16 w-full max-w-[1536px] items-center px-6 lg:px-[136px]">
           <Link href="/" className="shrink-0">
             <img
               src="/Group-1410097178.svg"
@@ -37,12 +57,20 @@ const Navbar = () => {
             className="ml-[42px] hidden min-w-0 flex-1 items-center lg:flex"
             aria-label="Main"
           >
-            <div className="flex items-center gap-[48px]">
-              {mainNavLinks.map((link) => (
-                <Link key={link.label} href={link.href} className={navLinkClass}>
-                  {link.label}
-                </Link>
-              ))}
+            <div className="flex items-center gap-[28px]">
+              {mainNavLinks.map((link) => {
+                const isActive = isMainNavLinkActive(link, pathname);
+                return (
+                  <Link
+                    key={link.label}
+                    href={link.href}
+                    className={isActive ? navLinkActiveClass : navLinkInactiveClass}
+                    aria-current={isActive ? "page" : undefined}
+                  >
+                    {link.label}
+                  </Link>
+                );
+              })}
             </div>
 
             <div className="ml-auto flex items-center">
@@ -116,16 +144,22 @@ const Navbar = () => {
             className="border-t border-[#1A1A1A]/10 bg-white px-6 pb-6 pt-4 lg:hidden"
           >
             <div className="flex flex-col gap-4">
-              {mainNavLinks.map((link) => (
-                <Link
-                  key={link.label}
-                  href={link.href}
-                  className={navLinkClass}
-                  onClick={() => setMobileOpen(false)}
-                >
-                  {link.label}
-                </Link>
-              ))}
+              {mainNavLinks.map((link) => {
+                const isActive = isMainNavLinkActive(link, pathname);
+                return (
+                  <Link
+                    key={link.label}
+                    href={link.href}
+                    className={
+                      isActive ? navLinkActiveClass : navLinkInactiveClass
+                    }
+                    aria-current={isActive ? "page" : undefined}
+                    onClick={() => setMobileOpen(false)}
+                  >
+                    {link.label}
+                  </Link>
+                );
+              })}
               <Link
                 href="/contact"
                 className={authLinkClass}

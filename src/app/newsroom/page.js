@@ -1,11 +1,9 @@
 import Footer from "@/components/Footer";
-import Navbar from "@/components/Navbar";
 import React from "react";
 
 function page() {
   return (
     <>
-      <Navbar />
       <div className=" px-[24px] 2xl:px-[140px] 3xl:px-[240px]  max-h-max ">
         <h1 className=" text-[28px] sm:text-[32px] lg:text-[48px] 2xl:text-[56px]  font-aeonik-medium text-[#1A1A1A] pb-[25px] text-left xl:text-center pt-[50px] md:pt-[100px] ">
           Newsroom
