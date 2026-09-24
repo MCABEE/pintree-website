@@ -113,32 +113,32 @@ export default function Section5() {
           </div>
 
           {/* Navigation Controls */}
-          <div className="flex shrink-0 items-center gap-3 self-end md:self-auto">
+          <div className="flex shrink-0 items-center gap-2 self-end md:self-auto">
             <button
               type="button"
               onClick={() => scroll("left")}
               disabled={!canScrollLeft}
-              className={`flex h-11 w-11 items-center justify-center rounded-full border transition-all duration-200 ${
+              className={`flex h-11 w-11 items-center justify-center rounded-full border transition-colors duration-200 ${
                 canScrollLeft
-                  ? "border-[#E5E5E5] bg-white text-[#1A1A1A] shadow-xs hover:border-[#CCCCCC] hover:bg-[#F2F2F2] cursor-pointer"
-                  : "border-[#E8E8E8]/60 bg-transparent text-[#B5B5B5] cursor-not-allowed opacity-50"
+                  ? "cursor-pointer border-[#C4C4C4] bg-white text-[#1A1A1A] hover:border-[#A3A3A3]"
+                  : "cursor-not-allowed border-[#E3E3E3] bg-transparent text-[#D1D1D1]"
               }`}
               aria-label="Previous communities"
             >
-              <FiArrowLeft className="h-5 w-5" />
+              <FiArrowLeft className="h-5 w-5 stroke-[1.5]" />
             </button>
             <button
               type="button"
               onClick={() => scroll("right")}
               disabled={!canScrollRight}
-              className={`flex h-11 w-11 items-center justify-center rounded-full border transition-all duration-200 ${
+              className={`flex h-11 w-11 items-center justify-center rounded-full border transition-colors duration-200 ${
                 canScrollRight
-                  ? "border-[#E5E5E5] bg-white text-[#1A1A1A] shadow-xs hover:border-[#CCCCCC] hover:bg-[#F2F2F2] cursor-pointer"
-                  : "border-[#E8E8E8]/60 bg-transparent text-[#B5B5B5] cursor-not-allowed opacity-50"
+                  ? "cursor-pointer border-[#C4C4C4] bg-white text-[#1A1A1A] hover:border-[#A3A3A3]"
+                  : "cursor-not-allowed border-[#E3E3E3] bg-transparent text-[#D1D1D1]"
               }`}
               aria-label="Next communities"
             >
-              <FiArrowRight className="h-5 w-5" />
+              <FiArrowRight className="h-5 w-5 stroke-[1.5]" />
             </button>
           </div>
         </div>
@@ -151,7 +151,7 @@ export default function Section5() {
           {communityCards.map((card) => (
             <div
               key={card.id}
-              className="flex h-[240px] w-[272px] shrink-0 cursor-pointer flex-col rounded-[20px] border border-black/5 bg-white p-[24px] text-left shadow-[0_2px_10px_rgba(0,0,0,0.03)] transition-transform duration-200 hover:-translate-y-0.5"
+              className="flex h-[240px] w-[272px] shrink-0 cursor-pointer flex-col rounded-[20px] border border-black/[0.08] bg-white p-[24px] text-left shadow-[0_6px_28px_rgba(0,0,0,0.12),0_2px_10px_rgba(0,0,0,0.08)] transition-[transform,box-shadow] duration-200 hover:-translate-y-1 hover:shadow-[0_12px_40px_rgba(0,0,0,0.16),0_6px_16px_rgba(0,0,0,0.1)]"
             >
               {/* Icon Container: 64x64px, 24px X & Y inset */}
               <div className="flex h-[64px] w-[64px] shrink-0 items-center justify-center rounded-[16px] bg-[#A9E0F1]">

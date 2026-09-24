@@ -1,12 +1,10 @@
 "use client";
 
-import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
 export default function Page() {
   return (
     <>
-      <Navbar />
       <div className="bg-white">
         <div className="px-[24px] sm:px-[50px] xl:px-[140px] 2xl:px-[240px] pt-[70px] md:pt-[160px] 2xl:pt-[190px]">
           <a

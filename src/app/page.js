@@ -25,14 +25,11 @@ import Section8 from "@/components/about/Section8";
 import Section9 from "@/components/about/Section9";
 import Section10 from "@/components/about/Section10";
 import Footer from "@/components/Footer";
-import Navbar from "@/components/Navbar";
 
 export default function Home() {
   return (
     // outer snap container — must be scrollable and full height
     <div className="">
-      <Navbar />
-
       <Section1 />
       <Section2 />
       <Section3 />

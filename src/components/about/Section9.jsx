@@ -57,7 +57,7 @@ export default function Section9() {
               Answers to your top question&apos;s
             </h2>
             <Link
-              href="/contact"
+              href="/support"
               className="mt-[28px] inline-flex h-[44px] items-center justify-center rounded-[10px] border border-[#D8D8D8] bg-white px-7 text-[14px] font-aeonik-medium font-medium text-[#1A1A1A] transition-colors hover:border-[#B8B8B8] sm:mt-[32px] sm:text-[15px]"
             >
               Contact support

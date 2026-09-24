@@ -1,12 +1,10 @@
 import CustomSelect from "@/components/CustomSelect";
 import Footer from "@/components/Footer";
-import Navbar from "@/components/Navbar";
 import React from "react";
 
 const page = () => {
   return (
     <>
-      <Navbar />
       <div className="bg-white pb-20">
         <div className=" py-[60px] lg:py-[100px] 3xl:py-[156px] min-h-screen mx-4 sm:w-[600px] lg:w-[950px] xl:w-[1050px] 3xl:w-[1440px] bg-white flex flex-col justify-center items-center border border-[#FFFFFF] shadow-xl sm:mx-auto mt-3 rounded">
           {/* Title */}

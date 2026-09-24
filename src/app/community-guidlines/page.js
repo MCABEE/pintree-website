@@ -1,5 +1,4 @@
 import Footer from "@/components/Footer";
-import Navbar from "@/components/Navbar";
 import CommunityGuidelinesContent from "@/components/CommunityGuidelinesContent";
 import { LEGAL_PAGE_COLUMN } from "@/components/legalDocumentIntro";
 
@@ -12,8 +11,6 @@ export const metadata = {
 export default function CommunityGuidelinesPage() {
   return (
     <div className="min-h-screen bg-white">
-      <Navbar />
-
       <main>
         <section className={LEGAL_PAGE_COLUMN}>
           <h1 className="pt-[92px] sm:pt-[104px] text-center text-[32px] sm:text-[40px] lg:text-[48px] leading-[1.12] font-aeonik-medium text-[#1A1A1A] tracking-[-0.02em] pb-5 sm:pb-6">

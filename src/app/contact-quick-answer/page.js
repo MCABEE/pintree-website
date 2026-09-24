@@ -1,13 +1,11 @@
 "use client";
 
 import Footer from "@/components/Footer";
-import Navbar from "@/components/Navbar";
 import Link from "next/link";
 
 export default function quickanswer() {
   return (
     <>
-      <Navbar />
       <div className="bg-white py-6 md:py-[71px] px-2 sm:px-10 lg:px-[80px] xl:px-[140px]  ">
         <div className="px-3 sm:px-[32px] md:px-[72px] py-10 md:py-[60px] lg:py-[80px] 2xl:py-[166px] min-h-screen  max-w-[1440px] bg-white flex flex-col justify-center  border border-[#FFFFFF] shadow-xl mx-4 sm:mx-auto   pb-8">
           <h1 className="text-[20px]  md:text-[24px] text-center md:text-left font-aeonik-bold text-[#0C0C0C] ">
