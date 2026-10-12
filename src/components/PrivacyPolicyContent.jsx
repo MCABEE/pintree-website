@@ -26,10 +26,10 @@ const MAIN_SECTION_TITLES = new Set([
 ]);
 
 const bodyBase =
-  "text-[12px] sm:text-[12px] leading-[1.6] font-aeonik-regular text-[#000000] antialiased max-sm:text-[13px] max-sm:leading-[1.6]";
+  "text-[15px] sm:text-[16px] leading-[1.6] font-aeonik-regular text-[#000000] antialiased";
 const bodyParagraph = `${bodyBase} pt-[10px]`;
 const headingBase =
-  "text-[12px] sm:text-[12px] leading-[1.6] text-[#000000] font-aeonik-bold max-sm:text-[13px]";
+  "text-[15px] sm:text-[16px] leading-[1.6] text-[#000000] font-aeonik-bold";
 
 function RunText({ runs }) {
   return runs.map((run, index) => {
@@ -113,13 +113,26 @@ function renderParagraph(block, index) {
     );
   }
 
-  if (index <= 2) {
+  if (index === 0) {
     return (
-      <p
-        key={index}
-        className={`${bodyBase} ${index === 0 ? "pt-0" : "pt-0 leading-[1.5]"}`}
-      >
-        <RunText runs={runs} />
+      <p key={index} className="text-[15px] sm:text-[16px] font-aeonik-bold text-[#000000] leading-tight">
+        Pintree
+      </p>
+    );
+  }
+
+  if (index === 1) {
+    return (
+      <p key={index} className="text-[15px] sm:text-[16px] font-aeonik-bold text-[#000000] leading-tight pt-1.5 sm:pt-2">
+        Privacy Policy
+      </p>
+    );
+  }
+
+  if (index === 2) {
+    return (
+      <p key={index} className="text-[15px] sm:text-[16px] font-aeonik-regular text-[#000000] leading-tight pt-3 sm:pt-4 pb-2 sm:pb-3">
+        Last Updated: 1 October 2026
       </p>
     );
   }
@@ -167,7 +180,7 @@ export default function PrivacyPolicyContent() {
   content.forEach((block, index) => {
     if (block.type === "blank") {
       flushList(index);
-      elements.push(<div key={`spacer-${index}`} className="h-3" aria-hidden />);
+      elements.push(<div key={`spacer-${index}`} className="h-4" aria-hidden />);
       return;
     }
 
