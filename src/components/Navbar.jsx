@@ -2,193 +2,321 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { getValidAccessToken, authenticatedFetch } from "@/utils/auth";
 
 const mainNavLinks = [
-  { href: "/", label: "Product" },
   { href: "/", label: "About" },
   { href: "/newsroom", label: "Newsroom" },
   { href: "/support", label: "Support" },
 ];
 
-const navLinkShellClass =
-  "inline-flex items-center justify-center rounded-[8px] px-[16px] py-[6px] whitespace-nowrap text-[13px] leading-[20px] font-aeonik-medium font-medium transition-[color,background-color] focus-visible:outline-none";
-
-const navLinkInactiveClass = `${navLinkShellClass} text-[#333333] hover:text-[#111111] focus-visible:text-[#111111]`;
-
-const navLinkActiveClass = `${navLinkShellClass} bg-[#F2F2F2] text-[#1A1A1A]`;
-
 function isMainNavLinkActive(link, pathname) {
-  if (link.label === "Product") {
-    return pathname === "/";
-  }
   if (link.label === "About") {
-    return pathname.startsWith("/about");
-  }
-  if (link.href === "/") {
-    return pathname === "/";
+    return pathname === "/" || pathname.startsWith("/about");
   }
   return pathname === link.href || pathname.startsWith(`${link.href}/`);
 }
 
-const authLinkClass =
-  "shrink-0 whitespace-nowrap text-[13px] leading-[20px] font-aeonik-medium font-medium text-[#333333] transition-colors hover:text-[#111111] focus-visible:text-[#111111] focus-visible:outline-none";
-
-const primaryButtonClass =
-  "inline-flex h-[36px] shrink-0 items-center justify-center rounded-[7px] bg-[#2C2C2C] text-[13px] leading-none font-aeonik-medium font-medium text-white transition-colors hover:bg-[#242424] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#2C2C2C]";
-
 const Navbar = () => {
   const pathname = usePathname();
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [userProfile, setUserProfile] = useState(null);
+
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    let mounted = true;
+
+    const storedToken = localStorage.getItem("pintree_access_token");
+    if (!storedToken) {
+      setIsAuthenticated(false);
+      setUserProfile(null);
+      return;
+    }
+
+    getValidAccessToken().then((token) => {
+      if (!mounted) return;
+      setIsAuthenticated(Boolean(token));
+
+      if (token) {
+        authenticatedFetch("https://dev.user.pintree.co/v1/users/profile")
+          .then((r) => r.json())
+          .then((d) => {
+            if (mounted && d?.data) setUserProfile(d.data);
+          })
+          .catch(() => null);
+      } else {
+        setUserProfile(null);
+      }
+    });
+
+    return () => {
+      mounted = false;
+    };
+  }, [pathname]);
 
   return (
-    <>
-      <header className="fixed inset-x-0 top-0 z-50 w-full border-b border-[#1A1A1A]/10 bg-white">
-        <div className="mx-auto box-border flex h-16 w-full max-w-[1536px] items-center px-6 lg:px-[136px]">
-          <Link href="/" className="shrink-0">
-            <img
-              src="/Group-1410097178.svg"
-              alt="Pintree"
-              className="h-[30px] w-[101px] object-contain object-left"
+    <header className="sticky top-0 z-50 w-full h-20 bg-white border-b border-[#e4e2e1]/80 font-jakarta">
+      <div className="mx-auto flex h-full w-full max-w-[1280px] items-center justify-between px-4 md:px-0">
+        {/* Left: Pintree Brand Identity */}
+        <Link
+          href="/"
+          className="group flex items-center gap-3 rounded-lg p-1 focus:outline-none focus-visible:ring-2 focus-visible:ring-black"
+        >
+          <svg
+            width="24"
+            height="32"
+            viewBox="0 0 60 80"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            className="block h-7 w-auto flex-shrink-0 transition-transform duration-200 group-hover:scale-105"
+            aria-hidden="true"
+          >
+            <path
+              d="M42.8602 1.02691C40.2674 0.358391 37.601 0.013596 34.9226 0.000475126C29.9344 -0.0289799 25.0349 1.31162 20.7634 3.87466C15.9366 6.75869 13.3277 10.308 13.3034 10.3426L13.2166 10.4566C3.74875 22.4628 0.921084 36.6842 0.215904 46.5062C-0.525751 56.8224 0.874188 64.6399 0.96277 65.1272C1.05135 65.6145 2.83341 73.3939 6.26378 78.3222C6.93596 79.2899 7.6533 79.8256 8.44011 79.9621C9.65594 80.1712 11.0281 79.461 11.4623 79.1672L11.4745 79.1586C11.8965 78.8423 13.7811 77.097 11.339 72.7649C5.9164 63.1503 6.36452 53.8554 7.66546 40.771C8.94034 27.9682 15.9835 18.5126 16.7182 17.557C17.1229 16.9816 18.7799 14.7576 21.7187 12.4767C25.7691 9.33169 30.5196 7.47409 35.4558 7.10257C42.287 6.58417 46.367 9.70839 48.5868 12.4162C50.1087 14.2797 51.2179 16.4419 51.8417 18.7614C52.2012 20.073 54.6207 29.7774 49.6237 37.6865C44.5867 45.6578 37.2743 44.8905 35.6834 44.614C34.6412 44.538 32.022 44.1147 30.0662 41.8596C28.3397 39.8707 27.7075 37.1577 28.1869 33.7968C29.0119 28.0114 32.8592 24.8301 38.478 25.2863C39.6765 25.3831 40.0951 25.2328 40.2375 25.1343C40.4737 24.9701 40.7985 24.3549 41.0069 23.1125C41.4933 20.2043 40.399 19.4008 40.2114 19.285C39.8641 19.1277 34.1584 16.6826 27.7058 21.2566C26.252 22.2934 24.0149 25.1446 22.4951 29.8051C21.0118 34.3601 20.8086 38.9082 21.9254 42.6096C23.6519 48.3362 28.5152 51.3809 36.3798 51.6626C42.8793 51.8924 48.1612 50.1488 52.0692 46.4786C59.5379 39.4577 59.9565 27.3876 59.9565 27.2666L59.9686 27.0714C60.1376 23.2064 59.6226 19.342 58.4471 15.6545C55.8783 7.81105 50.7874 3.03139 42.8602 1.02691Z"
+              fill="#101010"
             />
+          </svg>
+          <svg
+            width="100"
+            height="26"
+            viewBox="0 0 305 80"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            className="block h-6 w-auto"
+            aria-label="Pintree"
+          >
+            <path
+              d="M264.166 56.3241C264.237 58.4574 264.699 60.484 265.553 62.4039C266.477 64.2527 267.686 65.8882 269.179 67.3104C270.673 68.6615 272.379 69.7281 274.299 70.5103C276.29 71.2925 278.388 71.6836 280.593 71.6836C283.65 71.6836 286.175 71.1503 288.166 70.0836C290.228 68.9459 292.042 67.6659 293.606 66.2438C294.317 65.6038 294.922 65.1771 295.419 64.9638C295.988 64.7505 296.557 64.6438 297.126 64.6438C298.335 64.6438 299.33 65.0349 300.113 65.8171C300.966 66.5282 301.393 67.5237 301.393 68.8037C301.393 69.2303 301.286 69.7636 301.073 70.4036C300.859 71.0436 300.433 71.7191 299.793 72.4302C294.886 77.4789 288.486 80.0033 280.593 80.0033C276.753 80.0033 273.197 79.3633 269.926 78.0833C266.655 76.8034 263.846 75.0257 261.499 72.7502C259.152 70.4036 257.304 67.5948 255.952 64.3238C254.601 61.0528 253.926 57.4263 253.926 53.4442C253.926 49.5333 254.566 45.9423 255.846 42.6713C257.197 39.3292 259.046 36.4849 261.392 34.1383C263.739 31.7917 266.512 29.9784 269.713 28.6985C272.913 27.3474 276.361 26.6719 280.059 26.6719C286.459 26.6719 291.793 28.4851 296.059 32.1117C300.397 35.6671 303.064 40.9291 304.059 47.8978C304.202 48.68 304.273 49.2844 304.273 49.711C304.273 50.1377 304.273 50.6355 304.273 51.2043C304.273 54.6175 302.495 56.3241 298.939 56.3241H264.166ZM294.246 48.8577C294.175 46.8667 293.819 45.0179 293.179 43.3113C292.61 41.5336 291.722 40.0047 290.513 38.7248C289.375 37.4448 287.917 36.4493 286.139 35.7382C284.433 34.956 282.406 34.5649 280.059 34.5649C277.926 34.5649 275.899 34.956 273.979 35.7382C272.13 36.4493 270.495 37.4448 269.073 38.7248C267.721 40.0047 266.584 41.5336 265.659 43.3113C264.806 45.0179 264.308 46.8667 264.166 48.8577H294.246Z"
+              fill="#101010"
+            />
+            <path
+              d="M208.353 56.3241C208.424 58.4574 208.887 60.484 209.74 62.4039C210.664 64.2527 211.873 65.8882 213.367 67.3104C214.86 68.6615 216.567 69.7281 218.487 70.5103C220.478 71.2925 222.576 71.6836 224.78 71.6836C227.838 71.6836 230.362 71.1503 232.353 70.0836C234.416 68.9459 236.229 67.6659 237.793 66.2438C238.505 65.6038 239.109 65.1771 239.607 64.9638C240.176 64.7505 240.745 64.6438 241.313 64.6438C242.522 64.6438 243.518 65.0349 244.3 65.8171C245.153 66.5282 245.58 67.5237 245.58 68.8037C245.58 69.2303 245.473 69.7636 245.26 70.4036C245.047 71.0436 244.62 71.7191 243.98 72.4302C239.073 77.4789 232.673 80.0033 224.78 80.0033C220.94 80.0033 217.384 79.3633 214.113 78.0833C210.842 76.8034 208.033 75.0257 205.687 72.7502C203.34 70.4036 201.491 67.5948 200.14 64.3238C198.789 61.0528 198.113 57.4263 198.113 53.4442C198.113 49.5333 198.753 45.9423 200.033 42.6713C201.384 39.3292 203.233 36.4849 205.58 34.1383C207.927 31.7917 210.7 29.9784 213.9 28.6985C217.1 27.3474 220.549 26.6719 224.247 26.6719C230.647 26.6719 235.98 28.4851 240.247 32.1117C244.585 35.6671 247.251 40.9291 248.247 47.8978C248.389 48.68 248.46 49.2844 248.46 49.711C248.46 50.1377 248.46 50.6355 248.46 51.2043C248.46 54.6175 246.682 56.3241 243.127 56.3241H208.353ZM238.433 48.8577C238.362 46.8667 238.007 45.0179 237.367 43.3113C236.798 41.5336 235.909 40.0047 234.7 38.7248C233.562 37.4448 232.105 36.4493 230.327 35.7382C228.62 34.956 226.593 34.5649 224.247 34.5649C222.113 34.5649 220.087 34.956 218.167 35.7382C216.318 36.4493 214.682 37.4448 213.26 38.7248C211.909 40.0047 210.771 41.5336 209.847 43.3113C208.993 45.0179 208.496 46.8667 208.353 48.8577H238.433Z"
+              fill="#101010"
+            />
+            <path
+              d="M179.47 36.5915H179.79C180.999 33.7472 182.919 31.4006 185.55 29.5518C188.181 27.6318 191.168 26.6719 194.51 26.6719C196.074 26.6719 197.426 27.0274 198.563 27.7385C199.772 28.3785 200.377 29.5162 200.377 31.1517C200.377 32.9294 199.772 34.1738 198.563 34.8849C197.426 35.596 196.039 35.9515 194.403 35.9515H193.657C189.674 35.9515 186.403 37.3737 183.843 40.2181C181.283 43.0624 180.003 47.2222 180.003 52.6976V73.9235C180.003 75.1323 179.825 76.0923 179.47 76.8034C179.114 77.5145 178.652 78.0833 178.083 78.51C177.585 78.8655 177.052 79.1144 176.483 79.2566C175.914 79.3988 175.417 79.47 174.99 79.47C174.563 79.47 174.065 79.3988 173.497 79.2566C172.928 79.1144 172.359 78.8655 171.79 78.51C171.292 78.0833 170.865 77.5145 170.51 76.8034C170.154 76.0923 169.977 75.1323 169.977 73.9235V32.5383C169.977 31.4006 170.154 30.4762 170.51 29.7651C170.865 29.054 171.292 28.5207 171.79 28.1652C172.288 27.8096 172.785 27.5607 173.283 27.4185C173.852 27.2763 174.35 27.2052 174.777 27.2052C175.132 27.2052 175.559 27.2763 176.057 27.4185C176.625 27.5607 177.159 27.8096 177.657 28.1652C178.154 28.5207 178.581 29.054 178.937 29.7651C179.292 30.4762 179.47 31.4006 179.47 32.5383V36.5915Z"
+              fill="#101010"
+            />
+            <path
+              d="M162.83 78.2929C161.123 79.0751 158.954 79.4662 156.323 79.4662C151.488 79.4662 147.825 78.1507 145.336 75.5197C142.847 72.8176 141.603 68.871 141.603 63.6801V36.2678H135.736C134.741 36.2678 133.923 36.1256 133.283 35.8411C132.714 35.5567 132.252 35.2012 131.896 34.7745C131.541 34.3479 131.327 33.9212 131.256 33.4946C131.114 32.9968 131.043 32.5701 131.043 32.2146C131.043 31.8591 131.114 31.468 131.256 31.0413C131.327 30.5436 131.541 30.0813 131.896 29.6547C132.252 29.228 132.714 28.8725 133.283 28.5881C133.923 28.2325 134.741 28.0547 135.736 28.0547H141.603V18.2418C141.603 17.104 141.781 16.1796 142.136 15.4685C142.492 14.6864 142.919 14.1175 143.416 13.7619C143.985 13.3353 144.554 13.0509 145.123 12.9086C145.692 12.7664 146.19 12.6953 146.616 12.6953C147.043 12.6953 147.505 12.7664 148.003 12.9086C148.572 13.0509 149.105 13.3353 149.603 13.7619C150.172 14.1175 150.634 14.6864 150.99 15.4685C151.345 16.1796 151.523 17.104 151.523 18.2418V28.0547H161.23C162.225 28.0547 163.008 28.2325 163.576 28.5881C164.216 28.8725 164.679 29.228 164.963 29.6547C165.319 30.0813 165.532 30.5436 165.603 31.0413C165.745 31.468 165.816 31.8591 165.816 32.2146C165.816 32.5701 165.745 32.9968 165.603 33.4946C165.532 33.9212 165.319 34.3479 164.963 34.7745C164.679 35.2012 164.216 35.5567 163.576 35.8411C163.008 36.1256 162.225 36.2678 161.23 36.2678H151.523V62.6135C151.523 65.7423 152.056 67.9466 153.123 69.2266C154.261 70.4354 155.754 71.0398 157.603 71.0398C158.243 71.0398 158.99 70.9332 159.843 70.7199C160.554 70.5065 161.159 70.3999 161.656 70.3999C162.865 70.3999 163.825 70.791 164.536 71.5732C165.248 72.3554 165.603 73.2798 165.603 74.3464C165.603 75.1286 165.39 75.8752 164.963 76.5863C164.536 77.2263 163.825 77.7952 162.83 78.2929Z"
+              fill="#101010"
+            />
+            <path
+              d="M93.9973 36.3782H94.3173C94.9573 35.0271 95.8106 33.7827 96.8773 32.645C98.0151 31.4361 99.2951 30.4051 100.717 29.5518C102.14 28.6274 103.704 27.9163 105.411 27.4185C107.117 26.9208 108.895 26.6719 110.744 26.6719C114.015 26.6719 116.824 27.2407 119.171 28.3785C121.517 29.4451 123.473 30.9028 125.037 32.7517C126.602 34.6005 127.74 36.7693 128.451 39.2581C129.233 41.7469 129.624 44.4135 129.624 47.2578V73.9235C129.624 75.1323 129.446 76.0923 129.091 76.8034C128.735 77.5145 128.273 78.0833 127.704 78.51C127.206 78.8655 126.673 79.1144 126.104 79.2566C125.535 79.3988 125.037 79.47 124.611 79.47C124.184 79.47 123.686 79.3988 123.117 79.2566C122.549 79.1144 121.98 78.8655 121.411 78.51C120.913 78.0833 120.486 77.5145 120.131 76.8034C119.775 76.0923 119.597 75.1323 119.597 73.9235V50.5643C119.597 48.5022 119.42 46.5467 119.064 44.6979C118.78 42.8491 118.211 41.2136 117.357 39.7914C116.504 38.3692 115.331 37.2315 113.837 36.3782C112.344 35.5249 110.424 35.0982 108.077 35.0982C104.095 35.0982 100.824 36.6271 98.264 39.6847C95.7751 42.6713 94.5306 46.6889 94.5306 51.7376V73.9235C94.5306 75.1323 94.3528 76.0923 93.9973 76.8034C93.6417 77.5145 93.1795 78.0833 92.6106 78.51C92.1128 78.8655 91.5795 79.1144 91.0106 79.2566C90.4417 79.3988 89.9439 79.47 89.5173 79.47C89.0906 79.47 88.5928 79.3988 88.0239 79.2566C87.455 79.1144 86.8861 78.8655 86.3172 78.51C85.8195 78.0833 85.3928 77.5145 85.0372 76.8034C84.6817 76.0923 84.5039 75.1323 84.5039 73.9235V32.5383C84.5039 31.4006 84.6817 30.4762 85.0372 29.7651C85.3928 29.054 85.8195 28.5207 86.3172 28.1652C86.815 27.8096 87.3128 27.5607 87.8106 27.4185C88.3795 27.2763 88.8773 27.2052 89.3039 27.2052C89.6595 27.2052 90.0862 27.2763 90.5839 27.4185C91.1528 27.5607 91.6862 27.8096 92.1839 28.1652C92.6817 28.5207 93.1084 29.054 93.4639 29.7651C93.8195 30.4762 93.9973 31.4006 93.9973 32.5383V36.3782Z"
+              fill="#101010"
+            />
+            <path
+              d="M74.0756 9.81893C74.0756 11.6677 73.4 13.1966 72.0489 14.4054C70.7689 15.6143 69.2044 16.2187 67.3556 16.2187C65.5067 16.2187 63.9422 15.6143 62.6622 14.4054C61.3822 13.1255 60.7422 11.5966 60.7422 9.81893C60.7422 7.97011 61.3822 6.44128 62.6622 5.23243C63.9422 3.95248 65.5067 3.3125 67.3556 3.3125C69.2044 3.3125 70.7689 3.95248 72.0489 5.23243C73.4 6.44128 74.0756 7.97011 74.0756 9.81893ZM72.3689 73.9232C72.3689 75.1321 72.1911 76.0921 71.8356 76.8031C71.48 77.5142 71.0178 78.0831 70.4489 78.5097C69.9511 78.8653 69.4178 79.1142 68.8489 79.2564C68.28 79.3986 67.7822 79.4697 67.3556 79.4697C66.9289 79.4697 66.4311 79.3986 65.8622 79.2564C65.2933 79.1142 64.7244 78.8653 64.1555 78.5097C63.6578 78.0831 63.2311 77.5142 62.8755 76.8031C62.52 76.0921 62.3422 75.1321 62.3422 73.9232V32.7514C62.3422 31.6137 62.52 30.6893 62.8755 29.9782C63.2311 29.196 63.6578 28.6271 64.1555 28.2716C64.7244 27.8449 65.2933 27.5605 65.8622 27.4183C66.4311 27.2761 66.9289 27.205 67.3556 27.205C67.7822 27.205 68.28 27.2761 68.8489 27.4183C69.4178 27.5605 69.9511 27.8449 70.4489 28.2716C71.0178 28.6271 71.48 29.196 71.8356 29.9782C72.1911 30.6893 72.3689 31.6137 72.3689 32.7514V73.9232Z"
+              fill="#101010"
+            />
+            <path
+              d="M43.3069 26.559C43.3069 24.2124 42.9513 21.937 42.2402 19.7326C41.5291 17.5282 40.4624 15.5728 39.0402 13.8662C37.618 12.1596 35.8402 10.8085 33.7068 9.81297C31.6446 8.81746 29.2268 8.3197 26.4535 8.3197C23.8934 8.3197 21.5468 8.81746 19.4134 9.81297C17.3512 10.8085 15.5734 12.1596 14.0801 13.8662C12.5867 15.5728 11.4134 17.5282 10.56 19.7326C9.77782 21.937 9.38671 24.248 9.38671 26.6657C9.38671 29.0834 9.77782 31.3944 10.56 33.5988C11.4134 35.8031 12.5867 37.7586 14.0801 39.4652C15.5734 41.1007 17.3512 42.4162 19.4134 43.4117C21.5468 44.4073 23.8934 44.905 26.4535 44.905C29.2268 44.905 31.6446 44.4073 33.7068 43.4117C35.8402 42.3451 37.618 40.9585 39.0402 39.2519C40.4624 37.5453 41.5291 35.5898 42.2402 33.3854C42.9513 31.1811 43.3069 28.9056 43.3069 26.559ZM53.6536 26.559C53.6536 30.2567 53.0491 33.741 51.8402 37.012C50.6313 40.283 48.9247 43.1273 46.7202 45.545C44.5158 47.9627 41.8491 49.8826 38.7202 51.3048C35.5913 52.6559 32.0713 53.3314 28.1601 53.3314C24.5334 53.3314 21.1201 52.5492 17.9201 50.9848C14.7201 49.4204 12.1956 47.216 10.3467 44.3717H10.0267V72.8507C10.0267 74.0595 9.84894 75.0195 9.49338 75.7306C9.13782 76.4416 8.6756 76.975 8.1067 77.3305C7.60892 77.7572 7.07559 78.0416 6.5067 78.1838C5.93781 78.326 5.44003 78.3971 5.01336 78.3971C4.58669 78.3971 4.08891 78.326 3.52002 78.1838C2.95113 78.0416 2.38223 77.7572 1.81334 77.3305C1.31556 76.975 0.888894 76.4416 0.533336 75.7306C0.177779 75.0195 0 74.0595 0 72.8507V5.97311C0 4.83538 0.177779 3.91097 0.533336 3.19988C0.888894 2.41769 1.31556 1.84882 1.81334 1.49328C2.38223 1.13774 2.91557 0.888858 3.41335 0.74664C3.98224 0.604423 4.48002 0.533313 4.90669 0.533313C5.33336 0.533313 5.79558 0.604423 6.29336 0.74664C6.86225 0.888858 7.39559 1.13774 7.89337 1.49328C8.46226 1.84882 8.92449 2.41769 9.28005 3.19988C9.6356 3.91097 9.81338 4.83538 9.81338 5.97311V9.27966H10.1334C11.7689 6.57754 14.1512 4.37317 17.2801 2.66657C20.4801 0.888858 24.1779 0 28.3735 0C32.1424 0 35.5557 0.675533 38.6135 2.02659C41.7424 3.37766 44.4091 5.26203 46.6136 7.67972C48.8891 10.0974 50.6313 12.9418 51.8402 16.2127C53.0491 19.4126 53.6536 22.8614 53.6536 26.559Z"
+              fill="#101010"
+            />
+          </svg>
+        </Link>
+
+        {/* Center: Navigation Links */}
+        <nav
+          aria-label="Main Navigation"
+          className="hidden items-center gap-8 md:flex font-jakarta"
+        >
+          {mainNavLinks.map((link) => {
+            const isActive = isMainNavLinkActive(link, pathname);
+            return (
+              <Link
+                key={link.label}
+                href={link.href}
+                className={`font-jakarta text-[15px] leading-[20px] tracking-[0.01em] transition-colors ${
+                  isActive
+                    ? "font-semibold text-[#1b1c1c]"
+                    : "font-medium text-[#444748] hover:text-[#1b1c1c]"
+                }`}
+                aria-current={isActive ? "page" : undefined}
+              >
+                {link.label}
+              </Link>
+            );
+          })}
+        </nav>
+
+        {/* Right: Action Buttons */}
+        <div className="flex items-center gap-3 md:gap-5 font-jakarta">
+          <Link
+            href="/#download"
+            className="hidden font-jakarta text-[15px] leading-[20px] font-medium tracking-[0.01em] text-[#444748] transition-colors hover:text-[#1b1c1c] sm:inline-flex"
+          >
+            Download App
           </Link>
 
-          <nav
-            className="ml-[42px] hidden min-w-0 flex-1 items-center lg:flex"
-            aria-label="Main"
-          >
-            <div className="flex items-center gap-[28px]">
-              {mainNavLinks.map((link) => {
-                const isActive = isMainNavLinkActive(link, pathname);
-                return (
-                  <Link
-                    key={link.label}
-                    href={link.href}
-                    className={isActive ? navLinkActiveClass : navLinkInactiveClass}
-                    aria-current={isActive ? "page" : undefined}
-                  >
-                    {link.label}
-                  </Link>
-                );
-              })}
-            </div>
-
-            <div className="ml-auto flex items-center">
-              <Link href="/contact" className={`${authLinkClass} mr-[24px]`}>
-                Log in
-              </Link>
-              <div className="flex items-center gap-[6px]">
-                <Link
-                  href="/contact"
-                  className={`${primaryButtonClass} min-w-[76px] px-[18px]`}
-                >
-                  Sign up
-                </Link>
-                <Link
-                  href="/"
-                  className={`${primaryButtonClass} min-w-[126px] px-[18px]`}
-                >
-                  Download app
-                </Link>
-              </div>
-            </div>
-          </nav>
-
-          <div className="ml-auto flex items-center lg:hidden">
-            <button
-              type="button"
-              className="inline-flex h-10 w-10 items-center justify-center rounded-[7px] text-[#333333] hover:bg-[#F5F5F5] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#2C2C2C]"
-              aria-expanded={mobileOpen}
-              aria-controls="mobile-nav"
-              aria-label={mobileOpen ? "Close menu" : "Open menu"}
-              onClick={() => setMobileOpen((open) => !open)}
+          {isAuthenticated ? (
+            <Link
+              href="/account"
+              className="flex items-center gap-2.5 pl-1.5 pr-3.5 py-1 rounded-full bg-[#f6f3f2] border border-[#e4e2e1] hover:border-[#c4c7c7] transition-colors select-none"
             >
-              {mobileOpen ? (
-                <svg
-                  width="20"
-                  height="20"
-                  viewBox="0 0 20 20"
-                  fill="none"
-                  aria-hidden
-                >
-                  <path
-                    d="M5 5L15 15M15 5L5 15"
-                    stroke="currentColor"
-                    strokeWidth="1.5"
-                    strokeLinecap="round"
-                  />
-                </svg>
-              ) : (
-                <svg
-                  width="20"
-                  height="20"
-                  viewBox="0 0 20 20"
-                  fill="none"
-                  aria-hidden
-                >
-                  <path
-                    d="M3 5H17M3 10H17M3 15H17"
-                    stroke="currentColor"
-                    strokeWidth="1.5"
-                    strokeLinecap="round"
-                  />
-                </svg>
-              )}
-            </button>
-          </div>
-        </div>
-
-        {mobileOpen ? (
-          <div
-            id="mobile-nav"
-            className="border-t border-[#1A1A1A]/10 bg-white px-6 pb-6 pt-4 lg:hidden"
-          >
-            <div className="flex flex-col gap-4">
-              {mainNavLinks.map((link) => {
-                const isActive = isMainNavLinkActive(link, pathname);
-                return (
-                  <Link
-                    key={link.label}
-                    href={link.href}
-                    className={
-                      isActive ? navLinkActiveClass : navLinkInactiveClass
-                    }
-                    aria-current={isActive ? "page" : undefined}
-                    onClick={() => setMobileOpen(false)}
-                  >
-                    {link.label}
-                  </Link>
-                );
-              })}
+              <div className="relative w-8 h-8 rounded-full overflow-hidden flex-shrink-0 bg-[#eae7e7] ring-1 ring-[#e4e2e1]">
+                <img
+                  alt={userProfile?.fullName || "User profile"}
+                  src={
+                    userProfile?.profileImageUrl ||
+                    "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&auto=format&fit=crop&q=80"
+                  }
+                  className="w-full h-full object-cover"
+                />
+                <span className="absolute bottom-0 right-0 w-2 h-2 rounded-full bg-[#CAFFA6] ring-2 ring-white"></span>
+              </div>
+              <div className="flex flex-col text-left">
+                <span className="text-[13px] leading-tight font-semibold text-[#1b1c1c] capitalize">
+                  {userProfile?.fullName || "Amara Vance"}
+                </span>
+                <span className="text-[11px] leading-none text-[#747878]">
+                  {userProfile?.handleId
+                    ? `@${String(userProfile.handleId).trim().replace(/^@+/, "")}`
+                    : userProfile?.fullName
+                    ? `@${String(userProfile.fullName).toLowerCase().replace(/\s+/g, "").replace(/^@+/, "")}`
+                    : "@amaravance"}
+                </span>
+              </div>
+            </Link>
+          ) : (
+            <>
+              <Link
+                href="/login"
+                className={`font-jakarta px-3 py-2 text-[15px] leading-[20px] tracking-[0.01em] transition-colors ${
+                  pathname === "/login"
+                    ? "font-semibold text-[#1b1c1c]"
+                    : "font-medium text-[#1b1c1c] hover:text-black"
+                }`}
+              >
+                Login
+              </Link>
               <Link
                 href="/contact"
-                className={authLinkClass}
+                className="font-jakarta rounded-full bg-black px-5 py-2.5 text-[15px] leading-[20px] font-semibold tracking-[0.01em] text-white shadow-sm transition-all hover:bg-[#1c1b1b] active:scale-[0.98]"
+              >
+                Sign Up
+              </Link>
+            </>
+          )}
+
+          {/* Mobile Hamburger Button */}
+          <button
+            type="button"
+            className="inline-flex h-9 w-9 items-center justify-center rounded-lg text-[#1b1c1c] hover:bg-[#f0eded] md:hidden focus:outline-none focus-visible:ring-2 focus-visible:ring-black"
+            aria-expanded={mobileOpen}
+            aria-controls="mobile-nav"
+            aria-label={mobileOpen ? "Close menu" : "Open menu"}
+            onClick={() => setMobileOpen((open) => !open)}
+          >
+            {mobileOpen ? (
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 20 20"
+                fill="none"
+                aria-hidden
+              >
+                <path
+                  d="M5 5L15 15M15 5L5 15"
+                  stroke="currentColor"
+                  strokeWidth="1.5"
+                  strokeLinecap="round"
+                />
+              </svg>
+            ) : (
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 20 20"
+                fill="none"
+                aria-hidden
+              >
+                <path
+                  d="M3 5H17M3 10H17M3 15H17"
+                  stroke="currentColor"
+                  strokeWidth="1.5"
+                  strokeLinecap="round"
+                />
+              </svg>
+            )}
+          </button>
+        </div>
+      </div>
+
+      {mobileOpen ? (
+        <div
+          id="mobile-nav"
+          className="border-t border-[#e4e2e1]/80 bg-white px-6 pb-6 pt-4 md:hidden"
+        >
+          <div className="flex flex-col gap-4">
+            {mainNavLinks.map((link) => {
+              const isActive = isMainNavLinkActive(link, pathname);
+              return (
+                <Link
+                  key={link.label}
+                  href={link.href}
+                  className={`text-[15px] leading-[20px] tracking-[0.01em] transition-colors ${
+                    isActive
+                      ? "font-semibold text-[#1b1c1c]"
+                      : "font-medium text-[#444748] hover:text-[#1b1c1c]"
+                  }`}
+                  aria-current={isActive ? "page" : undefined}
+                  onClick={() => setMobileOpen(false)}
+                >
+                  {link.label}
+                </Link>
+              );
+            })}
+            <Link
+              href="/#download"
+              className="text-[13px] leading-[18px] font-medium tracking-[0.02em] text-[#444748] transition-colors hover:text-[#1b1c1c] sm:hidden"
+              onClick={() => setMobileOpen(false)}
+            >
+              Download App
+            </Link>
+
+            {isAuthenticated ? (
+              <Link
+                href="/account"
+                className={`text-[13px] leading-[18px] tracking-[0.02em] transition-colors ${
+                  pathname === "/account"
+                    ? "font-semibold text-[#1b1c1c]"
+                    : "font-medium text-[#1b1c1c] hover:text-black"
+                }`}
                 onClick={() => setMobileOpen(false)}
               >
-                Log in
+                Account Overview
               </Link>
-              <div className="flex flex-col gap-2 pt-2 sm:flex-row sm:items-center">
+            ) : (
+              <>
                 <Link
-                  href="/contact"
-                  className={`${primaryButtonClass} w-full sm:min-w-[76px] sm:w-auto`}
+                  href="/login"
+                  className={`text-[13px] leading-[18px] tracking-[0.02em] transition-colors ${
+                    pathname === "/login"
+                      ? "font-semibold text-[#1b1c1c]"
+                      : "font-medium text-[#1b1c1c] hover:text-black"
+                  }`}
                   onClick={() => setMobileOpen(false)}
                 >
-                  Sign up
+                  Login
                 </Link>
-                <Link
-                  href="/"
-                  className={`${primaryButtonClass} w-full sm:min-w-[126px] sm:w-auto`}
-                  onClick={() => setMobileOpen(false)}
-                >
-                  Download app
-                </Link>
-              </div>
-            </div>
+                <div className="pt-2">
+                  <Link
+                    href="/contact"
+                    className="inline-flex w-full items-center justify-center rounded-full bg-black px-5 py-2.5 text-[13px] leading-[18px] font-semibold tracking-[0.02em] text-white shadow-sm transition-all hover:bg-[#1c1b1b] active:scale-[0.98]"
+                    onClick={() => setMobileOpen(false)}
+                  >
+                    Sign Up
+                  </Link>
+                </div>
+              </>
+            )}
           </div>
-        ) : null}
-      </header>
-      <div className="h-16 shrink-0" aria-hidden="true" />
-    </>
+        </div>
+      ) : null}
+    </header>
   );
 };
 
