@@ -1,99 +1,82 @@
 "use client";
 
-import React from "react";
-import { motion } from "framer-motion";
-
-const sectionWrap =
-  "mx-auto w-full max-w-[1536px] px-6 sm:px-10 lg:px-[136px]";
-
-const illustrationSrc = "/Group-1410097221.svg";
-const illustrationFallback = "/Group 1410097221.svg";
+import Link from "next/link";
 
 const columns = [
   {
     title: "Our Story",
     body: "From an idea to a platform built around people, communities, and conversations.",
-    linkText: "Our Story",
+    linkText: "OUR STORY",
     linkHref: "#",
+    className:
+      "flex flex-col border-b border-[#E5E5E5] pb-8 pr-8 md:border-b-0 md:border-r md:pb-0 md:pr-10",
   },
   {
     title: "The Company",
     body: "Meet the team and the company building Pintree for a more connected social experience.",
-    linkText: "About",
+    linkText: "ABOUT MCABEE",
     linkHref: "#",
+    className:
+      "flex flex-col border-b border-[#E5E5E5] px-0 py-8 md:border-b-0 md:border-r md:px-10 md:py-0",
   },
   {
     title: "Our Approach",
     body: "A thoughtful approach to building social spaces around connection, participation, and discovery.",
-    linkText: "Approach",
+    linkText: "OUR APPROACH",
     linkHref: "#",
+    className: "flex flex-col pl-0 pt-8 md:pl-10 md:pt-0",
   },
 ];
 
 export default function Section4() {
   return (
-    <section className="w-full overflow-hidden bg-white pb-[20px] pt-[60px] sm:pb-[30px] sm:pt-[80px] lg:pt-[90px]">
-      <div className={sectionWrap}>
-        <p className="text-left text-[14px] leading-[20px] font-aeonik-regular font-normal text-[#555555] sm:text-[16px]">
-          About
-        </p>
+    <section className="w-full border-[#E5E5E5] bg-white pb-12 font-jakarta text-[#202020]">
+      <div className="mx-auto w-full max-w-[1340px] px-8">
+        <div className="pb-10 pt-12">
+          <div className="flex flex-col">
+            <div className="mb-3.5 flex items-center gap-2">
+              <span className="inline-block h-2 w-2 rounded-full bg-[#CAFFA6] ring-2 ring-[#e6ffd1]" />
+              <span className="text-[11px] font-semibold uppercase tracking-wider text-[#525252]">
+                ABOUT
+              </span>
+            </div>
 
-        <h2 className="mt-[12px] text-left text-[32px] font-aeonik-medium font-medium leading-[1.12] tracking-[-0.02em] text-[#0C0C0C] sm:mt-[16px] sm:text-[44px] lg:text-[54px] xl:text-[60px]">
-          Built around people,
-          <br />
-          communities, and conversations.
-        </h2>
+            <h2 className="max-w-2xl font-aeonik-regular text-[32px] font-normal leading-[1.25] tracking-tight text-[#202020] sm:text-[40px] lg:text-[48px]">
+              Built around people, communities, and conversations.
+            </h2>
 
-        <p className="mt-[18px] max-w-[730px] text-left text-[13px] leading-[1.5] font-aeonik-regular font-normal text-[#555555] sm:mt-[22px] sm:text-[15px] lg:text-[16px]">
-          Pintree is a community-first social platform designed to make online
-          interaction feel more organized, meaningful, and human. From personal
-          connections to shared-interest communities, Pintree creates spaces where
-          conversations can grow with purpose.
-        </p>
+            <p className="mt-4 max-w-[620px] text-[16px] font-normal leading-[1.65] text-[#525252]">
+              Pintree is a community-first social platform designed to make online
+              interaction feel more organized, meaningful, and human. From personal
+              connections to shared-interest communities, Pintree creates spaces where
+              conversations can grow with purpose.
+            </p>
+          </div>
 
-        <div className="mt-[48px] grid grid-cols-1 gap-8 sm:mt-[64px] md:grid-cols-3 sm:gap-10 lg:mt-[76px] lg:gap-12">
-          {columns.map((col) => (
-            <div key={col.title} className="flex flex-col justify-between text-left">
-              <div>
-                <h3 className="text-[18px] font-aeonik-medium font-medium text-[#0C0C0C] sm:text-[20px]">
+          <div className="my-12 w-full border-b border-[#E5E5E5]" />
+
+          <div className="grid grid-cols-1 gap-0 md:grid-cols-3">
+            {columns.map((col) => (
+              <div key={col.title} className={col.className}>
+                <h3 className="font-aeonik-medium text-[24px] font-medium text-[#202020]">
                   {col.title}
                 </h3>
-                <p className="mt-2 text-[13px] leading-[1.45] font-aeonik-regular text-[#555555] sm:text-[14px]">
+                <p className="mb-6 mt-2.5 font-jakarta text-[16px] leading-relaxed text-[#666666]">
                   {col.body}
                 </p>
+                <div className="mt-auto">
+                  <Link
+                    href={col.linkHref}
+                    className="inline-flex items-center text-[11px] font-semibold uppercase tracking-wider text-[#202020] transition-opacity hover:opacity-70"
+                  >
+                    {col.linkText}{" "}
+                    <span className="ml-1.5 font-normal">→</span>
+                  </Link>
+                </div>
               </div>
-              <a
-                href={col.linkHref}
-                className="mt-4 inline-block text-[13px] font-aeonik-medium font-medium text-[#0C0C0C] underline underline-offset-4 transition-opacity hover:opacity-80 sm:text-[14px]"
-              >
-                {col.linkText}
-              </a>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
-      </div>
-
-      <div className="relative mt-[48px] w-full overflow-hidden sm:mt-[56px] lg:mt-[64px]">
-        <motion.div
-          className="flex w-max will-change-transform"
-          animate={{ x: ["0%", "-50%"] }}
-          transition={{ duration: 45, repeat: Infinity, ease: "linear" }}
-          aria-hidden
-        >
-          {[0, 1].map((key) => (
-            <img
-              key={key}
-              src={illustrationSrc}
-              alt=""
-              className="h-[100px] w-auto max-w-none shrink-0 sm:h-[130px] lg:h-[153px]"
-              onError={(e) => {
-                if (e.currentTarget.src !== illustrationFallback) {
-                  e.currentTarget.src = illustrationFallback;
-                }
-              }}
-            />
-          ))}
-        </motion.div>
       </div>
     </section>
   );

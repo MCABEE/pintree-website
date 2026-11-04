@@ -1,153 +1,229 @@
 "use client";
 
-import React from "react";
+import Link from "next/link";
 
-function CardArrow({ isGreen = false }) {
-  return (
-    <div
-      className={`inline-flex h-[32px] w-[32px] cursor-pointer items-center justify-center rounded-full transition-all duration-300 ${
-        isGreen
-          ? "border border-[#00D685] bg-[#00D685]/20 text-white shadow-[0_0_12px_rgba(0,214,133,0.3)] hover:border-white hover:bg-white hover:text-[#0C0C0C] hover:shadow-none"
-          : "border border-white/40 bg-transparent text-white hover:border-white hover:bg-white hover:text-[#0C0C0C]"
-      }`}
-    >
-      <svg width="13" height="13" viewBox="0 0 16 16" fill="none" aria-hidden>
-        <path
-          d="M3.33334 8H12.6667M12.6667 8L8 3.33334M12.6667 8L8 12.6667"
-          stroke="currentColor"
-          strokeWidth="1.5"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        />
-      </svg>
-    </div>
-  );
-}
-
-function BentoCard({
-  image,
-  fallbackImage,
-  title,
-  description,
-  className = "",
-  isGreenArrow = false,
-  isLarge = false,
-}) {
-  return (
-    <div
-      className={`group relative flex flex-col items-start overflow-hidden rounded-[8px] px-[32px] py-[32px] ${
-        isLarge ? "justify-center pr-[61px]" : "justify-end pr-[52px]"
-      } ${className}`}
-    >
-      <img
-        src={image}
-        alt={title}
-        className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.03]"
-        onError={(e) => {
-          if (fallbackImage && e.currentTarget.src !== fallbackImage) {
-            e.currentTarget.src = fallbackImage;
-          }
-        }}
-      />
-      <div
-        className="pointer-events-none absolute inset-0 bg-gradient-to-b from-black/20 via-black/15 to-black/60"
-        aria-hidden
-      />
-      <div className="relative z-10 max-w-[320px] text-left text-white">
-        <h3 className="m-0 text-[20px] font-aeonik-medium font-medium leading-[1.15] sm:text-[21px]">
-          {title}
-        </h3>
-        <p className="mt-[10px] text-[12.5px] leading-[1.45] font-aeonik-regular text-white/85 sm:text-[13px]">
-          {description}
-        </p>
-        <div className="mt-[24px]">
-          <CardArrow isGreen={isGreenArrow} />
-        </div>
-      </div>
-    </div>
-  );
-}
-
-const featureCards = [
-  {
-    image: "/charlvera-polar-lights-5858656_1280_1.svg",
-    fallbackImage: "/charlvera-polar-lights-5858656_1280 1.svg",
-    title: "People",
-    description:
-      "Start with your own space. Create your profile, share who you are, and manage how you connect with others.",
-    className:
-      "h-[360px] w-full md:h-[400px] md:col-span-2 lg:col-span-1 lg:row-span-2 lg:h-[537px]",
-    isLarge: true,
-  },
-  {
-    image: "/tommyvideo-abstract-5719221_1280_1.svg",
-    fallbackImage: "/tommyvideo-abstract-5719221_1280 1.svg",
-    title: "Connections",
-    description:
-      "Build your network. Find people to follow accounts, and build friends through mutual connections.",
-    className: "h-[240px] w-full lg:h-[264px]",
-    isLarge: false,
-  },
-  {
-    image: "/hans-aurora-3273419_1280_2.svg",
-    fallbackImage: "/hans-aurora-3273419_1280 2.svg",
-    title: "Communities",
-    description:
-      "Find places to belong. Create or join communities around shared interests, organizations, local groups, and more.",
-    className: "h-[240px] w-full lg:h-[264px]",
-    isLarge: false,
-  },
-  {
-    image: "/stux-black-1072366_1280_1.svg",
-    fallbackImage: "/stux-black-1072366_1280 1.svg",
-    title: "Rooms",
-    description:
-      "Take conversations deeper. Join focused discussions within communities through dedicated rooms.",
-    className: "h-[240px] w-full lg:h-[264px]",
-    isLarge: false,
-  },
-  {
-    image: "/pexels-abstract-1850416_1280_1.svg",
-    fallbackImage: "/pexels-abstract-1850416_1280 1.svg",
-    title: "Discover",
-    description:
-      "Go beyond your network. Explore posts and communities from people you haven't connected with yet.",
-    className: "h-[240px] w-full lg:h-[264px]",
-    isLarge: false,
-  },
-];
+const PEOPLE_IMG = "/section2/people-irine-joy.jpg";
+const COMMUNITIES_IMG = "/section2/communities-outdoor-dining.jpg";
+const ROOMS_IMG = "/section2/rooms-discussion.jpg";
+const CONNECTIONS_IMG = "/section2/connections-relaxed-reading.jpg";
+const DISCOVER_IMG = "/section2/discover-scenic-hill.jpg";
 
 export default function Section2() {
   return (
-    <section className="w-full bg-white pb-[50px] pt-[50px] sm:pb-[60px] sm:pt-[60px] lg:pb-[70px] lg:pt-[70px]">
-      <div className="mx-auto w-full max-w-[1536px] px-6 sm:px-10 lg:px-[136px]">
-        <div className="max-w-[980px] text-center">
-          <p className="text-[14px] leading-[20px] font-aeonik-regular font-normal text-[#555555] sm:text-[16px]">
-            Start with what matters to you
-          </p>
-          <h2 className="mt-[10px] text-[28px] font-aeonik-medium font-medium leading-[1.15] tracking-[-0.02em] text-[#0C0C0C] sm:text-[36px] lg:text-[48px]">
-            Connect. Participate. Discover.
-          </h2>
-          <p className="mx-auto mt-[12px] max-w-[640px] text-[14px] leading-[24px] font-aeonik-regular font-normal text-[#555555] sm:text-[16px]">
-            Pintree brings your profile, connections, communities, and discovery
-            experience together in one place.
-          </p>
+    <section className="w-full border-[#E5E5E5] bg-white pb-12 font-jakarta text-[#202020]">
+      <div className="mx-auto w-full max-w-[1340px] px-8">
+        {/* Section intro */}
+        <div className="flex flex-col justify-between gap-6 pb-12 md:flex-row md:items-end">
+          <div>
+            <div className="mb-3.5 flex items-center gap-2">
+              <span className="inline-block h-2 w-2 rounded-full bg-[#CAFFA6] ring-2 ring-[#e6ffd1]" />
+              <span className="text-[11px] font-semibold uppercase tracking-wider text-[#777777]">
+                START WITH WHAT MATTERS TO YOU
+              </span>
+            </div>
+            <h2 className="font-aeonik-regular text-4xl font-normal leading-[1.08] tracking-tight text-[#202020] sm:text-5xl lg:text-[64px]">
+              Connect. Participate.
+              <br />
+              Discover.
+            </h2>
+          </div>
+          <div className="max-w-sm">
+            <p className="font-jakarta text-[16px] font-normal leading-6 tracking-normal text-[#525252]">
+              Pintree brings your profile, connections, communities, and discovery
+              experience together in one place.
+            </p>
+          </div>
         </div>
 
-        <div className="mt-[42px] w-full max-w-[980px] lg:mt-[48px]">
-          <div className="grid grid-cols-1 gap-x-[10px] gap-y-[9px] md:grid-cols-2 lg:grid-cols-3 lg:grid-rows-2">
-            {featureCards.map((card) => (
-              <BentoCard
-                key={card.title}
-                image={card.image}
-                fallbackImage={card.fallbackImage}
-                title={card.title}
-                description={card.description}
-                className={card.className}
-                isGreenArrow={card.isGreenArrow}
-                isLarge={card.isLarge}
+        <div className="w-full border-b border-[#E5E5E5]" />
+
+        {/* People + Communities */}
+        <div className="grid grid-cols-1 items-start gap-12 py-16 lg:grid-cols-12 lg:gap-16">
+          <div className="flex flex-col lg:col-span-5">
+            <div className="mb-3 flex items-center gap-2 text-[11px] uppercase tracking-wider text-[#777777]">
+              <span className="font-medium">THE PERSONAL SPACE</span>
+            </div>
+            <h3 className="mb-3 font-aeonik-regular text-[40px] font-normal leading-tight tracking-tight text-[#202020] sm:text-[48px]">
+              People
+            </h3>
+            <p className="mb-8 max-w-md font-jakarta text-[16px] font-normal leading-6 tracking-normal text-[#525252]">
+              Your profile is your space. Create your profile, share who you are, and
+              manage how you connect with others.
+            </p>
+            <div className="relative aspect-[4/5] h-[450px] w-[360px] max-w-full overflow-hidden rounded-2xl border border-[#ececec] shadow-sm">
+              <img
+                src={PEOPLE_IMG}
+                alt="Irine Joy portrait"
+                className="block aspect-[4/5] h-[450px] w-full max-w-[360px] object-cover object-top"
               />
-            ))}
+              <div className="absolute inset-x-3 bottom-3 flex items-center justify-between rounded-xl border border-white/60 bg-white/90 px-3.5 py-2.5 shadow-sm backdrop-blur-md">
+                <div>
+                  <p className="font-aeonik-medium text-[12px] font-semibold leading-tight text-[#1a1a1a]">
+                    Irine Joy
+                  </p>
+                  <p className="text-[10px] leading-tight text-[#666666]">
+                    Independent Curator
+                  </p>
+                </div>
+                <span className="rounded-md bg-black/5 px-2 py-0.5 text-[10.5px] font-medium text-[#777777]">
+                  Joined 2024
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <div className="flex flex-col lg:col-span-7">
+            <div className="relative mb-7 aspect-[16/9] w-full overflow-hidden rounded-2xl border border-[#ececec] shadow-sm lg:aspect-[2.1/1]">
+              <img
+                src={COMMUNITIES_IMG}
+                alt="Communities outdoor dining"
+                className="block h-full w-full object-cover"
+              />
+              <div className="absolute right-3.5 top-3.5 flex items-center gap-1.5 rounded-full border border-white/80 bg-white/95 px-3 py-1.5 shadow-sm backdrop-blur-md">
+                <span className="inline-block h-2 w-2 rounded-full bg-[#CAFFA6] ring-2 ring-[#e6ffd1]" />
+                <span className="text-[10.5px] font-semibold uppercase tracking-wider text-[#777777]">
+                  ACTIVE SANCTUARY
+                </span>
+              </div>
+            </div>
+            <div className="mb-2 flex items-center gap-2 text-[11px] uppercase tracking-wider text-[#777777]">
+              <span className="font-medium">SHARED BELONGING</span>
+            </div>
+            <h3 className="mb-2 font-aeonik-regular text-[40px] font-normal leading-[1.1] tracking-tight text-[#202020] sm:text-[48px]">
+              Communities
+            </h3>
+            <p className="max-w-xl font-jakarta text-[16px] font-normal leading-6 tracking-normal text-[#525252]">
+              Find places to belong. Join communities built around shared interests,
+              organizations, and local groups. Share ideas, take part in meaningful
+              conversations, discover different perspectives, and build connections
+              with people who care about the same things.
+            </p>
+            <div className="pt-12">
+              <Link
+                href="/support"
+                className="inline-flex cursor-pointer items-center gap-2 rounded-full bg-[#000000] px-5 py-2.5 font-jakarta text-[13px] font-medium leading-none text-white transition-colors hover:bg-[#202020]"
+              >
+                <span className="font-jakarta text-[12px] font-medium">
+                  Explore Communities
+                </span>
+                <span className="text-sm">→</span>
+              </Link>
+            </div>
+          </div>
+        </div>
+
+        <div className="w-full border-b border-[#E5E5E5]" />
+
+        {/* Rooms + Connections */}
+        <div className="relative grid grid-cols-1 items-start gap-12 py-16 md:grid-cols-2 lg:gap-16">
+          <div className="flex flex-col pr-0 md:pr-4">
+            <div className="mb-2.5 flex items-center gap-2 text-[11px] uppercase tracking-wider text-[#777777]">
+              <span className="font-medium">INTIMATE SPACES</span>
+            </div>
+            <h3 className="mb-2.5 font-aeonik-regular text-[40px] font-normal tracking-tight text-[#202020] sm:text-[48px]">
+              Rooms
+            </h3>
+            <p className="mb-6 font-jakarta text-[16px] font-normal leading-6 tracking-normal text-[#525252]">
+              Take conversations deeper. Join focused discussions within communities
+              through dedicated rooms.
+            </p>
+            <div className="mb-3 aspect-[16/9] w-full overflow-hidden rounded-2xl border border-[#ececec] shadow-sm">
+              <img
+                src={ROOMS_IMG}
+                alt="Rooms discussion"
+                className="block h-full w-full object-cover"
+              />
+            </div>
+          </div>
+
+          <div className="flex flex-col border-[#E5E5E5] pl-0 md:border-l md:pl-4">
+            <div className="mb-2.5 flex items-center gap-2 text-[11px] uppercase tracking-wider text-[#777777]">
+              <span className="font-medium">MEANINGFUL BONDS</span>
+            </div>
+            <h3 className="mb-2.5 font-aeonik-regular text-[40px] font-normal tracking-tight text-[#202020] sm:text-[48px]">
+              Connections
+            </h3>
+            <p className="mb-6 font-jakarta text-[16px] font-normal leading-6 tracking-normal text-[#525252]">
+              Build your network. Find people, follow accounts, and build meaningful
+              connections through mutual interests.
+            </p>
+            <div className="mb-3 aspect-[16/9] w-full overflow-hidden rounded-2xl border border-[#ececec] shadow-sm">
+              <img
+                src={CONNECTIONS_IMG}
+                alt="Connections relaxed reading"
+                className="block h-full w-full object-cover"
+              />
+            </div>
+          </div>
+        </div>
+
+        <div className="w-full border-b border-[#E5E5E5]" />
+
+        {/* Discover */}
+        <div className="grid grid-cols-1 items-center gap-12 py-16 lg:grid-cols-12 lg:gap-16">
+          <div className="flex flex-col justify-center lg:col-span-5">
+            <div className="mb-3 flex items-center gap-2 text-[11px] uppercase tracking-wider text-[#777777]">
+              <span className="font-medium">THE WIDER WORLD</span>
+            </div>
+            <h3 className="mb-3 font-aeonik-regular text-[40px] font-normal leading-tight tracking-tight text-[#202020] sm:text-[48px]">
+              Discover
+            </h3>
+            <p className="mb-6 font-jakarta text-[16px] font-normal leading-6 tracking-normal text-[#525252]">
+              Go beyond your network. Explore posts and communities from people you
+              haven&apos;t connected yet.
+            </p>
+            <div className="mb-8 space-y-3">
+              <div className="flex items-start gap-3">
+                <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-[#CAFFA6] ring-2 ring-[#e6ffd1]" />
+                <p className="font-jakarta text-[14px] font-normal leading-[22px] tracking-normal text-[#525252]">
+                  Serendipitous encounters with writers, local workshops, and
+                  grassroots collectives curated purely by resonance.
+                </p>
+              </div>
+              <div className="flex items-start gap-3">
+                <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-[#CAFFA6] ring-2 ring-[#e6ffd1]" />
+                <p className="font-jakarta text-[14px] font-normal leading-[22px] tracking-normal text-[#525252]">
+                  Open horizons where quiet taste and thoughtful dialogue take
+                  precedence over engagement-maximizing noise.
+                </p>
+              </div>
+            </div>
+            <div className="flex items-center gap-3">
+              <Link
+                href="/newsroom"
+                className="rounded-full bg-black px-5 py-2.5 text-xs font-medium text-white shadow-sm transition hover:bg-neutral-800"
+              >
+                Explore Stories
+              </Link>
+              <Link
+                href="/support"
+                className="rounded-full border border-[#E5E5E5] bg-[#F7F7F7] px-5 py-2.5 text-xs font-medium text-[#202020] transition hover:bg-[#ececec]"
+              >
+                Browse Directory
+              </Link>
+            </div>
+          </div>
+
+          <div className="flex flex-col lg:col-span-7">
+            <div className="relative aspect-[16/9] w-full overflow-hidden rounded-2xl border border-[#ececec] shadow-sm">
+              <img
+                src={DISCOVER_IMG}
+                alt="Scenic hill landscape at golden hour"
+                className="block h-full w-full object-cover"
+              />
+              <div className="absolute inset-0 flex items-end bg-gradient-to-t from-black/70 via-black/20 to-transparent p-6 lg:p-8">
+                <div className="flex w-full items-end justify-between text-white">
+                  <div>
+                    <p className="mb-1 text-[10px] font-semibold uppercase tracking-[0.14em] text-neutral-300">
+                      CULTURAL DISPATCH
+                    </p>
+                    <h4 className="font-aeonik-regular text-lg font-normal tracking-tight text-white lg:text-xl">
+                      The Architecture of Everyday Gathering
+                    </h4>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
