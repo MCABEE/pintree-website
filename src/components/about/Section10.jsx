@@ -27,7 +27,7 @@ export default function Section10() {
         <h2 className="mx-auto max-w-[640px] text-[30px] font-aeonik-medium font-medium leading-[1.15] tracking-[-0.02em] text-[#F0F0F0] sm:text-[36px] lg:text-[40px]">
           Your story belongs here
         </h2>
-        <p className="mx-auto mt-[14px] max-w-[620px] text-[14px] font-aeonik-regular font-normal leading-[1.5] text-[#9A9A9A] sm:text-[15px] lg:mt-[16px] lg:whitespace-nowrap">
+        <p className="mx-auto mt-[14px] max-w-[620px] font-jakarta text-[14px] font-normal leading-[1.5] text-[#9A9A9A] sm:text-[15px] lg:mt-[16px] lg:whitespace-nowrap">
           Pintree is where people, communities, and discovery come together.
         </p>
         <div className="mt-[26px] flex justify-center sm:mt-[28px]">

@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import { getValidAccessToken, authenticatedFetch, refreshAccessToken } from "@/utils/auth";
+import UserAvatar, { resolveProfileImageUrl } from "@/components/UserAvatar";
 
 function decodeJwt(token) {
   if (!token) return null;
@@ -39,6 +40,10 @@ export default function AccountOverviewPage() {
     isEmailVerified: false,
     isPhoneVerified: false,
   });
+  const [storedProfile, setStoredProfile] = useState({
+    fullName: "",
+    handle: "",
+  });
 
   useEffect(() => {
     if (typeof window === "undefined") return;
@@ -52,6 +57,10 @@ export default function AccountOverviewPage() {
     const storedAuthPhone = localStorage.getItem("pintree_auth_phone") || "";
     const storedEmailVerified = localStorage.getItem("pintree_email_verified");
     const storedMobileVerified = localStorage.getItem("pintree_mobile_verified");
+    const storedFullName = localStorage.getItem("pintree_user_full_name") || "";
+    const storedHandle = localStorage.getItem("pintree_user_handle") || "";
+
+    setStoredProfile({ fullName: storedFullName, handle: storedHandle });
 
     const jwtClaims = decodeJwt(token);
 
@@ -203,18 +212,34 @@ export default function AccountOverviewPage() {
         localStorage.removeItem("pintree_login_verified");
         localStorage.removeItem("pintree_email_verified");
         localStorage.removeItem("pintree_mobile_verified");
+        localStorage.removeItem("pintree_user_full_name");
+        localStorage.removeItem("pintree_user_handle");
         document.cookie = "pintree_token=; path=/; max-age=0;";
       }
       router.push("/login");
     }
   };
 
-  const fullName = profile?.fullName || "Amara Vance";
-  const username = profile?.handleId
-    ? `@${String(profile.handleId).trim().replace(/^@+/, "")}`
-    : profile?.fullName
-    ? `@${String(profile.fullName).toLowerCase().replace(/\s+/g, "").replace(/^@+/, "")}`
-    : "@amaravance";
+  const fullName =
+    profile?.fullName ||
+    storedProfile.fullName ||
+    (isLoading ? "Loading…" : "Your account");
+
+  const handleValue =
+    profile?.handleId ||
+    profile?.handle ||
+    profile?.username ||
+    storedProfile.handle ||
+    "";
+
+  const username = handleValue
+    ? `@${String(handleValue).trim().replace(/^@+/, "")}`
+    : profile?.fullName || storedProfile.fullName
+      ? `@${String(profile?.fullName || storedProfile.fullName)
+          .toLowerCase()
+          .replace(/\s+/g, "")
+          .replace(/^@+/, "")}`
+      : "";
 
   // Display empty string if missing or undefined - never display placeholder text or fabricated data
   const emailDisplay = sessionData.email ? String(sessionData.email).trim() : "";
@@ -229,11 +254,24 @@ export default function AccountOverviewPage() {
   const showEmailBadge = sessionData.loginMethod === "email" && sessionData.isEmailVerified && Boolean(emailDisplay);
   const showPhoneBadge = sessionData.loginMethod === "mobile" && sessionData.isPhoneVerified && Boolean(phoneDisplay);
 
-  const accountType = profile?.accountMode === "PUBLIC" ? "Personal" : profile?.accountMode || "Personal";
+  const accountTypeRaw =
+    profile?.accountType || profile?.accountMode || profile?.accountCategory || "";
+  const accountType =
+    accountTypeRaw === "PUBLIC"
+      ? "Personal"
+      : accountTypeRaw
+        ? String(accountTypeRaw)
+            .replace(/_/g, " ")
+            .toLowerCase()
+            .replace(/^\w/, (c) => c.toUpperCase())
+        : "Personal";
 
   const memberSince = profile?.createdAt
-    ? new Date(profile.createdAt).toLocaleDateString("en-US", { month: "long", year: "numeric" })
-    : "October 2024";
+    ? new Date(profile.createdAt).toLocaleDateString("en-US", {
+        month: "long",
+        year: "numeric",
+      })
+    : "";
 
   const friendsList = Array.isArray(friendsData?.friends)
     ? friendsData.friends
@@ -257,21 +295,25 @@ export default function AccountOverviewPage() {
     ? friendsData.total
     : typeof friendsData?.data?.total === "number"
     ? friendsData.data.total
-    : profile?.friendsCount ?? 1285;
+    : typeof profile?.friendsCount === "number"
+      ? profile.friendsCount
+      : 0;
 
   const ownedCommunitiesCount = typeof createdCommunities?.total === "number"
     ? createdCommunities.total
     : typeof createdCommunities?.data?.total === "number"
     ? createdCommunities.data.total
-    : 2;
+    : 0;
 
   const joinedCommunitiesCount = typeof joinedCommunities?.total === "number"
     ? joinedCommunities.total
     : typeof joinedCommunities?.data?.total === "number"
     ? joinedCommunities.data.total
-    : profile?.communitiesJoinedCount ?? 14;
+    : typeof profile?.communitiesJoinedCount === "number"
+      ? profile.communitiesJoinedCount
+      : 0;
 
-  const avatarUrl = profile?.profileImageUrl || "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=200&auto=format&fit=crop&q=80";
+  const avatarUrl = resolveProfileImageUrl(profile);
 
   return (
     <div className="min-h-[calc(100vh-80px)] bg-[#fcf9f8] text-[#1b1c1c] font-jakarta antialiased flex flex-col justify-between selection:bg-[#bdf19a] selection:text-black">
@@ -295,13 +337,14 @@ export default function AccountOverviewPage() {
               {/* Profile Card Header */}
               <div className="flex items-center justify-between pb-6 border-b border-[#e4e2e1]">
                 <div className="flex items-center gap-4">
-                  <div className="w-16 h-16 rounded-full overflow-hidden border border-[#e4e2e1] flex-shrink-0 bg-[#f6f3f2]">
-                    <img
-                      alt={`${fullName} portrait`}
-                      className="w-full h-full object-cover"
-                      src={avatarUrl}
-                    />
-                  </div>
+                  <UserAvatar
+                    name={fullName}
+                    src={avatarUrl}
+                    profile={profile}
+                    sizeClass="w-16 h-16"
+                    textClass="text-[22px]"
+                    alt={`${fullName} portrait`}
+                  />
                   <div className="flex flex-col">
                     <div className="flex items-center gap-2">
                       <h2 className="text-[15px] leading-[20px] font-bold text-[#1b1c1c] capitalize">
@@ -501,7 +544,7 @@ export default function AccountOverviewPage() {
                 <div className="py-3.5 flex items-center justify-between">
                   <span className="text-[13px] leading-[18px] text-[#747878] font-semibold">Member since</span>
                   <span suppressHydrationWarning className="text-[16px] leading-[24px] text-[#1b1c1c] font-medium">
-                    {memberSince}
+                    {memberSince || "—"}
                   </span>
                 </div>
               </div>

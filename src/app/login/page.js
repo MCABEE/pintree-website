@@ -3,45 +3,11 @@
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useState, useEffect } from "react";
-
-function getDeviceInfo() {
-  if (typeof window === "undefined") {
-    return {
-      deviceId: "web-client",
-      deviceName: "Web Browser",
-      platform: "web",
-      osVersion: "1.0",
-      appVersion: "1.0.0",
-      fcmToken: "web",
-    };
-  }
-
-  let deviceId = "web-client";
-  try {
-    deviceId = localStorage.getItem("pintree_device_id") || "";
-    if (!deviceId) {
-      deviceId = "web-" + Math.random().toString(36).substring(2, 11) + Date.now().toString(36);
-      localStorage.setItem("pintree_device_id", deviceId);
-    }
-  } catch (e) {
-    deviceId = "web-" + Date.now();
-  }
-
-  return {
-    deviceId,
-    deviceName: navigator.userAgent.includes("Chrome")
-      ? "Chrome Browser"
-      : navigator.userAgent.includes("Safari")
-      ? "Safari Browser"
-      : navigator.userAgent.includes("Firefox")
-      ? "Firefox Browser"
-      : "Web Browser",
-    platform: "web",
-    osVersion: navigator.platform || "Web",
-    appVersion: "1.0.0",
-    fcmToken: "web",
-  };
-}
+import { getDeviceInfo } from "@/utils/device";
+import {
+  needsGoogleProfileCompletion,
+  signInWithGoogle,
+} from "@/utils/googleAuth";
 
 export default function LoginPage() {
   const router = useRouter();
@@ -263,6 +229,46 @@ export default function LoginPage() {
     }
   };
 
+  const handleGoogleContinue = async () => {
+    setErrorMsg("");
+    setSuccessMsg("");
+    setIsLoading(true);
+
+    try {
+      const result = await signInWithGoogle();
+      if (!result.ok) {
+        setErrorMsg(result.message || "Google Sign-In failed.");
+        return;
+      }
+
+      if (needsGoogleProfileCompletion(result.data)) {
+        setSuccessMsg("Almost there — complete your profile…");
+        router.push("/?continue=profile");
+        return;
+      }
+
+      const searchParams = new URLSearchParams(window.location.search);
+      const targetAction = searchParams.get("action");
+      const redirectUrl =
+        targetAction === "delete_account"
+          ? "/account/delete"
+          : searchParams.get("redirect") || "/account";
+
+      setSuccessMsg("Login successful! Redirecting…");
+      setTimeout(() => {
+        router.push(redirectUrl);
+      }, 500);
+    } catch (err) {
+      setErrorMsg(
+        err instanceof Error
+          ? err.message
+          : "Google Sign-In failed. Please try again."
+      );
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
   return (
     <div className="flex h-[calc(100dvh-80px)] flex-col justify-between bg-white text-[#131313] font-jakarta overflow-y-auto sm:overflow-hidden">
       {/* Centered Login Console */}
@@ -278,7 +284,9 @@ export default function LoginPage() {
             {/* Continue with Google Button */}
             <button
               type="button"
-              className="flex w-full cursor-pointer items-center justify-center gap-3 rounded-xl border border-neutral-200 bg-white px-4 py-2 text-sm font-medium text-[#131313] transition-all hover:bg-neutral-50 active:scale-[0.99] font-jakarta"
+              onClick={handleGoogleContinue}
+              disabled={isLoading || rateLimitCountdown > 0}
+              className="flex w-full cursor-pointer items-center justify-center gap-3 rounded-xl border border-neutral-200 bg-white px-4 py-2 text-sm font-medium text-[#131313] transition-all hover:bg-neutral-50 active:scale-[0.99] font-jakarta disabled:cursor-not-allowed disabled:opacity-60"
             >
               <svg className="h-4 w-4 shrink-0" viewBox="0 0 24 24">
                 <path
@@ -298,7 +306,7 @@ export default function LoginPage() {
                   fill="#EA4335"
                 />
               </svg>
-              <span>Continue with Google</span>
+              <span>{isLoading ? "Connecting…" : "Continue with Google"}</span>
             </button>
 
             {/* Divider */}

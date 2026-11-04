@@ -1,33 +1,42 @@
 "use client";
 
-import React, { useEffect, useRef, useState } from "react";
+import Link from "next/link";
 
-const cards = [
+const stories = [
   {
+    id: "story-1",
     title:
-      "Pintree Launches a New Social Space Built for Meaningful Connections part..",
-    body: "Pintree introduces a fresh approach to social networking, bringing users, creators, and communities together in a space..",
+      "Pintree Launches a New Social Space Built for Meaningful Connections",
+    excerpt:
+      "Discover a fresh approach to social networking, bringing people, creators, and communities together in one place.",
+    href: "/newsroom",
   },
   {
+    id: "story-2",
     title:
       "Pintree Introduces a Fresh Social Platform for Expression and Discovery",
-    body: "Pintree offers a modern space for sharing, exploring, and connecting—bringing users, creators, and communities together through personalized content, inspiring moments..",
+    excerpt:
+      "Explore a modern space for sharing, discovering interests, and connecting with people and communities.",
+    href: "/newsroom",
   },
   {
-    title: "Pintree Launches a New Social Space Built for Meaningful Connections",
-    body: "Stay up to date with product news, community stories, and platform updates from the Pintree team.",
+    id: "story-3",
+    title: "Building a More Community-First Social Experience",
+    excerpt:
+      "Learn about the ideas and principles shaping Pintree's approach to meaningful participation and discovery.",
+    href: "/newsroom",
   },
 ];
 
 function ArrowIcon({ direction }) {
   return (
     <svg
-      width="16"
-      height="16"
+      width="20"
+      height="20"
       viewBox="0 0 24 24"
       fill="none"
       stroke="currentColor"
-      strokeWidth="1.75"
+      strokeWidth="1.5"
       strokeLinecap="round"
       strokeLinejoin="round"
       aria-hidden
@@ -47,113 +56,99 @@ function ArrowIcon({ direction }) {
   );
 }
 
-function CardArrowButton({ label = "Read story" }) {
+function SmallArrowIcon() {
   return (
-    <button
-      type="button"
-      className="mt-auto flex h-[40px] w-[40px] shrink-0 items-center justify-center rounded-full border border-[#3A3A3A] bg-transparent text-[#A0A0A0] transition-all duration-300 group-hover:border-white group-hover:bg-white group-hover:text-[#121212] group-hover:scale-105 active:scale-95 cursor-pointer"
-      aria-label={label}
+    <svg
+      width="18"
+      height="18"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden
     >
-      <ArrowIcon direction="right" />
-    </button>
-  );
-}
-
-function NavArrowButton({ direction, onClick, disabled, label }) {
-  return (
-    <button
-      type="button"
-      onClick={onClick}
-      disabled={disabled}
-      className={`flex h-[42px] w-[42px] items-center justify-center rounded-full border transition-all duration-300 ${
-        disabled
-          ? "cursor-default border-[#2B2B2B] text-[#404040] opacity-40"
-          : "cursor-pointer border-[#3A3A3A] text-[#CCCCCC] hover:border-white hover:bg-white hover:text-black hover:scale-105 active:scale-95"
-      }`}
-      aria-label={label}
-    >
-      <ArrowIcon direction={direction} />
-    </button>
+      <path d="M5 12h14" />
+      <path d="m12 5 7 7-7 7" />
+    </svg>
   );
 }
 
 export default function Section8() {
-  const trackRef = useRef(null);
-  const [canScrollLeft, setCanScrollLeft] = useState(false);
-  const [canScrollRight, setCanScrollRight] = useState(true);
-
-  const checkScroll = () => {
-    if (!trackRef.current) return;
-    const { scrollLeft, scrollWidth, clientWidth } = trackRef.current;
-    setCanScrollLeft(scrollLeft > 5);
-    setCanScrollRight(scrollLeft < scrollWidth - clientWidth - 5);
-  };
-
-  useEffect(() => {
-    checkScroll();
-    const node = trackRef.current;
-    if (!node) return undefined;
-    node.addEventListener("scroll", checkScroll, { passive: true });
-    window.addEventListener("resize", checkScroll);
-    return () => {
-      node.removeEventListener("scroll", checkScroll);
-      window.removeEventListener("resize", checkScroll);
-    };
-  }, []);
-
-  const scroll = (direction) => {
-    if (!trackRef.current) return;
-    trackRef.current.scrollBy({
-      left: direction === "left" ? -340 : 340,
-      behavior: "smooth",
-    });
-  };
-
   return (
-    <section className="w-full bg-black py-[56px] sm:py-[72px] lg:py-[88px]">
-      <div className="mx-auto w-full max-w-[1536px] px-6 sm:px-10 lg:px-[136px]">
-        <div className="flex flex-col gap-6 sm:flex-row sm:items-start sm:justify-between">
-          <div className="max-w-[520px] text-left">
-            <h2 className="text-[28px] font-aeonik-medium font-medium leading-[1.12] tracking-[-0.02em] text-white sm:text-[36px] lg:text-[40px]">
-              What&apos;s new at Pintree
+    <section
+      aria-labelledby="newsroom-headline"
+      className="w-full bg-white py-20 font-jakarta text-[#1b1c1c] lg:py-24"
+    >
+      <div className="mx-auto w-full max-w-[1340px] px-8">
+        <header className="flex flex-col justify-between gap-6 pb-2 md:flex-row md:items-end">
+          <div className="max-w-2xl">
+            <div className="mb-3 inline-flex items-center gap-2">
+              <span className="h-1.5 w-1.5 rounded-full bg-[#baee97]" />
+              <span className="text-[11px] font-semibold uppercase tracking-wider text-[#444748]">
+                Newsroom
+              </span>
+            </div>
+
+            <h2
+              id="newsroom-headline"
+              className="font-aeonik-regular text-[32px] font-normal tracking-tight text-black sm:text-[40px] lg:text-[48px] lg:leading-[56px]"
+            >
+              What&apos;s New at Pintree
             </h2>
-            <p className="mt-[12px] text-[14px] font-aeonik-regular font-normal leading-[1.5] text-white/55 sm:text-[15px]">
+
+            <p className="mt-2.5 max-w-xl font-jakarta text-[16px] font-normal leading-6 text-[#444748]">
               The latest updates, stories, and things happening around Pintree.
             </p>
           </div>
 
-          <div className="flex shrink-0 items-center gap-[10px] sm:pt-1">
-            <NavArrowButton
-              direction="left"
-              onClick={() => scroll("left")}
-              disabled={!canScrollLeft}
-              label="Previous updates"
-            />
-            <NavArrowButton
-              direction="right"
-              onClick={() => scroll("right")}
-              disabled={!canScrollRight}
-              label="Next updates"
-            />
-          </div>
-        </div>
-
-        <div
-          ref={trackRef}
-          className="mt-[32px] flex gap-[16px] overflow-x-auto pb-2 sm:mt-[40px] sm:gap-[20px] [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
-        >
-          {cards.map((card) => (
-            <article
-              key={card.title}
-              className="group flex h-[320px] w-[min(100%,320px)] shrink-0 flex-col rounded-[16px] bg-[#1A1A1A] p-[28px] text-left sm:h-[340px] sm:w-[340px] sm:p-[32px] lg:w-[360px] transition-all duration-300 hover:-translate-y-1 hover:bg-[#202020] cursor-pointer"
+          <div
+            aria-label="Newsroom stories navigation"
+            className="flex items-center gap-3 self-start pb-1 md:self-end"
+          >
+            <button
+              type="button"
+              aria-label="Previous stories"
+              className="flex h-11 w-11 items-center justify-center rounded-full border border-[#c4c7c7] bg-white text-[#1b1c1c] transition-all duration-150 hover:border-black focus:outline-none active:scale-[0.98]"
             >
-              <h3 className="text-[17px] font-aeonik-regular font-normal leading-[1.35] text-white sm:text-[18px]">
-                {card.title}
-              </h3>
-              <p className="mt-[14px] text-[14px] font-aeonik-regular font-normal leading-[1.5] text-white/50 sm:text-[15px]">
-                {card.body}
-              </p>
-              <CardArrowButton />
+              <ArrowIcon direction="left" />
+            </button>
+            <button
+              type="button"
+              aria-label="Next stories"
+              className="flex h-11 w-11 items-center justify-center rounded-full border border-[#c4c7c7] bg-white text-[#1b1c1c] transition-all duration-150 hover:border-black focus:outline-none active:scale-[0.98]"
+            >
+              <ArrowIcon direction="right" />
+            </button>
+          </div>
+        </header>
+
+        <div className="mt-12 grid grid-cols-1 items-stretch gap-6 md:grid-cols-3 lg:mt-14 lg:gap-8">
+          {stories.map((story) => (
+            <article
+              key={story.id}
+              className="group flex flex-col justify-between rounded-2xl border border-[#e4e2e1] bg-white p-8 transition-[transform,box-shadow,border-color] duration-250 hover:-translate-y-[3px] hover:border-[#747878] hover:shadow-[0_16px_36px_-12px_rgba(19,19,19,0.05)]"
+            >
+              <div>
+                <h3 className="mt-6 font-aeonik-regular text-[22px] font-normal leading-[30px] text-black transition-colors group-hover:text-[#444748]">
+                  <Link href={story.href} className="focus:outline-none">
+                    {story.title}
+                  </Link>
+                </h3>
+                <p className="mt-3.5 font-jakarta text-[16px] font-normal leading-6 text-[#444748]">
+                  {story.excerpt}
+                </p>
+              </div>
+
+              <div className="mt-6 flex items-center justify-between border-t border-[#f6f3f2] pt-8">
+                <span className="text-[13px] font-semibold tracking-[0.02em] text-[#1b1c1c] transition-colors group-hover:text-black">
+                  Read story
+                </span>
+                <div className="flex h-9 w-9 items-center justify-center rounded-full border border-[#e4e2e1] bg-[#f6f3f2] text-[#1b1c1c] transition-all duration-150 group-hover:border-black group-hover:bg-black group-hover:text-white">
+                  <SmallArrowIcon />
+                </div>
+              </div>
             </article>
           ))}
         </div>
