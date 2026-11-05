@@ -1,22 +1,16 @@
 import Footer from "@/components/Footer";
-import SupportCareer from "@/components/support/SupportCareer";
-import SupportCategories from "@/components/support/SupportCategories";
-import SupportSection1 from "@/components/support/SupportSection1";
+import HelpCenterView from "./HelpCenterView";
 
 export const metadata = {
-  title: "Support | Pintree",
+  title: "Help Center",
   description:
-    "Questions, support, or something to share? Get help with Pintree — FAQ, help center, press and media, and careers.",
+    "Find answers, explore helpful guides and learn how to make the most of Pintree.",
 };
 
 export default function SupportPage() {
   return (
-    <div className="min-h-screen bg-white">
-      <main>
-        <SupportSection1 />
-        <SupportCategories />
-        <SupportCareer />
-      </main>
+    <div className="min-h-screen bg-white selection:bg-[#CAFFA6] selection:text-[#202020]">
+      <HelpCenterView />
       <Footer />
     </div>
   );

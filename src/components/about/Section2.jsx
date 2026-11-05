@@ -21,7 +21,7 @@ export default function Section2() {
                 START WITH WHAT MATTERS TO YOU
               </span>
             </div>
-            <h2 className="font-aeonik-regular text-4xl font-normal leading-[1.08] tracking-tight text-[#202020] sm:text-5xl lg:text-[64px]">
+            <h2 className="font-aeonik-regular text-4xl font-normal leading-[1.08] tracking-tight text-[#202020] sm:text-5xl lg:text-[48px]">
               Connect. Participate.
               <br />
               Discover.
@@ -43,7 +43,7 @@ export default function Section2() {
             <div className="mb-3 flex items-center gap-2 text-[11px] uppercase tracking-wider text-[#777777]">
               <span className="font-medium">THE PERSONAL SPACE</span>
             </div>
-            <h3 className="mb-3 font-aeonik-regular text-[40px] font-normal leading-tight tracking-tight text-[#202020] sm:text-[48px]">
+            <h3 className="mb-3 font-aeonik-regular text-[36px] font-normal leading-tight tracking-tight text-[#202020] sm:text-[48px]">
               People
             </h3>
             <p className="mb-8 max-w-md font-jakarta text-[16px] font-normal leading-6 tracking-normal text-[#525252]">
@@ -89,7 +89,7 @@ export default function Section2() {
             <div className="mb-2 flex items-center gap-2 text-[11px] uppercase tracking-wider text-[#777777]">
               <span className="font-medium">SHARED BELONGING</span>
             </div>
-            <h3 className="mb-2 font-aeonik-regular text-[40px] font-normal leading-[1.1] tracking-tight text-[#202020] sm:text-[48px]">
+            <h3 className="mb-2 font-aeonik-regular text-[36px] font-normal leading-[1.1] tracking-tight text-[#202020] sm:text-[48px]">
               Communities
             </h3>
             <p className="max-w-xl font-jakarta text-[16px] font-normal leading-6 tracking-normal text-[#525252]">
@@ -120,7 +120,7 @@ export default function Section2() {
             <div className="mb-2.5 flex items-center gap-2 text-[11px] uppercase tracking-wider text-[#777777]">
               <span className="font-medium">INTIMATE SPACES</span>
             </div>
-            <h3 className="mb-2.5 font-aeonik-regular text-[40px] font-normal tracking-tight text-[#202020] sm:text-[48px]">
+            <h3 className="mb-2.5 font-aeonik-regular text-[36px] font-normal tracking-tight text-[#202020] sm:text-[48px]">
               Rooms
             </h3>
             <p className="mb-6 font-jakarta text-[16px] font-normal leading-6 tracking-normal text-[#525252]">
@@ -140,7 +140,7 @@ export default function Section2() {
             <div className="mb-2.5 flex items-center gap-2 text-[11px] uppercase tracking-wider text-[#777777]">
               <span className="font-medium">MEANINGFUL BONDS</span>
             </div>
-            <h3 className="mb-2.5 font-aeonik-regular text-[40px] font-normal tracking-tight text-[#202020] sm:text-[48px]">
+            <h3 className="mb-2.5 font-aeonik-regular text-[36px] font-normal tracking-tight text-[#202020] sm:text-[48px]">
               Connections
             </h3>
             <p className="mb-6 font-jakarta text-[16px] font-normal leading-6 tracking-normal text-[#525252]">
@@ -165,7 +165,7 @@ export default function Section2() {
             <div className="mb-3 flex items-center gap-2 text-[11px] uppercase tracking-wider text-[#777777]">
               <span className="font-medium">THE WIDER WORLD</span>
             </div>
-            <h3 className="mb-3 font-aeonik-regular text-[40px] font-normal leading-tight tracking-tight text-[#202020] sm:text-[48px]">
+            <h3 className="mb-3 font-aeonik-regular text-[36px] font-normal leading-tight tracking-tight text-[#202020] sm:text-[48px]">
               Discover
             </h3>
             <p className="mb-6 font-jakarta text-[16px] font-normal leading-6 tracking-normal text-[#525252]">

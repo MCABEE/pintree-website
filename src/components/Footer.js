@@ -23,14 +23,14 @@ const footerColumns = [
     links: [
       { href: "/contact-quick-answer", label: "Quick Answers" },
       { href: "/support", label: "Help Center" },
-      { href: "/newsroom", label: "Press & Media" },
+      { href: "/press-media", label: "Press & Media" },
     ],
   },
 ];
 
 const socialLinks = [
   {
-    href: "https://facebook.com",
+    href: "https://www.facebook.com/pintreeofficial",
     label: "Facebook",
     icon: (
       <svg className="h-3.5 w-3.5 fill-current" viewBox="0 0 24 24" aria-hidden>
@@ -39,7 +39,7 @@ const socialLinks = [
     ),
   },
   {
-    href: "https://instagram.com",
+    href: "https://www.instagram.com/pintree_official",
     label: "Instagram",
     icon: (
       <svg className="h-3.5 w-3.5 fill-current" viewBox="0 0 24 24" aria-hidden>

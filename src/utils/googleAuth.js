@@ -5,7 +5,7 @@ const GIS_SCRIPT_SRC = "https://accounts.google.com/gsi/client";
 let gisLoadPromise = null;
 
 function getGoogleClientId() {
-  return process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID || "";
+  return process.env.GOOGLE_WEB_CLIENT_ID || "";
 }
 
 export function loadGoogleIdentityScript() {
@@ -164,7 +164,7 @@ export async function requestGoogleIdToken() {
   const clientId = getGoogleClientId();
   if (!clientId) {
     throw new Error(
-      "Google Sign-In is not configured. Set NEXT_PUBLIC_GOOGLE_CLIENT_ID."
+      "Google Sign-In is not configured. Set GOOGLE_WEB_CLIENT_ID."
     );
   }
 
@@ -299,7 +299,7 @@ export async function signInWithGoogle() {
     ) {
       message =
         "Google sign-in worked, but the Pintree API rejected the token. Ask the backend team to allow this web client ID as a Google token audience: " +
-        (getGoogleClientId() || "(missing NEXT_PUBLIC_GOOGLE_CLIENT_ID)");
+        (getGoogleClientId() || "(missing GOOGLE_WEB_CLIENT_ID)");
     }
     if (res.status === 409) {
       message =
@@ -311,6 +311,11 @@ export async function signInWithGoogle() {
 
   if (data?.data?.accessToken) {
     persistGoogleSession(data.data);
+    if (needsGoogleProfileCompletion(data.data)) {
+      localStorage.setItem("pintree_signup_pending", "profile");
+    } else {
+      localStorage.removeItem("pintree_signup_pending");
+    }
   }
 
   return { ok: true, status: res.status, data: data?.data || null };

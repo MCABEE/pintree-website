@@ -34,12 +34,13 @@ const Navbar = () => {
     let mounted = true;
 
     const storedToken = localStorage.getItem("pintree_access_token");
+    const signupPending = localStorage.getItem("pintree_signup_pending");
     setStoredProfile({
       fullName: localStorage.getItem("pintree_user_full_name") || "",
       handle: localStorage.getItem("pintree_user_handle") || "",
     });
 
-    if (!storedToken) {
+    if (!storedToken || signupPending) {
       setIsAuthenticated(false);
       setUserProfile(null);
       return;
@@ -163,8 +164,13 @@ const Navbar = () => {
         {/* Right: Action Buttons */}
         <div className="flex items-center gap-7 font-jakarta">
           <Link
-            href="/#download"
-            className="hidden text-[13.5px] font-medium text-[#4a4a4a] transition hover:text-black sm:inline-block"
+            href="/download"
+            className={`hidden text-[13.5px] font-medium transition sm:inline-block ${
+              pathname === "/download"
+                ? "text-black"
+                : "text-[#4a4a4a] hover:text-black"
+            }`}
+            aria-current={pathname === "/download" ? "page" : undefined}
           >
             Download App
           </Link>
@@ -172,7 +178,7 @@ const Navbar = () => {
           {isAuthenticated ? (
             <Link
               href="/account"
-              className="flex items-center gap-2.5 pl-1.5 pr-3.5 py-1 rounded-full bg-[#f6f3f2] border border-[#e4e2e1] hover:border-[#c4c7c7] transition-colors select-none"
+              className="flex items-center gap-2.5 pl-1.5 pr-1.5 py-1 rounded-full bg-[#f6f3f2] border border-[#e4e2e1] hover:border-[#c4c7c7] transition-colors select-none md:pr-3.5"
             >
               <div className="relative flex-shrink-0">
                 <UserAvatar
@@ -186,7 +192,7 @@ const Navbar = () => {
                 />
                 <span className="absolute bottom-0 right-0 w-2 h-2 rounded-full bg-[#CAFFA6] ring-2 ring-white"></span>
               </div>
-              <div className="flex flex-col text-left">
+              <div className="hidden flex-col text-left md:flex">
                 <span className="text-[13px] leading-tight font-semibold text-[#1b1c1c] capitalize">
                   {navFullName}
                 </span>
@@ -201,7 +207,7 @@ const Navbar = () => {
             <>
               <Link
                 href="/login"
-                className={`text-[13.5px] font-medium transition ${
+                className={`hidden text-[13.5px] font-medium transition md:inline ${
                   pathname === "/login"
                     ? "text-black"
                     : "text-[#111111] hover:text-black"
@@ -210,8 +216,10 @@ const Navbar = () => {
                 Login
               </Link>
               <Link
-                href="/contact"
-                className="rounded-full bg-black px-5 py-2 text-[13.5px] font-medium text-white shadow-sm transition hover:bg-neutral-800"
+                href="/signup"
+                className={`hidden rounded-full px-5 py-2 text-[13.5px] font-medium text-white shadow-sm transition md:inline-flex ${
+                  pathname === "/signup" ? "bg-neutral-800" : "bg-black hover:bg-neutral-800"
+                }`}
               >
                 Sign Up
               </Link>
@@ -287,8 +295,13 @@ const Navbar = () => {
               );
             })}
             <Link
-              href="/#download"
-              className="text-[13px] leading-[18px] font-medium tracking-[0.02em] text-[#444748] transition-colors hover:text-[#1b1c1c] sm:hidden"
+              href="/download"
+              className={`text-[13px] leading-[18px] tracking-[0.02em] transition-colors sm:hidden ${
+                pathname === "/download"
+                  ? "font-semibold text-[#1b1c1c]"
+                  : "font-medium text-[#444748] hover:text-[#1b1c1c]"
+              }`}
+              aria-current={pathname === "/download" ? "page" : undefined}
               onClick={() => setMobileOpen(false)}
             >
               Download App
@@ -321,8 +334,10 @@ const Navbar = () => {
                 </Link>
                 <div className="pt-2">
                   <Link
-                    href="/contact"
-                    className="inline-flex w-full items-center justify-center rounded-full bg-black px-5 py-2.5 text-[13px] leading-[18px] font-semibold tracking-[0.02em] text-white shadow-sm transition-all hover:bg-[#1c1b1b] active:scale-[0.98]"
+                    href="/signup"
+                    className={`inline-flex w-full items-center justify-center rounded-full px-5 py-2.5 text-[13px] leading-[18px] font-semibold tracking-[0.02em] text-white shadow-sm transition-all active:scale-[0.98] ${
+                      pathname === "/signup" ? "bg-[#1c1b1b]" : "bg-black hover:bg-[#1c1b1b]"
+                    }`}
                     onClick={() => setMobileOpen(false)}
                   >
                     Sign Up

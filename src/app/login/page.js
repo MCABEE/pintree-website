@@ -33,6 +33,10 @@ export default function LoginPage() {
     if (typeof window === "undefined") return;
     const token = localStorage.getItem("pintree_access_token");
     if (token) {
+      if (localStorage.getItem("pintree_signup_pending")) {
+        router.replace("/");
+        return;
+      }
       const searchParams = new URLSearchParams(window.location.search);
       const targetAction = searchParams.get("action");
       const redirectUrl =
@@ -163,6 +167,7 @@ export default function LoginPage() {
           localStorage.setItem("pintree_access_token", data.data.accessToken);
           localStorage.setItem("pintree_login_method", isEmail ? "email" : "mobile");
           localStorage.setItem("pintree_login_verified", "true");
+          localStorage.removeItem("pintree_signup_pending");
 
           if (data.data.userId) {
             localStorage.setItem("pintree_user_id", data.data.userId);
@@ -468,7 +473,7 @@ export default function LoginPage() {
               Don't have an account?{" "}
               <Link
                 className="ml-1 cursor-pointer font-semibold text-[#131313] underline-offset-2 hover:underline"
-                href="/contact"
+                href="/signup"
               >
                 Sign up
               </Link>

@@ -48,6 +48,11 @@ export default function AccountOverviewPage() {
   useEffect(() => {
     if (typeof window === "undefined") return;
 
+    if (localStorage.getItem("pintree_signup_pending")) {
+      router.replace("/");
+      return;
+    }
+
     const token = localStorage.getItem("pintree_access_token");
     const storedLoginMethod = localStorage.getItem("pintree_login_method"); // "email" | "mobile"
     const storedLoginVerified = localStorage.getItem("pintree_login_verified") === "true";
@@ -181,7 +186,7 @@ export default function AccountOverviewPage() {
     }
 
     loadAccountData();
-  }, []);
+  }, [router]);
 
   const handleLogout = async () => {
     setIsLoggingOut(true);
@@ -214,6 +219,7 @@ export default function AccountOverviewPage() {
         localStorage.removeItem("pintree_mobile_verified");
         localStorage.removeItem("pintree_user_full_name");
         localStorage.removeItem("pintree_user_handle");
+        localStorage.removeItem("pintree_signup_pending");
         document.cookie = "pintree_token=; path=/; max-age=0;";
       }
       router.push("/login");

@@ -82,7 +82,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="en" data-scroll-behavior="smooth">
       <body
         className={`bg-white ${inter.variable} ${plusJakartaSans.variable} ${playfairDisplay.variable} ${bodoniModa.variable} ${aeonikRegular.variable} ${aeonikMedium.variable} ${aeonikBold.variable} ${aeonikLight.variable} antialiased`}
       >
