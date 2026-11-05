@@ -29,8 +29,8 @@ export default function Section2() {
           </div>
           <div className="max-w-sm">
             <p className="font-jakarta text-[16px] font-normal leading-6 tracking-normal text-[#525252]">
-              Pintree brings your profile, connections, communities, and discovery
-              experience together in one place.
+              Pintree brings your profile, connections, communities, and
+              discovery experience together in one place.
             </p>
           </div>
         </div>
@@ -43,12 +43,12 @@ export default function Section2() {
             <div className="mb-3 flex items-center gap-2 text-[11px] uppercase tracking-wider text-[#777777]">
               <span className="font-medium">THE PERSONAL SPACE</span>
             </div>
-            <h3 className="mb-3 font-aeonik-regular text-[36px] font-normal leading-tight tracking-tight text-[#202020] sm:text-[48px]">
+            <h3 className="mb-3 font-aeonik-regular text-[36px] font-normal leading-tight tracking-tight text-[#202020]">
               People
             </h3>
             <p className="mb-8 max-w-md font-jakarta text-[16px] font-normal leading-6 tracking-normal text-[#525252]">
-              Your profile is your space. Create your profile, share who you are, and
-              manage how you connect with others.
+              Your profile is your space. Create your profile, share who you
+              are, and manage how you connect with others.
             </p>
             <div className="relative aspect-[4/5] h-[450px] w-[360px] max-w-full overflow-hidden rounded-2xl border border-[#ececec] shadow-sm">
               <img
@@ -89,20 +89,19 @@ export default function Section2() {
             <div className="mb-2 flex items-center gap-2 text-[11px] uppercase tracking-wider text-[#777777]">
               <span className="font-medium">SHARED BELONGING</span>
             </div>
-            <h3 className="mb-2 font-aeonik-regular text-[36px] font-normal leading-[1.1] tracking-tight text-[#202020] sm:text-[48px]">
+            <h3 className="mb-2 font-aeonik-regular text-[36px] font-normal leading-[1.1] tracking-tight text-[#202020]">
               Communities
             </h3>
             <p className="max-w-xl font-jakarta text-[16px] font-normal leading-6 tracking-normal text-[#525252]">
-              Find places to belong. Join communities built around shared interests,
-              organizations, and local groups. Share ideas, take part in meaningful
-              conversations, discover different perspectives, and build connections
-              with people who care about the same things.
+              Find places to belong. Join communities built around shared
+              interests, organizations, and local groups. Share ideas, take part
+              in meaningful conversations, discover different perspectives, and
+              build connections with people who care about the same things.
             </p>
             <div className="pt-12">
               <Link
                 href="/support"
-                className="inline-flex cursor-pointer items-center gap-2 rounded-full bg-[#000000] px-5 py-2.5 font-jakarta text-[13px] font-medium leading-none text-white transition-colors hover:bg-[#202020]"
-              >
+                className="inline-flex cursor-pointer items-center gap-2 rounded-full bg-[#000000] px-5 py-2.5 font-jakarta text-[13px] font-medium leading-none text-white transition-colors hover:bg-[#202020]">
                 <span className="font-jakarta text-[12px] font-medium">
                   Explore Communities
                 </span>
@@ -120,12 +119,12 @@ export default function Section2() {
             <div className="mb-2.5 flex items-center gap-2 text-[11px] uppercase tracking-wider text-[#777777]">
               <span className="font-medium">INTIMATE SPACES</span>
             </div>
-            <h3 className="mb-2.5 font-aeonik-regular text-[36px] font-normal tracking-tight text-[#202020] sm:text-[48px]">
+            <h3 className="mb-2.5 font-aeonik-regular text-[36px] font-normal tracking-tight text-[#202020]">
               Rooms
             </h3>
             <p className="mb-6 font-jakarta text-[16px] font-normal leading-6 tracking-normal text-[#525252]">
-              Take conversations deeper. Join focused discussions within communities
-              through dedicated rooms.
+              Take conversations deeper. Join focused discussions within
+              communities through dedicated rooms.
             </p>
             <div className="mb-3 aspect-[16/9] w-full overflow-hidden rounded-2xl border border-[#ececec] shadow-sm">
               <img
@@ -140,12 +139,12 @@ export default function Section2() {
             <div className="mb-2.5 flex items-center gap-2 text-[11px] uppercase tracking-wider text-[#777777]">
               <span className="font-medium">MEANINGFUL BONDS</span>
             </div>
-            <h3 className="mb-2.5 font-aeonik-regular text-[36px] font-normal tracking-tight text-[#202020] sm:text-[48px]">
+            <h3 className="mb-2.5 font-aeonik-regular text-[36px] font-normal tracking-tight text-[#202020]">
               Connections
             </h3>
             <p className="mb-6 font-jakarta text-[16px] font-normal leading-6 tracking-normal text-[#525252]">
-              Build your network. Find people, follow accounts, and build meaningful
-              connections through mutual interests.
+              Build your network. Find people, follow accounts, and build
+              meaningful connections through mutual interests.
             </p>
             <div className="mb-3 aspect-[16/9] w-full overflow-hidden rounded-2xl border border-[#ececec] shadow-sm">
               <img
@@ -165,12 +164,12 @@ export default function Section2() {
             <div className="mb-3 flex items-center gap-2 text-[11px] uppercase tracking-wider text-[#777777]">
               <span className="font-medium">THE WIDER WORLD</span>
             </div>
-            <h3 className="mb-3 font-aeonik-regular text-[36px] font-normal leading-tight tracking-tight text-[#202020] sm:text-[48px]">
+            <h3 className="mb-3 font-aeonik-regular text-[36px] font-normal leading-tight tracking-tight text-[#202020]">
               Discover
             </h3>
             <p className="mb-6 font-jakarta text-[16px] font-normal leading-6 tracking-normal text-[#525252]">
-              Go beyond your network. Explore posts and communities from people you
-              haven&apos;t connected yet.
+              Go beyond your network. Explore posts and communities from people
+              you haven&apos;t connected yet.
             </p>
             <div className="mb-8 space-y-3">
               <div className="flex items-start gap-3">
@@ -191,14 +190,12 @@ export default function Section2() {
             <div className="flex items-center gap-3">
               <Link
                 href="/newsroom"
-                className="rounded-full bg-black px-5 py-2.5 text-xs font-medium text-white shadow-sm transition hover:bg-neutral-800"
-              >
+                className="rounded-full bg-black px-5 py-2.5 text-xs font-medium text-white shadow-sm transition hover:bg-neutral-800">
                 Explore Stories
               </Link>
               <Link
                 href="/support"
-                className="rounded-full border border-[#E5E5E5] bg-[#F7F7F7] px-5 py-2.5 text-xs font-medium text-[#202020] transition hover:bg-[#ececec]"
-              >
+                className="rounded-full border border-[#E5E5E5] bg-[#F7F7F7] px-5 py-2.5 text-xs font-medium text-[#202020] transition hover:bg-[#ececec]">
                 Browse Directory
               </Link>
             </div>
