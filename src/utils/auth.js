@@ -138,6 +138,7 @@ export function clearAuthSession() {
     localStorage.removeItem("pintree_login_verified");
     localStorage.removeItem("pintree_user_full_name");
     localStorage.removeItem("pintree_user_handle");
+    localStorage.removeItem("pintree_signup_pending");
     document.cookie = "pintree_token=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT";
     fetch("/api/auth/logout", { method: "POST" }).catch(() => null);
   } catch (e) {

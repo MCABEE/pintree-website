@@ -55,7 +55,7 @@ const supportCards = [
       </>
     ),
     buttonLabel: "Press & Media",
-    href: "/newsroom",
+    href: "/press-media",
   },
 ];
 

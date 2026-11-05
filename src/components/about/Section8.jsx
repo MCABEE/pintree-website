@@ -1,7 +1,5 @@
 "use client";
 
-import Link from "next/link";
-
 const stories = [
   {
     id: "story-1",
@@ -9,7 +7,7 @@ const stories = [
       "Pintree Launches a New Social Space Built for Meaningful Connections",
     excerpt:
       "Discover a fresh approach to social networking, bringing people, creators, and communities together in one place.",
-    href: "/newsroom",
+    href: "/newsroom/introducing-a-new-space",
   },
   {
     id: "story-2",
@@ -17,14 +15,14 @@ const stories = [
       "Pintree Introduces a Fresh Social Platform for Expression and Discovery",
     excerpt:
       "Explore a modern space for sharing, discovering interests, and connecting with people and communities.",
-    href: "/newsroom",
+    href: "/newsroom/introducing-a-new-space",
   },
   {
     id: "story-3",
     title: "Building a More Community-First Social Experience",
     excerpt:
       "Learn about the ideas and principles shaping Pintree's approach to meaningful participation and discovery.",
-    href: "/newsroom",
+    href: "/newsroom/introducing-a-new-space",
   },
 ];
 
@@ -126,15 +124,14 @@ export default function Section8() {
 
         <div className="mt-12 grid grid-cols-1 items-stretch gap-6 md:grid-cols-3 lg:mt-14 lg:gap-8">
           {stories.map((story) => (
-            <article
+            <a
               key={story.id}
+              href={story.href}
               className="group flex flex-col justify-between rounded-2xl border border-[#e4e2e1] bg-white p-8 transition-[transform,box-shadow,border-color] duration-250 hover:-translate-y-[3px] hover:border-[#747878] hover:shadow-[0_16px_36px_-12px_rgba(19,19,19,0.05)]"
             >
               <div>
                 <h3 className="mt-6 font-aeonik-regular text-[22px] font-normal leading-[30px] text-black transition-colors group-hover:text-[#444748]">
-                  <Link href={story.href} className="focus:outline-none">
-                    {story.title}
-                  </Link>
+                  {story.title}
                 </h3>
                 <p className="mt-3.5 font-jakarta text-[16px] font-normal leading-6 text-[#444748]">
                   {story.excerpt}
@@ -149,7 +146,7 @@ export default function Section8() {
                   <SmallArrowIcon />
                 </div>
               </div>
-            </article>
+            </a>
           ))}
         </div>
       </div>

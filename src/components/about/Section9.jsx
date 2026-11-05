@@ -135,10 +135,10 @@ export default function Section9() {
 
             <div>
               <Link
-                href="/support"
+                href="/faq"
                 className="group inline-flex items-center gap-2.5 rounded-full border border-black px-7 py-3.5 text-[15px] font-semibold leading-5 tracking-[0.01em] text-black transition-all duration-200 hover:bg-black hover:text-white active:scale-[0.98]"
               >
-                <span>Contact support</span>
+                <span>More questions</span>
                 <ArrowRightIcon />
               </Link>
             </div>
@@ -182,7 +182,7 @@ export default function Section9() {
                       onClick={() => setOpenIndex(isOpen ? null : index)}
                       className="group flex w-full items-center justify-between py-6 text-left focus:outline-none"
                     >
-                      <span className="pr-6 font-aeonik-medium text-[18px] font-medium leading-7 tracking-[-0.005em] text-black transition-colors">
+                      <span className="pr-6 font-aeonik-regular text-[18px] font-normal leading-7 tracking-[-0.005em] text-black transition-colors">
                         {item.question}
                       </span>
                       <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full transition-colors">
