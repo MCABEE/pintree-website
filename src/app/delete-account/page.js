@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
+import Footer from "@/components/Footer";
 
 export default function PublicDeleteAccountPage() {
   const router = useRouter();
@@ -258,28 +259,7 @@ export default function PublicDeleteAccountPage() {
         </div>
       </main>
 
-      {/* Footer matching standard design */}
-      <footer className="z-30 w-full shrink-0 border-t border-neutral-100 bg-[#f8f8f8] py-8 mt-auto font-jakarta">
-        <div className="mx-auto flex max-w-[1280px] flex-wrap items-center justify-center gap-x-6 gap-y-2 px-4 text-center text-[13px] text-[#666666]">
-          <span>© 2025 Pintree</span>
-          <span className="text-neutral-300">·</span>
-          <Link className="transition-colors hover:text-neutral-900 hover:underline" href="/terms-of-service">
-            Terms of Use
-          </Link>
-          <span className="text-neutral-300">·</span>
-          <Link className="transition-colors hover:text-neutral-900 hover:underline" href="/privacy-policy">
-            Privacy Policy
-          </Link>
-          <span className="text-neutral-300">·</span>
-          <Link className="transition-colors hover:text-neutral-900 hover:underline" href="/community-guidlines">
-            Community Guidelines
-          </Link>
-          <span className="text-neutral-300">·</span>
-          <Link className="transition-colors hover:text-neutral-900 hover:underline" href="/contact">
-            Report a problem
-          </Link>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 }

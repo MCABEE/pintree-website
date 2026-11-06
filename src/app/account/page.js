@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import { getValidAccessToken, authenticatedFetch, refreshAccessToken } from "@/utils/auth";
 import UserAvatar, { resolveProfileImageUrl } from "@/components/UserAvatar";
+import Footer from "@/components/Footer";
 
 function decodeJwt(token) {
   if (!token) return null;
@@ -327,7 +328,7 @@ export default function AccountOverviewPage() {
       <main className="flex-grow w-full max-w-[1280px] mx-auto px-4 md:px-0 py-8 md:py-10 flex flex-col justify-center">
         {/* PAGE INTRODUCTION */}
         <div className="mb-7">
-          <h1 className="font-playfair text-[32px] md:text-[36px] text-[#1b1c1c] font-normal tracking-tight">
+          <h1 className="font-aeonik-regular text-[32px] md:text-[36px] text-[#1b1c1c] font-normal tracking-tight">
             Your Pintree Account
           </h1>
           <p className="text-[16px] leading-[24px] text-[#444748] mt-1.5 font-normal">
@@ -581,7 +582,7 @@ export default function AccountOverviewPage() {
                     Mobile Experience
                   </span>
                 </div>
-                <h3 className="font-playfair text-[22px] leading-[30px] text-[#1b1c1c] font-medium">
+                <h3 className="font-aeonik-regular text-[22px] leading-[30px] text-[#1b1c1c] font-normal">
                   Experience more with Pintree
                 </h3>
                 <p className="text-[14px] leading-[20px] text-[#444748] mt-2 leading-relaxed">
@@ -708,40 +709,7 @@ export default function AccountOverviewPage() {
         </div>
       </main>
 
-      {/* Compact Footer */}
-      <footer className="z-30 w-full shrink-0 border-t border-neutral-100 bg-white py-4 mt-8">
-        <div className="mx-auto flex max-w-[1280px] items-center justify-center gap-3 px-6 text-center text-xs text-neutral-400 font-jakarta">
-          <span>© Pintree</span>
-          <span className="text-neutral-300">·</span>
-          <Link
-            className="transition-colors hover:text-neutral-700"
-            href="/terms-of-service"
-          >
-            Terms of use
-          </Link>
-          <span className="text-neutral-300">·</span>
-          <Link
-            className="transition-colors hover:text-neutral-700"
-            href="/privacy-policy"
-          >
-            Privacy Policy
-          </Link>
-          <span className="text-neutral-300">·</span>
-          <Link
-            className="transition-colors hover:text-neutral-700"
-            href="/community-guidlines"
-          >
-            Community Guidelines
-          </Link>
-          <span className="text-neutral-300">·</span>
-          <Link
-            className="transition-colors hover:text-neutral-700"
-            href="/contact"
-          >
-            Report a problem
-          </Link>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 }

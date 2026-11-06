@@ -21,7 +21,7 @@ const footerColumns = [
   {
     title: "Support",
     links: [
-      { href: "/contact-quick-answer", label: "Quick Answers" },
+      { href: "/faq", label: "Quick Answers" },
       { href: "/support", label: "Help Center" },
       { href: "/press-media", label: "Press & Media" },
     ],
@@ -121,7 +121,7 @@ function Footer() {
                 </div>
               </div>
 
-              <p className="mt-10 text-[11px] font-bold leading-4 tracking-normal text-[#858585] lg:mt-12">
+              <p className="mt-10 text-[11px] font-medium leading-4 tracking-normal text-[#858585] lg:mt-12">
                 Copyright © 2025–2026 MCABEE Digital. All rights reserved.
               </p>
             </div>

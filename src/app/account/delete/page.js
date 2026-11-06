@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import { getValidAccessToken, authenticatedFetch, clearAuthSession } from "@/utils/auth";
+import Footer from "@/components/Footer";
 
 function decodeJwt(token) {
   if (!token) return null;
@@ -660,31 +661,7 @@ export default function DeleteAccountPage() {
         </div>
       </main>
 
-      {/* Shared Footer */}
-      <footer className="bg-[#f6f3f2] border-t border-[#e4e2e1] mt-auto">
-        <div className="flex flex-col md:flex-row justify-between items-center w-full max-w-[1280px] mx-auto px-4 md:px-8 py-8 gap-4">
-          <div className="text-center md:text-left">
-            <span className="font-playfair text-[20px] font-bold text-[#1b1c1c] block mb-1">Pintree</span>
-            <p className="text-[13px] text-[#747878]">
-              © 2025 Pintree Inc. All rights reserved. Built for people and authentic communities.
-            </p>
-          </div>
-          <nav className="flex flex-wrap justify-center md:justify-end gap-x-6 gap-y-2 text-[13px] text-[#444748]">
-            <Link className="hover:text-[#1b1c1c] hover:underline transition-colors" href="/privacy-policy">
-              Privacy Policy
-            </Link>
-            <Link className="hover:text-[#1b1c1c] hover:underline transition-colors" href="/terms-of-service">
-              Terms of Service
-            </Link>
-            <Link className="hover:text-[#1b1c1c] hover:underline transition-colors" href="/community-guidlines">
-              Community Guidelines
-            </Link>
-            <Link className="hover:text-[#1b1c1c] hover:underline transition-colors" href="/contact">
-              Report a problem
-            </Link>
-          </nav>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 }

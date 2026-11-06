@@ -8,19 +8,19 @@ export default function Section3() {
       title: "Your Privacy Matters",
       text: "Report privacy concerns or data issues — our team ensures your safety and trust.",
       bg: "bg-[#C6F4F0]",
-      href: "/contact-privacy",
+      href: "/support",
     },
     {
       title: "Found a Problem?",
       text: "Tell us what’s wrong — we’ll fix it quickly and keep your experience smooth.",
       bg: "bg-[#DCF4C6]",
-      href: "/contact-found-a-problem",
+      href: "/support",
     },
     {
       title: "Quick Answers, Anytime",
       text: "Explore common questions and get instant help for your Pintree experience.",
       bg: "bg-[#D5C6F4]",
-      href: "/contact-quick-answer",
+      href: "/faq",
     },
     {
       title: "Press & Media Resources",
