@@ -420,7 +420,7 @@ export default function HelpCenterView() {
             </p>
             <div className="mb-4">
               <Link
-                href="/contact"
+                href="/support"
                 className="inline-flex cursor-pointer items-center justify-center gap-2 rounded-[8px] bg-black px-7 py-3.5 text-[14px] font-medium text-white shadow-[0_1px_2px_rgba(0,0,0,0.06)] transition-all hover:bg-[#202020] hover:shadow-md"
               >
                 <span>Contact Support</span>

@@ -4,7 +4,7 @@ import Link from "next/link";
 
 const columns = [
   {
-    title: "Our Story",
+    title: "Our story",
     body: "From an idea to a platform built around people, communities, and conversations.",
     linkText: "OUR STORY",
     linkHref: "#",
@@ -12,7 +12,7 @@ const columns = [
       "flex flex-col border-b border-[#E5E5E5] pb-8 pr-8 md:border-b-0 md:border-r md:pb-0 md:pr-10",
   },
   {
-    title: "The Company",
+    title: "The company",
     body: "Meet the team and the company building Pintree for a more connected social experience.",
     linkText: "ABOUT MCABEE",
     linkHref: "#",
@@ -20,7 +20,7 @@ const columns = [
       "flex flex-col border-b border-[#E5E5E5] px-0 py-8 md:border-b-0 md:border-r md:px-10 md:py-0",
   },
   {
-    title: "Our Approach",
+    title: "Our approach",
     body: "A thoughtful approach to building social spaces around connection, participation, and discovery.",
     linkText: "OUR APPROACH",
     linkHref: "#",
@@ -46,10 +46,10 @@ export default function Section4() {
             </h2>
 
             <p className="mt-4 max-w-[620px] text-[16px] font-normal leading-[1.65] text-[#525252]">
-              Pintree is a community-first social platform designed to make online
-              interaction feel more organized, meaningful, and human. From personal
-              connections to shared-interest communities, Pintree creates spaces where
-              conversations can grow with purpose.
+              Pintree is a community-first social platform designed to make
+              online interaction feel more organized, meaningful, and human.
+              From personal connections to shared-interest communities, Pintree
+              creates spaces where conversations can grow with purpose.
             </p>
           </div>
 
@@ -58,7 +58,7 @@ export default function Section4() {
           <div className="grid grid-cols-1 gap-0 md:grid-cols-3">
             {columns.map((col) => (
               <div key={col.title} className={col.className}>
-                <h3 className="font-aeonik-medium text-[24px] font-medium text-[#202020]">
+                <h3 className="font-aeonik-medium text-[22px] font-medium text-[#202020]">
                   {col.title}
                 </h3>
                 <p className="mb-6 mt-2.5 font-jakarta text-[16px] leading-relaxed text-[#666666]">
@@ -67,10 +67,8 @@ export default function Section4() {
                 <div className="mt-auto">
                   <Link
                     href={col.linkHref}
-                    className="inline-flex items-center text-[11px] font-semibold uppercase tracking-wider text-[#202020] transition-opacity hover:opacity-70"
-                  >
-                    {col.linkText}{" "}
-                    <span className="ml-1.5 font-normal">→</span>
+                    className="inline-flex items-center text-[11px] font-semibold uppercase tracking-wider text-[#202020] transition-opacity hover:opacity-70">
+                    {col.linkText} <span className="ml-1.5 font-normal">→</span>
                   </Link>
                 </div>
               </div>

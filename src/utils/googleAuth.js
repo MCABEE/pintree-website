@@ -5,7 +5,11 @@ const GIS_SCRIPT_SRC = "https://accounts.google.com/gsi/client";
 let gisLoadPromise = null;
 
 function getGoogleClientId() {
-  return process.env.GOOGLE_WEB_CLIENT_ID || "";
+  return (
+    process.env.NEXT_PUBLIC_GOOGLE_WEB_CLIENT_ID ||
+    process.env.GOOGLE_WEB_CLIENT_ID ||
+    ""
+  ).trim();
 }
 
 export function loadGoogleIdentityScript() {

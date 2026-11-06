@@ -8,6 +8,7 @@ import {
   needsGoogleProfileCompletion,
   signInWithGoogle,
 } from "@/utils/googleAuth";
+import Footer from "@/components/Footer";
 
 export default function LoginPage() {
   const router = useRouter();
@@ -275,14 +276,14 @@ export default function LoginPage() {
   };
 
   return (
-    <div className="flex h-[calc(100dvh-80px)] flex-col justify-between bg-white text-[#131313] font-jakarta overflow-y-auto sm:overflow-hidden">
+    <div className="flex flex-col bg-white text-[#131313] font-jakarta">
       {/* Centered Login Console */}
-      <main className="relative z-20 flex flex-1 items-center justify-center px-4 py-2 sm:py-3">
+      <main className="relative z-20 flex min-h-[calc(100dvh-68px)] items-center justify-center px-4 py-2 sm:py-3">
         <div className="mx-auto flex w-full max-w-[520px] flex-col items-center rounded-3xl border border-[#e4e2e1] bg-white px-6 sm:px-8 pt-6 sm:pt-7 pb-6 sm:pb-7 shadow-[0_8px_30px_-4px_rgba(19,19,19,0.04)]">
           {/* Inner Form Container */}
           <div className="w-full max-w-[420px]">
             {/* Editorial Headline */}
-            <h1 className="mb-4 sm:mb-5 text-center font-playfair text-[28px] sm:text-[32px] font-medium leading-tight tracking-tight text-[#131313]">
+            <h1 className="mb-4 sm:mb-5 text-center font-aeonik-regular text-[28px] sm:text-[32px] font-normal leading-tight tracking-tight text-[#131313]">
               Welcome back.
             </h1>
 
@@ -429,7 +430,7 @@ export default function LoginPage() {
               <div className="flex justify-end pt-0.5">
                 <Link
                   className="text-xs text-neutral-500 transition-colors hover:text-[#131313] font-jakarta"
-                  href="/contact"
+                  href="/forgot-password"
                 >
                   Forgot password?
                 </Link>
@@ -482,40 +483,7 @@ export default function LoginPage() {
         </div>
       </main>
 
-      {/* Compact Footer */}
-      <footer className="z-30 w-full shrink-0 border-t border-neutral-100 bg-white py-3">
-        <div className="mx-auto flex max-w-[1280px] items-center justify-center gap-3 px-6 text-center text-xs text-neutral-400 font-jakarta">
-          <span>© Pintree</span>
-          <span className="text-neutral-300">·</span>
-          <Link
-            className="transition-colors hover:text-neutral-700"
-            href="/terms-of-service"
-          >
-            Terms of use
-          </Link>
-          <span className="text-neutral-300">·</span>
-          <Link
-            className="transition-colors hover:text-neutral-700"
-            href="/privacy-policy"
-          >
-            Privacy Policy
-          </Link>
-          <span className="text-neutral-300">·</span>
-          <Link
-            className="transition-colors hover:text-neutral-700"
-            href="/community-guidlines"
-          >
-            Community Guidelines
-          </Link>
-          <span className="text-neutral-300">·</span>
-          <Link
-            className="transition-colors hover:text-neutral-700"
-            href="/contact"
-          >
-            Report a problem
-          </Link>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 }

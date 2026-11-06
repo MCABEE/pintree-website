@@ -395,6 +395,7 @@ function Section1({ variant = "hero" }) {
   const [genders, setGenders] = useState([]);
   const [countries, setCountries] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
+  const [isGoogleLoading, setIsGoogleLoading] = useState(false);
   const [errorMsg, setErrorMsg] = useState("");
   const [successMsg, setSuccessMsg] = useState("");
 
@@ -964,7 +965,7 @@ function Section1({ variant = "hero" }) {
   const handleGoogleSignUp = async () => {
     setErrorMsg("");
     setSuccessMsg("");
-    setIsLoading(true);
+    setIsGoogleLoading(true);
 
     try {
       const result = await signInWithGoogle();
@@ -986,7 +987,7 @@ function Section1({ variant = "hero" }) {
           : "Google Sign-In failed. Please try again."
       );
     } finally {
-      setIsLoading(false);
+      setIsGoogleLoading(false);
     }
   };
 
@@ -1216,7 +1217,7 @@ function Section1({ variant = "hero" }) {
                       Email address or phone number
                     </label>
                     <div
-                      className={`flex w-full items-center border bg-white transition ${
+                      className={`flex w-full items-center overflow-hidden border bg-white transition ${
                         isPage
                           ? "h-12 rounded-xl border-[#E5E5E5] focus-within:border-[#202020] focus-within:shadow-[0_0_0_1px_#202020]"
                           : "h-[42px] rounded-[8px] border-[#e2e2e2] focus-within:border-black"
@@ -1228,18 +1229,19 @@ function Section1({ variant = "hero" }) {
                         </span>
                       ) : null}
                       <input
-                        className={`h-full min-w-0 flex-1 bg-transparent focus:outline-none focus:ring-0 disabled:cursor-not-allowed ${
+                        className={`contact-field h-full min-w-0 flex-1 bg-white focus:outline-none focus:ring-0 disabled:cursor-not-allowed ${
                           isPage
                             ? "text-[14px] text-[#202020] placeholder-[#777777]"
                             : "text-[13px] text-gray-800 placeholder-[#a1a1aa]"
                         } ${phoneMode ? "pl-2 pr-4" : isPage ? "px-4" : "px-3.5"}`}
                         id="contact"
-                        name="contact"
+                        name="pintree-contact"
+                        autoComplete="off"
                         placeholder={
                           phoneMode ? "9876543210" : "you@example.com or mobile"
                         }
-                        type={phoneMode ? "tel" : "text"}
-                        inputMode={phoneMode ? "numeric" : undefined}
+                        type="text"
+                        inputMode={phoneMode ? "numeric" : "text"}
                         maxLength={phoneMode ? 10 : undefined}
                         value={
                           phoneMode ? normalizeIndianMobile(contact) : contact
@@ -1271,7 +1273,7 @@ function Section1({ variant = "hero" }) {
                           : "h-[44px] rounded-[9px] text-[13.5px] tracking-tight shadow-sm hover:bg-neutral-800"
                       }`}
                       type="submit"
-                      disabled={isLoading}
+                      disabled={isLoading || isGoogleLoading}
                     >
                       {isLoading ? "Sending…" : "Create account"}
                     </button>
@@ -1307,7 +1309,7 @@ function Section1({ variant = "hero" }) {
                     <button
                       type="button"
                       onClick={handleGoogleSignUp}
-                      disabled={isLoading}
+                      disabled={isGoogleLoading || isLoading}
                       className={`flex w-full cursor-pointer items-center justify-center border bg-white font-medium transition disabled:cursor-not-allowed disabled:opacity-60 ${
                         isPage
                           ? "h-12 gap-3 rounded-xl border-[#E5E5E5] text-[14px] text-[#202020] hover:bg-[#F7F7F7]"
@@ -1332,7 +1334,7 @@ function Section1({ variant = "hero" }) {
                           d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.33 0 3.26 2.64 1.25 6.58l4.03 3.15c.95-2.83 3.6-4.98 6.72-4.98z"
                         />
                       </svg>
-                      {isLoading ? "Connecting…" : "Sign up with Google"}
+                      {isGoogleLoading ? "Connecting…" : "Sign up with Google"}
                     </button>
                   </div>
 
@@ -1390,7 +1392,7 @@ function Section1({ variant = "hero" }) {
                           ? "mt-0 h-11 rounded-xl border-[#E8E8E8] bg-[#F6F6F6] text-[13px] hover:bg-[#EFEFEF]"
                           : "mt-2 h-[42px] rounded-[9px] border-[#E8E8E8] bg-[#F6F6F6] text-[13px] text-[#2d2d2d] hover:bg-[#ececec]"
                       }`}
-                      href="/contact"
+                      href="/support"
                     >
                       Let&apos;s get started
                       {isPage ? (

@@ -93,7 +93,7 @@ export default function Section8() {
               id="newsroom-headline"
               className="font-aeonik-regular text-[32px] font-normal tracking-tight text-black sm:text-[40px] lg:text-[48px] lg:leading-[56px]"
             >
-              What&apos;s New at Pintree
+              What&apos;s new at Pintree
             </h2>
 
             <p className="mt-2.5 max-w-xl font-jakarta text-[16px] font-normal leading-6 text-[#444748]">
@@ -105,13 +105,6 @@ export default function Section8() {
             aria-label="Newsroom stories navigation"
             className="flex items-center gap-3 self-start pb-1 md:self-end"
           >
-            <button
-              type="button"
-              aria-label="Previous stories"
-              className="flex h-11 w-11 items-center justify-center rounded-full border border-[#c4c7c7] bg-white text-[#1b1c1c] transition-all duration-150 hover:border-black focus:outline-none active:scale-[0.98]"
-            >
-              <ArrowIcon direction="left" />
-            </button>
             <button
               type="button"
               aria-label="Next stories"
@@ -127,10 +120,10 @@ export default function Section8() {
             <a
               key={story.id}
               href={story.href}
-              className="group flex flex-col justify-between rounded-2xl border border-[#e4e2e1] bg-white p-8 transition-[transform,box-shadow,border-color] duration-250 hover:-translate-y-[3px] hover:border-[#747878] hover:shadow-[0_16px_36px_-12px_rgba(19,19,19,0.05)]"
+              className="group flex flex-col justify-between rounded-2xl border border-[#e4e2e1] bg-white p-8 transition-[background-color,border-color] duration-250 hover:border-[#204654]/30 hover:bg-[#F7F7F7]"
             >
               <div>
-                <h3 className="mt-6 font-aeonik-regular text-[22px] font-normal leading-[30px] text-black transition-colors group-hover:text-[#444748]">
+                <h3 className="mt-6 font-aeonik-regular text-[22px] font-normal leading-[30px] text-black">
                   {story.title}
                 </h3>
                 <p className="mt-3.5 font-jakarta text-[16px] font-normal leading-6 text-[#444748]">

@@ -19,7 +19,7 @@ const supportCards = [
       </>
     ),
     buttonLabel: "FAQ",
-    href: "/contact-quick-answer",
+    href: "/faq",
   },
   {
     title: (
@@ -37,7 +37,7 @@ const supportCards = [
       </>
     ),
     buttonLabel: "Help Center",
-    href: "/contact-found-a-problem",
+    href: "/support",
   },
   {
     title: (
