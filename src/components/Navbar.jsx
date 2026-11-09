@@ -7,14 +7,15 @@ import { getValidAccessToken, authenticatedFetch } from "@/utils/auth";
 import UserAvatar, { resolveProfileImageUrl } from "@/components/UserAvatar";
 
 const mainNavLinks = [
-  { href: "/", label: "About" },
+  { href: "/about", label: "About" },
+  { href: "/product", label: "Product" },
   { href: "/newsroom", label: "Newsroom" },
   { href: "/support", label: "Support" },
 ];
 
 function isMainNavLinkActive(link, pathname) {
-  if (link.label === "About") {
-    return pathname === "/" || pathname.startsWith("/about");
+  if (link.href === "/") {
+    return pathname === "/";
   }
   return pathname === link.href || pathname.startsWith(`${link.href}/`);
 }
