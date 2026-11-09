@@ -14,7 +14,7 @@ const footerColumns = [
     title: "Company",
     links: [
       { href: "/", label: "About" },
-      { href: "/", label: "Product" },
+      { href: "/product", label: "Product" },
       { href: "/newsroom", label: "Newsroom" },
     ],
   },
@@ -76,8 +76,7 @@ function Footer() {
                 <Link
                   href="/"
                   aria-label="Pintree Home"
-                  className="group inline-flex items-center gap-2.5"
-                >
+                  className="group inline-flex items-center gap-2.5">
                   <img
                     src="/pintree-mark-white.svg"
                     alt=""
@@ -98,8 +97,7 @@ function Footer() {
 
                 <div
                   aria-label="Social Media"
-                  className="mt-7 flex items-center gap-4"
-                >
+                  className="mt-7 flex items-center gap-4">
                   {socialLinks.map((item) => (
                     <a
                       key={item.label}
@@ -113,8 +111,7 @@ function Footer() {
                       target={
                         item.href.startsWith("http") ? "_blank" : undefined
                       }
-                      className="flex h-9 w-9 items-center justify-center rounded-full border border-white/10 text-[#858585] transition-all duration-150 hover:border-white/30 hover:bg-white/[0.04] hover:text-white"
-                    >
+                      className="flex h-9 w-9 items-center justify-center rounded-full border border-white/10 text-[#858585] transition-all duration-150 hover:border-white/30 hover:bg-white/[0.04] hover:text-white">
                       {item.icon}
                     </a>
                   ))}

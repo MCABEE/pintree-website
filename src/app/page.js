@@ -1,37 +1,21 @@
-// import Section1 from "@/components/about/Section1";
-// import Section2 from "@/components/about/Section2";
-// import Section3 from "@/components/about/Section3";
-// import Navbar from "@/components/Navbar";
-// import Image from "next/image";
-
-// export default function Home() {
-//   return (
-// <div className="h-screen overflow-y-scroll snap-y snap-mandatory">    {/* <Navbar/> */}
-//   <Section1/>
-//   <Section2/>
-//   <Section3/>
-// </div>
-//   );
-// }
-
-// app/page.jsx or pages/index.jsx (wherever you render)
-import Section1 from "@/components/about/Section1";
-import Section2 from "@/components/about/Section2";
-import Section4 from "@/components/about/Section4";
-import Section8 from "@/components/about/Section8";
-import Section9 from "@/components/about/Section9";
 import Footer from "@/components/Footer";
+import AboutView from "./AboutView";
+
+export const metadata = {
+  title: "About",
+  description:
+    "Pintree brings people together through personal connections, shared interests and meaningful conversations.",
+};
 
 export default function Home() {
   return (
-    // outer snap container — must be scrollable and full height
-    <div className="">
-      <Section1 />
-      <Section2 />
-      <Section4 />
-      <Section8/>
-      <Section9/>
-      <Footer/>
+    <div className="min-h-screen bg-white text-[#202020] antialiased selection:bg-[#CAFFA6] selection:text-[#204654]">
+      <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20,400,0,0&display=swap"
+      />
+      <AboutView />
+      <Footer />
     </div>
   );
 }

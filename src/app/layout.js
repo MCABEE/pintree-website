@@ -1,4 +1,4 @@
-import { Inter, Plus_Jakarta_Sans, Playfair_Display, Bodoni_Moda } from "next/font/google";
+import { Inter, Plus_Jakarta_Sans, Playfair_Display } from "next/font/google";
 import localFont from "next/font/local";
 import Navbar from "@/components/Navbar";
 import "./globals.css";
@@ -21,13 +21,6 @@ const playfairDisplay = Playfair_Display({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
   variable: "--font-playfair",
-  display: "swap",
-});
-
-const bodoniModa = Bodoni_Moda({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-  variable: "--font-bodoni",
   display: "swap",
 });
 
@@ -84,7 +77,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" data-scroll-behavior="smooth">
       <body
-        className={`bg-white ${inter.variable} ${plusJakartaSans.variable} ${playfairDisplay.variable} ${bodoniModa.variable} ${aeonikRegular.variable} ${aeonikMedium.variable} ${aeonikBold.variable} ${aeonikLight.variable} antialiased`}
+        className={`bg-white ${inter.variable} ${plusJakartaSans.variable} ${playfairDisplay.variable} ${aeonikRegular.variable} ${aeonikMedium.variable} ${aeonikBold.variable} ${aeonikLight.variable} antialiased`}
       >
         <Navbar />
         {children}
