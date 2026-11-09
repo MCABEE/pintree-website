@@ -1,5 +1,4 @@
-const PLAY_QR =
-  "https://lh3.googleusercontent.com/aida-public/AB6AXuB1AnD1g75bhoV_JRXJJNR96gnJxgI0v-dbF_RP2bEtg-KjfqDUnLU4txLe6Ul59q3j4WI2Fw1mP7M0fIqcinARNTabbl9EtNQB3AOlYakrhkVXhC4_n7vz7qYq6FJVnbd5WK5OaOUTRTcyesJSP28tR10Ho-SizXbsPOHZvgd2ut9AYrr728M-f_aN3aTdsb7B36KrYSvuo2tMDp5uydWzGZuYvKH8BBdxg5KEOVSrxi4nyhdNCQVp";
+const PLAY_QR = "/download/playstore-qr.jpeg";
 const APP_STORE_QR =
   "https://lh3.googleusercontent.com/aida-public/AB6AXuBVkYmsI3Uez51k7j7F6UQmufFPuehf-Jr4sq4BmH7XdOUhK69o8eJfBIpPVMrrdzXb93vppi_HAUVg30crO5Rao_0npPQR7W44pB0fb0L1suoR1bNGKztvPbkuVFvHZbt6R9jZHK6aCBCzFGHTjHoIS_IoPDWArMCKnEnjoP7Hb8mJlKXKsymoldn_U4u83p7ZN5CirI2Oy-JNW4sF5BbRiGcRj2zv1XNoirvxqCLDiA6scQoCnFSG";
 

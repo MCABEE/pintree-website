@@ -100,10 +100,10 @@ export default function DeleteAccountPage() {
     }
   }, []);
 
-  // If user is not logged in and deletion hasn't occurred, redirect them safely to the public informational delete account page
+  // Logged-out users must sign in before opening the delete flow
   useEffect(() => {
     if (!isLoading && !isAuthenticated && !deletionScheduled) {
-      router.replace("/delete-account");
+      router.replace("/login?action=delete_account");
     }
   }, [isLoading, isAuthenticated, deletionScheduled, router]);
 
