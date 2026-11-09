@@ -1,125 +1,188 @@
 "use client";
 
 import Link from "next/link";
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
+import {
+  getSupportTopics,
+  getSupportArticles,
+  getTopicIcon,
+} from "@/utils/support";
 
 const POPULAR_SEARCHES = [
+  "Getting Started",
   "Account Settings",
-  "Communities",
-  "Rooms",
   "Privacy",
   "Connections",
+  "News & Media",
 ];
 
-const SEARCH_TERMS = {
-  "account settings": ["account", "profile", "password", "username"],
-  communities: ["communit"],
-  rooms: ["room"],
-  privacy: ["privacy", "private"],
-  connections: ["connection", "follow", "friend", "circle"],
-};
-
-const CATEGORIES = [
+const FALLBACK_TOPICS = [
   {
-    title: "Account & Profile",
-    description: "Manage your account, personal information and profile settings.",
-    countLabel: "View all 6 articles",
-    icon: "user",
+    id: "cmw65hs5w0000ldu4b2k0y37w",
+    heading: "Getting Started",
+    subHeading: "Learn the basics of using Pintree.",
+    articleCount: 9,
     articles: [
-      "Creating your Pintree account",
-      "Logging in and managing your password",
-      "Setting up and editing your profile",
-      "Changing your username",
-      "Managing account visibility",
-      "Deactivating or deleting your account",
+      {
+        id: "cmw6ate8i0001o7017u6bxy7v",
+        headline: "How Local Communities Are Building Meaningful Connections on Pintree",
+        slug: "how-local-communities-are-building-meaningful-connections-on-pintree",
+      },
+      {
+        id: "cmw65hs5w_2",
+        headline: "Creating your Pintree account",
+        slug: "creating-your-pintree-account",
+      },
+      {
+        id: "cmw65hs5w_3",
+        headline: "Logging in and managing your password",
+        slug: "logging-in-and-managing-your-password",
+      },
+      {
+        id: "cmw65hs5w_4",
+        headline: "Setting up and editing your profile",
+        slug: "setting-up-and-editing-your-profile",
+      },
+      {
+        id: "cmw65hs5w_5",
+        headline: "Changing your username",
+        slug: "changing-your-username",
+      },
+      {
+        id: "cmw65hs5w_6",
+        headline: "Managing account visibility",
+        slug: "managing-account-visibility",
+      },
     ],
   },
   {
-    title: "People & Connections",
-    description: "Learn how to follow people, manage relationships and connect with others.",
-    countLabel: "View all 6 articles",
-    icon: "people",
+    id: "cmw65hsax0001ldu4qkq7soxn",
+    heading: "Accounts & Profiles",
+    subHeading: "Manage your account, profile and personal information.",
+    articleCount: 8,
     articles: [
-      "Following and unfollowing people",
-      "Understanding followers and friends",
-      "Managing follow requests",
-      "Creating and managing Circles",
-      "Controlling who sees your posts",
-      "Blocking and managing users",
+      {
+        id: "cmw65hsax_1",
+        headline: "Following and unfollowing people",
+        slug: "following-and-unfollowing-people",
+      },
+      {
+        id: "cmw65hsax_2",
+        headline: "Understanding followers and friends",
+        slug: "understanding-followers-and-friends",
+      },
+      {
+        id: "cmw65hsax_3",
+        headline: "Managing follow requests",
+        slug: "managing-follow-requests",
+      },
+      {
+        id: "cmw65hsax_4",
+        headline: "Creating and managing Circles",
+        slug: "creating-and-managing-circles",
+      },
+      {
+        id: "cmw65hsax_5",
+        headline: "Controlling who sees your posts",
+        slug: "controlling-who-sees-your-posts",
+      },
+      {
+        id: "cmw65hsax_6",
+        headline: "Blocking and managing users",
+        slug: "blocking-and-managing-users",
+      },
     ],
   },
   {
-    title: "Communities & Rooms",
-    description: "Discover how to create, join and participate in communities and Rooms.",
-    countLabel: "View all 7 articles",
-    icon: "grid",
+    id: "cmw65hshd0003ldu4v71gu62e",
+    heading: "Connections & Privacy",
+    subHeading: "Manage connections, friends and privacy settings.",
+    articleCount: 5,
     articles: [
-      "Creating a community",
-      "Choosing community type and visibility",
-      "Joining or leaving a community",
-      "Managing community membership",
-      "Creating and joining Rooms",
-      "Participating in Room discussions",
+      {
+        id: "cmw65hshd_1",
+        headline: "Managing your privacy settings",
+        slug: "managing-your-privacy-settings",
+      },
+      {
+        id: "cmw65hshd_2",
+        headline: "Controlling who can send you connection requests",
+        slug: "controlling-connection-requests",
+      },
+      {
+        id: "cmw65hshd_3",
+        headline: "Understanding public and private profiles",
+        slug: "understanding-public-and-private-profiles",
+      },
+      {
+        id: "cmw65hshd_4",
+        headline: "Managing blocked users",
+        slug: "managing-blocked-users",
+      },
+      {
+        id: "cmw65hshd_5",
+        headline: "Controlling profile information visibility",
+        slug: "controlling-profile-information-visibility",
+      },
     ],
   },
   {
-    title: "Posts & Discovery",
-    description: "Learn how to share content and discover people, posts and communities.",
-    countLabel: "View all 6 articles",
-    icon: "star",
+    id: "cmw65hskn0004ldu4icnwv1hk",
+    heading: "News & Media",
+    subHeading: "Explore news, publications and media content on Pintree.",
+    articleCount: 3,
     articles: [
-      "Creating and publishing a post",
-      "Adding images and files to posts",
-      "Creating polls",
-      "Commenting and reacting to posts",
-      "Exploring the Discover feed",
-      "Finding new communities and people",
-    ],
-  },
-  {
-    title: "Privacy & Safety",
-    description: "Understand privacy settings and how to keep your Pintree experience safe.",
-    countLabel: "View all 7 articles",
-    icon: "shield",
-    articles: [
-      "Managing your privacy settings",
-      "Choosing who can see your posts",
-      "Reporting inappropriate content",
-      "Blocking unwanted interactions",
-      "Understanding account restrictions",
-      "Understanding community guidelines",
-    ],
-  },
-  {
-    title: "Troubleshooting",
-    description: "Find solutions to common account, notification and app-related issues.",
-    countLabel: "View all 6 articles",
-    icon: "settings",
-    articles: [
-      "Unable to log in",
-      "OTP or verification problems",
-      "Not receiving notifications",
-      "Problems uploading images or files",
-      "App not responding or loading",
-      "Reporting a technical issue",
+      {
+        id: "cmw65hskn_1",
+        headline: "Exploring news and publications on Pintree",
+        slug: "exploring-news-and-publications-on-pintree",
+      },
+      {
+        id: "cmw65hskn_2",
+        headline: "Finding the latest Pintree announcements",
+        slug: "finding-the-latest-pintree-announcements",
+      },
+      {
+        id: "cmw65hskn_3",
+        headline: "Understanding news categories",
+        slug: "understanding-news-categories",
+      },
     ],
   },
 ];
 
-const POPULAR = [
-  { category: "Account & Profile", title: "How do I create a Pintree account?" },
-  { category: "Privacy & Safety", title: "How do I make my account private?" },
-  { category: "Communities & Rooms", title: "How do I create or join a community?" },
-  { category: "People & Connections", title: "How do following and friendships work?" },
-  { category: "People & Connections", title: "How do I create and manage Circles?" },
-  { category: "Privacy & Safety", title: "How do I report inappropriate content?" },
+const FALLBACK_POPULAR = [
+  {
+    category: "Getting Started",
+    title: "How Local Communities Are Building Meaningful Connections on Pintree",
+    slug: "how-local-communities-are-building-meaningful-connections-on-pintree",
+  },
+  {
+    category: "Getting Started",
+    title: "Creating your Pintree account",
+    slug: "creating-your-pintree-account",
+  },
+  {
+    category: "Connections & Privacy",
+    title: "Managing your privacy settings",
+    slug: "managing-your-privacy-settings",
+  },
+  {
+    category: "Accounts & Profiles",
+    title: "Following and unfollowing people",
+    slug: "following-and-unfollowing-people",
+  },
+  {
+    category: "Accounts & Profiles",
+    title: "Creating and managing Circles",
+    slug: "creating-and-managing-circles",
+  },
+  {
+    category: "News & Media",
+    title: "Exploring news and publications on Pintree",
+    slug: "exploring-news-and-publications-on-pintree",
+  },
 ];
-
-function matches(text, query) {
-  const value = text.toLowerCase();
-  const terms = SEARCH_TERMS[query] || [query];
-  return terms.some((term) => value.includes(term));
-}
 
 function CategoryIcon({ name }) {
   const props = {
@@ -203,31 +266,126 @@ function Arrow() {
 
 export default function HelpCenterView() {
   const [query, setQuery] = useState("");
+  const [topics, setTopics] = useState(FALLBACK_TOPICS);
+  const [allArticles, setAllArticles] = useState([]);
+
+  // Fetch topics and articles from live APIs
+  useEffect(() => {
+    let cancelled = false;
+
+    async function loadData() {
+      try {
+        const [topicsData, articlesData] = await Promise.all([
+          getSupportTopics(),
+          getSupportArticles({ limit: 100 }),
+        ]);
+
+        if (cancelled) return;
+
+        const articles = articlesData.articles || [];
+        const topicMap = new Map();
+        for (const t of topicsData) {
+          topicMap.set(t.id, {
+            ...t,
+            articles: [],
+          });
+        }
+
+        for (const a of articles) {
+          if (a.topicId && topicMap.has(a.topicId)) {
+            topicMap.get(a.topicId).articles.push(a);
+          }
+        }
+
+        // Only show topics that have articles available
+        const activeTopics = Array.from(topicMap.values()).filter(
+          (t) => (t.articles && t.articles.length > 0) || (t.articleCount && t.articleCount > 0)
+        );
+
+        if (activeTopics.length > 0) {
+          setTopics(activeTopics);
+        }
+
+        if (articles.length > 0) {
+          setAllArticles(articles);
+        }
+      } catch (err) {
+        console.error("Failed to load support data from API:", err);
+      }
+    }
+
+    loadData();
+
+    return () => {
+      cancelled = true;
+    };
+  }, []);
+
   const active = query.trim().toLowerCase();
 
-  const categories = useMemo(() => {
-    if (!active) return CATEGORIES;
-    return CATEGORIES.map((category) => {
-      const categoryHit = matches(category.title, active) || matches(category.description, active);
-      const articles = categoryHit
-        ? category.articles
-        : category.articles.filter((article) => matches(article, active));
-      return articles.length ? { ...category, articles } : null;
-    }).filter(Boolean);
-  }, [active]);
+  // Filter topics by search query
+  const filteredTopics = useMemo(() => {
+    if (!active) return topics;
 
+    return topics
+      .map((t) => {
+        const headingMatch =
+          t.heading.toLowerCase().includes(active) ||
+          (t.subHeading && t.subHeading.toLowerCase().includes(active));
+
+        const matchedArticles = (t.articles || []).filter(
+          (a) =>
+            (a.headline || "").toLowerCase().includes(active) ||
+            (a.excerpt || "").toLowerCase().includes(active)
+        );
+
+        if (headingMatch || matchedArticles.length > 0) {
+          return {
+            ...t,
+            articles: headingMatch ? t.articles : matchedArticles,
+          };
+        }
+        return null;
+      })
+      .filter(Boolean);
+  }, [topics, active]);
+
+  // Popular articles list
   const popular = useMemo(() => {
-    if (!active) return POPULAR;
-    return POPULAR.filter(
-      (article) => matches(article.title, active) || matches(article.category, active),
-    );
-  }, [active]);
+    const topicHeadingById = new Map(topics.map((t) => [t.id, t.heading]));
 
-  const popularColumns = [popular.slice(0, Math.ceil(popular.length / 2)), popular.slice(Math.ceil(popular.length / 2))];
+    let list = [];
+    if (allArticles.length > 0) {
+      list = allArticles.map((a) => ({
+        id: a.id,
+        slug: a.slug,
+        title: a.headline,
+        category: topicHeadingById.get(a.topicId) || "General",
+      }));
+    } else {
+      list = FALLBACK_POPULAR;
+    }
+
+    if (active) {
+      list = list.filter(
+        (article) =>
+          article.title.toLowerCase().includes(active) ||
+          article.category.toLowerCase().includes(active)
+      );
+    }
+
+    return list.slice(0, 6);
+  }, [allArticles, topics, active]);
+
+  const popularColumns = [
+    popular.slice(0, Math.ceil(popular.length / 2)),
+    popular.slice(Math.ceil(popular.length / 2)),
+  ];
 
   return (
     <main className="font-jakarta mx-auto w-full max-w-[1536px] px-6 pb-24 pt-14 text-[#525252] selection:bg-[#CAFFA6] selection:text-[#202020] sm:px-12 md:px-20 md:pb-32 md:pt-20 lg:px-28 xl:px-[128px]">
       <div className="mx-auto w-full max-w-[1280px]">
+        {/* Header & Search */}
         <section className="mx-auto max-w-[780px] pb-16 text-center md:pb-24">
           <div className="mb-4 inline-flex items-center justify-center gap-2">
             <span className="inline-block h-2 w-2 rounded-full bg-[#204654]" aria-hidden />
@@ -290,6 +448,7 @@ export default function HelpCenterView() {
 
         <div className="mb-16 w-full border-t border-[#E5E5E5] md:mb-20" />
 
+        {/* Explore Help Topics */}
         <section className="mb-20 md:mb-28">
           <div className="mb-10 flex flex-col justify-between gap-3 sm:flex-row sm:items-end md:mb-12">
             <div>
@@ -305,46 +464,61 @@ export default function HelpCenterView() {
             </p>
           </div>
 
-          {categories.length ? (
+          {filteredTopics.length ? (
             <div className="grid grid-cols-1 gap-6 md:grid-cols-2 md:gap-7 lg:grid-cols-3">
-              {categories.map((category) => (
-                <article
-                  key={category.title}
-                  className="group flex flex-col justify-between rounded-[12px] border border-[#E5E5E5] bg-white p-7 transition-all duration-200 hover:border-[#D4D4D4] hover:bg-[#FCFCFC] md:p-8"
-                >
-                  <div>
-                    <div className="mb-6 flex items-center justify-between">
-                      <div className="flex h-11 w-11 items-center justify-center rounded-[8px] bg-[#F7F7F7] text-[#204654] transition-colors group-hover:bg-[#CAFFA6]/30">
-                        <CategoryIcon name={category.icon} />
+              {filteredTopics.map((category) => {
+                const icon = getTopicIcon(category.heading);
+                const displayArticles = (category.articles || []).slice(0, 6);
+                const count = category.articleCount || (category.articles ? category.articles.length : 0);
+
+                return (
+                  <article
+                    key={category.id || category.heading}
+                    className="group flex flex-col justify-between rounded-[12px] border border-[#E5E5E5] bg-white p-7 transition-all duration-200 hover:border-[#D4D4D4] hover:bg-[#FCFCFC] md:p-8"
+                  >
+                    <div>
+                      <div className="mb-6 flex items-center justify-between">
+                        <div className="flex h-11 w-11 items-center justify-center rounded-[8px] bg-[#F7F7F7] text-[#204654] transition-colors group-hover:bg-[#CAFFA6]/30">
+                          <CategoryIcon name={icon} />
+                        </div>
+                      </div>
+                      <h3 className="mb-2 text-[19px] font-semibold tracking-[-0.01em] text-[#202020]">
+                        {category.heading}
+                      </h3>
+                      <p className="mb-6 text-[14px] leading-[1.55] text-[#666666]">
+                        {category.subHeading}
+                      </p>
+                      <div className="mb-6 border-t border-[#E5E5E5] pt-4">
+                        <p className="mb-3 text-[12px] font-semibold uppercase tracking-[0.08em] text-[#202020]">
+                          Popular Articles
+                        </p>
+                        <ul className="space-y-2.5 text-[13.5px] text-[#525252]">
+                          {displayArticles.map((article) => (
+                            <li key={article.id || article.slug || article.headline}>
+                              <Link
+                                href={`/support/${article.slug}`}
+                                className="block truncate transition-colors hover:text-[#202020] hover:underline"
+                              >
+                                {article.headline}
+                              </Link>
+                            </li>
+                          ))}
+                        </ul>
                       </div>
                     </div>
-                    <h3 className="mb-2 text-[19px] font-semibold tracking-[-0.01em] text-[#202020]">
-                      {category.title}
-                    </h3>
-                    <p className="mb-6 text-[14px] leading-[1.55] text-[#666666]">{category.description}</p>
-                    <div className="mb-6 border-t border-[#E5E5E5] pt-4">
-                      <p className="mb-3 text-[12px] font-semibold uppercase tracking-[0.08em] text-[#202020]">
-                        Popular Articles
-                      </p>
-                      <ul className="space-y-2.5 text-[13.5px] text-[#525252]">
-                        {category.articles.map((article) => (
-                          <li key={article}>
-                            <a href="#articles" className="block truncate transition-colors hover:text-[#202020] hover:underline">
-                              {article}
-                            </a>
-                          </li>
-                        ))}
-                      </ul>
+                    <div className="flex items-center justify-between border-t border-[#E5E5E5] pt-2 text-[13px] font-medium text-[#202020]">
+                      <span>
+                        {active
+                          ? `${category.articles.length} matching`
+                          : `View all ${count} articles`}
+                      </span>
+                      <span className="text-[#777777] transition-transform duration-200 group-hover:translate-x-[3px] group-hover:text-[#202020]">
+                        →
+                      </span>
                     </div>
-                  </div>
-                  <div className="flex items-center justify-between border-t border-[#E5E5E5] pt-2 text-[13px] font-medium text-[#202020]">
-                    <span>{active ? `${category.articles.length} matching` : category.countLabel}</span>
-                    <span className="text-[#777777] transition-transform duration-200 group-hover:translate-x-[3px] group-hover:text-[#202020]">
-                      →
-                    </span>
-                  </div>
-                </article>
-              ))}
+                  </article>
+                );
+              })}
             </div>
           ) : (
             <p className="text-[15px] text-[#666666]">No help topics match that search.</p>
@@ -353,6 +527,7 @@ export default function HelpCenterView() {
 
         <div className="mb-16 w-full border-t border-[#E5E5E5] md:mb-20" />
 
+        {/* Popular Help Articles */}
         <section id="articles" className="mb-20 scroll-mt-24 md:mb-28">
           <div className="mb-10 flex flex-col justify-between gap-3 sm:flex-row sm:items-end md:mb-12">
             <div>
@@ -373,12 +548,14 @@ export default function HelpCenterView() {
               {popularColumns.map((column, columnIndex) => (
                 <div
                   key={columnIndex}
-                  className={`divide-y divide-[#E5E5E5] ${columnIndex === 1 ? "border-t border-[#E5E5E5] lg:border-t-0" : ""}`}
+                  className={`divide-y divide-[#E5E5E5] ${
+                    columnIndex === 1 ? "border-t border-[#E5E5E5] lg:border-t-0" : ""
+                  }`}
                 >
                   {column.map((article) => (
-                    <a
-                      key={article.title}
-                      href="#articles"
+                    <Link
+                      key={article.id || article.slug || article.title}
+                      href={`/support/${article.slug}`}
                       className="group -mx-3 flex items-center justify-between rounded-[8px] px-3 py-5 transition-colors hover:bg-[#FAFAFA]"
                     >
                       <div className="pr-6">
@@ -392,7 +569,7 @@ export default function HelpCenterView() {
                       <div className="shrink-0 text-[#777777] transition-transform group-hover:translate-x-[3px] group-hover:text-[#202020]">
                         <Arrow />
                       </div>
-                    </a>
+                    </Link>
                   ))}
                 </div>
               ))}
@@ -404,6 +581,7 @@ export default function HelpCenterView() {
           )}
         </section>
 
+        {/* Direct Assistance */}
         <section className="rounded-[16px] border border-[#E5E5E5] bg-[#F7F7F7] p-8 text-center sm:p-12 md:p-14">
           <div className="mx-auto max-w-[620px]">
             <div className="mb-4 inline-flex items-center gap-2">

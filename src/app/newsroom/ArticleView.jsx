@@ -53,8 +53,153 @@ function ReadStoryLink({ href }) {
   );
 }
 
+function renderBlock(block, index) {
+  if (!block) return null;
+  const key = block.id || `block-${index}`;
+
+  switch (block.type) {
+    case "HEADING_2":
+      return (
+        <h2
+          key={key}
+          id={block.anchor || undefined}
+          className="font-aeonik-regular mb-4 mt-10 text-[24px] font-normal leading-[1.3] tracking-[-0.015em] text-[#202020] md:text-[28px] md:leading-[1.28]"
+        >
+          {block.text}
+        </h2>
+      );
+
+    case "HEADING_3":
+      return (
+        <h3
+          key={key}
+          id={block.anchor || undefined}
+          className="font-aeonik-regular mb-3 mt-8 text-[20px] font-normal leading-[1.3] tracking-[-0.01em] text-[#202020] md:text-[22px]"
+        >
+          {block.text}
+        </h3>
+      );
+
+    case "PARAGRAPH":
+      return (
+        <p
+          key={key}
+          className="mb-5 text-[17px] leading-[1.76] text-[#525252] last:mb-0"
+        >
+          {block.text}
+        </p>
+      );
+
+    case "IMAGE":
+      return (
+        <figure key={key} className="my-10">
+          <div className="aspect-[16/9] w-full overflow-hidden rounded-md border border-[#E5E5E5] bg-[#F7F7F7]">
+            <img
+              src={block.imageUrl}
+              alt={block.title || block.text || ""}
+              className="h-full w-full object-cover"
+              loading="lazy"
+            />
+          </div>
+          {block.title || block.attribution ? (
+            <figcaption className="mt-2.5 font-jakarta text-[13px] text-[#777777]">
+              {block.title || block.attribution}
+            </figcaption>
+          ) : null}
+        </figure>
+      );
+
+    case "BULLET_LIST":
+      return (
+        <div key={key} className="mb-8">
+          {block.title ? (
+            <h3 className="font-aeonik-regular mb-3 text-[20px] font-normal text-[#202020]">
+              {block.title}
+            </h3>
+          ) : null}
+          <ul className="my-4 space-y-2.5 pl-6 list-disc font-jakarta text-[16px] leading-[1.65] text-[#525252] sm:text-[17px]">
+            {block.items?.map((item, itemIdx) => (
+              <li key={item.id || itemIdx}>{item.text}</li>
+            ))}
+          </ul>
+        </div>
+      );
+
+    case "NUMBERED_LIST":
+      return (
+        <div key={key} className="mb-8">
+          {block.title ? (
+            <h3 className="font-aeonik-regular mb-3 text-[20px] font-normal text-[#202020]">
+              {block.title}
+            </h3>
+          ) : null}
+          <ol className="my-4 space-y-2.5 pl-6 list-decimal font-jakarta text-[16px] leading-[1.65] text-[#525252] sm:text-[17px]">
+            {block.items?.map((item, itemIdx) => (
+              <li key={item.id || itemIdx}>{item.text}</li>
+            ))}
+          </ol>
+        </div>
+      );
+
+    case "QUOTE":
+      return (
+        <blockquote
+          key={key}
+          className="my-10 rounded-r-md border-l-2 border-[#202020] bg-[#F7F7F7] px-6 py-6 sm:px-8 sm:py-8"
+        >
+          <p className="mb-3 font-jakarta text-[20px] font-normal italic leading-[1.4] text-[#202020] sm:text-[23px]">
+            “{block.text}”
+          </p>
+          {block.attribution ? (
+            <cite className="block font-jakarta text-[13px] font-medium not-italic text-[#777777]">
+              — {block.attribution}
+            </cite>
+          ) : null}
+        </blockquote>
+      );
+
+    case "CALLOUT":
+      return (
+        <div
+          key={key}
+          className="my-8 rounded-md border border-[#E5E5E5] bg-[#F7F7F7] p-6"
+        >
+          {block.title ? (
+            <h4 className="mb-2 font-jakarta text-[16px] font-semibold text-[#202020]">
+              {block.title}
+            </h4>
+          ) : null}
+          <p className="text-[15px] leading-relaxed text-[#525252]">
+            {block.text}
+          </p>
+        </div>
+      );
+
+    case "DIVIDER":
+      return <hr key={key} className="my-10 border-[#E5E5E5]" />;
+
+    default:
+      if (block.text) {
+        return (
+          <p key={key} className="mb-5 text-[17px] leading-[1.76] text-[#525252]">
+            {block.text}
+          </p>
+        );
+      }
+      return null;
+  }
+}
+
 export default function ArticleView({ article, related }) {
   const [copied, setCopied] = useState(false);
+  const sameCategoryRelated = (related || []).filter(
+    (item) =>
+      item &&
+      item.slug !== article?.slug &&
+      (!article?.category ||
+        item.category === article.category ||
+        (item.categoryRaw && item.categoryRaw === article.categoryRaw))
+  );
   const shareUrl = () =>
     typeof window === "undefined" ? "" : window.location.href;
 
@@ -167,107 +312,115 @@ export default function ArticleView({ article, related }) {
         ) : null}
 
         <article className="mx-auto max-w-[760px] font-jakarta">
-          {article.lead || article.paragraphs?.length ? (
-            <div className="mb-10 space-y-6">
-              {article.lead ? (
-                <p className="text-[18px] font-normal leading-[1.8] text-[#202020] sm:text-[19px]">
-                  {article.lead}
-                </p>
-              ) : null}
-              {article.paragraphs?.map((paragraph) => (
-                <p
-                  key={paragraph}
-                  className="text-[17px] leading-[1.76] text-[#525252]"
-                >
-                  {paragraph}
-                </p>
-              ))}
+          {Array.isArray(article.blocks) && article.blocks.length > 0 ? (
+            <div className="mb-10">
+              {article.blocks.map((block, index) => renderBlock(block, index))}
             </div>
-          ) : null}
-
-          {article.sections?.map((section) => {
-            if (section.type === "quote") {
-              return (
-                <blockquote
-                  key={section.text}
-                  className="my-10 rounded-r-md border-l-2 border-[#202020] bg-[#F7F7F7] px-6 py-6 sm:px-8 sm:py-8"
-                >
-                  <p className="mb-3 font-jakarta text-[20px] font-normal italic leading-[1.4] text-[#202020] sm:text-[23px]">
-                    “{section.text}”
-                  </p>
-                  <cite className="block font-jakarta text-[13px] font-medium not-italic text-[#777777]">
-                    — {section.cite}
-                  </cite>
-                </blockquote>
-              );
-            }
-
-            if (section.type === "figure") {
-              return (
-                <figure key={section.image} className="my-10">
-                  <div className="aspect-[16/9] w-full overflow-hidden rounded-md border border-[#E5E5E5] bg-[#F7F7F7]">
-                    <img
-                      src={section.image}
-                      alt={section.imageAlt || ""}
-                      className="h-full w-full object-cover"
-                      loading="lazy"
-                    />
-                  </div>
-                  {section.caption ? (
-                    <figcaption className="mt-2.5 font-jakarta text-[13px] text-[#777777]">
-                      {section.caption}
-                    </figcaption>
-                  ) : null}
-                </figure>
-              );
-            }
-
-            if (section.type === "list") {
-              return (
-                <div key={section.heading} className="mb-10">
-                  <h2 className="font-aeonik-regular mb-4 text-[24px] font-normal leading-[1.3] tracking-[-0.015em] text-[#202020] md:text-[28px] md:leading-[1.28]">
-                    {section.heading}
-                  </h2>
-                  {section.intro ? (
-                    <p className="mb-6 text-[17px] leading-[1.76] text-[#525252]">
-                      {section.intro}
+          ) : (
+            <>
+              {article.lead || article.paragraphs?.length ? (
+                <div className="mb-10 space-y-6">
+                  {article.lead ? (
+                    <p className="text-[18px] font-normal leading-[1.8] text-[#202020] sm:text-[19px]">
+                      {article.lead}
                     </p>
                   ) : null}
-                  <ul className="my-6 space-y-4 pl-1 font-jakarta text-[16px] leading-[1.65] sm:text-[17px]">
-                    {section.items.map((item, index) => (
-                      <li key={item.title} className="flex items-start gap-3">
-                        <span className="mt-1 inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#CAFFA6] text-[11px] font-bold text-[#204654]">
-                          {index + 1}
-                        </span>
-                        <div>
-                          <strong className="font-semibold text-[#202020]">
-                            {item.title}
-                          </strong>
-                          <span className="text-[#525252]"> — {item.text}</span>
-                        </div>
-                      </li>
-                    ))}
-                  </ul>
+                  {article.paragraphs?.map((paragraph) => (
+                    <p
+                      key={paragraph}
+                      className="text-[17px] leading-[1.76] text-[#525252]"
+                    >
+                      {paragraph}
+                    </p>
+                  ))}
                 </div>
-              );
-            }
+              ) : null}
 
-            return (
-              <div key={section.heading} className="mb-10">
-                <h2 className="font-aeonik-regular mb-4 text-[24px] font-normal leading-[1.3] tracking-[-0.015em] text-[#202020] md:text-[28px] md:leading-[1.28]">
-                  {section.heading}
-                </h2>
-                {section.paragraphs?.map((paragraph) => (
-                  <p
-                    key={paragraph}
-                    className="mb-5 text-[17px] leading-[1.76] text-[#525252] last:mb-0"
-                  >
-                    {paragraph}
-                  </p>
-                ))}
-              </div>
-            );
-          })}
+              {article.sections?.map((section) => {
+                if (section.type === "quote") {
+                  return (
+                    <blockquote
+                      key={section.text}
+                      className="my-10 rounded-r-md border-l-2 border-[#202020] bg-[#F7F7F7] px-6 py-6 sm:px-8 sm:py-8"
+                    >
+                      <p className="mb-3 font-jakarta text-[20px] font-normal italic leading-[1.4] text-[#202020] sm:text-[23px]">
+                        “{section.text}”
+                      </p>
+                      <cite className="block font-jakarta text-[13px] font-medium not-italic text-[#777777]">
+                        — {section.cite}
+                      </cite>
+                    </blockquote>
+                  );
+                }
+
+                if (section.type === "figure") {
+                  return (
+                    <figure key={section.image} className="my-10">
+                      <div className="aspect-[16/9] w-full overflow-hidden rounded-md border border-[#E5E5E5] bg-[#F7F7F7]">
+                        <img
+                          src={section.image}
+                          alt={section.imageAlt || ""}
+                          className="h-full w-full object-cover"
+                          loading="lazy"
+                        />
+                      </div>
+                      {section.caption ? (
+                        <figcaption className="mt-2.5 font-jakarta text-[13px] text-[#777777]">
+                          {section.caption}
+                        </figcaption>
+                      ) : null}
+                    </figure>
+                  );
+                }
+
+                if (section.type === "list") {
+                  return (
+                    <div key={section.heading} className="mb-10">
+                      <h2 className="font-aeonik-regular mb-4 text-[24px] font-normal leading-[1.3] tracking-[-0.015em] text-[#202020] md:text-[28px] md:leading-[1.28]">
+                        {section.heading}
+                      </h2>
+                      {section.intro ? (
+                        <p className="mb-6 text-[17px] leading-[1.76] text-[#525252]">
+                          {section.intro}
+                        </p>
+                      ) : null}
+                      <ul className="my-6 space-y-4 pl-1 font-jakarta text-[16px] leading-[1.65] sm:text-[17px]">
+                        {section.items.map((item, index) => (
+                          <li key={item.title} className="flex items-start gap-3">
+                            <span className="mt-1 inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#CAFFA6] text-[11px] font-bold text-[#204654]">
+                              {index + 1}
+                            </span>
+                            <div>
+                              <strong className="font-semibold text-[#202020]">
+                                {item.title}
+                              </strong>
+                              <span className="text-[#525252]"> — {item.text}</span>
+                            </div>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  );
+                }
+
+                return (
+                  <div key={section.heading} className="mb-10">
+                    <h2 className="font-aeonik-regular mb-4 text-[24px] font-normal leading-[1.3] tracking-[-0.015em] text-[#202020] md:text-[28px] md:leading-[1.28]">
+                      {section.heading}
+                    </h2>
+                    {section.paragraphs?.map((paragraph) => (
+                      <p
+                        key={paragraph}
+                        className="mb-5 text-[17px] leading-[1.76] text-[#525252] last:mb-0"
+                      >
+                        {paragraph}
+                      </p>
+                    ))}
+                  </div>
+                );
+              })}
+            </>
+          )}
 
           <div className="flex flex-col items-start justify-between gap-4 border-y border-[#E5E5E5] py-8 sm:flex-row sm:items-center">
             <div className="text-[12px] font-semibold uppercase tracking-wider text-[#777777]">
@@ -349,7 +502,7 @@ export default function ArticleView({ article, related }) {
           </div>
         </article>
 
-        {related.length > 0 ? (
+        {sameCategoryRelated.length > 0 ? (
           <section className="mt-20 border-t border-[#E5E5E5] pt-16">
             <div className="mb-10 flex flex-col justify-between gap-3 md:flex-row md:items-end">
               <div>
@@ -366,7 +519,7 @@ export default function ArticleView({ article, related }) {
               </p>
             </div>
             <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
-              {related.map((item) => (
+              {sameCategoryRelated.map((item) => (
                 <article
                   key={item.slug}
                   className="group flex h-full flex-col font-jakarta"

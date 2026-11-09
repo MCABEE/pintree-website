@@ -1,38 +1,45 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
+import { getFaqs } from "@/utils/faq";
 
-const faqItems = [
+const fallbackFaqItems = [
   {
+    id: "cmw8vhhz5000mo701fqlrxb04",
     question: "What is Pintree?",
     answer:
-      "Pintree is a community-first social platform designed to make online interaction feel more organized, meaningful, and human. We bring together personal connections, interest-based groups, and serendipitous discovery in one calm, considered digital environment.",
+      "Pintree is a community-first social networking platform that brings people, communities and shared interests together. It allows you to connect with friends, follow people, join communities, participate in discussions, share updates and discover new people and interests. Pintree provides a space to build meaningful connections and engage with communities that matter to you.",
   },
   {
-    question: "How is Pintree different from other social platforms?",
+    id: "cmw8vi3va000oo701sdxixoy8",
+    question: "How does Pintree work?",
     answer:
-      "Unlike traditional platforms driven by viral engagement algorithms and infinite feeds, Pintree is built around intentional participation. We prioritize focused discussions, authentic community rooms, and thoughtful dialogue over vanity metrics.",
+      "Getting started with Pintree is simple. Create your account, complete your profile and start exploring. Your Home feed brings together updates from your friends, people you follow and communities you've joined. You can discover new people and communities, share posts, interact with others and participate in community discussions. You can also join Rooms within communities for more focused conversations.",
   },
   {
-    question: "What are Pintree communities?",
+    id: "cmw8vjhnd000qo70165eq6hs7",
+    question: "Can I change my registered mobile number or email address?",
     answer:
-      "Communities are dedicated shared spaces centered around shared passions, cultural circles, local collectives, and organizations. They allow members to engage in focused topical threads and build lasting connections.",
+      "Yes. You can update your registered mobile number or email address from the Account Settings section. You may be required to verify your new contact information to complete the change.",
   },
   {
-    question: "What are Rooms, and how do they work?",
+    id: "cmw8vjwsn000so701usmdd5fq",
+    question: "Can I change my username after creating my account?",
     answer:
-      "Rooms are intimate, topic-specific spaces within communities for deeper conversation. Whether it's a weekly reflection salon, an open workshop, or an ongoing collaborative project, Rooms keep discussions structured and distraction-free.",
+      "Yes. You can change your username through the Edit Profile option. However, usernames are unique, so your preferred username must be available before you can use it.",
   },
   {
-    question: "Who can join Pintree?",
+    id: "cmw8vkn89000uo701f6874t33",
+    question: "Who can create a community on Pintree?",
     answer:
-      "Pintree is open to anyone seeking a more mindful, human-centric way to connect online—including creators, thinkers, community organizers, and everyday people looking for genuine belonging.",
+      "Anyone with an active Pintree account can create a community. Whether you want to start a discussion group, build an interest-based community or create a private group for your circle, you have the tools to set it up and manage it.",
   },
   {
-    question: "How can I control my privacy on Pintree?",
+    id: "cmw8vl89r000wo701416q05r4",
+    question: "How can I create a community on Pintree?",
     answer:
-      "You maintain full sovereignty over your space. Pintree provides granular controls over who can discover your profile, join your conversations, and access your community rooms, with transparent data policies and zero intrusive tracking.",
+      "To create a community, go to the Communities section, click on \"Create Community\", fill in details such as name, description and privacy type (Public or Private) and submit.",
   },
 ];
 
@@ -105,6 +112,34 @@ function ForumIcon() {
 
 export default function Section9() {
   const [openIndex, setOpenIndex] = useState(null);
+  const [items, setItems] = useState(fallbackFaqItems);
+
+  useEffect(() => {
+    let cancelled = false;
+    async function fetchQuestions() {
+      try {
+        const topics = await getFaqs();
+        if (cancelled) return;
+        const allQuestions = (topics || [])
+          .flatMap((t) => t.questions || [])
+          .filter((q) => q && q.question && q.answer)
+          .slice(0, 6);
+
+        if (allQuestions.length > 0) {
+          setItems(allQuestions);
+        }
+      } catch (err) {
+        console.error("Failed to load FAQs:", err);
+      }
+    }
+
+    fetchQuestions();
+    return () => {
+      cancelled = true;
+    };
+  }, []);
+
+  const displayItems = items.slice(0, 6);
 
   return (
     <section
@@ -163,14 +198,14 @@ export default function Section9() {
           {/* Right column — accordion */}
           <div className="lg:col-span-7">
             <div className="flex w-full flex-col">
-              {faqItems.map((item, index) => {
+              {displayItems.map((item, index) => {
                 const isOpen = openIndex === index;
-                const isLast = index === faqItems.length - 1;
-                const contentId = `faq-content-${index + 1}`;
+                const isLast = index === displayItems.length - 1;
+                const contentId = `faq-content-${item.id || index + 1}`;
 
                 return (
                   <div
-                    key={item.question}
+                    key={item.id || item.question || index}
                     className={`border-t border-[#e4e2e1] transition-colors duration-150 ${
                       isLast ? "border-b" : ""
                     }`}
@@ -194,11 +229,11 @@ export default function Section9() {
                       id={contentId}
                       className={`overflow-hidden transition-all duration-300 ease-in-out ${
                         isOpen
-                          ? "max-h-96 opacity-100"
+                          ? "max-h-[500px] opacity-100"
                           : "max-h-0 opacity-0"
                       }`}
                     >
-                      <p className="pb-6 pr-12 font-jakarta text-[16px] font-normal leading-6 text-[#444748]">
+                      <p className="pb-6 pr-12 font-jakarta text-[16px] font-normal leading-6 text-[#444748] whitespace-pre-line">
                         {item.answer}
                       </p>
                     </div>
