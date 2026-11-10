@@ -285,19 +285,10 @@ export default function SupportTopicView({
                 Our support team is available Monday through Friday to help resolve personal account issues.
               </p>
             </div>
-            <div className="flex flex-wrap items-center gap-3">
-              <button
-                type="button"
-                disabled
-                aria-disabled="true"
-                className="inline-flex items-center justify-center px-4 py-2 rounded text-sm font-medium text-[#999999] bg-[#EFEFEF] border border-[#E5E5E5] cursor-not-allowed opacity-60 select-none whitespace-nowrap"
-                title="Submitting requests is currently unavailable"
-              >
-                Submit a request
-              </button>
+            <div className="flex shrink-0 items-center">
               <a
-                className="inline-flex items-center gap-1.5 px-4 py-2 rounded text-sm font-medium text-[#FFFFFF] bg-[#000000] hover:bg-[#204654] transition-colors whitespace-nowrap group"
-                href="mailto:support@pintree.co"
+                className="inline-flex items-center justify-center gap-1.5 px-5 py-2.5 rounded text-sm font-medium text-white bg-black hover:bg-[#204654] transition-colors whitespace-nowrap group shadow-sm"
+                href="mailto:hello@pintree.co"
               >
                 <span>Contact Support</span>
                 <svg

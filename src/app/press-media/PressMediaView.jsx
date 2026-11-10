@@ -321,7 +321,7 @@ export default function PressMediaView() {
                 </div>
                 <div className="border-t border-[#E5E5E5] pt-4">
                   <a
-                    href="mailto:press@pintree.co?subject=Pintree%20Brand%20Guidelines"
+                    href="mailto:hello@pintree.co?subject=Pintree%20Brand%20Guidelines"
                     className="inline-flex w-full items-center justify-center gap-2 rounded-lg bg-[#202020] px-4 py-2.5 text-xs font-medium text-white transition-colors hover:bg-black"
                   >
                     Download Brand Guidelines →
@@ -395,15 +395,15 @@ export default function PressMediaView() {
             </div>
             <div className="flex flex-col items-start justify-center gap-4 sm:flex-row lg:col-span-5 lg:flex-col lg:items-end">
               <a
-                href="mailto:press@pintree.co?subject=Press%20Inquiry%20-%20Pintree"
+                href="mailto:hello@pintree.co?subject=Press%20Inquiry%20-%20Pintree"
                 className="inline-flex w-full items-center justify-center gap-2 rounded-lg bg-[#202020] px-6 py-3.5 text-sm font-medium text-white shadow-sm transition-colors hover:bg-black sm:w-auto"
               >
                 Contact Media Team →
               </a>
               <div className="text-xs text-[#777777] lg:text-right">
                 <span>Press email: </span>
-                <a href="mailto:press@pintree.co" className="font-medium text-[#202020] hover:underline">
-                  press@pintree.co
+                <a href="mailto:hello@pintree.co" className="font-medium text-[#202020] hover:underline">
+                  hello@pintree.co
                 </a>
                 <span className="mt-0.5 block text-[11px] text-[#777777]">(Subject to confirmation)</span>
               </div>

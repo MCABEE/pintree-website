@@ -395,17 +395,6 @@ export default function AccountOverviewPage() {
                     </span>
                   </div>
                 </div>
-
-                {/* Edit Profile Action Button */}
-                <button
-                  type="button"
-                  className="h-9 px-4 rounded-full border border-[#e4e2e1] bg-white text-[13px] leading-[18px] text-[#1b1c1c] font-medium hover:bg-[#f6f3f2] hover:border-[#c4c7c7] transition-colors flex items-center gap-1.5 active:scale-[0.98] cursor-pointer"
-                >
-                  <svg className="w-4 h-4 text-[#1b1c1c]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
-                  </svg>
-                  <span>Edit profile</span>
-                </button>
               </div>
 
               {/* Structured Information Rows */}
@@ -424,14 +413,14 @@ export default function AccountOverviewPage() {
                   </span>
                 </div>
 
-                <div className="py-3.5 flex items-center justify-between">
-                  <span className="text-[13px] leading-[18px] text-[#747878] font-semibold">Email address</span>
-                  <div className="flex items-center gap-2">
-                    <span suppressHydrationWarning className="text-[16px] leading-[24px] text-[#1b1c1c] font-medium">
+                <div className="py-3.5 flex items-center justify-between gap-3">
+                  <span className="text-[13px] leading-[18px] text-[#747878] font-semibold shrink-0">Email address</span>
+                  <div className="flex flex-col items-end sm:flex-row sm:items-center gap-1 sm:gap-2 text-right sm:text-left">
+                    <span suppressHydrationWarning className="text-[16px] leading-[24px] text-[#1b1c1c] font-medium break-all sm:break-normal">
                       {emailDisplay}
                     </span>
                     {showEmailBadge && (
-                      <span className="inline-flex items-center text-[11px] font-semibold text-[#3d6922] gap-1 bg-[#baee97]/30 px-2 py-0.5 rounded-full border border-[#baee97]">
+                      <span className="inline-flex items-center text-[11px] font-semibold text-[#3d6922] gap-1 bg-[#baee97]/30 px-2 py-0.5 rounded-full border border-[#baee97] whitespace-nowrap">
                         <svg className="w-3.5 h-3.5 text-[#3d6922]" fill="currentColor" viewBox="0 0 20 20">
                           <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                         </svg>
@@ -441,14 +430,14 @@ export default function AccountOverviewPage() {
                   </div>
                 </div>
 
-                <div className="py-3.5 flex items-center justify-between">
-                  <span className="text-[13px] leading-[18px] text-[#747878] font-semibold">Phone number</span>
-                  <div className="flex items-center gap-2">
+                <div className="py-3.5 flex items-center justify-between gap-3">
+                  <span className="text-[13px] leading-[18px] text-[#747878] font-semibold shrink-0">Phone number</span>
+                  <div className="flex flex-col items-end sm:flex-row sm:items-center gap-1 sm:gap-2 text-right sm:text-left">
                     <span suppressHydrationWarning className="text-[16px] leading-[24px] text-[#1b1c1c] font-medium">
                       {phoneDisplay}
                     </span>
                     {showPhoneBadge && (
-                      <span className="inline-flex items-center text-[11px] font-semibold text-[#3d6922] gap-1 bg-[#baee97]/30 px-2 py-0.5 rounded-full border border-[#baee97]">
+                      <span className="inline-flex items-center text-[11px] font-semibold text-[#3d6922] gap-1 bg-[#baee97]/30 px-2 py-0.5 rounded-full border border-[#baee97] whitespace-nowrap">
                         <svg className="w-3.5 h-3.5 text-[#3d6922]" fill="currentColor" viewBox="0 0 20 20">
                           <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                         </svg>
@@ -465,112 +454,111 @@ export default function AccountOverviewPage() {
                   </span>
                 </div>
 
-                <div className="py-3.5 flex items-center justify-between">
-                  <span className="text-[13px] leading-[18px] text-[#747878] font-semibold">Friends</span>
-                  <div className="flex items-center gap-2.5">
-                    <div className="flex items-center -space-x-2">
-                      {friendsList.length > 0 ? (
-                        friendsList.slice(0, 4).map((friend, idx) => {
-                          const imgUrl = friend?.profileImageUrl || friend?.user?.profileImageUrl || friend?.avatarUrl;
+                <div className="py-3.5 flex items-center justify-between gap-3">
+                  <span className="text-[13px] leading-[18px] text-[#747878] font-semibold shrink-0">Friends</span>
+                  <div className="flex flex-col items-end sm:flex-row sm:items-center gap-1 sm:gap-2.5 text-right sm:text-left">
+                    {friendsCount > 0 && friendsList.length > 0 && (
+                      <div className="flex items-center -space-x-2">
+                        {friendsList.slice(0, 4).map((friend, idx) => {
+                          const imgUrl =
+                            friend?.profileImageUrl ||
+                            friend?.user?.profileImageUrl ||
+                            friend?.avatarUrl ||
+                            friend?.friend?.profileImageUrl ||
+                            friend?.friend?.avatarUrl;
                           return imgUrl ? (
                             <img
                               key={friend.id || friend.userId || idx}
                               className="w-6 h-6 rounded-full object-cover ring-2 ring-white"
                               src={imgUrl}
-                              alt={friend.fullName || friend.name || `Friend ${idx + 1}`}
+                              alt={friend.fullName || friend.name || friend?.user?.fullName || `Friend ${idx + 1}`}
                             />
                           ) : (
                             <div
                               key={friend.id || friend.userId || idx}
                               className="w-6 h-6 rounded-full bg-[#e4e2e1] text-[#1b1c1c] text-[10px] font-bold flex items-center justify-center ring-2 ring-white uppercase"
                             >
-                              {(friend.fullName || friend.name || "F")[0]}
+                              {(friend.fullName || friend.name || friend?.user?.fullName || friend?.user?.name || "F")[0]}
                             </div>
                           );
-                        })
-                      ) : (
-                        <>
-                          <img className="w-6 h-6 rounded-full object-cover ring-2 ring-white" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&auto=format&fit=crop&q=80" alt="Friend 1" />
-                          <img className="w-6 h-6 rounded-full object-cover ring-2 ring-white" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&auto=format&fit=crop&q=80" alt="Friend 2" />
-                          <img className="w-6 h-6 rounded-full object-cover ring-2 ring-white" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&auto=format&fit=crop&q=80" alt="Friend 3" />
-                          <img className="w-6 h-6 rounded-full object-cover ring-2 ring-white" src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&auto=format&fit=crop&q=80" alt="Friend 4" />
-                        </>
-                      )}
-                    </div>
-                    <span suppressHydrationWarning className="text-[16px] leading-[24px] text-[#1b1c1c] font-medium">
+                        })}
+                      </div>
+                    )}
+                    <span suppressHydrationWarning className="text-[16px] leading-[24px] text-[#1b1c1c] font-medium whitespace-nowrap">
                       {friendsCount.toLocaleString()} Friends
                     </span>
                   </div>
                 </div>
 
-                <div className="py-3.5 flex items-center justify-between">
-                  <span className="text-[13px] leading-[18px] text-[#747878] font-semibold">Owned communities</span>
-                  <div className="flex items-center gap-2.5">
-                    <div className="flex items-center -space-x-2">
-                      {ownedCommunitiesList.length > 0 ? (
-                        ownedCommunitiesList.slice(0, 4).map((community, idx) => {
-                          const imgUrl = community?.profileImageUrl || community?.coverImageUrl || community?.iconUrl || community?.avatarUrl;
+                <div className="py-3.5 flex items-center justify-between gap-3">
+                  <span className="text-[13px] leading-[18px] text-[#747878] font-semibold shrink-0">Owned communities</span>
+                  <div className="flex flex-col items-end sm:flex-row sm:items-center gap-1 sm:gap-2.5 text-right sm:text-left">
+                    {ownedCommunitiesCount > 0 && ownedCommunitiesList.length > 0 && (
+                      <div className="flex items-center -space-x-2">
+                        {ownedCommunitiesList.slice(0, 4).map((community, idx) => {
+                          const imgUrl =
+                            community?.profileImageUrl ||
+                            community?.coverImageUrl ||
+                            community?.iconUrl ||
+                            community?.avatarUrl ||
+                            community?.community?.profileImageUrl ||
+                            community?.community?.iconUrl;
                           return imgUrl ? (
                             <img
                               key={community.id || idx}
                               className="w-6 h-6 rounded-full object-cover ring-2 ring-white"
                               src={imgUrl}
-                              alt={community.name || `Community ${idx + 1}`}
+                              alt={community.name || community?.community?.name || `Community ${idx + 1}`}
                             />
                           ) : (
                             <div
                               key={community.id || idx}
                               className="w-6 h-6 rounded-full bg-[#baee97] text-[#3d6922] text-[10px] font-bold flex items-center justify-center ring-2 ring-white uppercase"
                             >
-                              {(community.name || "C")[0]}
+                              {(community.name || community?.community?.name || "C")[0]}
                             </div>
                           );
-                        })
-                      ) : (
-                        <>
-                          <img className="w-6 h-6 rounded-full object-cover ring-2 ring-white" src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=100&auto=format&fit=crop&q=80" alt="Community 1" />
-                          <img className="w-6 h-6 rounded-full object-cover ring-2 ring-white" src="https://images.unsplash.com/photo-1511447333015-45b65e60f6d5?w=100&auto=format&fit=crop&q=80" alt="Community 2" />
-                        </>
-                      )}
-                    </div>
-                    <span suppressHydrationWarning className="text-[16px] leading-[24px] text-[#1b1c1c] font-medium">
-                      Owned {ownedCommunitiesCount} {ownedCommunitiesCount === 1 ? "community" : "communities"}
+                        })}
+                      </div>
+                    )}
+                    <span suppressHydrationWarning className="text-[16px] leading-[24px] text-[#1b1c1c] font-medium whitespace-nowrap">
+                      {ownedCommunitiesCount} {ownedCommunitiesCount === 1 ? "community" : "communities"}
                     </span>
                   </div>
                 </div>
 
-                <div className="py-3.5 flex items-center justify-between">
-                  <span className="text-[13px] leading-[18px] text-[#747878] font-semibold">Joined communities</span>
-                  <div className="flex items-center gap-2.5">
-                    <div className="flex items-center -space-x-2">
-                      {joinedCommunitiesList.length > 0 ? (
-                        joinedCommunitiesList.slice(0, 5).map((community, idx) => {
-                          const imgUrl = community?.profileImageUrl || community?.coverImageUrl || community?.iconUrl || community?.avatarUrl;
+                <div className="py-3.5 flex items-center justify-between gap-3">
+                  <span className="text-[13px] leading-[18px] text-[#747878] font-semibold shrink-0">Joined communities</span>
+                  <div className="flex flex-col items-end sm:flex-row sm:items-center gap-1 sm:gap-2.5 text-right sm:text-left">
+                    {joinedCommunitiesCount > 0 && joinedCommunitiesList.length > 0 && (
+                      <div className="flex items-center -space-x-2">
+                        {joinedCommunitiesList.slice(0, 5).map((community, idx) => {
+                          const imgUrl =
+                            community?.profileImageUrl ||
+                            community?.coverImageUrl ||
+                            community?.iconUrl ||
+                            community?.avatarUrl ||
+                            community?.community?.profileImageUrl ||
+                            community?.community?.iconUrl;
                           return imgUrl ? (
                             <img
                               key={community.id || idx}
                               className="w-6 h-6 rounded-full object-cover ring-2 ring-white"
                               src={imgUrl}
-                              alt={community.name || `Community ${idx + 1}`}
+                              alt={community.name || community?.community?.name || `Community ${idx + 1}`}
                             />
                           ) : (
                             <div
                               key={community.id || idx}
                               className="w-6 h-6 rounded-full bg-[#CAFFA6] text-[#1b1c1c] text-[10px] font-bold flex items-center justify-center ring-2 ring-white uppercase"
                             >
-                              {(community.name || "C")[0]}
+                              {(community.name || community?.community?.name || "C")[0]}
                             </div>
                           );
-                        })
-                      ) : (
-                        <>
-                          <img className="w-6 h-6 rounded-full object-cover ring-2 ring-white" src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=100&auto=format&fit=crop&q=80" alt="Community 3" />
-                          <img className="w-6 h-6 rounded-full object-cover ring-2 ring-white" src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=100&auto=format&fit=crop&q=80" alt="Community 4" />
-                          <img className="w-6 h-6 rounded-full object-cover ring-2 ring-white" src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=100&auto=format&fit=crop&q=80" alt="Community 5" />
-                        </>
-                      )}
-                    </div>
-                    <span suppressHydrationWarning className="text-[16px] leading-[24px] text-[#1b1c1c] font-medium">
+                        })}
+                      </div>
+                    )}
+                    <span suppressHydrationWarning className="text-[16px] leading-[24px] text-[#1b1c1c] font-medium whitespace-nowrap">
                       {joinedCommunitiesCount} communities
                     </span>
                   </div>
@@ -620,7 +608,7 @@ export default function AccountOverviewPage() {
                   <div className="flex items-center gap-3 flex-wrap">
                     <Link
                       className="inline-flex items-center justify-center gap-2 h-11 px-6 rounded-full bg-black text-white text-[15px] leading-[20px] font-medium hover:bg-neutral-800 transition-all active:scale-[0.98] shadow-sm"
-                      href="/#download"
+                      href="/download"
                     >
                       <span>Explore the Pintree app</span>
                       <svg className="w-4.5 h-4.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -641,13 +629,16 @@ export default function AccountOverviewPage() {
               </h3>
               <div className="divide-y divide-[#e4e2e1]">
                 {/* Row 1: Help & Support */}
-                <div className="py-3.5 flex items-center justify-between -mx-3 px-3">
+                <Link
+                  href="/support"
+                  className="w-full py-3.5 flex items-center justify-between group hover:bg-[#f6f3f2] -mx-3 px-3 rounded-lg transition-colors text-left"
+                >
                   <div className="flex items-start gap-3">
                     <svg className="w-5 h-5 text-[#747878] mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
                     <div className="flex flex-col text-left">
-                      <span className="text-[13px] leading-[18px] font-semibold text-[#1b1c1c]">
+                      <span className="text-[13px] leading-[18px] font-semibold text-[#1b1c1c] group-hover:text-[#204654] transition-colors">
                         Help &amp; Support
                       </span>
                       <span className="text-[14px] leading-[20px] text-[#444748]">
@@ -655,16 +646,22 @@ export default function AccountOverviewPage() {
                       </span>
                     </div>
                   </div>
-                </div>
+                  <svg className="w-4 h-4 text-[#747878] group-hover:translate-x-0.5 transition-transform flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" />
+                  </svg>
+                </Link>
 
                 {/* Row 2: Privacy & Security */}
-                <div className="py-3.5 flex items-center justify-between -mx-3 px-3">
+                <Link
+                  href="/privacy-policy"
+                  className="w-full py-3.5 flex items-center justify-between group hover:bg-[#f6f3f2] -mx-3 px-3 rounded-lg transition-colors text-left"
+                >
                   <div className="flex items-start gap-3">
                     <svg className="w-5 h-5 text-[#747878] mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
                     </svg>
                     <div className="flex flex-col text-left">
-                      <span className="text-[13px] leading-[18px] font-semibold text-[#1b1c1c]">
+                      <span className="text-[13px] leading-[18px] font-semibold text-[#1b1c1c] group-hover:text-[#204654] transition-colors">
                         Privacy &amp; Security
                       </span>
                       <span className="text-[14px] leading-[20px] text-[#444748]">
@@ -672,16 +669,22 @@ export default function AccountOverviewPage() {
                       </span>
                     </div>
                   </div>
-                </div>
+                  <svg className="w-4 h-4 text-[#747878] group-hover:translate-x-0.5 transition-transform flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" />
+                  </svg>
+                </Link>
 
                 {/* Row 3: Terms of Service */}
-                <div className="py-3.5 flex items-center justify-between -mx-3 px-3">
+                <Link
+                  href="/terms-of-service"
+                  className="w-full py-3.5 flex items-center justify-between group hover:bg-[#f6f3f2] -mx-3 px-3 rounded-lg transition-colors text-left"
+                >
                   <div className="flex items-start gap-3">
                     <svg className="w-5 h-5 text-[#747878] mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                     </svg>
                     <div className="flex flex-col text-left">
-                      <span className="text-[13px] leading-[18px] font-semibold text-[#1b1c1c]">
+                      <span className="text-[13px] leading-[18px] font-semibold text-[#1b1c1c] group-hover:text-[#204654] transition-colors">
                         Terms of Service
                       </span>
                       <span className="text-[14px] leading-[20px] text-[#444748]">
@@ -689,7 +692,10 @@ export default function AccountOverviewPage() {
                       </span>
                     </div>
                   </div>
-                </div>
+                  <svg className="w-4 h-4 text-[#747878] group-hover:translate-x-0.5 transition-transform flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" />
+                  </svg>
+                </Link>
 
                 {/* Row 4: Log out */}
                 <button

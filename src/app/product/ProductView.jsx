@@ -1014,7 +1014,7 @@ function NewsEditorialMock() {
       </div>
 
       {/* Publisher Analytics Widget */}
-      <div className="relative z-10 mt-1 flex flex-col gap-3 rounded-2xl border border-[#E5E5E5] bg-white p-3.5 shadow-sm sm:flex-row sm:items-center sm:justify-between">
+      <div className="relative z-10 mt-1 flex flex-col gap-3 rounded-2xl border border-[#E5E5E5] bg-white p-3.5 shadow-sm">
         <div className="flex items-center gap-2">
           <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-[#204654] text-[#CAFFA6]">
             <Symbol name="monitoring" className="text-[16px]" />
@@ -1031,41 +1031,58 @@ function NewsEditorialMock() {
             </span>
           </div>
         </div>
-        <div className="grid grid-cols-3 gap-2 border-t border-gray-100 pt-2.5 text-left sm:border-t-0 sm:pt-0 sm:flex sm:items-center sm:gap-3 sm:divide-x sm:divide-gray-100">
-          <div className="sm:pl-2">
-            <div className="flex items-center gap-1">
+
+        {/* Divider */}
+        <div className="h-px w-full bg-[#E5E5E5]/70" />
+
+        {/* Metric Sections */}
+        <div className="flex items-start justify-between gap-4 text-left">
+          {/* Metric 1: Impressions */}
+          <div className="flex flex-col items-start min-w-0">
+            <div className="flex h-5 items-center gap-1.5">
               <span className="text-[13px] font-bold leading-none text-[#1b1c1c]">
                 24.8K
               </span>
-              <span className="rounded bg-[#CAFFA6] px-1 py-0.5 text-[9px] font-bold leading-none text-[#204654]">
+              <span className="inline-flex items-center rounded bg-[#CAFFA6] px-1 py-0.5 text-[9px] font-bold leading-none text-[#204654]">
                 +18.4%
               </span>
             </div>
-            <span className="mt-0.5 block text-[9px] font-normal text-gray-500 whitespace-nowrap">
+            <span className="mt-1 block text-[9.5px] font-normal leading-none text-gray-500 whitespace-nowrap">
               Impressions
             </span>
           </div>
-          <div className="sm:pl-3">
-            <div className="flex items-center gap-1">
+
+          {/* Metric 2: Read-through */}
+          <div className="flex flex-col items-start min-w-0">
+            <div className="flex h-5 items-center">
               <span className="text-[13px] font-bold leading-none text-[#1b1c1c]">
                 8.6K
               </span>
             </div>
-            <span className="mt-0.5 block text-[9px] font-normal text-gray-500 whitespace-nowrap">
+            <span className="mt-1 block text-[9.5px] font-normal leading-none text-gray-500 whitespace-nowrap">
               74% read-through
             </span>
           </div>
-          <div className="sm:pl-3">
-            <div className="flex items-center gap-1">
+
+          {/* Metric 3: Reactions */}
+          <div className="flex flex-col items-start min-w-0">
+            <div className="flex h-5 items-center gap-1">
               <span className="text-[13px] font-bold leading-none text-[#1b1c1c]">
                 642
               </span>
-              <Symbol
-                name="favorite"
-                className="text-[12px] text-[#e11d48]"
-              />
+              <svg
+                className="h-3.5 w-3.5 shrink-0 text-[#e11d48]"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                aria-hidden>
+                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+              </svg>
             </div>
-            <span className="mt-0.5 block text-[9px] font-normal text-gray-500 whitespace-nowrap">
+            <span className="mt-1 block text-[9.5px] font-normal leading-none text-gray-500 whitespace-nowrap">
               Reactions
             </span>
           </div>
@@ -1164,8 +1181,8 @@ export default function ProductView() {
               </li>
             ))}
             <li className="flex items-center pt-2">
-              <a
-                href="#profiles"
+              <Link
+                href="/support"
                 className="group inline-flex items-center gap-1.5 font-jakarta text-[16px] font-semibold text-[#204654] transition-colors hover:text-[#092100]">
                 <span>Know more about profile features</span>
                 <svg
@@ -1181,7 +1198,7 @@ export default function ProductView() {
                     strokeLinejoin="round"
                   />
                 </svg>
-              </a>
+              </Link>
             </li>
           </ul>
         </div>
@@ -1232,8 +1249,8 @@ export default function ProductView() {
               </li>
             ))}
           </ul>
-          <a
-            href="#communities"
+          <Link
+            href="/support"
             className="group mt-6 inline-flex items-center gap-2 font-jakarta text-[16px] font-semibold text-[#204654] transition-opacity hover:opacity-80">
             <span>Know more about communities</span>
             <svg
@@ -1249,7 +1266,7 @@ export default function ProductView() {
                 strokeLinejoin="round"
               />
             </svg>
-          </a>
+          </Link>
           <div className="mt-8 flex flex-col items-start gap-3 pt-1 font-jakarta">
             {[
               "How to Create a Community?",
@@ -1257,9 +1274,9 @@ export default function ProductView() {
               "Interest-Based Communities",
               "More about Rooms",
             ].map((btnLabel) => (
-              <a
+              <Link
                 key={btnLabel}
-                href="#communities"
+                href="/support"
                 className="inline-flex w-fit items-center gap-1.5 rounded-full border border-[#E5E5E5] bg-[#F7F7F7] px-3.5 py-1.5 text-[16px] font-medium text-[#525252] transition-colors hover:border-[#202020] hover:text-[#202020]">
                 <span>{btnLabel}</span>
                 <svg
@@ -1275,7 +1292,7 @@ export default function ProductView() {
                     strokeLinejoin="round"
                   />
                 </svg>
-              </a>
+              </Link>
             ))}
           </div>
         </div>
@@ -1321,8 +1338,8 @@ export default function ProductView() {
               </li>
             ))}
           </ul>
-          <a
-            href="#editorial"
+          <Link
+            href="/support"
             className="group mt-6 inline-flex items-center gap-2 font-jakarta text-[16px] font-semibold text-[#204654] transition-opacity hover:opacity-80">
             <span>Learn more about News &amp; Media</span>
             <svg
@@ -1338,15 +1355,15 @@ export default function ProductView() {
                 strokeLinejoin="round"
               />
             </svg>
-          </a>
+          </Link>
           <div className="mt-8 flex flex-col items-start gap-3 pt-1 font-jakarta">
             {[
               "Create News & Media account",
               "How to become a verified publisher?",
             ].map((btnLabel) => (
-              <a
+              <Link
                 key={btnLabel}
-                href="#editorial"
+                href="/support"
                 className="inline-flex w-fit items-center gap-1.5 rounded-full border border-[#E5E5E5] bg-[#F7F7F7] px-3.5 py-1.5 text-[16px] font-medium text-[#525252] transition-colors hover:border-[#202020] hover:text-[#202020]">
                 <span>{btnLabel}</span>
                 <svg
@@ -1362,7 +1379,7 @@ export default function ProductView() {
                     strokeLinejoin="round"
                   />
                 </svg>
-              </a>
+              </Link>
             ))}
           </div>
         </div>

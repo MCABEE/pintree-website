@@ -7,7 +7,7 @@ const columns = [
     title: "Our story",
     body: "From an idea to a platform built around people, communities, and conversations.",
     linkText: "OUR STORY",
-    linkHref: "#",
+    linkHref: "/about#our-journey",
     className:
       "flex flex-col border-b border-[#E5E5E5] pb-8 pr-8 md:border-b-0 md:border-r md:pb-0 md:pr-10",
   },
@@ -15,7 +15,7 @@ const columns = [
     title: "The company",
     body: "Meet the team and the company building Pintree for a more connected social experience.",
     linkText: "ABOUT MCABEE",
-    linkHref: "#",
+    linkHref: "/about#the-company",
     className:
       "flex flex-col border-b border-[#E5E5E5] px-0 py-8 md:border-b-0 md:border-r md:px-10 md:py-0",
   },
@@ -23,7 +23,7 @@ const columns = [
     title: "Our approach",
     body: "A thoughtful approach to building social spaces around connection, participation, and discovery.",
     linkText: "OUR APPROACH",
-    linkHref: "#",
+    linkHref: "/about",
     className: "flex flex-col pl-0 pt-8 md:pl-10 md:pt-0",
   },
 ];

@@ -2,7 +2,6 @@
 
 import Link from "next/link";
 import { useState } from "react";
-import { monthYear } from "./articles";
 
 function BackLink() {
   return (
@@ -566,10 +565,7 @@ export default function ArticleView({ article, related }) {
         <footer className="mt-16 flex items-center justify-between gap-6 border-t border-[#E5E5E5] pt-10 font-jakarta">
           <BackLink />
           <div className="text-right font-jakarta text-[13px] text-[#777777]">
-            Pintree Official Newsroom ·{" "}
-            <span className="font-medium text-[#202020]">
-              {monthYear(article.date)}
-            </span>
+            Pintree Official Newsroom
           </div>
         </footer>
       </div>

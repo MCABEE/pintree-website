@@ -2,7 +2,7 @@
 
 import { useEffect, useState, useTransition } from "react";
 import Link from "next/link";
-import { getNews, CATEGORY_MAP } from "@/utils/news";
+import { getNews, CATEGORY_MAP, FALLBACK_ARTICLES } from "@/utils/news";
 
 const CATEGORIES = [
   "All News",
@@ -10,93 +10,6 @@ const CATEGORIES = [
   "Product Updates",
   "Company News",
   "Stories",
-];
-
-const FALLBACK_ARTICLES = [
-  {
-    id: "cmw92pcr5002fo701swkr60r1",
-    slug: "enhanced-privacy-controls-granular-audience-tiers-for-personal-profiles",
-    title: "Enhanced privacy controls: Granular audience tiers for personal profiles",
-    headline: "Enhanced privacy controls: Granular audience tiers for personal profiles",
-    excerpt: "New privacy controls offer users more flexibility over who can view their personal profile information.",
-    category: "Product Updates",
-    categoryRaw: "PRODUCT_UPDATES",
-    attribution: "Pintree Product Team",
-    image: "https://image.pintree.co/1794217381538-hqdefault.jpg",
-    imageAlt: "Enhanced privacy controls: Granular audience tiers for personal profiles",
-    date: "Nov 9, 2026",
-    dateTime: "2026-11-09",
-  },
-  {
-    id: "cmw92izjb0021o701an5tw4rk",
-    slug: "how-independent-book-clubs-and-creative-collectives-found-a-new-home-on-pintree",
-    title: "How independent book clubs and creative collectives found a new home on Pintree",
-    headline: "How independent book clubs and creative collectives found a new home on Pintree",
-    excerpt: "Discover how independent book clubs and creative communities connect, collaborate and share their passions on Pintree.",
-    category: "Stories",
-    categoryRaw: "COMMUNITY_STORIES",
-    attribution: "Pintree Community Team",
-    image: "https://image.pintree.co/1794217082683-a92bdf90-dbbe-11f1-b441-2b33b063138f.jpg.webp",
-    imageAlt: "How independent book clubs and creative collectives found a new home on Pintree",
-    date: "Nov 9, 2026",
-    dateTime: "2026-11-09",
-  },
-  {
-    id: "cmw92aua4001uo701ftzlyuwz",
-    slug: "pintree-appoints-elena-rostova-as-vice-president-of-community-integrity",
-    title: "Pintree appoints Elena Rostova as Vice President of Community Integrity",
-    headline: "Pintree appoints Elena Rostova as Vice President of Community Integrity",
-    excerpt: "Pintree announces a new leadership appointment focused on community integrity and trust.",
-    category: "Company News",
-    categoryRaw: "COMPANY_NEWS",
-    attribution: "Pintree Communications Team",
-    image: "https://image.pintree.co/1794216704400-apple_news-local-expansion_hero_10262021_big.jpg.large_2x.jpg",
-    imageAlt: "Pintree appoints Elena Rostova as Vice President of Community Integrity",
-    date: "Nov 9, 2026",
-    dateTime: "2026-11-09",
-  },
-  {
-    id: "cmw926wgn001jo701y13kitmy",
-    slug: "introducing-focused-rooms-intimate-topic-spaces-within-larger-communities",
-    title: "Introducing Focused Rooms: Intimate topic spaces within larger communities",
-    headline: "Introducing Focused Rooms: Intimate topic spaces within larger communities",
-    excerpt: "Discover Focused Rooms, dedicated spaces for meaningful discussions within larger communities.",
-    category: "Product Updates",
-    categoryRaw: "PRODUCT_UPDATES",
-    attribution: "Pintree Product Team",
-    image: "https://image.pintree.co/1794216520676-kyrmhas_1701182285359_1709622176270.webp",
-    imageAlt: "Introducing Focused Rooms: Intimate topic spaces within larger communities",
-    date: "Nov 9, 2026",
-    dateTime: "2026-11-09",
-  },
-  {
-    id: "cmw62nxwu0002s901x9sf9hp1",
-    slug: "introducing-pintree-s-new-privacy-dashboard",
-    title: "Introducing Pintree's New Privacy Dashboard",
-    headline: "Introducing Pintree's New Privacy Dashboard",
-    excerpt: "A redesigned privacy dashboard gives users greater control and transparency.",
-    category: "Product Updates",
-    categoryRaw: "PRODUCT_UPDATES",
-    attribution: "Pintree Product Team",
-    image: "https://image.pintree.co/1794035915605-foodio_delivery_app_showcase.png",
-    imageAlt: "Introducing Pintree's New Privacy Dashboard",
-    date: "Nov 7, 2026",
-    dateTime: "2026-11-07",
-  },
-  {
-    id: "cmw60xb5k0000ld9kbgebxghh",
-    slug: "expanding-decentralized-communities-across-40-metropolitan-hubs",
-    title: "Expanding Decentralized Communities Across 40+ Metropolitan Hubs",
-    headline: "Expanding Decentralized Communities Across 40+ Metropolitan Hubs",
-    excerpt: "Pintree expands localized privacy nodes across forty core metropolises.",
-    category: "Announcements",
-    categoryRaw: "ANNOUNCEMENTS",
-    attribution: "Pintree Editorial Team & Ops",
-    image: "https://image.pintree.co/1794032742692-vanta_luxury_jewelry_platform_showcase.png",
-    imageAlt: "Expanding Decentralized Communities Across 40+ Metropolitan Hubs",
-    date: "Nov 7, 2026",
-    dateTime: "2026-11-07",
-  },
 ];
 
 function ArrowRight({ size = 16 }) {
@@ -380,13 +293,13 @@ export default function NewsroomView() {
                     Working on a story? Contact our global communications team
                     for press kits and interview requests.
                   </p>
-                  <a
-                    href="mailto:press@pintree.com"
+                  <Link
+                    href="/support"
                     className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#202020] hover:text-[#204654]"
                   >
-                    <span>press@pintree.com</span>
+                    <span>Connect</span>
                     <ArrowRight size={12} />
-                  </a>
+                  </Link>
                 </div>
               </aside>
             </div>

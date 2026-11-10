@@ -15,7 +15,7 @@ const FEATURES = [
     number: "02",
     title: "Communities",
     body: "Create or join communities built around shared interests, organizations and common goals. Share updates and participate with like-minded people.",
-    tag: "Interest-based Networks",
+    tag: "Interest/Organization - based Networks",
     badge: "bg-[#A9E0F1]/40 border-[#A9E0F1]",
     tagClass: "bg-[#A9E0F1]/25 border-[#A9E0F1]/50",
   },
@@ -209,7 +209,7 @@ export default function DownloadView() {
 
       <section className="mx-auto mt-24 max-w-[1280px] border-t border-[#E5E5E5] pt-20">
         <div className="max-w-2xl">
-          <div className="mb-3 inline-flex items-center gap-2">
+          <div className="mb-3 flex flex-col items-start gap-2 sm:flex-row sm:items-center">
             <div className="inline-flex items-center gap-1.5 rounded-full border border-[#A9E0F1] bg-[#A9E0F1]/40 px-3 py-1 text-[12px] font-semibold uppercase tracking-wider text-[#204654]">
               <span className="h-1.5 w-1.5 rounded-full bg-[#204654]" />
               <span>Core Capabilities</span>

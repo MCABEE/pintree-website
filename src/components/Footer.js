@@ -21,8 +21,8 @@ const footerColumns = [
   {
     title: "Support",
     links: [
-      { href: "/faq", label: "Quick Answers" },
-      { href: "/support", label: "Help Center" },
+      { href: "/faq", label: "FA Questions" },
+      { href: "/support", label: "Support" },
       { href: "/press-media", label: "Press & Media" },
     ],
   },

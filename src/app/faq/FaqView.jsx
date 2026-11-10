@@ -322,9 +322,9 @@ export default function FaqView() {
                 </p>
                 <div className="pt-1">
                   <a
-                    href="mailto:support@pintree.com"
+                    href="mailto:hello@pintree.co"
                     className="inline-flex items-center gap-1.5 text-sm font-semibold text-[#204654] underline-offset-4 hover:underline">
-                    <span>support@pintree.com</span>
+                    <span>hello@pintree.co</span>
                     <svg
                       className="h-3 w-3"
                       fill="none"

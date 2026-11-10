@@ -15,7 +15,7 @@ export const FALLBACK_TOPICS = [
     subHeading: "Learn the basics of using Pintree.",
     sortOrder: 1,
     isActive: true,
-    articleCount: 9,
+    articleCount: 8,
   },
   {
     id: "cmw65hsax0001ldu4qkq7soxn",
@@ -62,15 +62,6 @@ export const FALLBACK_ARTICLES = [
     excerpt: "Learn how to create your Pintree account and get started.",
     publishedAt: "2026-11-09T10:47:16.326Z",
     updatedAt: "2026-11-09T10:57:24.338Z",
-  },
-  {
-    id: "cmw951p2j003oo701y23de7kb",
-    topicId: "cmw65hs5w0000ldu4b2k0y37w",
-    headline: "Logging in and managing your password",
-    slug: "logging-in-and-managing-your-password-2",
-    excerpt: "Learn how to sign in securely and manage your Pintree password.",
-    publishedAt: "2026-11-09T10:48:37.674Z",
-    updatedAt: "2026-11-09T10:58:10.856Z",
   },
   {
     id: "cmw950y0b003eo70152nmqjy1",
