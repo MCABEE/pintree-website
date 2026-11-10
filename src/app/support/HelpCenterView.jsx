@@ -6,6 +6,9 @@ import {
   getSupportTopics,
   getSupportArticles,
   getTopicIcon,
+  getTopicSlug,
+  FALLBACK_TOPICS,
+  FALLBACK_ARTICLES,
 } from "@/utils/support";
 
 const POPULAR_SEARCHES = [
@@ -16,173 +19,20 @@ const POPULAR_SEARCHES = [
   "News & Media",
 ];
 
-const FALLBACK_TOPICS = [
-  {
-    id: "cmw65hs5w0000ldu4b2k0y37w",
-    heading: "Getting Started",
-    subHeading: "Learn the basics of using Pintree.",
-    articleCount: 9,
-    articles: [
-      {
-        id: "cmw6ate8i0001o7017u6bxy7v",
-        headline: "How Local Communities Are Building Meaningful Connections on Pintree",
-        slug: "how-local-communities-are-building-meaningful-connections-on-pintree",
-      },
-      {
-        id: "cmw65hs5w_2",
-        headline: "Creating your Pintree account",
-        slug: "creating-your-pintree-account",
-      },
-      {
-        id: "cmw65hs5w_3",
-        headline: "Logging in and managing your password",
-        slug: "logging-in-and-managing-your-password",
-      },
-      {
-        id: "cmw65hs5w_4",
-        headline: "Setting up and editing your profile",
-        slug: "setting-up-and-editing-your-profile",
-      },
-      {
-        id: "cmw65hs5w_5",
-        headline: "Changing your username",
-        slug: "changing-your-username",
-      },
-      {
-        id: "cmw65hs5w_6",
-        headline: "Managing account visibility",
-        slug: "managing-account-visibility",
-      },
-    ],
-  },
-  {
-    id: "cmw65hsax0001ldu4qkq7soxn",
-    heading: "Accounts & Profiles",
-    subHeading: "Manage your account, profile and personal information.",
-    articleCount: 8,
-    articles: [
-      {
-        id: "cmw65hsax_1",
-        headline: "Following and unfollowing people",
-        slug: "following-and-unfollowing-people",
-      },
-      {
-        id: "cmw65hsax_2",
-        headline: "Understanding followers and friends",
-        slug: "understanding-followers-and-friends",
-      },
-      {
-        id: "cmw65hsax_3",
-        headline: "Managing follow requests",
-        slug: "managing-follow-requests",
-      },
-      {
-        id: "cmw65hsax_4",
-        headline: "Creating and managing Circles",
-        slug: "creating-and-managing-circles",
-      },
-      {
-        id: "cmw65hsax_5",
-        headline: "Controlling who sees your posts",
-        slug: "controlling-who-sees-your-posts",
-      },
-      {
-        id: "cmw65hsax_6",
-        headline: "Blocking and managing users",
-        slug: "blocking-and-managing-users",
-      },
-    ],
-  },
-  {
-    id: "cmw65hshd0003ldu4v71gu62e",
-    heading: "Connections & Privacy",
-    subHeading: "Manage connections, friends and privacy settings.",
-    articleCount: 5,
-    articles: [
-      {
-        id: "cmw65hshd_1",
-        headline: "Managing your privacy settings",
-        slug: "managing-your-privacy-settings",
-      },
-      {
-        id: "cmw65hshd_2",
-        headline: "Controlling who can send you connection requests",
-        slug: "controlling-connection-requests",
-      },
-      {
-        id: "cmw65hshd_3",
-        headline: "Understanding public and private profiles",
-        slug: "understanding-public-and-private-profiles",
-      },
-      {
-        id: "cmw65hshd_4",
-        headline: "Managing blocked users",
-        slug: "managing-blocked-users",
-      },
-      {
-        id: "cmw65hshd_5",
-        headline: "Controlling profile information visibility",
-        slug: "controlling-profile-information-visibility",
-      },
-    ],
-  },
-  {
-    id: "cmw65hskn0004ldu4icnwv1hk",
-    heading: "News & Media",
-    subHeading: "Explore news, publications and media content on Pintree.",
-    articleCount: 3,
-    articles: [
-      {
-        id: "cmw65hskn_1",
-        headline: "Exploring news and publications on Pintree",
-        slug: "exploring-news-and-publications-on-pintree",
-      },
-      {
-        id: "cmw65hskn_2",
-        headline: "Finding the latest Pintree announcements",
-        slug: "finding-the-latest-pintree-announcements",
-      },
-      {
-        id: "cmw65hskn_3",
-        headline: "Understanding news categories",
-        slug: "understanding-news-categories",
-      },
-    ],
-  },
-];
+const DEFAULT_TOPICS = FALLBACK_TOPICS.map((topic) => ({
+  ...topic,
+  articles: FALLBACK_ARTICLES.filter((a) => a.topicId === topic.id),
+}));
 
-const FALLBACK_POPULAR = [
-  {
-    category: "Getting Started",
-    title: "How Local Communities Are Building Meaningful Connections on Pintree",
-    slug: "how-local-communities-are-building-meaningful-connections-on-pintree",
-  },
-  {
-    category: "Getting Started",
-    title: "Creating your Pintree account",
-    slug: "creating-your-pintree-account",
-  },
-  {
-    category: "Connections & Privacy",
-    title: "Managing your privacy settings",
-    slug: "managing-your-privacy-settings",
-  },
-  {
-    category: "Accounts & Profiles",
-    title: "Following and unfollowing people",
-    slug: "following-and-unfollowing-people",
-  },
-  {
-    category: "Accounts & Profiles",
-    title: "Creating and managing Circles",
-    slug: "creating-and-managing-circles",
-  },
-  {
-    category: "News & Media",
-    title: "Exploring news and publications on Pintree",
-    slug: "exploring-news-and-publications-on-pintree",
-  },
-];
+const DEFAULT_POPULAR = FALLBACK_ARTICLES.slice(0, 6).map((a) => {
+  const topic = FALLBACK_TOPICS.find((t) => t.id === a.topicId);
+  return {
+    id: a.id,
+    category: topic?.heading || "Getting Started",
+    title: a.headline,
+    slug: a.slug,
+  };
+});
 
 function CategoryIcon({ name }) {
   const props = {
@@ -266,7 +116,7 @@ function Arrow() {
 
 export default function HelpCenterView() {
   const [query, setQuery] = useState("");
-  const [topics, setTopics] = useState(FALLBACK_TOPICS);
+  const [topics, setTopics] = useState(DEFAULT_TOPICS);
   const [allArticles, setAllArticles] = useState([]);
 
   // Fetch topics and articles from live APIs
@@ -363,7 +213,7 @@ export default function HelpCenterView() {
         category: topicHeadingById.get(a.topicId) || "General",
       }));
     } else {
-      list = FALLBACK_POPULAR;
+      list = DEFAULT_POPULAR;
     }
 
     if (active) {
@@ -470,6 +320,7 @@ export default function HelpCenterView() {
                 const icon = getTopicIcon(category.heading);
                 const displayArticles = (category.articles || []).slice(0, 6);
                 const count = category.articleCount || (category.articles ? category.articles.length : 0);
+                const topicSlug = getTopicSlug(category);
 
                 return (
                   <article
@@ -478,12 +329,21 @@ export default function HelpCenterView() {
                   >
                     <div>
                       <div className="mb-6 flex items-center justify-between">
-                        <div className="flex h-11 w-11 items-center justify-center rounded-[8px] bg-[#F7F7F7] text-[#204654] transition-colors group-hover:bg-[#CAFFA6]/30">
+                        <Link
+                          href={`/support/topic/${topicSlug}`}
+                          className="flex h-11 w-11 items-center justify-center rounded-[8px] bg-[#EEF9E8] text-[#204654] transition-colors group-hover:bg-[#CAFFA6]/50"
+                          aria-label={`View all ${category.heading} articles`}
+                        >
                           <CategoryIcon name={icon} />
-                        </div>
+                        </Link>
                       </div>
                       <h3 className="mb-2 text-[19px] font-semibold tracking-[-0.01em] text-[#202020]">
-                        {category.heading}
+                        <Link
+                          href={`/support/topic/${topicSlug}`}
+                          className="transition-colors hover:text-[#204654]"
+                        >
+                          {category.heading}
+                        </Link>
                       </h3>
                       <p className="mb-6 text-[14px] leading-[1.55] text-[#666666]">
                         {category.subHeading}
@@ -506,16 +366,19 @@ export default function HelpCenterView() {
                         </ul>
                       </div>
                     </div>
-                    <div className="flex items-center justify-between border-t border-[#E5E5E5] pt-2 text-[13px] font-medium text-[#202020]">
-                      <span>
+                    <Link
+                      href={`/support/topic/${topicSlug}`}
+                      className="group/btn flex items-center justify-between border-t border-[#E5E5E5] pt-3 text-[13px] font-medium text-[#202020] transition-colors hover:text-[#204654] cursor-pointer"
+                    >
+                      <span className="group-hover/btn:underline">
                         {active
-                          ? `${category.articles.length} matching`
+                          ? `View all ${category.articles.length} matching`
                           : `View all ${count} articles`}
                       </span>
-                      <span className="text-[#777777] transition-transform duration-200 group-hover:translate-x-[3px] group-hover:text-[#202020]">
+                      <span className="text-[#777777] transition-transform duration-200 group-hover:translate-x-[3px] group-hover/btn:text-[#204654]">
                         →
                       </span>
-                    </div>
+                    </Link>
                   </article>
                 );
               })}
