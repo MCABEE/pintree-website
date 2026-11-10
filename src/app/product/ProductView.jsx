@@ -155,26 +155,26 @@ function Divider() {
 
 function HeroCluster() {
   return (
-    <div className="relative mx-auto mb-8 h-[250px] w-full max-w-[840px] select-none md:h-[270px]">
+    <div className="relative mx-auto mb-8 h-[220px] w-full max-w-[840px] select-none sm:h-[250px] md:h-[270px]">
       {/* Center Main Feature Squircle Avatar */}
       <Squircle
         src={PORTRAIT.center}
-        className="absolute left-1/2 top-1/2 z-10 h-[136px] w-[136px] -translate-x-1/2 -translate-y-1/2 shadow-xl"
+        className="absolute left-1/2 top-1/2 z-10 h-24 w-24 -translate-x-1/2 -translate-y-1/2 shadow-xl sm:h-28 sm:w-28 md:h-[136px] md:w-[136px]"
       />
-      <span className="pointer-events-auto absolute left-1/2 top-1/2 z-20 flex h-7 w-7 translate-x-10 translate-y-7 cursor-pointer items-center justify-center rounded-full border-2 border-white bg-[#204654] text-[13px] text-white shadow-sm">
-        <Symbol name="add" className="text-[15px]" />
+      <span className="pointer-events-auto absolute left-1/2 top-1/2 z-20 flex h-6 w-6 translate-x-7 translate-y-5 cursor-pointer items-center justify-center rounded-full border-2 border-white bg-[#204654] text-[11px] text-white shadow-sm md:h-7 md:w-7 md:translate-x-10 md:translate-y-7 md:text-[13px]">
+        <Symbol name="add" className="text-[13px] md:text-[15px]" />
       </span>
 
       {/* Top Pill: New connections */}
-      <div className="pointer-events-auto absolute left-[28%] top-2 z-20 flex items-center gap-2 rounded-full border border-[#EAEAEA] bg-white/95 px-3.5 py-1.5 shadow-md backdrop-blur-sm md:left-[32%]">
-        <span className="flex h-5 w-5 items-center justify-center rounded-full bg-[#CAFFA6] text-[#204654]">
-          <Symbol name="group_add" className="text-[13px]" />
+      <div className="pointer-events-auto absolute left-1 top-1 z-20 flex items-center gap-1.5 rounded-full border border-[#EAEAEA] bg-white/95 px-2.5 py-1 shadow-md backdrop-blur-sm sm:left-[22%] sm:px-3 sm:py-1.5 md:left-[32%] md:gap-2 md:px-3.5">
+        <span className="flex h-4 w-4 items-center justify-center rounded-full bg-[#CAFFA6] text-[#204654] md:h-5 md:w-5">
+          <Symbol name="group_add" className="text-[11px] md:text-[13px]" />
         </span>
         <div className="text-left leading-none">
-          <span className="block font-jakarta text-[11px] font-semibold text-[#202020]">
+          <span className="block font-jakarta text-[10px] font-semibold text-[#202020] md:text-[11px]">
             New connections
           </span>
-          <span className="text-[9px] font-medium text-gray-500">
+          <span className="text-[8px] font-medium text-gray-500 md:text-[9px]">
             +24 joined today
           </span>
         </div>
@@ -183,18 +183,18 @@ function HeroCluster() {
       {/* Mid-Left Secondary Squircle Avatar */}
       <Squircle
         src={PORTRAIT.midLeft}
-        className="absolute left-[21%] top-1/2 z-0 h-[108px] w-[108px] -translate-y-8 shadow-lg md:left-[23%]"
+        className="absolute left-[10%] top-1/2 z-0 h-[72px] w-[72px] -translate-y-6 shadow-lg sm:left-[16%] sm:h-[90px] sm:w-[90px] md:left-[21%] md:h-[108px] md:w-[108px] md:-translate-y-8"
       />
-      <span className="pointer-events-auto absolute left-[21%] top-1/2 z-20 flex h-6 w-6 translate-x-16 translate-y-7 cursor-pointer items-center justify-center rounded-full border border-white bg-[#CAFFA6] text-[11px] text-[#204654] shadow-sm md:left-[23%]">
-        <Symbol name="add" className="text-[13px]" />
+      <span className="pointer-events-auto absolute left-[10%] top-1/2 z-20 flex h-5 w-5 translate-x-11 translate-y-4 cursor-pointer items-center justify-center rounded-full border border-white bg-[#CAFFA6] text-[10px] text-[#204654] shadow-sm sm:left-[16%] sm:translate-x-14 md:left-[21%] md:h-6 md:w-6 md:translate-x-16 md:translate-y-7 md:text-[11px]">
+        <Symbol name="add" className="text-[11px] md:text-[13px]" />
       </span>
 
       {/* Bottom-Left Pill: Shared interests */}
-      <div className="pointer-events-auto absolute bottom-2 left-[12%] z-20 flex items-center gap-2 rounded-full border border-[#EAEAEA] bg-white/95 px-3.5 py-1.5 shadow-md backdrop-blur-sm md:left-[17%]">
-        <span className="flex h-5 w-5 items-center justify-center rounded-full bg-[#204654] text-[#CAFFA6]">
-          <Symbol name="forum" className="text-[13px]" />
+      <div className="pointer-events-auto absolute bottom-1 left-1 z-20 flex items-center gap-1.5 rounded-full border border-[#EAEAEA] bg-white/95 px-2.5 py-1 shadow-md backdrop-blur-sm sm:left-[8%] sm:px-3 sm:py-1.5 md:bottom-2 md:left-[17%] md:gap-2 md:px-3.5">
+        <span className="flex h-4 w-4 items-center justify-center rounded-full bg-[#204654] text-[#CAFFA6] md:h-5 md:w-5">
+          <Symbol name="forum" className="text-[11px] md:text-[13px]" />
         </span>
-        <span className="font-jakarta text-[11px] font-semibold text-[#202020]">
+        <span className="font-jakarta text-[10px] font-semibold text-[#202020] md:text-[11px]">
           Shared interests
         </span>
       </div>
@@ -202,37 +202,37 @@ function HeroCluster() {
       {/* Far-Left Medium Squircle Avatar */}
       <Squircle
         src={PORTRAIT.farLeft}
-        className="absolute bottom-6 left-[3%] z-0 h-[84px] w-[84px] shadow-md md:left-[6%]"
+        className="absolute bottom-6 left-[3%] z-0 hidden h-[84px] w-[84px] shadow-md sm:block md:left-[6%]"
       />
 
       {/* Top-Far-Left Small Accent Squircle Avatar */}
       <Squircle
         src={PORTRAIT.topLeft}
-        className="absolute left-[0%] top-3 z-0 h-[72px] w-[72px] opacity-90 shadow-sm md:left-[2%]"
+        className="absolute left-[0%] top-3 z-0 hidden h-[72px] w-[72px] opacity-90 shadow-sm sm:block md:left-[2%]"
       />
 
       {/* Mid-Right Secondary Squircle Avatar */}
       <Squircle
         src={PORTRAIT.midRight}
-        className="absolute right-[22%] top-5 z-0 h-[112px] w-[112px] shadow-lg md:right-[24%]"
+        className="absolute right-[12%] top-3 z-0 h-[76px] w-[76px] shadow-lg sm:right-[18%] sm:top-4 sm:h-[94px] sm:w-[94px] md:right-[22%] md:top-5 md:h-[112px] md:w-[112px]"
       />
 
       {/* Bottom-Right Squircle Avatar */}
       <Squircle
         src={PORTRAIT.bottomRight}
-        className="absolute bottom-5 right-[13%] z-10 h-[102px] w-[102px] shadow-lg md:right-[15%]"
+        className="absolute bottom-2 right-[4%] z-10 h-[70px] w-[70px] shadow-lg sm:bottom-4 sm:right-[8%] sm:h-[86px] sm:w-[86px] md:bottom-5 md:right-[13%] md:h-[102px] md:w-[102px]"
       />
 
       {/* Bottom-Right Pill: Growing communities */}
-      <div className="pointer-events-auto absolute bottom-2 right-[0%] z-20 flex items-center gap-2 rounded-full border border-[#EAEAEA] bg-white/95 px-3.5 py-1.5 shadow-md backdrop-blur-sm md:right-[2%]">
-        <span className="flex h-5 w-5 items-center justify-center rounded-full bg-[#CAFFA6] text-[#204654]">
-          <Symbol name="hub" className="text-[13px]" />
+      <div className="pointer-events-auto absolute bottom-1 right-1 z-20 flex items-center gap-1.5 rounded-full border border-[#EAEAEA] bg-white/95 px-2.5 py-1 shadow-md backdrop-blur-sm sm:right-[1%] sm:px-3 sm:py-1.5 md:bottom-2 md:right-[2%] md:gap-2 md:px-3.5">
+        <span className="flex h-4 w-4 items-center justify-center rounded-full bg-[#CAFFA6] text-[#204654] md:h-5 md:w-5">
+          <Symbol name="hub" className="text-[11px] md:text-[13px]" />
         </span>
         <div className="text-left leading-none">
-          <span className="block font-jakarta text-[11px] font-semibold text-[#202020]">
+          <span className="block font-jakarta text-[10px] font-semibold text-[#202020] md:text-[11px]">
             Growing communities
           </span>
-          <span className="text-[9px] font-medium text-[#204654]">
+          <span className="text-[8px] font-medium text-[#204654] md:text-[9px]">
             12k+ rooms active
           </span>
         </div>
@@ -241,72 +241,72 @@ function HeroCluster() {
       {/* Far-Right Accent Squircle Avatar */}
       <Squircle
         src={PORTRAIT.farRight}
-        className="absolute right-[2%] top-4 z-0 h-[80px] w-[80px] opacity-85 shadow-sm md:right-[4%]"
+        className="absolute right-[2%] top-4 z-0 hidden h-[80px] w-[80px] opacity-85 shadow-sm sm:block md:right-[4%]"
       />
 
       {/* Floating Sparkles, Chat Badges & Reaction Elements */}
-      <div className="pointer-events-none absolute left-[16%] top-1 z-10 animate-pulse md:left-[19%]">
+      <div className="pointer-events-none absolute left-[16%] top-1 z-10 hidden animate-pulse sm:block md:left-[19%]">
         <Spark className="h-4 w-4 text-[#F9C74F] drop-shadow-sm" color="#F9C74F" />
       </div>
-      <div className="pointer-events-auto absolute left-[26%] top-7 z-20 shadow-sm transition-transform hover:scale-110 md:left-[27%]">
-        <div className="flex h-7 w-7 items-center justify-center rounded-full border border-white bg-[#FFE5D9] text-[12px] shadow-sm">
-          <Symbol name="favorite" className="text-[14px] text-[#E07A5F]" />
+      <div className="pointer-events-auto absolute left-[22%] top-6 z-20 hidden shadow-sm transition-transform hover:scale-110 sm:left-[26%] sm:top-7 sm:block md:left-[27%]">
+        <div className="flex h-6 w-6 items-center justify-center rounded-full border border-white bg-[#FFE5D9] text-[11px] shadow-sm md:h-7 md:w-7 md:text-[12px]">
+          <Symbol name="favorite" className="text-[12px] text-[#E07A5F] md:text-[14px]" />
         </div>
       </div>
-      <div className="pointer-events-auto absolute bottom-8 left-[23%] z-20 transition-transform hover:scale-110 md:left-[25%]">
-        <div className="flex items-center gap-1 rounded-full border border-white bg-[#EDE7F6] px-2 py-0.5 text-[11px] text-[#673AB7] shadow-sm">
-          <Symbol name="chat_bubble" className="text-[13px]" />
-          <span className="text-[10px] font-semibold">Hey!</span>
+      <div className="pointer-events-auto absolute bottom-7 left-[16%] z-20 hidden transition-transform hover:scale-110 sm:bottom-8 sm:left-[23%] sm:flex md:left-[25%]">
+        <div className="flex items-center gap-1 rounded-full border border-white bg-[#EDE7F6] px-2 py-0.5 text-[10px] text-[#673AB7] shadow-sm md:text-[11px]">
+          <Symbol name="chat_bubble" className="text-[11px] md:text-[13px]" />
+          <span className="text-[9px] font-semibold md:text-[10px]">Hey!</span>
         </div>
       </div>
-      <div className="pointer-events-none absolute left-[13%] top-[48%] z-10 md:left-[15%]">
+      <div className="pointer-events-none absolute left-[13%] top-[48%] z-10 hidden sm:block md:left-[15%]">
         <Spark className="h-3.5 w-3.5 text-[#A9E0F1] drop-shadow-sm" color="#A9E0F1" />
       </div>
-      <div className="pointer-events-auto absolute bottom-1 left-[32%] z-20 transition-transform hover:scale-110 md:left-[35%]">
+      <div className="pointer-events-auto absolute bottom-1 left-[32%] z-20 hidden transition-transform hover:scale-110 lg:left-[35%] lg:flex">
         <div className="flex h-7 w-7 items-center justify-center rounded-full border border-[#EAEAEA] bg-white/95 text-[13px] shadow-md">
           ✨
         </div>
       </div>
-      <div className="pointer-events-auto absolute left-[58%] top-3 z-20 -translate-x-1/2 transition-transform hover:scale-110 md:left-[57%]">
+      <div className="pointer-events-auto absolute left-[58%] top-3 z-20 hidden -translate-x-1/2 transition-transform hover:scale-110 lg:left-[57%] lg:flex">
         <div className="flex items-center gap-1 rounded-full border border-white bg-[#E8F5E9] px-2 py-0.5 text-[11px] text-[#2E7D32] shadow-sm">
           <span>🌿</span>
           <span className="text-[10px] font-semibold text-[#204654]">design</span>
         </div>
       </div>
-      <div className="pointer-events-none absolute left-[38%] top-1/2 z-10 -translate-y-8 md:left-[39%]">
+      <div className="pointer-events-none absolute left-[38%] top-1/2 z-10 hidden -translate-y-8 sm:block md:left-[39%]">
         <Spark className="h-3 w-3 text-[#FF9E80] drop-shadow-sm" color="#FF9E80" />
       </div>
-      <div className="pointer-events-auto absolute bottom-3 left-[46%] z-20 -translate-x-1/2 transition-transform hover:scale-110 md:left-[48%]">
+      <div className="pointer-events-auto absolute bottom-3 left-[46%] z-20 hidden -translate-x-1/2 transition-transform hover:scale-110 lg:left-[48%] lg:flex">
         <div className="flex h-7 w-7 items-center justify-center rounded-full border border-white bg-[#FFF9C4] text-[13px] shadow-sm">
           💡
         </div>
       </div>
-      <div className="pointer-events-auto absolute right-[33%] top-[38%] z-20 transition-transform hover:scale-110 md:right-[35%]">
-        <div className="flex items-center gap-1 rounded-full border border-[#EAEAEA] bg-white/95 px-2 py-0.5 text-[10px] font-medium text-[#204654] shadow-sm">
+      <div className="pointer-events-auto absolute right-1 top-2 z-20 transition-transform hover:scale-110 sm:right-[10%] sm:top-3 md:right-[35%] md:top-[38%]">
+        <div className="flex items-center gap-1 rounded-full border border-[#EAEAEA] bg-white/95 px-2 py-0.5 text-[9px] font-medium text-[#204654] shadow-sm md:text-[10px]">
           <span className="h-1.5 w-1.5 rounded-full bg-[#22c55e]" />
           <span>Live News</span>
         </div>
       </div>
-      <div className="pointer-events-none absolute left-[68%] top-0 z-20 animate-pulse md:left-[67%]">
+      <div className="pointer-events-none absolute left-[68%] top-0 z-20 hidden animate-pulse md:left-[67%] md:block">
         <Spark className="h-4 w-4 text-[#D8B4E2] drop-shadow-sm" color="#D8B4E2" />
       </div>
-      <div className="pointer-events-auto absolute bottom-10 right-[25%] z-20 transition-transform hover:scale-110 md:right-[27%]">
-        <div className="flex h-7 w-7 items-center justify-center rounded-full border border-white bg-[#E0F4FA] text-[#204654] shadow-sm">
-          <Symbol name="mic" className="text-[14px]" />
+      <div className="pointer-events-auto absolute bottom-8 right-[18%] z-20 hidden transition-transform hover:scale-110 sm:bottom-10 sm:right-[25%] sm:flex md:right-[27%]">
+        <div className="flex h-6 w-6 items-center justify-center rounded-full border border-white bg-[#E0F4FA] text-[#204654] shadow-sm md:h-7 md:w-7">
+          <Symbol name="mic" className="text-[12px] md:text-[14px]" />
         </div>
       </div>
-      <div className="pointer-events-auto absolute right-[15%] top-1/2 z-20 -translate-y-12 transition-transform hover:scale-110 md:right-[17%]">
+      <div className="pointer-events-auto absolute right-[15%] top-1/2 z-20 hidden -translate-y-12 transition-transform hover:scale-110 md:right-[17%] md:flex">
         <div className="flex h-7 w-7 items-center justify-center rounded-full border border-white bg-[#FFF3E0] text-[13px] shadow-sm">
           👋
         </div>
       </div>
-      <div className="pointer-events-none absolute right-[7%] top-[52%] z-10 md:right-[9%]">
+      <div className="pointer-events-none absolute right-[7%] top-[52%] z-10 hidden sm:block md:right-[9%]">
         <Spark className="h-3.5 w-3.5 text-[#CAFFA6] drop-shadow-sm" color="#CAFFA6" />
       </div>
-      <div className="pointer-events-none absolute bottom-2 right-[20%] z-10 md:right-[21%]">
+      <div className="pointer-events-none absolute bottom-2 right-[20%] z-10 hidden sm:block md:right-[21%]">
         <Spark className="h-3 w-3 text-[#FFD166] drop-shadow-sm" color="#FFD166" />
       </div>
-      <div className="pointer-events-auto absolute right-[10%] top-0 z-20 transition-transform hover:scale-110 md:right-[12%]">
+      <div className="pointer-events-auto absolute right-[10%] top-0 z-20 hidden transition-transform hover:scale-110 sm:block md:right-[12%]">
         <div className="flex items-center gap-1 rounded-full border border-white bg-[#FCE4EC] px-2 py-0.5 text-[10px] text-[#C2185B] shadow-sm">
           <Symbol name="thumb_up" className="text-[12px]" />
           <span className="text-[10px] font-semibold">+88</span>
@@ -359,8 +359,8 @@ function ProfileMock() {
         </svg>
       </div>
 
-      <div className="relative z-10 flex items-center gap-5">
-        <div className="h-[160px] w-[160px] min-h-[160px] min-w-[160px] shrink-0 overflow-hidden rounded-full border-2 border-white shadow-md">
+      <div className="relative z-10 flex items-center gap-4 sm:gap-5">
+        <div className="h-[120px] w-[120px] min-h-[120px] min-w-[120px] shrink-0 overflow-hidden rounded-full border-2 border-white shadow-md sm:h-[150px] sm:w-[150px] sm:min-h-[150px] sm:min-w-[150px] md:h-[160px] md:w-[160px] md:min-h-[160px] md:min-w-[160px]">
           <img
             src={PORTRAIT.profile}
             alt="Merlin Jaise"
@@ -369,35 +369,35 @@ function ProfileMock() {
         </div>
         <div className="flex min-w-0 flex-col justify-center">
           <div className="flex items-center gap-1.5">
-            <h3 className="truncate font-jakarta text-[22px] font-semibold tracking-tight text-[#1b1c1c] sm:text-[24px]">
+            <h3 className="truncate font-jakarta text-[20px] font-semibold tracking-tight text-[#1b1c1c] sm:text-[24px]">
               Merlin Jaise
             </h3>
             <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#1D9BF0] text-white">
               <Symbol name="check" className="text-[13px] font-bold" />
             </span>
           </div>
-          <span className="mb-3 font-jakarta text-[16px] font-semibold text-[#1D9BF0]">
+          <span className="mb-2 font-jakarta text-[15px] font-semibold text-[#1D9BF0] sm:mb-3 sm:text-[16px]">
             @merlin_jaise99
           </span>
-          <div className="inline-flex items-center gap-1.5 rounded-full bg-[#f5f3f3] px-3 py-1.5 text-[11px] text-[#4c4546] sm:text-[12px]">
-            <span className="font-semibold text-[#1b1c1c]">87 Posts</span>
+          <div className="inline-flex max-w-full items-center gap-1 rounded-full bg-[#f5f3f3] px-2.5 py-1 text-[10px] text-[#4c4546] sm:gap-1.5 sm:px-3 sm:py-1.5 sm:text-[12px]">
+            <span className="font-semibold text-[#1b1c1c] whitespace-nowrap">87 Posts</span>
             <span className="text-gray-400">·</span>
-            <Symbol name="lock" className="text-[13px] text-gray-500" />
-            <span className="flex items-center gap-1">
-              Visible to{" "}
-              <strong className="font-semibold text-[#1b1c1c]">
+            <Symbol name="lock" className="text-[12px] text-gray-500 shrink-0 sm:text-[13px]" />
+            <span className="flex items-center gap-1 whitespace-nowrap overflow-hidden">
+              <span className="hidden sm:inline">Visible to </span>
+              <strong className="truncate font-semibold text-[#1b1c1c]">
                 My School Friends
               </strong>
             </span>
             <Symbol
               name="unfold_more"
-              className="ml-0.5 cursor-pointer text-[14px] text-gray-500 hover:text-[#1b1c1c]"
+              className="ml-0.5 shrink-0 cursor-pointer text-[13px] text-gray-500 hover:text-[#1b1c1c] sm:text-[14px]"
             />
           </div>
         </div>
       </div>
 
-      <div className="relative z-10 mt-6 flex items-center justify-between pt-1">
+      <div className="relative z-10 mt-6 flex flex-wrap items-center justify-between gap-2.5 pt-1">
         <div className="flex items-center gap-3">
           <div className="flex -space-x-2 overflow-hidden">
             {FRIENDS.map((src, i) => (
@@ -424,9 +424,9 @@ function ProfileMock() {
         </div>
       </div>
 
-      <div className="relative z-10 mt-6 grid grid-cols-4 gap-2 border-y border-gray-100 py-3">
-        <div className="flex items-center gap-2">
-          <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-[#E0F4FA] text-[#204654]">
+      <div className="relative z-10 mt-6 grid grid-cols-2 gap-y-3 gap-x-2 border-y border-gray-100 py-3 sm:grid-cols-4 sm:gap-1.5">
+        <div className="flex min-w-0 items-center gap-1.5 sm:gap-2">
+          <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-[#E0F4FA] text-[#204654] sm:h-9 sm:w-9 sm:rounded-xl">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-4 w-4 text-[#204654]"
@@ -443,49 +443,55 @@ function ProfileMock() {
               <polyline points="10 9 9 9 8 9" />
             </svg>
           </div>
-          <div className="text-left leading-none">
-            <span className="block text-[14px] font-bold text-[#1b1c1c]">
+          <div className="min-w-0 text-left leading-none">
+            <span className="block text-[13px] font-bold text-[#1b1c1c] sm:text-[14px]">
               241
             </span>
-            <span className="text-[11px] font-medium text-gray-500">Posts</span>
+            <span className="mt-0.5 block text-[10px] font-medium text-gray-500 whitespace-nowrap sm:text-[11px]">
+              Posts
+            </span>
           </div>
         </div>
 
-        <div className="flex items-center gap-2">
-          <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-[#FFE5D9] text-[#E07A5F]">
-            <Symbol name="favorite" className="text-[18px] text-[#EA580C]" />
+        <div className="flex min-w-0 items-center gap-1.5 sm:gap-2">
+          <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-[#FFE5D9] text-[#E07A5F] sm:h-9 sm:w-9 sm:rounded-xl">
+            <Symbol name="favorite" className="text-[16px] text-[#EA580C] sm:text-[18px]" />
           </div>
-          <div className="text-left leading-none">
-            <span className="block text-[14px] font-bold text-[#1b1c1c]">
+          <div className="min-w-0 text-left leading-none">
+            <span className="block text-[13px] font-bold text-[#1b1c1c] sm:text-[14px]">
               14.8k
             </span>
-            <span className="text-[11px] font-medium text-gray-500">Likes</span>
+            <span className="mt-0.5 block text-[10px] font-medium text-gray-500 whitespace-nowrap sm:text-[11px]">
+              Likes
+            </span>
           </div>
         </div>
 
-        <div className="flex items-center gap-2">
-          <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-[#E0F2FE] text-[#0284C7]">
-            <Symbol name="chat_bubble" className="text-[18px] text-[#0284C7]" />
+        <div className="flex min-w-0 items-center gap-1.5 sm:gap-2">
+          <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-[#E0F2FE] text-[#0284C7] sm:h-9 sm:w-9 sm:rounded-xl">
+            <Symbol name="chat_bubble" className="text-[16px] text-[#0284C7] sm:text-[18px]" />
           </div>
-          <div className="text-left leading-none">
-            <span className="block text-[14px] font-bold text-[#1b1c1c]">
+          <div className="min-w-0 text-left leading-none">
+            <span className="block text-[13px] font-bold text-[#1b1c1c] sm:text-[14px]">
               2.4k
             </span>
-            <span className="text-[11px] font-medium text-gray-500">
+            <span className="mt-0.5 block text-[10px] font-medium text-gray-500 whitespace-nowrap sm:text-[11px]">
               Comments
             </span>
           </div>
         </div>
 
-        <div className="flex items-center gap-2">
-          <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-[#EDE7F6] text-[#673AB7]">
-            <Symbol name="bookmark" className="text-[18px] text-[#9333EA]" />
+        <div className="flex min-w-0 items-center gap-1.5 sm:gap-2">
+          <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-[#EDE7F6] text-[#673AB7] sm:h-9 sm:w-9 sm:rounded-xl">
+            <Symbol name="bookmark" className="text-[16px] text-[#9333EA] sm:text-[18px]" />
           </div>
-          <div className="text-left leading-none">
-            <span className="block text-[14px] font-bold text-[#1b1c1c]">
+          <div className="min-w-0 text-left leading-none">
+            <span className="block text-[13px] font-bold text-[#1b1c1c] sm:text-[14px]">
               980
             </span>
-            <span className="text-[11px] font-medium text-gray-500">Saved</span>
+            <span className="mt-0.5 block text-[10px] font-medium text-gray-500 whitespace-nowrap sm:text-[11px]">
+              Saved
+            </span>
           </div>
         </div>
       </div>
@@ -1008,9 +1014,9 @@ function NewsEditorialMock() {
       </div>
 
       {/* Publisher Analytics Widget */}
-      <div className="relative z-10 mt-1 flex items-center justify-between gap-3 rounded-2xl border border-[#E5E5E5] bg-white p-3.5 shadow-sm">
+      <div className="relative z-10 mt-1 flex flex-col gap-3 rounded-2xl border border-[#E5E5E5] bg-white p-3.5 shadow-sm sm:flex-row sm:items-center sm:justify-between">
         <div className="flex items-center gap-2">
-          <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-[#204654] text-[#CAFFA6]">
+          <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-[#204654] text-[#CAFFA6]">
             <Symbol name="monitoring" className="text-[16px]" />
           </div>
           <div className="text-left leading-none">
@@ -1020,13 +1026,13 @@ function NewsEditorialMock() {
               </span>
               <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-[#22c55e]" />
             </div>
-            <span className="text-[10px] font-medium text-gray-400">
+            <span className="mt-0.5 block text-[10px] font-medium text-gray-400">
               Live audience metrics
             </span>
           </div>
         </div>
-        <div className="flex items-center gap-3 divide-x divide-gray-100 text-left">
-          <div className="pl-2">
+        <div className="grid grid-cols-3 gap-2 border-t border-gray-100 pt-2.5 text-left sm:border-t-0 sm:pt-0 sm:flex sm:items-center sm:gap-3 sm:divide-x sm:divide-gray-100">
+          <div className="sm:pl-2">
             <div className="flex items-center gap-1">
               <span className="text-[13px] font-bold leading-none text-[#1b1c1c]">
                 24.8K
@@ -1035,21 +1041,21 @@ function NewsEditorialMock() {
                 +18.4%
               </span>
             </div>
-            <span className="mt-0.5 block text-[9px] font-normal text-gray-500">
+            <span className="mt-0.5 block text-[9px] font-normal text-gray-500 whitespace-nowrap">
               Impressions
             </span>
           </div>
-          <div className="pl-3">
+          <div className="sm:pl-3">
             <div className="flex items-center gap-1">
               <span className="text-[13px] font-bold leading-none text-[#1b1c1c]">
                 8.6K
               </span>
             </div>
-            <span className="mt-0.5 block text-[9px] font-normal text-gray-500">
+            <span className="mt-0.5 block text-[9px] font-normal text-gray-500 whitespace-nowrap">
               74% read-through
             </span>
           </div>
-          <div className="pl-3">
+          <div className="sm:pl-3">
             <div className="flex items-center gap-1">
               <span className="text-[13px] font-bold leading-none text-[#1b1c1c]">
                 642
@@ -1059,7 +1065,7 @@ function NewsEditorialMock() {
                 className="text-[12px] text-[#e11d48]"
               />
             </div>
-            <span className="mt-0.5 block text-[9px] font-normal text-gray-500">
+            <span className="mt-0.5 block text-[9px] font-normal text-gray-500 whitespace-nowrap">
               Reactions
             </span>
           </div>
