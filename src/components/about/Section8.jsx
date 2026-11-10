@@ -1,30 +1,8 @@
 "use client";
 
-const stories = [
-  {
-    id: "story-1",
-    title:
-      "Pintree Launches a New Social Space Built for Meaningful Connections",
-    excerpt:
-      "Discover a fresh approach to social networking, bringing people, creators, and communities together in one place.",
-    href: "/newsroom/introducing-a-new-space",
-  },
-  {
-    id: "story-2",
-    title:
-      "Pintree Introduces a Fresh Social Platform for Expression and Discovery",
-    excerpt:
-      "Explore a modern space for sharing, discovering interests, and connecting with people and communities.",
-    href: "/newsroom/introducing-a-new-space",
-  },
-  {
-    id: "story-3",
-    title: "Building a More Community-First Social Experience",
-    excerpt:
-      "Learn about the ideas and principles shaping Pintree's approach to meaningful participation and discovery.",
-    href: "/newsroom/introducing-a-new-space",
-  },
-];
+import { useEffect, useState } from "react";
+import Link from "next/link";
+import { getNews, FALLBACK_ARTICLES } from "@/utils/news";
 
 function ArrowIcon({ direction }) {
   return (
@@ -74,6 +52,41 @@ function SmallArrowIcon() {
 }
 
 export default function Section8() {
+  const [articles, setArticles] = useState(FALLBACK_ARTICLES);
+  const [pageIndex, setPageIndex] = useState(0);
+
+  useEffect(() => {
+    let isMounted = true;
+    getNews({ page: 1, limit: 12 })
+      .then((res) => {
+        if (isMounted && res.articles && res.articles.length > 0) {
+          setArticles(res.articles);
+        }
+      })
+      .catch((err) => {
+        console.error("Failed to fetch newsroom real data for homepage:", err);
+      });
+
+    return () => {
+      isMounted = false;
+    };
+  }, []);
+
+  const pageSize = 3;
+  const totalPages = Math.ceil(articles.length / pageSize);
+  const displayedArticles = articles.slice(
+    pageIndex * pageSize,
+    pageIndex * pageSize + pageSize
+  );
+
+  const handlePrev = () => {
+    setPageIndex((prev) => (prev > 0 ? prev - 1 : Math.max(0, totalPages - 1)));
+  };
+
+  const handleNext = () => {
+    setPageIndex((prev) => (prev + 1 < totalPages ? prev + 1 : 0));
+  };
+
   return (
     <section
       aria-labelledby="newsroom-headline"
@@ -82,12 +95,15 @@ export default function Section8() {
       <div className="mx-auto w-full max-w-[1340px] px-8">
         <header className="flex flex-col justify-between gap-6 pb-2 md:flex-row md:items-end">
           <div className="max-w-2xl">
-            <div className="mb-3 inline-flex items-center gap-2">
+            <Link
+              href="/newsroom"
+              className="group mb-3 inline-flex items-center gap-2 transition hover:opacity-80"
+            >
               <span className="h-1.5 w-1.5 rounded-full bg-[#baee97]" />
-              <span className="text-[11px] font-semibold uppercase tracking-wider text-[#444748]">
+              <span className="text-[11px] font-semibold uppercase tracking-wider text-[#444748] group-hover:text-black">
                 Newsroom
               </span>
-            </div>
+            </Link>
 
             <h2
               id="newsroom-headline"
@@ -101,33 +117,61 @@ export default function Section8() {
             </p>
           </div>
 
-          <div
-            aria-label="Newsroom stories navigation"
-            className="flex items-center gap-3 self-start pb-1 md:self-end"
-          >
-            <button
-              type="button"
-              aria-label="Next stories"
-              className="flex h-11 w-11 items-center justify-center rounded-full border border-[#c4c7c7] bg-white text-[#1b1c1c] transition-all duration-150 hover:border-black focus:outline-none active:scale-[0.98]"
+          {totalPages > 1 && (
+            <div
+              aria-label="Newsroom stories navigation"
+              className="flex items-center gap-2.5 self-start pb-1 md:self-end"
             >
-              <ArrowIcon direction="right" />
-            </button>
-          </div>
+              <button
+                type="button"
+                onClick={handlePrev}
+                aria-label="Previous stories"
+                className="flex h-11 w-11 items-center justify-center rounded-full border border-[#c4c7c7] bg-white text-[#1b1c1c] transition-all duration-150 hover:border-black focus:outline-none active:scale-[0.98]"
+              >
+                <ArrowIcon direction="left" />
+              </button>
+              <button
+                type="button"
+                onClick={handleNext}
+                aria-label="Next stories"
+                className="flex h-11 w-11 items-center justify-center rounded-full border border-[#c4c7c7] bg-white text-[#1b1c1c] transition-all duration-150 hover:border-black focus:outline-none active:scale-[0.98]"
+              >
+                <ArrowIcon direction="right" />
+              </button>
+            </div>
+          )}
         </header>
 
         <div className="mt-12 grid grid-cols-1 items-stretch gap-6 md:grid-cols-3 lg:mt-14 lg:gap-8">
-          {stories.map((story) => (
-            <a
-              key={story.id}
-              href={story.href}
+          {(displayedArticles.length > 0
+            ? displayedArticles
+            : articles.slice(0, 3)
+          ).map((story) => (
+            <Link
+              key={story.id || story.slug}
+              href={`/newsroom/${story.slug}`}
               className="group flex flex-col justify-between rounded-2xl border border-[#e4e2e1] bg-white p-8 transition-[background-color,border-color] duration-250 hover:border-[#204654]/30 hover:bg-[#F7F7F7]"
             >
               <div>
-                <h3 className="mt-6 font-aeonik-regular text-[22px] font-normal leading-[30px] text-black">
-                  {story.title}
+                <div className="flex items-center gap-2">
+                  <span className="text-[11px] font-semibold uppercase tracking-wider text-[#525252]">
+                    {story.category || "News"}
+                  </span>
+                  {story.date && (
+                    <>
+                      <span className="text-gray-300">•</span>
+                      <span className="text-[12px] text-[#777777]">
+                        {story.date}
+                      </span>
+                    </>
+                  )}
+                </div>
+
+                <h3 className="mt-4 font-aeonik-regular text-[22px] font-normal leading-[30px] text-black transition-colors group-hover:text-[#204654] line-clamp-2">
+                  {story.title || story.headline}
                 </h3>
-                <p className="mt-3.5 font-jakarta text-[16px] font-normal leading-6 text-[#444748]">
-                  {story.excerpt}
+                <p className="mt-3.5 font-jakarta text-[15px] font-normal leading-6 text-[#444748] line-clamp-3">
+                  {story.excerpt || story.summary}
                 </p>
               </div>
 
@@ -139,7 +183,7 @@ export default function Section8() {
                   <SmallArrowIcon />
                 </div>
               </div>
-            </a>
+            </Link>
           ))}
         </div>
       </div>

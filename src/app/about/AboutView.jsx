@@ -417,7 +417,8 @@ function Timeline() {
   }, []);
 
   return (
-    <section className="w-full border-t border-[#E5E5E5] pt-10">
+    <section id="our-journey" className="w-full border-t border-[#E5E5E5] pt-10 scroll-mt-24">
+      <span id="journey" className="relative -top-24 block" />
       <div className="mb-8 flex flex-col justify-between gap-4 sm:flex-row sm:items-end">
         <div>
           <div className="mb-3 inline-flex items-center gap-2">
@@ -483,6 +484,30 @@ const FACTS = [
 ];
 
 export default function AboutView() {
+  useEffect(() => {
+    const scrollToHash = () => {
+      const hash = window.location.hash;
+      if (hash) {
+        const id = decodeURIComponent(hash.replace(/^#/, ""));
+        const el = document.getElementById(id);
+        if (el) {
+          el.scrollIntoView({ behavior: "smooth" });
+        }
+      }
+    };
+
+    scrollToHash();
+    const timer1 = setTimeout(scrollToHash, 100);
+    const timer2 = setTimeout(scrollToHash, 400);
+
+    window.addEventListener("hashchange", scrollToHash);
+    return () => {
+      clearTimeout(timer1);
+      clearTimeout(timer2);
+      window.removeEventListener("hashchange", scrollToHash);
+    };
+  }, []);
+
   return (
     <main className="mx-auto w-full max-w-[1536px] px-4 py-16 font-jakarta sm:px-8 md:py-24 xl:px-0">
       <style>{`
@@ -586,7 +611,8 @@ export default function AboutView() {
 
         <Timeline />
 
-        <section className="w-full border-t border-[#E5E5E5] pt-10">
+        <section id="the-company" className="w-full border-t border-[#E5E5E5] pt-10 scroll-mt-24">
+          <span id="company" className="relative -top-24 block" />
           <div className="grid grid-cols-1 items-start gap-12 lg:grid-cols-12 lg:gap-16">
             <div className="space-y-6 lg:col-span-6">
               <div className="inline-flex items-center gap-2">

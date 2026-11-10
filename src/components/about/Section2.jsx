@@ -189,14 +189,9 @@ export default function Section2() {
             </div>
             <div className="flex items-center gap-3">
               <Link
-                href="/newsroom"
+                href="/support"
                 className="rounded-full bg-black px-5 py-2.5 text-xs font-medium text-white shadow-sm transition hover:bg-neutral-800">
                 Explore Stories
-              </Link>
-              <Link
-                href="/support"
-                className="rounded-full border border-[#E5E5E5] bg-[#F7F7F7] px-5 py-2.5 text-xs font-medium text-[#202020] transition hover:bg-[#ececec]">
-                Browse Directory
               </Link>
             </div>
           </div>

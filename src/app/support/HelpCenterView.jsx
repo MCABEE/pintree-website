@@ -318,7 +318,15 @@ export default function HelpCenterView() {
             <div className="grid grid-cols-1 gap-6 md:grid-cols-2 md:gap-7 lg:grid-cols-3">
               {filteredTopics.map((category) => {
                 const icon = getTopicIcon(category.heading);
-                const displayArticles = (category.articles || []).slice(0, 6);
+                const seenHeadlines = new Set();
+                const displayArticles = (category.articles || [])
+                  .filter((a) => {
+                    const norm = (a.headline || "").trim().toLowerCase();
+                    if (!norm || seenHeadlines.has(norm)) return false;
+                    seenHeadlines.add(norm);
+                    return true;
+                  })
+                  .slice(0, 6);
                 const count = category.articleCount || (category.articles ? category.articles.length : 0);
                 const topicSlug = getTopicSlug(category);
 
