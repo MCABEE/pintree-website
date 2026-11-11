@@ -1,6 +1,23 @@
-const ICON = "/Group-1410097144.svg";
-const WORDMARK = "/pintree-wordmark.svg";
-const ICON_WHITE = "/pintree-mark-white.svg";
+"use client";
+
+import { useEffect, useState } from "react";
+
+const ASSET_01_PNG = "/media-kit/asset_01.png";
+const ASSET_01_SVG = "/media-kit/asset_01.svg";
+
+const ASSET_02_PNG = "/media-kit/asset_02.png";
+const ASSET_02_SVG = "/media-kit/asset_02.svg";
+
+const ASSET_03_PNG = "/media-kit/asset_03.png";
+const ASSET_03_SVG = "/media-kit/asset_03.svg";
+
+const ASSET_04_DARK_PNG = "/media-kit/asset_04.png";
+const ASSET_04_DARK_SVG = "/media-kit/asset_04.svg";
+
+const ASSET_04_LIGHT_PNG = "/media-kit/asset_04_light.png";
+const ASSET_04_LIGHT_SVG = "/media-kit/asset_04_light.svg";
+
+const MEDIA_KIT_ZIP = "/media-kit/pintree-media-kit.zip";
 
 const FACTS = [
   ["Product", "Pintree"],
@@ -16,6 +33,16 @@ const EXPERIENCES = [
   ["Discovery", "Discover people, posts and communities beyond your existing network. Explore new interests and find conversations worth being part of."],
   ["Rooms", "Join focused discussion spaces within communities. Take part in structured conversations around specific topics and shared interests."],
   ["Connections", "Follow people, build mutual friendships and stay connected. Share personal moments with friends and selected circles."],
+];
+
+const MEDIA_TYPES = [
+  "Print Media",
+  "Broadcast Media – Television",
+  "Broadcast Media – Radio",
+  "Digital / Online Media",
+  "News Agency",
+  "Independent Media – journalists",
+  "Podcast / Audio Media",
 ];
 
 const grid =
@@ -57,6 +84,58 @@ function IndiaMark() {
 }
 
 export default function PressMediaView() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isSubmitted, setIsSubmitted] = useState(false);
+  const [formData, setFormData] = useState({
+    mediaType: "",
+    publicationName: "",
+    contactName: "",
+    designation: "",
+    contactEmail: "",
+    contactPhone: "",
+    subject: "",
+    message: "",
+  });
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+    setIsSubmitted(false);
+  };
+
+  useEffect(() => {
+    if (!isModalOpen) return;
+    const handleKeyDown = (e) => {
+      if (e.key === "Escape") {
+        handleCloseModal();
+      }
+    };
+    document.addEventListener("keydown", handleKeyDown);
+    const originalBodyOverflow = document.body.style.overflow;
+    const originalHtmlOverflow = document.documentElement.style.overflow;
+    document.body.style.overflow = "hidden";
+    document.documentElement.style.overflow = "hidden";
+    return () => {
+      document.removeEventListener("keydown", handleKeyDown);
+      document.body.style.overflow = originalBodyOverflow;
+      document.documentElement.style.overflow = originalHtmlOverflow;
+    };
+  }, [isModalOpen]);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setIsSubmitted(true);
+    setFormData({
+      mediaType: "",
+      publicationName: "",
+      contactName: "",
+      designation: "",
+      contactEmail: "",
+      contactPhone: "",
+      subject: "",
+      message: "",
+    });
+  };
+
   return (
     <main className="mx-auto w-full max-w-[1536px] px-6 pb-32 pt-12 font-jakarta sm:px-12 md:px-16 md:pt-20 lg:px-24 xl:px-[128px]">
       <header className="mx-auto max-w-[1280px] border-b border-[#E5E5E5] pb-16 md:pb-24">
@@ -160,16 +239,26 @@ export default function PressMediaView() {
       </section>
 
       <section id="brand-resources" className="mx-auto max-w-[1280px] scroll-mt-24 border-b border-[#E5E5E5] py-16 md:py-24">
-        <div className="mb-14 max-w-3xl md:mb-16">
-          <span className="mb-3 block text-xs font-semibold uppercase tracking-[0.14em] text-[#777777]">
-            Brand Resources
-          </span>
-          <h2 className="font-aeonik-regular mb-4 text-3xl font-normal leading-[1.18] text-[#202020] sm:text-4xl md:text-[36px]">
-            The Pintree identity.
-          </h2>
-          <p className="text-sm font-normal leading-relaxed text-[#666666] sm:text-base">
-            Official Pintree logos, icons and brand resources. Download these assets when featuring Pintree in publications, articles, presentations and other media.
-          </p>
+        <div className="mb-14 flex flex-col justify-between gap-6 md:mb-16 md:flex-row md:items-end">
+          <div className="max-w-3xl">
+            <span className="mb-3 block text-xs font-semibold uppercase tracking-[0.14em] text-[#777777]">
+              Brand Resources
+            </span>
+            <h2 className="font-aeonik-regular mb-4 text-3xl font-normal leading-[1.18] text-[#202020] sm:text-4xl md:text-[36px]">
+              The Pintree identity.
+            </h2>
+            <p className="text-sm font-normal leading-relaxed text-[#666666] sm:text-base">
+              Official Pintree logos, icons and brand resources. Download these assets when featuring Pintree in publications, articles, presentations and other media.
+            </p>
+          </div>
+          <a
+            href={MEDIA_KIT_ZIP}
+            download="pintree-media-kit.zip"
+            className="inline-flex shrink-0 items-center gap-2 rounded-lg bg-[#202020] px-5 py-3 text-xs font-medium text-white shadow-sm transition-colors hover:bg-black"
+          >
+            <DownloadIcon accent={true} />
+            Download Media Kit (.ZIP)
+          </a>
         </div>
 
         <div className="space-y-10">
@@ -179,9 +268,8 @@ export default function PressMediaView() {
                 <span className="absolute left-4 top-4 rounded border border-[#E5E5E5]/80 bg-[#F7F7F7] px-2.5 py-1 text-[11px] font-medium uppercase tracking-wide text-[#777777]">
                   White Surface • 1:1 Scale
                 </span>
-                <div className="flex items-center gap-4" aria-label="Pintree Primary Logo Preview">
-                  <img src={ICON} alt="Pintree brand icon" className="h-11 w-11 rounded-xl object-contain sm:h-12 sm:w-12" />
-                  <img src={WORDMARK} alt="" className="h-9 w-auto sm:h-10" />
+                <div className="flex items-center justify-center w-full px-4" aria-label="Pintree Primary Logo Preview">
+                  <img src={ASSET_01_SVG} alt="Pintree Primary Logo" className="h-10 w-auto max-w-[85%] object-contain sm:h-12" />
                 </div>
               </div>
               <div className="flex flex-col justify-between bg-[#F7F7F7]/40 p-8 sm:p-10 lg:col-span-5">
@@ -198,8 +286,8 @@ export default function PressMediaView() {
                 <div className="border-t border-[#E5E5E5] pt-4">
                   <div className="mb-3 text-xs font-medium text-[#777777]">Available Formats</div>
                   <div className="flex flex-wrap items-center gap-3">
-                    <FileLink href={WORDMARK} fileName="pintree-logo-primary.svg" solid>Download SVG</FileLink>
-                    <FileLink href={ICON} fileName="pintree-logo-primary.svg">Download PNG</FileLink>
+                    <FileLink href={ASSET_01_SVG} fileName="asset_01.svg" solid>Download SVG</FileLink>
+                    <FileLink href={ASSET_01_PNG} fileName="asset_01.png">Download PNG</FileLink>
                   </div>
                 </div>
               </div>
@@ -210,7 +298,7 @@ export default function PressMediaView() {
             <article className="flex flex-col justify-between overflow-hidden rounded-xl border border-[#E5E5E5] bg-white transition-colors hover:border-[#CCCCCC]">
               <div className={`relative flex min-h-[220px] items-center justify-center border-b border-[#E5E5E5] p-10 ${grid}`}>
                 <span className="absolute left-4 top-4 rounded border border-[#E5E5E5]/80 bg-[#F7F7F7] px-2 py-0.5 text-[11px] font-medium uppercase tracking-wide text-[#777777]">Wordmark</span>
-                <img src={WORDMARK} alt="Pintree wordmark" className="h-9 w-auto max-w-full sm:h-11" />
+                <img src={ASSET_02_SVG} alt="Pintree wordmark" className="h-9 w-auto max-w-[85%] object-contain sm:h-11" />
               </div>
               <div className="flex flex-1 flex-col justify-between bg-[#F7F7F7]/40 p-7 sm:p-8">
                 <div>
@@ -224,8 +312,8 @@ export default function PressMediaView() {
                   </p>
                 </div>
                 <div className="flex flex-wrap items-center gap-3 border-t border-[#E5E5E5] pt-4">
-                  <FileLink href={WORDMARK} fileName="pintree-wordmark.svg" solid>Download SVG</FileLink>
-                  <FileLink href={WORDMARK} fileName="pintree-wordmark.svg">Download PNG</FileLink>
+                  <FileLink href={ASSET_02_SVG} fileName="asset_02.svg" solid>Download SVG</FileLink>
+                  <FileLink href={ASSET_02_PNG} fileName="asset_02.png">Download PNG</FileLink>
                 </div>
               </div>
             </article>
@@ -233,7 +321,7 @@ export default function PressMediaView() {
             <article className="flex flex-col justify-between overflow-hidden rounded-xl border border-[#E5E5E5] bg-white transition-colors hover:border-[#CCCCCC]">
               <div className={`relative flex min-h-[220px] items-center justify-center border-b border-[#E5E5E5] p-10 ${grid}`}>
                 <span className="absolute left-4 top-4 rounded border border-[#E5E5E5]/80 bg-[#F7F7F7] px-2 py-0.5 text-[11px] font-medium uppercase tracking-wide text-[#777777]">Symbol</span>
-                <img src={ICON} alt="Pintree brand icon" className="h-20 w-20 rounded-2xl object-contain" />
+                <img src={ASSET_03_SVG} alt="Pintree brand icon" className="h-20 w-20 rounded-2xl object-contain shadow-sm" />
               </div>
               <div className="flex flex-1 flex-col justify-between bg-[#F7F7F7]/40 p-7 sm:p-8">
                 <div>
@@ -247,8 +335,8 @@ export default function PressMediaView() {
                   </p>
                 </div>
                 <div className="flex flex-wrap items-center gap-3 border-t border-[#E5E5E5] pt-4">
-                  <FileLink href={ICON} fileName="pintree-brand-icon.svg" solid>Download SVG</FileLink>
-                  <FileLink href={ICON} fileName="pintree-brand-icon.svg">Download PNG</FileLink>
+                  <FileLink href={ASSET_03_SVG} fileName="asset_03.svg" solid>Download SVG</FileLink>
+                  <FileLink href={ASSET_03_PNG} fileName="asset_03.png">Download PNG</FileLink>
                 </div>
               </div>
             </article>
@@ -271,16 +359,13 @@ export default function PressMediaView() {
                       <span className="text-[10px] text-[#777777]">For light surfaces</span>
                     </div>
                     <div className={`relative mb-4 flex h-28 items-center justify-center overflow-hidden rounded-lg border border-[#E5E5E5]/60 p-4 ${grid}`}>
-                      <div className="relative flex items-center gap-2.5">
-                        <img src={ICON} alt="" className="h-7 w-7 rounded-md object-contain" />
-                        <img src={WORDMARK} alt="Pintree" className="h-5 w-auto" />
-                      </div>
+                      <img src={ASSET_04_DARK_SVG} alt="Pintree Dark Logo" className="h-6 w-auto max-w-[85%] object-contain sm:h-7" />
                     </div>
                   </div>
                   <div className="flex items-center gap-2 border-t border-[#E5E5E5] pt-2 text-xs font-medium text-[#202020]">
-                    <a href={WORDMARK} download="pintree-logo-dark.svg" className="hover:underline">SVG ↓</a>
+                    <a href={ASSET_04_DARK_SVG} download="asset_04.svg" className="hover:underline">SVG ↓</a>
                     <span className="text-[#E5E5E5]">|</span>
-                    <a href={ICON} download="pintree-logo-dark.svg" className="hover:underline">PNG ↓</a>
+                    <a href={ASSET_04_DARK_PNG} download="asset_04.png" className="hover:underline">PNG ↓</a>
                   </div>
                 </div>
                 <div className="flex flex-col justify-between rounded-xl border border-[#E5E5E5] bg-white p-5">
@@ -290,18 +375,13 @@ export default function PressMediaView() {
                       <span className="text-[10px] text-[#777777]">For dark surfaces</span>
                     </div>
                     <div className="relative mb-4 flex h-28 items-center justify-center overflow-hidden rounded-lg border border-[#E5E5E5] bg-[#202020] p-4 bg-[linear-gradient(to_right,rgba(255,255,255,0.06)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.06)_1px,transparent_1px)] [background-size:24px_24px]">
-                      <div className="relative flex items-center gap-2.5">
-                        <span className="flex h-7 w-7 items-center justify-center rounded-md bg-white p-0.5">
-                          <img src={ICON_WHITE} alt="" className="h-full w-full object-contain" />
-                        </span>
-                        <img src={WORDMARK} alt="Pintree" className="h-5 w-auto brightness-0 invert" />
-                      </div>
+                      <img src={ASSET_04_LIGHT_SVG} alt="Pintree Light Logo" className="h-6 w-auto max-w-[85%] object-contain sm:h-7" />
                     </div>
                   </div>
                   <div className="flex items-center gap-2 border-t border-[#E5E5E5] pt-2 text-xs font-medium text-[#202020]">
-                    <a href={ICON_WHITE} download="pintree-logo-light.svg" className="hover:underline">SVG ↓</a>
+                    <a href={ASSET_04_LIGHT_SVG} download="asset_04_light.svg" className="hover:underline">SVG ↓</a>
                     <span className="text-[#E5E5E5]">|</span>
-                    <a href={WORDMARK} download="pintree-logo-light.svg" className="hover:underline">PNG ↓</a>
+                    <a href={ASSET_04_LIGHT_PNG} download="asset_04_light.png" className="hover:underline">PNG ↓</a>
                   </div>
                 </div>
               </div>
@@ -320,12 +400,14 @@ export default function PressMediaView() {
                   </p>
                 </div>
                 <div className="border-t border-[#E5E5E5] pt-4">
-                  <a
-                    href="mailto:hello@pintree.co?subject=Pintree%20Brand%20Guidelines"
-                    className="inline-flex w-full items-center justify-center gap-2 rounded-lg bg-[#202020] px-4 py-2.5 text-xs font-medium text-white transition-colors hover:bg-black"
+                  <button
+                    type="button"
+                    disabled
+                    aria-disabled="true"
+                    className="inline-flex w-full items-center justify-center gap-2 rounded-lg bg-[#202020] px-4 py-2.5 text-xs font-medium text-white opacity-50 cursor-not-allowed select-none"
                   >
                     Download Brand Guidelines →
-                  </a>
+                  </button>
                 </div>
               </div>
             </article>
@@ -394,12 +476,16 @@ export default function PressMediaView() {
               </p>
             </div>
             <div className="flex flex-col items-start justify-center gap-4 sm:flex-row lg:col-span-5 lg:flex-col lg:items-end">
-              <a
-                href="mailto:hello@pintree.co?subject=Press%20Inquiry%20-%20Pintree"
-                className="inline-flex w-full items-center justify-center gap-2 rounded-lg bg-[#202020] px-6 py-3.5 text-sm font-medium text-white shadow-sm transition-colors hover:bg-black sm:w-auto"
+              <button
+                type="button"
+                onClick={() => {
+                  setIsSubmitted(false);
+                  setIsModalOpen(true);
+                }}
+                className="inline-flex w-full cursor-pointer items-center justify-center gap-2 rounded-lg bg-[#202020] px-6 py-3.5 text-sm font-medium text-white shadow-sm transition-colors hover:bg-black sm:w-auto"
               >
                 Contact Media Team →
-              </a>
+              </button>
               <div className="text-xs text-[#777777] lg:text-right">
                 <span>Press email: </span>
                 <a href="mailto:hello@pintree.co" className="font-medium text-[#202020] hover:underline">
@@ -411,6 +497,286 @@ export default function PressMediaView() {
           </div>
         </div>
       </section>
+
+      {isModalOpen && (
+        <div
+          id="media-enquiry-modal"
+          className="fixed inset-0 z-50 flex items-center justify-center overflow-hidden bg-black/40 p-4 backdrop-blur-sm"
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="media-modal-title"
+          onClick={(e) => {
+            if (e.target === e.currentTarget) {
+              handleCloseModal();
+            }
+          }}
+        >
+          <div className="relative w-full max-w-[620px] overflow-hidden rounded-2xl border border-[#E5E5E5] bg-white p-5 shadow-2xl sm:p-7">
+            <button
+              type="button"
+              id="close-media-modal-btn"
+              aria-label="Close modal"
+              onClick={handleCloseModal}
+              className="absolute right-4 top-4 inline-flex items-center justify-center rounded-full p-2 text-[#666666] transition-colors hover:bg-[#F7F7F7] hover:text-[#202020] cursor-pointer sm:right-5 sm:top-5"
+            >
+              <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
+
+            {isSubmitted ? (
+              <div className="flex flex-col items-center pt-2 text-center sm:pt-4">
+                <div className="mb-5 flex h-14 w-14 items-center justify-center rounded-full bg-[#CAFFA6] shadow-xs">
+                  <svg className="h-7 w-7 text-[#204654]" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
+                    <path d="M5 13l4 4L19 7" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                </div>
+                <div className="mb-2 flex items-center gap-2">
+                  <span className="h-2 w-2 rounded-full bg-[#204654]" />
+                  <span className="text-[11px] font-semibold uppercase tracking-[0.16em] text-[#777777]">
+                    Enquiry Received
+                  </span>
+                </div>
+                <h2
+                  id="media-modal-title"
+                  className="font-aeonik-regular mb-3 text-2xl font-normal leading-[1.2] text-[#202020] sm:text-[28px]"
+                >
+                  Thank you for reaching out.
+                </h2>
+                <p className="mb-6 max-w-md text-sm font-normal leading-relaxed text-[#666666] sm:text-base">
+                  Your media enquiry has been successfully delivered to our communications team.
+                </p>
+
+                <div className="mb-6 w-full space-y-2.5 rounded-xl border border-[#E5E5E5] bg-[#F7F7F7] p-5 text-left text-sm">
+                  <div className="text-xs font-medium uppercase tracking-wider text-[#202020]">
+                    What to expect next:
+                  </div>
+                  <p className="text-xs leading-relaxed text-[#666666] sm:text-sm">
+                    <span className="font-medium text-[#202020]">• Response timeframe:</span> Our press team typically responds within 24 to 48 business hours.
+                  </p>
+                  <p className="text-xs leading-relaxed text-[#666666] sm:text-sm">
+                    <span className="font-medium text-[#202020]">• Direct contact:</span> If your story is on a breaking editorial deadline, you may also follow up directly at{" "}
+                    <a className="font-medium text-[#202020] underline hover:text-black" href="mailto:hello@pintree.co">
+                      hello@pintree.co
+                    </a>{" "}
+                    referencing your publication name.
+                  </p>
+                </div>
+
+                <div className="w-full space-y-3">
+                  <button
+                    type="button"
+                    onClick={handleCloseModal}
+                    className="group flex w-full cursor-pointer items-center justify-center gap-2 rounded-xl bg-[#101010] px-6 py-3 text-sm font-medium text-white shadow-sm transition-all hover:bg-black"
+                  >
+                    <span>Back to Press &amp; Media</span>
+                    <svg className="h-4 w-4 text-[#CAFFA6] transition-transform group-hover:translate-x-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                    </svg>
+                  </button>
+                  <p className="text-xs text-[#777777]">
+                    A confirmation email has been sent to your inbox.
+                  </p>
+                </div>
+              </div>
+            ) : (
+              <>
+                <div className="pr-10">
+                  <div className="mb-1.5 flex items-center gap-2">
+                    <span className="h-2 w-2 rounded-full bg-[#204654]" />
+                    <span className="text-[11px] font-semibold uppercase tracking-[0.16em] text-[#777777]">
+                      Media Enquiries
+                    </span>
+                  </div>
+                  <h2
+                    id="media-modal-title"
+                    className="font-aeonik-regular text-2xl font-normal leading-[1.2] text-[#202020] sm:text-[28px]"
+                  >
+                    Contact Pintree Media Team
+                  </h2>
+                  <p className="mt-1 text-xs font-normal leading-relaxed text-[#666666] sm:text-sm">
+                    Tell us a little about your enquiry. Our team will get back to you promptly.
+                  </p>
+                </div>
+
+                <form onSubmit={handleSubmit} className="mt-4 space-y-3 sm:space-y-3.5">
+                  <div>
+                    <label
+                      htmlFor="media-type"
+                      className="mb-1 block text-xs font-semibold uppercase tracking-wider text-[#202020]"
+                    >
+                      Media Type <span className="text-[#204654]">*</span>
+                    </label>
+                    <select
+                      id="media-type"
+                      required
+                      value={formData.mediaType}
+                      onChange={(e) => setFormData({ ...formData, mediaType: e.target.value })}
+                      className="w-full cursor-pointer rounded-xl border border-[#E5E5E5] bg-white px-3.5 py-2 text-sm text-[#202020] transition-all focus:border-[#204654] focus:outline-none focus:ring-2 focus:ring-[#204654]/20"
+                    >
+                      <option value="" disabled>Select media type...</option>
+                      {MEDIA_TYPES.map((type) => (
+                        <option key={type} value={type}>
+                          {type}
+                        </option>
+                      ))}
+                    </select>
+                  </div>
+
+                  <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 sm:gap-4">
+                    <div>
+                      <label
+                        htmlFor="publication-name"
+                        className="mb-1 block text-xs font-semibold uppercase tracking-wider text-[#202020]"
+                      >
+                        Media / Publication <span className="text-[#204654]">*</span>
+                      </label>
+                      <input
+                        type="text"
+                        id="publication-name"
+                        required
+                        placeholder="e.g. The Daily Chronicle"
+                        value={formData.publicationName}
+                        onChange={(e) => setFormData({ ...formData, publicationName: e.target.value })}
+                        className="w-full rounded-xl border border-[#E5E5E5] bg-white px-3.5 py-2 text-sm text-[#202020] transition-all focus:border-[#204654] focus:outline-none focus:ring-2 focus:ring-[#204654]/20"
+                      />
+                    </div>
+                    <div>
+                      <label
+                        htmlFor="contact-name"
+                        className="mb-1 block text-xs font-semibold uppercase tracking-wider text-[#202020]"
+                      >
+                        Contact Person <span className="text-[#204654]">*</span>
+                      </label>
+                      <input
+                        type="text"
+                        id="contact-name"
+                        required
+                        placeholder="e.g. Maya Sharma"
+                        value={formData.contactName}
+                        onChange={(e) => setFormData({ ...formData, contactName: e.target.value })}
+                        className="w-full rounded-xl border border-[#E5E5E5] bg-white px-3.5 py-2 text-sm text-[#202020] transition-all focus:border-[#204654] focus:outline-none focus:ring-2 focus:ring-[#204654]/20"
+                      />
+                    </div>
+                    <div>
+                      <label
+                        htmlFor="designation"
+                        className="mb-1 block text-xs font-semibold uppercase tracking-wider text-[#202020]"
+                      >
+                        Role / Designation <span className="text-[#204654]">*</span>
+                      </label>
+                      <input
+                        type="text"
+                        id="designation"
+                        required
+                        placeholder="e.g. Senior Tech Correspondent"
+                        value={formData.designation}
+                        onChange={(e) => setFormData({ ...formData, designation: e.target.value })}
+                        className="w-full rounded-xl border border-[#E5E5E5] bg-white px-3.5 py-2 text-sm text-[#202020] transition-all focus:border-[#204654] focus:outline-none focus:ring-2 focus:ring-[#204654]/20"
+                      />
+                    </div>
+                    <div>
+                      <label
+                        htmlFor="contact-email"
+                        className="mb-1 block text-xs font-semibold uppercase tracking-wider text-[#202020]"
+                      >
+                        Email Address <span className="text-[#204654]">*</span>
+                      </label>
+                      <input
+                        type="email"
+                        id="contact-email"
+                        required
+                        placeholder="e.g. press@publication.com"
+                        value={formData.contactEmail}
+                        onChange={(e) => setFormData({ ...formData, contactEmail: e.target.value })}
+                        className="w-full rounded-xl border border-[#E5E5E5] bg-white px-3.5 py-2 text-sm text-[#202020] transition-all focus:border-[#204654] focus:outline-none focus:ring-2 focus:ring-[#204654]/20"
+                      />
+                    </div>
+                  </div>
+
+                  <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 sm:gap-4">
+                    <div>
+                      <label
+                        htmlFor="contact-phone"
+                        className="mb-1 block text-xs font-semibold uppercase tracking-wider text-[#202020]"
+                      >
+                        Phone Number <span className="font-normal lowercase text-[#777777]">(optional)</span>
+                      </label>
+                      <input
+                        type="tel"
+                        id="contact-phone"
+                        placeholder="+91 98765 43210"
+                        value={formData.contactPhone}
+                        onChange={(e) => setFormData({ ...formData, contactPhone: e.target.value })}
+                        className="w-full rounded-xl border border-[#E5E5E5] bg-white px-3.5 py-2 text-sm text-[#202020] transition-all focus:border-[#204654] focus:outline-none focus:ring-2 focus:ring-[#204654]/20"
+                      />
+                    </div>
+                    <div>
+                      <label
+                        htmlFor="enquiry-subject"
+                        className="mb-1 block text-xs font-semibold uppercase tracking-wider text-[#202020]"
+                      >
+                        Subject <span className="text-[#204654]">*</span>
+                      </label>
+                      <input
+                        type="text"
+                        id="enquiry-subject"
+                        required
+                        placeholder="e.g. Feature interview / Q3 enquiry"
+                        value={formData.subject}
+                        onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
+                        className="w-full rounded-xl border border-[#E5E5E5] bg-white px-3.5 py-2 text-sm text-[#202020] transition-all focus:border-[#204654] focus:outline-none focus:ring-2 focus:ring-[#204654]/20"
+                      />
+                    </div>
+                  </div>
+
+                  <div>
+                    <label
+                      htmlFor="enquiry-message"
+                      className="mb-1 block text-xs font-semibold uppercase tracking-wider text-[#202020]"
+                    >
+                      Message / Details <span className="text-[#204654]">*</span>
+                    </label>
+                    <textarea
+                      id="enquiry-message"
+                      required
+                      rows={3}
+                      placeholder="Provide context, interview topics, editorial deadlines, or specific information requested..."
+                      value={formData.message}
+                      onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                      className="w-full resize-none rounded-xl border border-[#E5E5E5] bg-white px-3.5 py-2 text-sm text-[#202020] transition-all focus:border-[#204654] focus:outline-none focus:ring-2 focus:ring-[#204654]/20"
+                    />
+                  </div>
+
+                  <div className="pt-1">
+                    <button
+                      type="submit"
+                      className="group flex w-full cursor-pointer items-center justify-center gap-2 rounded-xl bg-[#101010] px-6 py-2.5 text-sm font-medium text-white shadow-sm transition-all hover:bg-black"
+                    >
+                      <span>Submit Enquiry</span>
+                      <svg className="h-4 w-4 text-[#CAFFA6] transition-transform group-hover:translate-x-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                      </svg>
+                    </button>
+                  </div>
+
+                  <div className="space-y-0.5 pt-0.5 text-center">
+                    <p className="text-xs text-[#525252]">
+                      Prefer direct email? Reach us at{" "}
+                      <a href="mailto:hello@pintree.co" className="font-medium text-[#202020] underline hover:text-black">
+                        hello@pintree.co
+                      </a>
+                    </p>
+                    <p className="text-[11px] text-[#777777]">
+                      Your information will only be used to respond to this press enquiry.
+                    </p>
+                  </div>
+                </form>
+              </>
+            )}
+          </div>
+        </div>
+      )}
     </main>
   );
 }

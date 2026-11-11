@@ -283,7 +283,7 @@ export default function LoginPage() {
           {/* Inner Form Container */}
           <div className="w-full max-w-[420px]">
             {/* Editorial Headline */}
-            <h1 className="mb-4 sm:mb-5 text-center font-aeonik-regular text-[28px] sm:text-[32px] font-normal leading-tight tracking-tight text-[#131313]">
+            <h1 className="mb-4 sm:mb-5 text-center font-aeonik-regular text-[28px] sm:text-[36px] font-normal leading-tight tracking-tight text-[#131313]">
               Welcome back.
             </h1>
 

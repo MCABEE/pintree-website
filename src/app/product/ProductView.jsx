@@ -1118,7 +1118,7 @@ export default function ProductView() {
         <HeroCluster />
 
         {/* Main Headline */}
-        <h1 className="font-aeonik-medium mb-6 text-[32px] font-medium leading-[40px] tracking-tight text-[#202020] md:text-[48px] md:leading-[56px] md:tracking-[-0.02em]">
+        <h1 className="font-aeonik-regular mb-6 text-[32px] font-medium leading-[40px] tracking-tight text-[#202020] md:text-[48px] md:leading-[56px] md:tracking-[-0.02em]">
           One platform. Multiple ways to connect.
         </h1>
 
