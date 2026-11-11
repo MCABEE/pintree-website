@@ -54,6 +54,7 @@ function SmallArrowIcon() {
 export default function Section8() {
   const [articles, setArticles] = useState(FALLBACK_ARTICLES);
   const [pageIndex, setPageIndex] = useState(0);
+  const [isSliding, setIsSliding] = useState(false);
 
   useEffect(() => {
     let isMounted = true;
@@ -74,17 +75,21 @@ export default function Section8() {
 
   const pageSize = 3;
   const totalPages = Math.ceil(articles.length / pageSize);
-  const displayedArticles = articles.slice(
-    pageIndex * pageSize,
-    pageIndex * pageSize + pageSize
-  );
+  const canPrev = pageIndex > 0;
+  const canNext = pageIndex < totalPages - 1;
 
   const handlePrev = () => {
-    setPageIndex((prev) => (prev > 0 ? prev - 1 : Math.max(0, totalPages - 1)));
+    if (isSliding || !canPrev) return;
+    setIsSliding(true);
+    setPageIndex((prev) => Math.max(0, prev - 1));
+    setTimeout(() => setIsSliding(false), 1500);
   };
 
   const handleNext = () => {
-    setPageIndex((prev) => (prev + 1 < totalPages ? prev + 1 : 0));
+    if (isSliding || !canNext) return;
+    setIsSliding(true);
+    setPageIndex((prev) => Math.min(totalPages - 1, prev + 1));
+    setTimeout(() => setIsSliding(false), 1500);
   };
 
   return (
@@ -125,16 +130,26 @@ export default function Section8() {
               <button
                 type="button"
                 onClick={handlePrev}
+                disabled={!canPrev}
                 aria-label="Previous stories"
-                className="flex h-11 w-11 items-center justify-center rounded-full border border-[#c4c7c7] bg-white text-[#1b1c1c] transition-all duration-150 hover:border-black focus:outline-none active:scale-[0.98]"
+                className={`flex h-11 w-11 items-center justify-center rounded-full border transition-all duration-150 focus:outline-none ${
+                  canPrev
+                    ? "cursor-pointer border-[#c4c7c7] bg-white text-[#1b1c1c] hover:border-black active:scale-[0.98]"
+                    : "cursor-not-allowed border-[#e4e2e1] bg-white text-[#c4c7c7] opacity-40"
+                }`}
               >
                 <ArrowIcon direction="left" />
               </button>
               <button
                 type="button"
                 onClick={handleNext}
+                disabled={!canNext}
                 aria-label="Next stories"
-                className="flex h-11 w-11 items-center justify-center rounded-full border border-[#c4c7c7] bg-white text-[#1b1c1c] transition-all duration-150 hover:border-black focus:outline-none active:scale-[0.98]"
+                className={`flex h-11 w-11 items-center justify-center rounded-full border transition-all duration-150 focus:outline-none ${
+                  canNext
+                    ? "cursor-pointer border-[#c4c7c7] bg-white text-[#1b1c1c] hover:border-black active:scale-[0.98]"
+                    : "cursor-not-allowed border-[#e4e2e1] bg-white text-[#c4c7c7] opacity-40"
+                }`}
               >
                 <ArrowIcon direction="right" />
               </button>
@@ -142,49 +157,64 @@ export default function Section8() {
           )}
         </header>
 
-        <div className="mt-12 grid grid-cols-1 items-stretch gap-6 md:grid-cols-3 lg:mt-14 lg:gap-8">
-          {(displayedArticles.length > 0
-            ? displayedArticles
-            : articles.slice(0, 3)
-          ).map((story) => (
-            <Link
-              key={story.id || story.slug}
-              href={`/newsroom/${story.slug}`}
-              className="group flex flex-col justify-between rounded-2xl border border-[#e4e2e1] bg-white p-8 transition-[background-color,border-color] duration-250 hover:border-[#204654]/30 hover:bg-[#F7F7F7]"
-            >
-              <div>
-                <div className="flex items-center gap-2">
-                  <span className="text-[11px] font-semibold uppercase tracking-wider text-[#525252]">
-                    {story.category || "News"}
-                  </span>
-                  {story.date && (
-                    <>
-                      <span className="text-gray-300">•</span>
-                      <span className="text-[12px] text-[#777777]">
-                        {story.date}
-                      </span>
-                    </>
-                  )}
-                </div>
+        <div className="mt-12 overflow-hidden py-1 lg:mt-14">
+          <div
+            className="flex transition-transform duration-[1500ms] ease-[cubic-bezier(0.25,1,0.1,1)]"
+            style={{ transform: `translateX(-${pageIndex * 100}%)` }}
+          >
+            {Array.from({ length: Math.max(1, totalPages) }).map((_, pIdx) => {
+              const pageArticles = articles.slice(
+                pIdx * pageSize,
+                pIdx * pageSize + pageSize
+              );
+              return (
+                <div
+                  key={pIdx}
+                  className="grid w-full shrink-0 grid-cols-1 items-stretch gap-6 px-1 md:grid-cols-3 lg:gap-8"
+                >
+                  {pageArticles.map((story) => (
+                    <Link
+                      key={story.id || story.slug}
+                      href={`/newsroom/${story.slug}`}
+                      className="group flex flex-col justify-between rounded-2xl border border-[#e4e2e1] bg-white p-8 transition-[background-color,border-color] duration-250 hover:border-[#204654]/30 hover:bg-[#F7F7F7]"
+                    >
+                      <div>
+                        <div className="flex items-center gap-2">
+                          <span className="text-[11px] font-semibold uppercase tracking-wider text-[#525252]">
+                            {story.category || "News"}
+                          </span>
+                          {story.date && (
+                            <>
+                              <span className="text-gray-300">•</span>
+                              <span className="text-[12px] text-[#777777]">
+                                {story.date}
+                              </span>
+                            </>
+                          )}
+                        </div>
 
-                <h3 className="mt-4 font-aeonik-regular text-[22px] font-normal leading-[30px] text-black transition-colors group-hover:text-[#204654] line-clamp-2">
-                  {story.title || story.headline}
-                </h3>
-                <p className="mt-3.5 font-jakarta text-[15px] font-normal leading-6 text-[#444748] line-clamp-3">
-                  {story.excerpt || story.summary}
-                </p>
-              </div>
+                        <h3 className="mt-4 font-aeonik-regular text-[22px] font-normal leading-[30px] text-black transition-colors group-hover:text-[#204654] line-clamp-2">
+                          {story.title || story.headline}
+                        </h3>
+                        <p className="mt-3.5 font-jakarta text-[15px] font-normal leading-6 text-[#444748] line-clamp-3">
+                          {story.excerpt || story.summary}
+                        </p>
+                      </div>
 
-              <div className="mt-6 flex items-center justify-between border-t border-[#f6f3f2] pt-8">
-                <span className="text-[13px] font-semibold tracking-[0.02em] text-[#1b1c1c] transition-colors group-hover:text-black">
-                  Read story
-                </span>
-                <div className="flex h-9 w-9 items-center justify-center rounded-full border border-[#e4e2e1] bg-[#f6f3f2] text-[#1b1c1c] transition-all duration-150 group-hover:border-black group-hover:bg-black group-hover:text-white">
-                  <SmallArrowIcon />
+                      <div className="mt-6 flex items-center justify-between border-t border-[#f6f3f2] pt-8">
+                        <span className="text-[13px] font-semibold tracking-[0.02em] text-[#1b1c1c] transition-colors group-hover:text-black">
+                          Read story
+                        </span>
+                        <div className="flex h-9 w-9 items-center justify-center rounded-full border border-[#e4e2e1] bg-[#f6f3f2] text-[#1b1c1c] transition-all duration-150 group-hover:border-black group-hover:bg-black group-hover:text-white">
+                          <SmallArrowIcon />
+                        </div>
+                      </div>
+                    </Link>
+                  ))}
                 </div>
-              </div>
-            </Link>
-          ))}
+              );
+            })}
+          </div>
         </div>
       </div>
     </section>

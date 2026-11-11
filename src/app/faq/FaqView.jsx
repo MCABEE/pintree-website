@@ -267,7 +267,7 @@ export default function FaqView() {
                 </p>
                 <div className="pt-2">
                   <a
-                    href="/support"
+                    href="/contact"
                     className="group inline-flex items-center justify-between gap-4 rounded-full border border-[#202020] px-5 py-3 text-sm font-medium text-[#202020] transition-all duration-200 hover:bg-[#202020] hover:text-white">
                     <span>Contact support</span>
                     <span
@@ -412,7 +412,7 @@ export default function FaqView() {
                     Clear Search
                   </button>
                   <a
-                    href="/support"
+                    href="/contact"
                     className="rounded-full border border-[#E5E5E5] bg-white px-5 py-2 text-xs font-semibold text-[#202020] transition hover:border-[#202020]">
                     Contact Support
                   </a>

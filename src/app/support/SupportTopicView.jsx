@@ -286,9 +286,9 @@ export default function SupportTopicView({
               </p>
             </div>
             <div className="flex shrink-0 items-center">
-              <a
+              <Link
                 className="inline-flex items-center justify-center gap-1.5 px-5 py-2.5 rounded text-sm font-medium text-white bg-black hover:bg-[#204654] transition-colors whitespace-nowrap group shadow-sm"
-                href="mailto:hello@pintree.co"
+                href="/contact"
               >
                 <span>Contact Support</span>
                 <svg
@@ -303,7 +303,7 @@ export default function SupportTopicView({
                 >
                   <path d="M3 8H13M13 8L8.5 3.5M13 8L8.5 12.5" />
                 </svg>
-              </a>
+              </Link>
             </div>
           </div>
         </footer>
