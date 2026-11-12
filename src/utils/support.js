@@ -6,7 +6,9 @@
  * - https://api.places.mcabee.in/v1/support/slug/:slug
  */
 
-export const SUPPORT_API_BASE = "https://api.places.mcabee.in/v1";
+import { PLACES_API_BASE } from "@/config/api";
+
+export const SUPPORT_API_BASE = PLACES_API_BASE;
 
 export const FALLBACK_TOPICS = [
   {

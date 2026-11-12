@@ -5,7 +5,9 @@
  * - https://api.places.mcabee.in/v1/news/slug/:slug
  */
 
-export const NEWS_API_BASE = "https://api.places.mcabee.in/v1";
+import { PLACES_API_BASE } from "@/config/api";
+
+export const NEWS_API_BASE = PLACES_API_BASE;
 
 export const CATEGORY_MAP = {
   "All News": "",

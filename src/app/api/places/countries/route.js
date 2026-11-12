@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { PLACES_API_BASE } from "@/config/api";
 
 export async function GET(request) {
   try {
@@ -11,7 +12,7 @@ export async function GET(request) {
     if (search) params.set("search", search);
 
     const backendRes = await fetch(
-      `https://api.places.mcabee.in/v1/country?${params.toString()}`,
+      `${PLACES_API_BASE}/country?${params.toString()}`,
       {
         method: "GET",
         headers: {

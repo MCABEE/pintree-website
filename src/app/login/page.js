@@ -8,6 +8,7 @@ import {
   needsGoogleProfileCompletion,
   signInWithGoogle,
 } from "@/utils/googleAuth";
+import { USER_API_BASE } from "@/config/api";
 import Footer from "@/components/Footer";
 
 export default function LoginPage() {
@@ -114,7 +115,7 @@ export default function LoginPage() {
           body: JSON.stringify(payload),
         });
       } catch (proxyErr) {
-        res = await fetch("https://dev.user.pintree.co/v1/auth/login", {
+        res = await fetch(`${USER_API_BASE}/auth/login`, {
           method: "POST",
           credentials: "include",
           headers: {

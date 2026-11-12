@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { USER_API_BASE } from "@/config/api";
 
 export async function POST(request) {
   try {
@@ -28,7 +29,7 @@ export async function POST(request) {
     }
 
     // 2. Call Pintree dev auth server with Cookie header
-    const backendRes = await fetch("https://dev.user.pintree.co/v1/auth/refresh-token", {
+    const backendRes = await fetch(`${USER_API_BASE}/auth/refresh-token`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

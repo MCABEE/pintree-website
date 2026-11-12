@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import { getValidAccessToken, authenticatedFetch, refreshAccessToken } from "@/utils/auth";
+import { USER_API_BASE } from "@/config/api";
 import UserAvatar, { resolveProfileImageUrl } from "@/components/UserAvatar";
 import Footer from "@/components/Footer";
 
@@ -125,10 +126,10 @@ export default function AccountOverviewPage() {
 
       try {
         const [profileRes, createdRes, joinedRes, friendsRes] = await Promise.allSettled([
-          authenticatedFetch("https://dev.user.pintree.co/v1/users/profile"),
-          authenticatedFetch("https://dev.user.pintree.co/v1/communities/created?page=1&limit=20&status=ALL"),
-          authenticatedFetch("https://dev.user.pintree.co/v1/communities/joined?page=1&limit=20&status=ALL"),
-          authenticatedFetch("https://dev.user.pintree.co/v1/connections/friends?page=1&limit=10"),
+          authenticatedFetch(`${USER_API_BASE}/users/profile`),
+          authenticatedFetch(`${USER_API_BASE}/communities/created?page=1&limit=20&status=ALL`),
+          authenticatedFetch(`${USER_API_BASE}/communities/joined?page=1&limit=20&status=ALL`),
+          authenticatedFetch(`${USER_API_BASE}/connections/friends?page=1&limit=10`),
         ]);
 
         if (profileRes.status === "fulfilled" && profileRes.value.ok) {
@@ -205,7 +206,7 @@ export default function AccountOverviewPage() {
 
     try {
       if (token) {
-        await fetch("https://dev.user.pintree.co/v1/auth/logout", {
+        await fetch(`${USER_API_BASE}/auth/logout`, {
           method: "POST",
           headers: {
             Authorization: `Bearer ${token}`,

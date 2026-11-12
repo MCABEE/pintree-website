@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { USER_API_BASE } from "@/config/api";
 
 export async function POST(request) {
   try {
@@ -21,7 +22,7 @@ export async function POST(request) {
     }
 
     const backendRes = await fetch(
-      `https://dev.user.pintree.co/v1/auth/web/register/${encodeURIComponent(userId)}/Page-3`,
+      `${USER_API_BASE}/auth/web/register/${encodeURIComponent(userId)}/Page-3`,
       {
         method: "POST",
         headers,

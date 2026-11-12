@@ -5,7 +5,9 @@
  * - https://api.places.mcabee.in/v1/faqs/topics
  */
 
-export const FAQ_API_BASE = "https://api.places.mcabee.in/v1";
+import { PLACES_API_BASE } from "@/config/api";
+
+export const FAQ_API_BASE = PLACES_API_BASE;
 
 /**
  * Fetch all FAQ topics

@@ -1,9 +1,11 @@
 /**
  * Pintree Authentication Utilities
  * Handles access token retrieval, proactive expiry detection,
- * automatic token refreshing via https://dev.user.pintree.co/v1/auth/refresh-token,
+ * automatic token refreshing via USER_API_BASE/auth/refresh-token,
  * and resilient authenticated fetching.
  */
+
+import { USER_API_BASE } from "@/config/api";
 
 /**
  * Decode JWT token safely without external dependencies
@@ -69,7 +71,7 @@ export async function refreshAccessToken() {
           body: JSON.stringify({}),
         });
       } catch (proxyErr) {
-        res = await fetch("https://dev.user.pintree.co/v1/auth/refresh-token", {
+        res = await fetch(`${USER_API_BASE}/auth/refresh-token`, {
           method: "POST",
           credentials: "include",
           headers: {
@@ -80,7 +82,7 @@ export async function refreshAccessToken() {
       }
 
       if (res && res.status === 404) {
-        res = await fetch("https://dev.user.pintree.co/v1/auth/refresh-token", {
+        res = await fetch(`${USER_API_BASE}/auth/refresh-token`, {
           method: "POST",
           credentials: "include",
           headers: {

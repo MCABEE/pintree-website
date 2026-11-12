@@ -9,19 +9,20 @@ import {
   signInWithGoogle,
 } from "@/utils/googleAuth";
 import { getValidAccessToken, authenticatedFetch } from "@/utils/auth";
+import { USER_API_BASE } from "@/config/api";
 import UserAvatar from "@/components/UserAvatar";
 
-const SUPPORT_CATEGORIES = [
-  "Account & Login",
-  "Profile & Settings",
-  "Communities & Rooms",
-  "Connections & Privacy",
-  "Posts & Content",
-  "Chat & Messaging",
-  "Notifications",
-  "Technical Issues",
-  "Report a Problem",
-  "Other",
+export const SUPPORT_CATEGORIES = [
+  { value: "COMMUNITIES_ROOMS", label: "Communities & Rooms" },
+  { value: "ACCOUNT_LOGIN", label: "Account & Login" },
+  { value: "PROFILE_SETTINGS", label: "Profile & Settings" },
+  { value: "CONNECTIONS_PRIVACY", label: "Connections & Privacy" },
+  { value: "POSTS_CONTENT", label: "Posts & Content" },
+  { value: "CHAT_MESSAGING", label: "Chat & Messaging" },
+  { value: "NOTIFICATIONS", label: "Notifications" },
+  { value: "TECHNICAL_ISSUES", label: "Technical Issues" },
+  { value: "REPORT_PROBLEM", label: "Report a Problem" },
+  { value: "OTHER", label: "Other" },
 ];
 
 function decodeJwt(token) {
@@ -122,21 +123,37 @@ export default function ContactSupportView() {
   const [rateLimitCountdown, setRateLimitCountdown] = useState(0);
 
   // Ticket Form State
-  const [category, setCategory] = useState("Communities & Rooms");
+  const [category, setCategory] = useState("COMMUNITIES_ROOMS");
   const [subject, setSubject] = useState("");
   const [message, setMessage] = useState("");
-  const [attachmentFile, setAttachmentFile] = useState(null);
+  const [attachmentFiles, setAttachmentFiles] = useState([]);
   const [isDragging, setIsDragging] = useState(false);
   const [isSubmittingTicket, setIsSubmittingTicket] = useState(false);
   const [ticketError, setTicketError] = useState("");
   const [ticketSuccess, setTicketSuccess] = useState(null);
   const [isCopied, setIsCopied] = useState(false);
 
-  // Copy Ticket ID to clipboard with 2s visual feedback
+  const handleFilesAdded = (newFiles) => {
+    if (!newFiles || newFiles.length === 0) return;
+    const incoming = Array.from(newFiles);
+    // 25MB limit per file
+    const valid = incoming.filter((f) => f.size <= 25 * 1024 * 1024);
+    if (valid.length < incoming.length) {
+      setTicketError("Some files exceeded the 25MB limit and were skipped.");
+    }
+    setAttachmentFiles((prev) => [...prev, ...valid]);
+  };
+
+  const handleRemoveFile = (index) => {
+    setAttachmentFiles((prev) => prev.filter((_, i) => i !== index));
+  };
+
+  // Copy Ticket Number to clipboard with 2s visual feedback
   const handleCopyTicket = () => {
-    if (!ticketSuccess?.id) return;
+    const ticketNum = ticketSuccess?.ticketNumber || ticketSuccess?.id;
+    if (!ticketNum) return;
     try {
-      navigator.clipboard.writeText(ticketSuccess.id).then(() => {
+      navigator.clipboard.writeText(ticketNum).then(() => {
         setIsCopied(true);
         setTimeout(() => setIsCopied(false), 2000);
       });
@@ -208,7 +225,7 @@ export default function ContactSupportView() {
       const activeToken = await getValidAccessToken();
       if (activeToken) {
         const res = await authenticatedFetch(
-          "https://dev.user.pintree.co/v1/users/profile"
+          `${USER_API_BASE}/users/profile`
         );
         if (res.ok) {
           const json = await res.json();
@@ -305,7 +322,7 @@ export default function ContactSupportView() {
           body: JSON.stringify(payload),
         });
       } catch (proxyErr) {
-        res = await fetch("https://dev.user.pintree.co/v1/auth/login", {
+        res = await fetch(`${USER_API_BASE}/auth/login`, {
           method: "POST",
           credentials: "include",
           headers: { "Content-Type": "application/json" },
@@ -514,7 +531,7 @@ export default function ContactSupportView() {
     e.preventDefault();
     setIsDragging(false);
     if (e.dataTransfer.files && e.dataTransfer.files.length > 0) {
-      setAttachmentFile(e.dataTransfer.files[0]);
+      handleFilesAdded(e.dataTransfer.files);
     }
   };
 
@@ -526,67 +543,113 @@ export default function ContactSupportView() {
     const trimmedSubject = subject.trim();
     const trimmedMessage = message.trim();
 
+    if (!category) {
+      setTicketError("Please select a support category.");
+      return;
+    }
+
     if (!trimmedSubject) {
       setTicketError("Please enter a subject for your support request.");
       return;
     }
     if (!trimmedMessage) {
-      setTicketError("Please describe your issue in the message field.");
+      setTicketError("Please describe your issue in the description field.");
+      return;
+    }
+    if (trimmedMessage.length < 30) {
+      setTicketError("Please describe your issue with at least 30 characters.");
       return;
     }
 
     setIsSubmittingTicket(true);
 
-    const ticketId = `PNT-2026-${String(Math.floor(10000 + Math.random() * 90000))}`;
-
     try {
-      const payload = {
-        ticketId,
-        category,
-        subject: trimmedSubject,
-        message: trimmedMessage,
-        attachmentName: attachmentFile ? attachmentFile.name : null,
-        submittedAt: new Date().toISOString(),
-        user: {
-          fullName: displayName,
-          handle: displayHandle,
-          email: displayEmail,
-          phone: displayPhone,
-        },
-      };
+      const activeToken = await getValidAccessToken();
+      if (!activeToken) {
+        setTicketError("Your session has expired. Please sign in again.");
+        setIsAuthenticated(false);
+        setIsSubmittingTicket(false);
+        return;
+      }
+
+      const formData = new FormData();
+      formData.append("category", category);
+      formData.append("subject", trimmedSubject);
+      formData.append("description", trimmedMessage);
+
+      if (attachmentFiles && attachmentFiles.length > 0) {
+        attachmentFiles.forEach((file) => {
+          formData.append("files", file);
+        });
+      }
+
+      const res = await authenticatedFetch(
+        `${USER_API_BASE}/support/tickets`,
+        {
+          method: "POST",
+          body: formData,
+        }
+      );
+
+      const json = await res.json().catch(() => null);
+
+      if (!res.ok || json?.status === "error") {
+        let errMsg = "Failed to submit support request. Please try again.";
+        if (json?.message) errMsg = json.message;
+        if (json?.error?.details?.message) errMsg = json.error.details.message;
+        if (Array.isArray(json?.error?.details) && json.error.details[0]?.message) {
+          errMsg = json.error.details[0].message;
+        }
+        setTicketError(errMsg);
+        setIsSubmittingTicket(false);
+        return;
+      }
+
+      const fallbackTicketNumber = `SUP-2026-${String(
+        Math.floor(1 + Math.random() * 9999)
+      ).padStart(4, "0")}`;
+      const confirmedTicketNumber =
+        json?.data?.ticketNumber ||
+        json?.data?.referenceId ||
+        json?.data?.ticketId ||
+        json?.data?.id ||
+        fallbackTicketNumber;
+
+      const categoryObj = SUPPORT_CATEGORIES.find((c) => c.value === category);
+      const categoryLabel = categoryObj ? categoryObj.label : category;
 
       // Safely record in local history
       try {
         const stored = JSON.parse(
           localStorage.getItem("pintree_support_tickets") || "[]"
         );
-        stored.unshift(payload);
+        stored.unshift({
+          ticketId: confirmedTicketNumber,
+          ticketNumber: confirmedTicketNumber,
+          category,
+          categoryLabel,
+          subject: trimmedSubject,
+          description: trimmedMessage,
+          filesCount: attachmentFiles.length,
+          status: json?.data?.status || "NEW",
+          submittedAt: new Date().toISOString(),
+          user: {
+            fullName: displayName,
+            handle: displayHandle,
+            email: displayEmail,
+            phone: displayPhone,
+          },
+        });
         localStorage.setItem(
           "pintree_support_tickets",
           JSON.stringify(stored.slice(0, 20))
         );
       } catch (storageErr) {}
 
-      // Optional fire-and-forget post without risking auth token deletion on 401
-      try {
-        const token = localStorage.getItem("pintree_access_token");
-        if (token) {
-          fetch("https://dev.user.pintree.co/v1/support/tickets", {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-              Authorization: `Bearer ${token}`,
-            },
-            body: JSON.stringify(payload),
-          }).catch(() => null);
-        }
-      } catch (postErr) {
-        // Fallback gracefully
-      }
-
       setTicketSuccess({
-        id: ticketId,
-        category,
+        id: confirmedTicketNumber,
+        ticketNumber: confirmedTicketNumber,
+        category: categoryLabel,
         subject: trimmedSubject,
       });
 
@@ -594,7 +657,8 @@ export default function ContactSupportView() {
         window.scrollTo({ top: 0, behavior: "smooth" });
       }
     } catch (err) {
-      setTicketError("Failed to submit request. Please try again.");
+      console.error("Support ticket submission error:", err);
+      setTicketError("Network error. Please check your connection and try again.");
     } finally {
       setIsSubmittingTicket(false);
     }
@@ -603,14 +667,30 @@ export default function ContactSupportView() {
   // Resolved user credentials (real data only, strictly sanitized, no mock fallbacks)
   const displayEmail = cleanEmail(userProfile?.email || storedData.email || "");
   const displayPhone = cleanPhone(
-    userProfile?.mobileNumber || userProfile?.phone || storedData.phone || ""
+    userProfile?.mobileNumber ||
+    userProfile?.phoneNumber ||
+    userProfile?.phone ||
+    storedData.phone ||
+    ""
   );
-  const displayName = cleanName(
-    userProfile?.fullName || storedData.fullName || "",
-    displayPhone || "Pintree Member"
-  );
+  const rawFullName =
+    userProfile?.fullName ||
+    userProfile?.name ||
+    userProfile?.displayName ||
+    storedData.fullName ||
+    "";
+  const cleanedName = cleanName(rawFullName, "");
+  const displayName =
+    cleanedName ||
+    (displayEmail
+      ? displayEmail.split("@")[0]
+      : displayPhone || "Pintree Member");
   const displayHandle = cleanHandle(
-    userProfile?.handleId || userProfile?.handle || storedData.handle || ""
+    userProfile?.handleId ||
+    userProfile?.handle ||
+    userProfile?.username ||
+    storedData.handle ||
+    ""
   );
 
   return (
@@ -659,7 +739,7 @@ export default function ContactSupportView() {
                     </span>
                     <div className="flex items-center gap-3 mt-1">
                       <span className="text-[24px] sm:text-[28px] font-aeonik-regular text-[#1b1c1c] tracking-tight" id="ticketNumber">
-                        {ticketSuccess.id}
+                        {ticketSuccess.ticketNumber || ticketSuccess.id}
                       </span>
                     </div>
                   </div>
@@ -778,7 +858,7 @@ export default function ContactSupportView() {
                     setTicketSuccess(null);
                     setSubject("");
                     setMessage("");
-                    setAttachmentFile(null);
+                    setAttachmentFiles([]);
                   }}
                   className="text-[14px] text-[#525252] hover:text-[#1b1c1c] underline underline-offset-4 decoration-[#cfc4c5] transition-colors cursor-pointer bg-transparent border-0 p-0"
                 >
@@ -793,13 +873,9 @@ export default function ContactSupportView() {
           /* ======================================================== */
           <main className="w-full flex-grow">
             <div className="max-w-[760px] mx-auto px-6 pt-10 pb-16">
-              {/* Header / Eyebrow Cluster */}
+              {/* Header Cluster */}
               <div className="mb-8">
-                <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#F7F7F7] border border-[#E5E5E5] text-[11px] font-medium uppercase tracking-wider text-neutral-600 mb-4">
-                  <span className="w-1.5 h-1.5 rounded-full bg-black" />
-                  <span>SUPPORT TICKET</span>
-                </div>
-                <h1 className="text-[36px] leading-[44px] tracking-tight font-normal text-[#202020] mb-2 font-aeonik-regular">
+                <h1 className="text-[32px] sm:text-[36px] leading-[40px] sm:leading-[44px] tracking-tight font-normal text-[#1b1c1c] mb-2 font-aeonik-regular">
                   Submit a support request.
                 </h1>
                 <p className="text-[15px] leading-relaxed text-[#525252]">
@@ -814,14 +890,14 @@ export default function ContactSupportView() {
               >
                 <div className="flex items-center justify-between mb-4">
                   <h2
-                    className="text-[11px] font-medium uppercase tracking-wider text-neutral-400"
+                    className="text-[11px] font-medium uppercase tracking-wider text-[#7e7576]"
                     id="authenticated-account-title"
                   >
                     AUTHENTICATED ACCOUNT (READ-ONLY)
                   </h2>
-                  <div className="flex items-center gap-1.5 text-[12px] text-neutral-500 font-medium">
+                  <div className="flex items-center gap-1.5 text-[12px] text-[#7e7576] font-medium">
                     <svg
-                      className="w-3.5 h-3.5 text-neutral-500"
+                      className="w-3.5 h-3.5 text-[#7e7576]"
                       viewBox="0 0 24 24"
                       fill="none"
                       stroke="currentColor"
@@ -846,7 +922,7 @@ export default function ContactSupportView() {
                     />
                     <div className="min-w-0">
                       <div className="flex items-center gap-1.5">
-                        <span className="text-[15px] font-semibold text-[#202020] truncate">
+                        <span className="text-[15px] font-semibold text-[#1b1c1c] truncate">
                           {displayName}
                         </span>
                         <svg
@@ -854,7 +930,7 @@ export default function ContactSupportView() {
                           viewBox="0 0 24 24"
                           fill="currentColor"
                         >
-                          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
+                          <path fillRule="evenodd" d="M8.603 3.799A4.49 4.49 0 0112 2.25c1.357 0 2.573.6 3.397 1.549a4.49 4.49 0 013.498 1.307 4.491 4.491 0 011.307 3.497A4.49 4.49 0 0121.75 12a4.49 4.49 0 01-1.549 3.397 4.491 4.491 0 01-1.307 3.497 4.491 4.491 0 01-3.497 1.307A4.49 4.49 0 0112 21.75a4.49 4.49 0 01-3.397-1.549 4.49 4.49 0 01-3.498-1.306 4.491 4.491 0 01-1.307-3.498A4.49 4.49 0 012.25 12c0-1.357.6-2.573 1.549-3.397a4.49 4.49 0 011.307-3.497 4.49 4.49 0 013.497-1.307zm7.007 6.387a.75.75 0 10-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 00-1.06 1.06l2.25 2.25a.75.75 0 001.14-.094l3.75-5.25z" clipRule="evenodd" />
                         </svg>
                       </div>
                       {displayHandle ? (
@@ -865,37 +941,37 @@ export default function ContactSupportView() {
                     </div>
                   </div>
 
-                  <div className="md:col-span-6 flex flex-col md:border-l md:border-[#E5E5E5] md:pl-5 space-y-1">
+                  <div className="md:col-span-6 flex flex-col pt-3 border-t border-[#E5E5E5] md:border-t-0 md:pt-0 md:border-l md:border-[#E5E5E5] md:pl-5 space-y-2">
                     {displayEmail ? (
-                      <div className="flex items-center gap-2 text-[13px] text-[#525252] truncate">
+                      <div className="flex items-center gap-2.5 text-[14px] text-[#4c4546] truncate">
                         <svg
-                          className="w-4 h-4 text-neutral-400 shrink-0"
+                          className="w-4 h-4 text-[#7e7576] shrink-0"
                           viewBox="0 0 24 24"
                           fill="none"
                           stroke="currentColor"
-                          strokeWidth="2"
+                          strokeWidth="1.75"
                           strokeLinecap="round"
                           strokeLinejoin="round"
                         >
-                          <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
-                          <polyline points="22,6 12,13 2,6" />
+                          <rect x="3" y="5" width="18" height="14" rx="2" />
+                          <polyline points="3 7 12 13 21 7" />
                         </svg>
                         <span className="truncate">{displayEmail}</span>
                       </div>
                     ) : null}
 
                     {displayPhone ? (
-                      <div className="flex items-center gap-2 text-[13px] text-[#525252]">
+                      <div className="flex items-center gap-2.5 text-[14px] text-[#4c4546]">
                         <svg
-                          className="w-4 h-4 text-neutral-400 shrink-0"
+                          className="w-4 h-4 text-[#7e7576] shrink-0"
                           viewBox="0 0 24 24"
                           fill="none"
                           stroke="currentColor"
-                          strokeWidth="2"
+                          strokeWidth="1.75"
                           strokeLinecap="round"
                           strokeLinejoin="round"
                         >
-                          <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z" />
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                         </svg>
                         <span>{displayPhone}</span>
                       </div>
@@ -976,8 +1052,8 @@ export default function ContactSupportView() {
                         onChange={(e) => setCategory(e.target.value)}
                       >
                         {SUPPORT_CATEGORIES.map((cat) => (
-                          <option key={cat} value={cat}>
-                            {cat}
+                          <option key={cat.value} value={cat.value}>
+                            {cat.label}
                           </option>
                         ))}
                       </select>
@@ -1050,10 +1126,13 @@ export default function ContactSupportView() {
                       type="file"
                       ref={fileInputRef}
                       className="hidden"
+                      multiple
+                      accept=".png,.jpg,.jpeg,.pdf,.log,.txt"
                       onChange={(e) => {
                         if (e.target.files && e.target.files.length > 0) {
-                          setAttachmentFile(e.target.files[0]);
+                          handleFilesAdded(e.target.files);
                         }
+                        e.target.value = "";
                       }}
                     />
 
@@ -1080,21 +1159,44 @@ export default function ContactSupportView() {
                             <path d="M21.44 11.05l-9.19 9.19a6 6 0 01-8.49-8.49l9.19-9.19a4 4 0 015.66 5.66l-9.2 9.19a2 2 0 01-2.83-2.83l8.49-8.48" />
                           </svg>
                         </div>
-                        {attachmentFile ? (
-                          <div className="flex items-center gap-2">
-                            <span className="text-[14px] font-medium text-[#202020]">
-                              {attachmentFile.name} ({(attachmentFile.size / 1024).toFixed(1)} KB)
-                            </span>
-                            <button
-                              type="button"
-                              onClick={(e) => {
-                                e.stopPropagation();
-                                setAttachmentFile(null);
-                              }}
-                              className="text-xs text-red-600 hover:text-red-800 ml-2 font-medium"
-                            >
-                              Remove
-                            </button>
+                        {attachmentFiles && attachmentFiles.length > 0 ? (
+                          <div className="w-full max-w-md space-y-2">
+                            {attachmentFiles.map((file, idx) => (
+                              <div
+                                key={`${file.name}-${idx}`}
+                                className="flex items-center justify-between p-2 rounded-lg bg-white border border-[#E5E5E5] text-left text-xs"
+                                onClick={(e) => e.stopPropagation()}
+                              >
+                                <div className="flex items-center gap-2 truncate pr-2">
+                                  <svg
+                                    className="w-4 h-4 text-neutral-500 shrink-0"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    strokeWidth="2"
+                                  >
+                                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                                    <polyline points="14 2 14 8 20 8" />
+                                  </svg>
+                                  <span className="font-medium text-[#202020] truncate">
+                                    {file.name}
+                                  </span>
+                                  <span className="text-[#777777] shrink-0">
+                                    ({(file.size / 1024).toFixed(1)} KB)
+                                  </span>
+                                </div>
+                                <button
+                                  type="button"
+                                  onClick={() => handleRemoveFile(idx)}
+                                  className="text-xs text-red-600 hover:text-red-800 font-medium px-2 py-0.5 rounded cursor-pointer"
+                                >
+                                  Remove
+                                </button>
+                              </div>
+                            ))}
+                            <p className="text-xs text-[#666666] pt-1">
+                              Click or drop to add more files (PNG, JPG, PDF up to 25MB)
+                            </p>
                           </div>
                         ) : (
                           <>

@@ -1,25 +1,21 @@
-import { Inter, Plus_Jakarta_Sans, Playfair_Display } from "next/font/google";
 import localFont from "next/font/local";
 import Navbar from "@/components/Navbar";
 import "./globals.css";
 
-const inter = Inter({
-  subsets: ["latin"],
-  weight: ["700"],
+const inter = localFont({
+  src: "../../public/fonts/inter/Inter-Variable.ttf",
   variable: "--font-inter",
   display: "swap",
 });
 
-const plusJakartaSans = Plus_Jakarta_Sans({
-  subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
+const plusJakartaSans = localFont({
+  src: "../../public/fonts/jakarta/PlusJakartaSans-Variable.ttf",
   variable: "--font-jakarta",
   display: "swap",
 });
 
-const playfairDisplay = Playfair_Display({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
+const playfairDisplay = localFont({
+  src: "../../public/fonts/playfair/PlayfairDisplay-Variable.ttf",
   variable: "--font-playfair",
   display: "swap",
 });

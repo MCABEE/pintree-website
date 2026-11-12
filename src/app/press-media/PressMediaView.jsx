@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { PLACES_API_BASE } from "@/config/api";
 
 const ASSET_01_PNG = "/media-kit/asset_01.png";
 const ASSET_01_SVG = "/media-kit/asset_01.svg";
@@ -209,7 +210,7 @@ export default function PressMediaView() {
       } catch (proxyErr) {
         // Direct fallback to backend endpoint if local proxy is unavailable
         res = await fetch(
-          "https://api.places.mcabee.in/v1/support/press-enquiries",
+          `${PLACES_API_BASE}/support/press-enquiries`,
           {
             method: "POST",
             headers: { "Content-Type": "application/json" },

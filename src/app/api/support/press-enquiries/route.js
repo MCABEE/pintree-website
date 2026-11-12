@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { PLACES_API_BASE } from "@/config/api";
 
 const VALID_MEDIA_TYPES = new Set([
   "PRINT_MEDIA",
@@ -97,7 +98,7 @@ export async function POST(request) {
     };
 
     const backendRes = await fetch(
-      "https://api.places.mcabee.in/v1/support/press-enquiries",
+      `${PLACES_API_BASE}/support/press-enquiries`,
       {
         method: "POST",
         headers: {
