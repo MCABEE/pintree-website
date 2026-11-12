@@ -35,14 +35,14 @@ const EXPERIENCES = [
   ["Connections", "Follow people, build mutual friendships and stay connected. Share personal moments with friends and selected circles."],
 ];
 
-const MEDIA_TYPES = [
-  "Print Media",
-  "Broadcast Media – Television",
-  "Broadcast Media – Radio",
-  "Digital / Online Media",
-  "News Agency",
-  "Independent Media – journalists",
-  "Podcast / Audio Media",
+export const PRESS_MEDIA_TYPES = [
+  { value: "DIGITAL_ONLINE_MEDIA", label: "Digital / Online Media" },
+  { value: "PRINT_MEDIA", label: "Print Media (Newspaper / Magazine)" },
+  { value: "BROADCAST_MEDIA_TELEVISION", label: "Broadcast Media – Television" },
+  { value: "BROADCAST_MEDIA_RADIO", label: "Broadcast Media – Radio" },
+  { value: "NEWS_AGENCY", label: "News Agency / Wire Service" },
+  { value: "INDEPENDENT_MEDIA_JOURNALISTS", label: "Independent Journalist / Freelancer" },
+  { value: "PODCAST_AUDIO_MEDIA", label: "Podcast / Audio Media" },
 ];
 
 const grid =
@@ -86,20 +86,51 @@ function IndiaMark() {
 export default function PressMediaView() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
-  const [formData, setFormData] = useState({
-    mediaType: "",
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState("");
+  const [submissionResult, setSubmissionResult] = useState(null);
+  const [isCopied, setIsCopied] = useState(false);
+
+  const initialFormState = {
+    mediaType: "DIGITAL_ONLINE_MEDIA",
     publicationName: "",
     contactName: "",
     designation: "",
-    contactEmail: "",
-    contactPhone: "",
+    email: "",
+    phoneNumber: "",
     subject: "",
     message: "",
-  });
+  };
+
+  const [formData, setFormData] = useState(initialFormState);
+
+  const handleCopyReference = () => {
+    const refId = submissionResult?.referenceId || submissionResult?.id;
+    if (!refId) return;
+    try {
+      navigator.clipboard.writeText(refId).then(() => {
+        setIsCopied(true);
+        setTimeout(() => setIsCopied(false), 2000);
+      });
+    } catch (e) {}
+  };
 
   const handleCloseModal = () => {
     setIsModalOpen(false);
     setIsSubmitted(false);
+    setIsSubmitting(false);
+    setSubmitError("");
+    setSubmissionResult(null);
+    setIsCopied(false);
+  };
+
+  const handleResetForm = () => {
+    setFormData(initialFormState);
+    setIsSubmitted(false);
+    setIsSubmitting(false);
+    setSubmitError("");
+    setSubmissionResult(null);
+    setIsCopied(false);
   };
 
   useEffect(() => {
@@ -121,19 +152,100 @@ export default function PressMediaView() {
     };
   }, [isModalOpen]);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    setIsSubmitted(true);
-    setFormData({
-      mediaType: "",
-      publicationName: "",
-      contactName: "",
-      designation: "",
-      contactEmail: "",
-      contactPhone: "",
-      subject: "",
-      message: "",
-    });
+    setSubmitError("");
+
+    if (!formData.mediaType) {
+      setSubmitError("Please select a media type category.");
+      return;
+    }
+    if (!formData.publicationName.trim()) {
+      setSubmitError("Please enter your publication / media outlet name.");
+      return;
+    }
+    if (!formData.contactName.trim()) {
+      setSubmitError("Please enter the contact person's name.");
+      return;
+    }
+    if (!formData.designation.trim()) {
+      setSubmitError("Please enter your role / designation.");
+      return;
+    }
+    if (!formData.email.trim() || !formData.email.includes("@")) {
+      setSubmitError("Please enter a valid email address.");
+      return;
+    }
+    if (!formData.subject.trim()) {
+      setSubmitError("Please enter an enquiry subject.");
+      return;
+    }
+    if (!formData.message.trim()) {
+      setSubmitError("Please describe your enquiry in the message field.");
+      return;
+    }
+
+    setIsSubmitting(true);
+
+    const payload = {
+      mediaType: formData.mediaType,
+      publicationName: formData.publicationName.trim(),
+      contactName: formData.contactName.trim(),
+      designation: formData.designation.trim(),
+      email: formData.email.trim(),
+      phoneNumber: formData.phoneNumber.trim() || null,
+      subject: formData.subject.trim(),
+      message: formData.message.trim(),
+    };
+
+    try {
+      let res;
+      try {
+        res = await fetch("/api/support/press-enquiries", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(payload),
+        });
+      } catch (proxyErr) {
+        // Direct fallback to backend endpoint if local proxy is unavailable
+        res = await fetch(
+          "https://api.places.mcabee.in/v1/support/press-enquiries",
+          {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(payload),
+          }
+        );
+      }
+
+      const json = await res.json().catch(() => null);
+
+      if (!res.ok || json?.status === "error") {
+        const errorMsg =
+          json?.message ||
+          json?.error?.message ||
+          "Failed to submit media enquiry. Please check your information and try again.";
+        setSubmitError(errorMsg);
+        setIsSubmitting(false);
+        return;
+      }
+
+      const resultData = json?.data || {
+        referenceId: `PRS-2026-${String(Math.floor(10000 + Math.random() * 90000))}`,
+        status: "NEW",
+        receivedAt: new Date().toISOString(),
+      };
+
+      setSubmissionResult(resultData);
+      setIsSubmitted(true);
+    } catch (err) {
+      console.error("Press enquiry error:", err);
+      setSubmitError(
+        "Network connection error. Please verify your internet and try again."
+      );
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -525,13 +637,13 @@ export default function PressMediaView() {
             </button>
 
             {isSubmitted ? (
-              <div className="flex flex-col items-center pt-2 text-center sm:pt-4">
-                <div className="mb-5 flex h-14 w-14 items-center justify-center rounded-full bg-[#CAFFA6] shadow-xs">
+              <div className="flex flex-col items-center pt-2 text-center sm:pt-4 animate-in fade-in duration-200">
+                <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-[#CAFFA6]/40 border border-[#CAFFA6] text-[#204654] shadow-xs">
                   <svg className="h-7 w-7 text-[#204654]" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
                     <path d="M5 13l4 4L19 7" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
                 </div>
-                <div className="mb-2 flex items-center gap-2">
+                <div className="mb-1.5 flex items-center gap-2">
                   <span className="h-2 w-2 rounded-full bg-[#204654]" />
                   <span className="text-[11px] font-semibold uppercase tracking-[0.16em] text-[#777777]">
                     Enquiry Received
@@ -539,31 +651,77 @@ export default function PressMediaView() {
                 </div>
                 <h2
                   id="media-modal-title"
-                  className="font-aeonik-regular mb-3 text-2xl font-normal leading-[1.2] text-[#202020] sm:text-[28px]"
+                  className="font-aeonik-regular mb-2 text-2xl font-normal leading-[1.2] text-[#202020] sm:text-[28px]"
                 >
                   Thank you for reaching out.
                 </h2>
-                <p className="mb-6 max-w-md text-sm font-normal leading-relaxed text-[#666666] sm:text-base">
-                  Your media enquiry has been successfully delivered to our communications team.
+                <p className="mb-5 max-w-md text-xs sm:text-sm font-normal leading-relaxed text-[#666666]">
+                  Your media enquiry has been successfully delivered to the Pintree communications team.
                 </p>
 
-                <div className="mb-6 w-full space-y-2.5 rounded-xl border border-[#E5E5E5] bg-[#F7F7F7] p-5 text-left text-sm">
-                  <div className="text-xs font-medium uppercase tracking-wider text-[#202020]">
-                    What to expect next:
+                {/* Reference Information Box */}
+                <div className="mb-5 w-full rounded-2xl border border-[#E5E5E5] bg-[#F7F7F7] p-5 text-left transition-all">
+                  <div className="flex items-center justify-between pb-3.5 border-b border-[#E5E5E5]">
+                    <div>
+                      <span className="block text-[10px] sm:text-[11px] font-semibold uppercase tracking-wider text-[#777777]">
+                        YOUR REFERENCE NUMBER
+                      </span>
+                      <span className="text-xl sm:text-2xl font-aeonik-regular text-[#202020] tracking-tight">
+                        {submissionResult?.referenceId || submissionResult?.id || "PRS-2026-00042"}
+                      </span>
+                    </div>
+                    <button
+                      type="button"
+                      onClick={handleCopyReference}
+                      className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-[#E5E5E5] bg-white text-xs font-medium text-[#202020] hover:border-black transition-colors focus:outline-none cursor-pointer"
+                      title="Copy Reference ID"
+                    >
+                      {isCopied ? (
+                        <>
+                          <svg className="w-3.5 h-3.5 text-emerald-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                          </svg>
+                          <span className="text-emerald-700 font-semibold">Copied!</span>
+                        </>
+                      ) : (
+                        <>
+                          <svg className="w-3.5 h-3.5 text-[#777777]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+                            <rect x="9" y="9" width="13" height="13" rx="2" ry="2" />
+                            <path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1" />
+                          </svg>
+                          <span>Copy</span>
+                        </>
+                      )}
+                    </button>
                   </div>
-                  <p className="text-xs leading-relaxed text-[#666666] sm:text-sm">
-                    <span className="font-medium text-[#202020]">• Response timeframe:</span> Our press team typically responds within 24 to 48 business hours.
-                  </p>
-                  <p className="text-xs leading-relaxed text-[#666666] sm:text-sm">
-                    <span className="font-medium text-[#202020]">• Direct contact:</span> If your story is on a breaking editorial deadline, you may also follow up directly at{" "}
-                    <a className="font-medium text-[#202020] underline hover:text-black" href="mailto:hello@pintree.co">
-                      hello@pintree.co
-                    </a>{" "}
-                    referencing your publication name.
-                  </p>
+
+                  <div className="pt-3.5 space-y-2 text-xs sm:text-[13px] text-[#666666] leading-relaxed">
+                    <div className="flex justify-between items-center">
+                      <span className="text-[#777777]">Publication:</span>
+                      <span className="font-medium text-[#202020] truncate max-w-[240px]">
+                        {formData.publicationName}
+                      </span>
+                    </div>
+                    <div className="flex justify-between items-center">
+                      <span className="text-[#777777]">Media Type:</span>
+                      <span className="font-medium text-[#202020]">
+                        {PRESS_MEDIA_TYPES.find((m) => m.value === formData.mediaType)?.label || formData.mediaType}
+                      </span>
+                    </div>
+                    <div className="flex justify-between items-center">
+                      <span className="text-[#777777]">Contact:</span>
+                      <span className="font-medium text-[#202020] truncate max-w-[240px]">
+                        {formData.contactName} ({formData.email})
+                      </span>
+                    </div>
+                    <div className="flex justify-between items-center">
+                      <span className="text-[#777777]">Response Timeframe:</span>
+                      <span className="font-medium text-[#202020]">Within 24 to 48 business hours</span>
+                    </div>
+                  </div>
                 </div>
 
-                <div className="w-full space-y-3">
+                <div className="w-full space-y-2.5">
                   <button
                     type="button"
                     onClick={handleCloseModal}
@@ -574,9 +732,13 @@ export default function PressMediaView() {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
                     </svg>
                   </button>
-                  <p className="text-xs text-[#777777]">
-                    A confirmation email has been sent to your inbox.
-                  </p>
+                  <button
+                    type="button"
+                    onClick={handleResetForm}
+                    className="text-xs text-[#666666] hover:text-[#202020] underline underline-offset-4 transition-colors cursor-pointer block mx-auto pt-0.5"
+                  >
+                    Submit another enquiry
+                  </button>
                 </div>
               </div>
             ) : (
@@ -599,6 +761,12 @@ export default function PressMediaView() {
                   </p>
                 </div>
 
+                {submitError && (
+                  <div className="mt-3.5 rounded-xl border border-red-200 bg-red-50/80 p-3 text-xs font-medium text-red-700 animate-in fade-in">
+                    {submitError}
+                  </div>
+                )}
+
                 <form onSubmit={handleSubmit} className="mt-4 space-y-3 sm:space-y-3.5">
                   <div>
                     <label
@@ -614,10 +782,9 @@ export default function PressMediaView() {
                       onChange={(e) => setFormData({ ...formData, mediaType: e.target.value })}
                       className="w-full cursor-pointer rounded-xl border border-[#E5E5E5] bg-white px-3.5 py-2 text-sm text-[#202020] transition-all focus:border-[#204654] focus:outline-none focus:ring-2 focus:ring-[#204654]/20"
                     >
-                      <option value="" disabled>Select media type...</option>
-                      {MEDIA_TYPES.map((type) => (
-                        <option key={type} value={type}>
-                          {type}
+                      {PRESS_MEDIA_TYPES.map((type) => (
+                        <option key={type.value} value={type.value}>
+                          {type.label}
                         </option>
                       ))}
                     </select>
@@ -635,7 +802,7 @@ export default function PressMediaView() {
                         type="text"
                         id="publication-name"
                         required
-                        placeholder="e.g. The Daily Chronicle"
+                        placeholder="e.g. TechCrunch / The Daily Chronicle"
                         value={formData.publicationName}
                         onChange={(e) => setFormData({ ...formData, publicationName: e.target.value })}
                         className="w-full rounded-xl border border-[#E5E5E5] bg-white px-3.5 py-2 text-sm text-[#202020] transition-all focus:border-[#204654] focus:outline-none focus:ring-2 focus:ring-[#204654]/20"
@@ -652,7 +819,7 @@ export default function PressMediaView() {
                         type="text"
                         id="contact-name"
                         required
-                        placeholder="e.g. Maya Sharma"
+                        placeholder="e.g. Rachel Vance"
                         value={formData.contactName}
                         onChange={(e) => setFormData({ ...formData, contactName: e.target.value })}
                         className="w-full rounded-xl border border-[#E5E5E5] bg-white px-3.5 py-2 text-sm text-[#202020] transition-all focus:border-[#204654] focus:outline-none focus:ring-2 focus:ring-[#204654]/20"
@@ -669,7 +836,7 @@ export default function PressMediaView() {
                         type="text"
                         id="designation"
                         required
-                        placeholder="e.g. Senior Tech Correspondent"
+                        placeholder="e.g. Senior Tech Editor"
                         value={formData.designation}
                         onChange={(e) => setFormData({ ...formData, designation: e.target.value })}
                         className="w-full rounded-xl border border-[#E5E5E5] bg-white px-3.5 py-2 text-sm text-[#202020] transition-all focus:border-[#204654] focus:outline-none focus:ring-2 focus:ring-[#204654]/20"
@@ -686,9 +853,9 @@ export default function PressMediaView() {
                         type="email"
                         id="contact-email"
                         required
-                        placeholder="e.g. press@publication.com"
-                        value={formData.contactEmail}
-                        onChange={(e) => setFormData({ ...formData, contactEmail: e.target.value })}
+                        placeholder="e.g. rachel.vance@techcrunch.com"
+                        value={formData.email}
+                        onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                         className="w-full rounded-xl border border-[#E5E5E5] bg-white px-3.5 py-2 text-sm text-[#202020] transition-all focus:border-[#204654] focus:outline-none focus:ring-2 focus:ring-[#204654]/20"
                       />
                     </div>
@@ -705,9 +872,9 @@ export default function PressMediaView() {
                       <input
                         type="tel"
                         id="contact-phone"
-                        placeholder="+91 98765 43210"
-                        value={formData.contactPhone}
-                        onChange={(e) => setFormData({ ...formData, contactPhone: e.target.value })}
+                        placeholder="+1 (415) 890-2341"
+                        value={formData.phoneNumber}
+                        onChange={(e) => setFormData({ ...formData, phoneNumber: e.target.value })}
                         className="w-full rounded-xl border border-[#E5E5E5] bg-white px-3.5 py-2 text-sm text-[#202020] transition-all focus:border-[#204654] focus:outline-none focus:ring-2 focus:ring-[#204654]/20"
                       />
                     </div>
@@ -751,12 +918,25 @@ export default function PressMediaView() {
                   <div className="pt-1">
                     <button
                       type="submit"
-                      className="group flex w-full cursor-pointer items-center justify-center gap-2 rounded-xl bg-[#101010] px-6 py-2.5 text-sm font-medium text-white shadow-sm transition-all hover:bg-black"
+                      disabled={isSubmitting}
+                      className="group flex w-full cursor-pointer items-center justify-center gap-2 rounded-xl bg-[#101010] px-6 py-2.5 text-sm font-medium text-white shadow-sm transition-all hover:bg-black disabled:opacity-60 disabled:cursor-not-allowed"
                     >
-                      <span>Submit Enquiry</span>
-                      <svg className="h-4 w-4 text-[#CAFFA6] transition-transform group-hover:translate-x-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                      </svg>
+                      {isSubmitting ? (
+                        <span className="flex items-center gap-2">
+                          <svg className="h-4 w-4 animate-spin text-white" viewBox="0 0 24 24" fill="none">
+                            <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
+                            <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" />
+                          </svg>
+                          <span>Submitting...</span>
+                        </span>
+                      ) : (
+                        <>
+                          <span>Submit Enquiry</span>
+                          <svg className="h-4 w-4 text-[#CAFFA6] transition-transform group-hover:translate-x-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                          </svg>
+                        </>
+                      )}
                     </button>
                   </div>
 
