@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { USER_API_BASE } from "@/config/api";
 
 export async function GET(request) {
   try {
@@ -15,7 +16,7 @@ export async function GET(request) {
     }
 
     const backendRes = await fetch(
-      `https://dev.user.pintree.co/v1/shared/gender?page=${encodeURIComponent(page)}&limit=${encodeURIComponent(limit)}`,
+      `${USER_API_BASE}/shared/gender?page=${encodeURIComponent(page)}&limit=${encodeURIComponent(limit)}`,
       {
         method: "GET",
         headers,

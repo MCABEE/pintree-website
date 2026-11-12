@@ -1,11 +1,12 @@
 import { NextResponse } from "next/server";
+import { USER_API_BASE } from "@/config/api";
 
 export async function POST(request) {
   try {
     const body = await request.json();
 
     const backendRes = await fetch(
-      "https://dev.user.pintree.co/v1/auth/web/send-otp",
+      `${USER_API_BASE}/auth/web/send-otp`,
       {
         method: "POST",
         headers: {

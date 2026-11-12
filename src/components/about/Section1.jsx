@@ -7,6 +7,7 @@ import {
   needsGoogleProfileCompletion,
   signInWithGoogle,
 } from "@/utils/googleAuth";
+import { USER_API_BASE } from "@/config/api";
 
 const MEMBER_AVATARS = [
   {
@@ -541,7 +542,7 @@ function Section1({ variant = "hero" }) {
     try {
       const { res, data } = await postJson(
         "/api/auth/send-otp",
-        "https://dev.user.pintree.co/v1/auth/web/send-otp",
+        `${USER_API_BASE}/auth/web/send-otp`,
         payload
       );
 
@@ -585,7 +586,7 @@ function Section1({ variant = "hero" }) {
     try {
       const { res, data } = await postJson(
         "/api/auth/send-otp",
-        "https://dev.user.pintree.co/v1/auth/web/send-otp",
+        `${USER_API_BASE}/auth/web/send-otp`,
         payload
       );
 
@@ -639,7 +640,7 @@ function Section1({ variant = "hero" }) {
     try {
       const { res, data } = await postJson(
         "/api/auth/validating-otp",
-        "https://dev.user.pintree.co/v1/auth/web/validating-otp",
+        `${USER_API_BASE}/auth/web/validating-otp`,
         payload
       );
 
@@ -711,7 +712,7 @@ function Section1({ variant = "hero" }) {
     try {
       const { res, data } = await postJson(
         "/api/auth/register/page-1",
-        "https://dev.user.pintree.co/v1/auth/web/register/page-1",
+        `${USER_API_BASE}/auth/web/register/page-1`,
         payload,
         { Authorization: `Bearer ${accessToken}` }
       );
@@ -821,7 +822,7 @@ function Section1({ variant = "hero" }) {
     try {
       const { res, data } = await postJson(
         "/api/auth/register/page-2",
-        "https://dev.user.pintree.co/v1/auth/web/register/page-2",
+        `${USER_API_BASE}/auth/web/register/page-2`,
         payload,
         { Authorization: `Bearer ${accessToken}` }
       );
@@ -913,7 +914,7 @@ function Section1({ variant = "hero" }) {
         });
       } catch {
         res = await fetch(
-          `https://dev.user.pintree.co/v1/auth/web/register/${encodeURIComponent(userId)}/Page-3`,
+          `${USER_API_BASE}/auth/web/register/${encodeURIComponent(userId)}/Page-3`,
           {
             method: "POST",
             credentials: "include",

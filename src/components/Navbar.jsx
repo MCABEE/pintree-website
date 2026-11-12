@@ -4,6 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { getValidAccessToken, authenticatedFetch } from "@/utils/auth";
+import { USER_API_BASE } from "@/config/api";
 import UserAvatar, { resolveProfileImageUrl } from "@/components/UserAvatar";
 
 const mainNavLinks = [
@@ -52,7 +53,7 @@ const Navbar = () => {
       setIsAuthenticated(Boolean(token));
 
       if (token) {
-        authenticatedFetch("https://dev.user.pintree.co/v1/users/profile")
+        authenticatedFetch(`${USER_API_BASE}/users/profile`)
           .then((r) => r.json())
           .then((d) => {
             if (mounted && d?.data) setUserProfile(d.data);

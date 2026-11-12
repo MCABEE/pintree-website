@@ -1,10 +1,11 @@
 import { NextResponse } from "next/server";
+import { USER_API_BASE } from "@/config/api";
 
 export async function POST(request) {
   try {
     const body = await request.json();
 
-    const backendRes = await fetch("https://dev.user.pintree.co/v1/auth/login", {
+    const backendRes = await fetch(`${USER_API_BASE}/auth/login`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

@@ -1,4 +1,5 @@
 import { getDeviceInfo } from "@/utils/device";
+import { USER_API_BASE } from "@/config/api";
 
 const GIS_SCRIPT_SRC = "https://accounts.google.com/gsi/client";
 
@@ -280,7 +281,7 @@ export async function signInWithGoogle() {
       body: JSON.stringify(payload),
     });
   } catch {
-    res = await fetch("https://dev.user.pintree.co/v1/auth/google", {
+    res = await fetch(`${USER_API_BASE}/auth/google`, {
       method: "POST",
       credentials: "include",
       headers: { "Content-Type": "application/json" },

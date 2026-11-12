@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import { getValidAccessToken, authenticatedFetch, clearAuthSession } from "@/utils/auth";
+import { USER_API_BASE } from "@/config/api";
 import Footer from "@/components/Footer";
 
 function decodeJwt(token) {
@@ -82,7 +83,7 @@ export default function DeleteAccountPage() {
     setIsVerified(storedVerified);
 
     if (token) {
-      authenticatedFetch("https://dev.user.pintree.co/v1/users/profile")
+      authenticatedFetch(`${USER_API_BASE}/users/profile`)
         .then((r) => r.json())
         .then((d) => {
           if (d?.data) {
@@ -126,7 +127,7 @@ export default function DeleteAccountPage() {
     setIsVerifying(true);
 
     try {
-      const res = await authenticatedFetch("https://dev.user.pintree.co/v1/auth/verify-password", {
+      const res = await authenticatedFetch(`${USER_API_BASE}/auth/verify-password`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -184,7 +185,7 @@ export default function DeleteAccountPage() {
     setIsDeleting(true);
 
     try {
-      const res = await authenticatedFetch("https://dev.user.pintree.co/v1/auth/account", {
+      const res = await authenticatedFetch(`${USER_API_BASE}/auth/account`, {
         method: "DELETE",
         headers: {
           "Content-Type": "application/json",
