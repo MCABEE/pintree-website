@@ -17,8 +17,10 @@ export function decodeJwt(token) {
   try {
     const parts = token.split(".");
     if (parts.length < 2) return null;
-    const base64Url = parts[1];
-    const base64 = base64Url.replace(/-/g, "+").replace(/_/g, "/");
+    let base64 = parts[1].replace(/-/g, "+").replace(/_/g, "/");
+    while (base64.length % 4 !== 0) {
+      base64 += "=";
+    }
     const jsonPayload = decodeURIComponent(
       atob(base64)
         .split("")
@@ -139,7 +141,13 @@ export function clearAuthSession() {
     localStorage.removeItem("pintree_login_method");
     localStorage.removeItem("pintree_login_verified");
     localStorage.removeItem("pintree_user_full_name");
+    localStorage.removeItem("pintree_user_name");
     localStorage.removeItem("pintree_user_handle");
+    localStorage.removeItem("pintree_user_handle_id");
+    localStorage.removeItem("pintree_user_profile_image");
+    localStorage.removeItem("pintree_user_avatar");
+    localStorage.removeItem("pintree_email_verified");
+    localStorage.removeItem("pintree_mobile_verified");
     localStorage.removeItem("pintree_signup_pending");
     document.cookie = "pintree_token=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT";
     fetch("/api/auth/logout", { method: "POST" }).catch(() => null);
@@ -212,4 +220,102 @@ export async function authenticatedFetch(url, options = {}) {
   }
 
   return res;
+}
+
+function extractProfileImageUrl(source) {
+  if (!source || typeof source !== "object") return "";
+  const candidates = [
+    source.profileImageUrl,
+    source.profileImage,
+    source.profilePic,
+    source.profilePicture,
+    source.avatarUrl,
+    source.avatar,
+    source.photoUrl,
+    source.photo,
+    source.imageUrl,
+    source.image,
+    source.media?.url,
+    source.profileMedia?.url,
+  ];
+  for (const val of candidates) {
+    if (typeof val === "string" && val.trim()) return val.trim();
+  }
+  return "";
+}
+
+/**
+ * Fetches the authenticated user's exact profile from /users/profile
+ * and persists real name, handle, avatar, and contact details to localStorage.
+ */
+export async function fetchAndPersistCurrentUserProfile() {
+  if (typeof window === "undefined") return null;
+  const token = await getValidAccessToken();
+  if (!token) return null;
+
+  try {
+    const res = await authenticatedFetch(`${USER_API_BASE}/users/profile`);
+    if (!res.ok) return null;
+    const json = await res.json().catch(() => null);
+    const p = json?.data;
+    if (!p || typeof p !== "object") return null;
+
+    const fullName = String(p.fullName || p.name || "").trim();
+    const rawHandle = String(p.handleId || p.handle || p.username || "").trim();
+    const handle = rawHandle
+      ? rawHandle.startsWith("@")
+        ? rawHandle
+        : `@${rawHandle}`
+      : "";
+    const email = String(
+      p.email ||
+      localStorage.getItem("pintree_auth_email") ||
+      localStorage.getItem("pintree_user_email") ||
+      ""
+    ).trim();
+    const phone = String(
+      p.mobileNumber ||
+      p.phoneNumber ||
+      p.phone ||
+      localStorage.getItem("pintree_auth_phone") ||
+      localStorage.getItem("pintree_user_phone") ||
+      ""
+    ).trim();
+    const userId = String(
+      p.userCredentialId ||
+      p.id ||
+      localStorage.getItem("pintree_user_id") ||
+      ""
+    ).trim();
+    const profileImageUrl = extractProfileImageUrl(p);
+
+    if (userId) localStorage.setItem("pintree_user_id", userId);
+    if (fullName) {
+      localStorage.setItem("pintree_user_full_name", fullName);
+    }
+    if (handle) {
+      localStorage.setItem("pintree_user_handle", handle);
+    }
+    if (email) localStorage.setItem("pintree_user_email", email);
+    if (phone) localStorage.setItem("pintree_user_phone", phone);
+    if (profileImageUrl) {
+      localStorage.setItem("pintree_user_profile_image", profileImageUrl);
+    } else {
+      localStorage.removeItem("pintree_user_profile_image");
+      localStorage.removeItem("pintree_user_avatar");
+    }
+
+    return {
+      userId,
+      fullName,
+      handle,
+      email,
+      phone,
+      profileImageUrl,
+      rawProfile: p,
+    };
+  } catch (err) {
+    console.warn("[fetchAndPersistCurrentUserProfile]:", err);
+    return null;
+  }
 }

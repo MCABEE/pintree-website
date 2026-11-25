@@ -8,6 +8,7 @@ import {
   needsGoogleProfileCompletion,
   signInWithGoogle,
 } from "@/utils/googleAuth";
+import { isTokenExpired, clearAuthSession, fetchAndPersistCurrentUserProfile } from "@/utils/auth";
 import { USER_API_BASE } from "@/config/api";
 import Footer from "@/components/Footer";
 
@@ -33,20 +34,35 @@ export default function LoginPage() {
   // If user is already logged in, redirect straight to account without requiring login
   useEffect(() => {
     if (typeof window === "undefined") return;
-    const token = localStorage.getItem("pintree_access_token");
-    if (token) {
-      if (localStorage.getItem("pintree_signup_pending")) {
-        router.replace("/");
-        return;
-      }
-      const searchParams = new URLSearchParams(window.location.search);
-      const targetAction = searchParams.get("action");
-      const redirectUrl =
-        targetAction === "delete_account"
-          ? "/account/delete"
-          : searchParams.get("redirect") || "/account";
-      router.replace(redirectUrl);
+    const searchParams = new URLSearchParams(window.location.search);
+    const redirectParam = searchParams.get("redirect");
+    const forcePrompt = searchParams.get("prompt") === "login";
+
+    // If user explicitly came to log in (e.g. from onboarding or change account), do not auto-redirect back!
+    if (forcePrompt || (redirectParam && redirectParam.includes("/onboarding"))) {
+      return;
     }
+
+    const token = localStorage.getItem("pintree_access_token");
+    if (!token) return;
+
+    // If stored token is expired, clean up stale session and allow user to log in
+    if (isTokenExpired(token)) {
+      clearAuthSession();
+      return;
+    }
+
+    if (localStorage.getItem("pintree_signup_pending")) {
+      router.replace("/");
+      return;
+    }
+
+    const targetAction = searchParams.get("action");
+    const redirectUrl =
+      targetAction === "delete_account"
+        ? "/account/delete"
+        : redirectParam || "/account";
+    router.replace(redirectUrl);
   }, [router]);
 
   useEffect(() => {
@@ -127,9 +143,9 @@ export default function LoginPage() {
 
       const data = await res.json().catch(() => null);
 
-      if (!res.ok || (data && data.status === "error")) {
+      if (!res || !res.ok || (data && data.status === "error")) {
         const isRateLimited =
-          res.status === 429 ||
+          res?.status === 429 ||
           (typeof data?.message === "string" && data.message.toLowerCase().includes("rate limit"));
 
         if (isRateLimited) {
@@ -166,6 +182,14 @@ export default function LoginPage() {
 
       if (data?.data?.accessToken) {
         try {
+          // Clear previous account's profile cache before writing new session
+          localStorage.removeItem("pintree_user_full_name");
+          localStorage.removeItem("pintree_user_name");
+          localStorage.removeItem("pintree_user_handle");
+          localStorage.removeItem("pintree_user_handle_id");
+          localStorage.removeItem("pintree_user_profile_image");
+          localStorage.removeItem("pintree_user_avatar");
+
           localStorage.setItem("pintree_access_token", data.data.accessToken);
           localStorage.setItem("pintree_login_method", isEmail ? "email" : "mobile");
           localStorage.setItem("pintree_login_verified", "true");
@@ -184,6 +208,17 @@ export default function LoginPage() {
             }
             localStorage.setItem("pintree_user_phone", phone);
             localStorage.removeItem("pintree_user_email");
+          }
+
+          const userObj = data.data.user || data.data.profile || data.data;
+          if (userObj?.fullName || userObj?.name) {
+            localStorage.setItem("pintree_user_full_name", userObj.fullName || userObj.name);
+          }
+          if (userObj?.handle || userObj?.handleId) {
+            localStorage.setItem("pintree_user_handle", userObj.handle || userObj.handleId);
+          }
+          if (userObj?.avatar || userObj?.profileImageUrl) {
+            localStorage.setItem("pintree_user_profile_image", userObj.avatar || userObj.profileImageUrl);
           }
 
           // Parse and store JWT claims if present
@@ -208,6 +243,29 @@ export default function LoginPage() {
 
           const maxAge = data.data.expiresIn || 86400;
           document.cookie = `pintree_token=${data.data.accessToken}; path=/; max-age=${maxAge}; SameSite=Lax`;
+
+          // Fetch real user profile (/users/profile) so exact fullName, handleId, and profileImageUrl are persisted
+          const fetchedProfile = await fetchAndPersistCurrentUserProfile();
+          try {
+            const draftRaw = localStorage.getItem("pintree_news_media_onboarding_draft");
+            if (draftRaw) {
+              const draft = JSON.parse(draftRaw);
+              if (draft && typeof draft === "object") {
+                draft.owner = fetchedProfile
+                  ? {
+                      userId: fetchedProfile.userId,
+                      fullName: fetchedProfile.fullName,
+                      handle: fetchedProfile.handle,
+                      email: fetchedProfile.email,
+                      phone: fetchedProfile.phone,
+                      profileImageUrl: fetchedProfile.profileImageUrl,
+                    }
+                  : null;
+                draft.isAccountConnected = Boolean(fetchedProfile?.fullName);
+                localStorage.setItem("pintree_news_media_onboarding_draft", JSON.stringify(draft));
+              }
+            }
+          } catch {}
         } catch (storageErr) {
           console.warn("Storage warning:", storageErr);
         }
@@ -253,6 +311,26 @@ export default function LoginPage() {
         router.push("/?continue=profile");
         return;
       }
+
+      const fetchedProfile = await fetchAndPersistCurrentUserProfile();
+      try {
+        const draftRaw = localStorage.getItem("pintree_news_media_onboarding_draft");
+        if (draftRaw) {
+          const draft = JSON.parse(draftRaw);
+          if (draft && typeof draft === "object" && fetchedProfile?.fullName) {
+            draft.owner = {
+              userId: fetchedProfile.userId,
+              fullName: fetchedProfile.fullName,
+              handle: fetchedProfile.handle,
+              email: fetchedProfile.email,
+              phone: fetchedProfile.phone,
+              profileImageUrl: fetchedProfile.profileImageUrl,
+            };
+            draft.isAccountConnected = true;
+            localStorage.setItem("pintree_news_media_onboarding_draft", JSON.stringify(draft));
+          }
+        }
+      } catch {}
 
       const searchParams = new URLSearchParams(window.location.search);
       const targetAction = searchParams.get("action");
