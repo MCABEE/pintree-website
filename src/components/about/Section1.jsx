@@ -1393,7 +1393,7 @@ function Section1({ variant = "hero" }) {
                           ? "mt-0 h-11 rounded-xl border-[#E8E8E8] bg-[#F6F6F6] text-[13px] hover:bg-[#EFEFEF]"
                           : "mt-2 h-[42px] rounded-[9px] border-[#E8E8E8] bg-[#F6F6F6] text-[13px] text-[#2d2d2d] hover:bg-[#ececec]"
                       }`}
-                      href="/support"
+                      href="/get-started"
                     >
                       Let&apos;s get started
                       {isPage ? (
@@ -2069,6 +2069,24 @@ function Section1({ variant = "hero" }) {
                   </span>
                   <span className="mt-0.5 block text-[12px] text-[#666666]">Personal Account</span>
                 </div>
+                {(() => {
+                  const redirectTarget =
+                    typeof window !== "undefined"
+                      ? new URLSearchParams(window.location.search).get("redirect")
+                      : null;
+                  if (!redirectTarget) return null;
+                  return (
+                    <div className="mb-6 w-full">
+                      <button
+                        type="button"
+                        onClick={() => router.push(redirectTarget)}
+                        className="w-full flex h-[50px] items-center justify-center gap-2 rounded-xl bg-black px-6 text-[15px] font-semibold text-white transition-colors duration-150 hover:bg-[#202020] shadow-sm cursor-pointer"
+                      >
+                        Continue to News &amp; Media Onboarding &rarr;
+                      </button>
+                    </div>
+                  );
+                })()}
                 <div className="grid w-full grid-cols-1 gap-3 sm:grid-cols-2">
                   <a
                     href="https://play.google.com/store/apps/details?id=com.mcabee.pintree&pcampaignid=web_share"
